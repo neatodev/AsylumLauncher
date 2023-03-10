@@ -114,6 +114,22 @@ namespace AsylumLauncher
             BmEngineData.Sections.RemoveSection("AppCompat");
         }
 
+        public int ColorIniToLauncher(string input)
+        {
+            double inp = double.Parse(input, CultureInfo.InvariantCulture);
+            return (int)((inp / 0.04) - 125) * (-1);
+        }
+
+        public string ColorLauncherToIni(int input)
+        {
+            string Affix = "";
+            if ((double)(125 - input) * 0.04 % 1 == 0)
+            {
+                Affix = ".00";
+            }
+            return ((double)(125 - input) * 0.04).ToString() + Affix;
+        }
+
         public void ResetDisplay()
         {
             Program.FileHandler.BmEngine.IsReadOnly = false;

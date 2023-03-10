@@ -30,6 +30,7 @@ namespace AsylumLauncher
             Program.FileHandler.BmInput.IsReadOnly = false;
             WriteBmEngineBasic();
             WriteBmEngineAdvanced();
+            WriteColors();
             WriteTextureGroupLines();
             WriteToTempFile();
             MergeBmEngine();
@@ -452,6 +453,24 @@ namespace AsylumLauncher
                 IniHandler.BmEngineData["SystemSettings"]["Reflections"] = "False";
             }
             Nlog.Info("WriteBmEngineAdvanced - Set Reflections to {0}", IniHandler.BmEngineData["SystemSettings"]["Reflections"]);
+        }
+        private void WriteColors()
+        {
+            // Saturation
+            IniHandler.BmEngineData["Engine.Player"]["PP_DesaturationMultiplier"] = Program.IniHandler.ColorLauncherToIni(Program.MainWindow.SaturationTrackbar.Value);
+            Nlog.Info("WriteColors - Set Saturation to {0}", IniHandler.BmEngineData["Engine.Player"]["PP_DesaturationMultiplier"]);
+
+            // Highlights
+            IniHandler.BmEngineData["Engine.Player"]["PP_HighlightsMultiplier"] = Program.IniHandler.ColorLauncherToIni(Program.MainWindow.HighlightsTrackbar.Value);
+            Nlog.Info("WriteColors - Set Highlights to {0}", IniHandler.BmEngineData["Engine.Player"]["PP_HighlightsMultiplier"]);
+
+            // Midtones
+            IniHandler.BmEngineData["Engine.Player"]["PP_MidTonesMultiplier"] = Program.IniHandler.ColorLauncherToIni(Program.MainWindow.MidtonesTrackbar.Value);
+            Nlog.Info("WriteColors - Set Midtones to {0}", IniHandler.BmEngineData["Engine.Player"]["PP_MidTonesMultiplier"]);
+
+            // Shadows
+            IniHandler.BmEngineData["Engine.Player"]["PP_ShadowsMultiplier"] = Program.IniHandler.ColorLauncherToIni(Program.MainWindow.ShadowsTrackbar.Value);
+            Nlog.Info("WriteColors - Set Shadows to {0}", IniHandler.BmEngineData["Engine.Player"]["PP_ShadowsMultiplier"]);
         }
 
         private void WriteTextureGroupLines()

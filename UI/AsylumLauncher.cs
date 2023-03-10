@@ -9,6 +9,7 @@ namespace AsylumLauncher
     {
         private bool DisplaySetting = false;
         private bool ControlSetting = false;
+        private ImageTooltip ImgToolTip;
         public bool DisplaySettingChanged
         {
             get => DisplaySetting;
@@ -33,6 +34,17 @@ namespace AsylumLauncher
         public AsylumLauncher()
         {
             InitializeComponent();
+            ImgToolTip = new();
+            ImgToolTip.InitialDelay = 50;
+            ImgToolTip.AutoPopDelay = 5000000;
+            ImgToolTip.AutomaticDelay = 500;
+            ImgToolTip.ReshowDelay = 20;
+            ImgToolTip.SetToolTip(DefaultColorButton, "Default");
+            ImgToolTip.SetToolTip(NoirColorButton, "Monochrome");
+            ImgToolTip.SetToolTip(MutedColorButton, "Muted");
+            ImgToolTip.SetToolTip(LowContrastColorButton, "Log Profile 1");
+            ImgToolTip.SetToolTip(VividColorButton, "Log Profile 2");
+            ImgToolTip.SetToolTip(HighContrastColorButton, "High Contrast");
         }
 
         private void ApplySettingsButton_Click(object sender, EventArgs e)
@@ -324,12 +336,32 @@ namespace AsylumLauncher
             DisplaySettingChanged = true;
             if (DOFBox.Checked)
             {
-             
+                Program.MainWindow.AdvancedColorBox.Text = "ADVANCED COLOR SETTINGS";
+                Program.MainWindow.DefaultColorButton.Enabled = true;
+                Program.MainWindow.NoirColorButton.Enabled = true;
+                Program.MainWindow.MutedColorButton.Enabled = true;
+                Program.MainWindow.LowContrastColorButton.Enabled = true;
+                Program.MainWindow.HighContrastColorButton.Enabled = true;
+                Program.MainWindow.VividColorButton.Enabled = true;
+                Program.MainWindow.SaturationTrackbar.Enabled = true;
+                Program.MainWindow.HighlightsTrackbar.Enabled = true;
+                Program.MainWindow.MidtonesTrackbar.Enabled = true;
+                Program.MainWindow.ShadowsTrackbar.Enabled = true;
 
             }
             else
             {
-
+                Program.MainWindow.AdvancedColorBox.Text = "ADVANCED COLOR SETTINGS ('Depth of Field' must be enabled to edit.)";
+                Program.MainWindow.DefaultColorButton.Enabled = false;
+                Program.MainWindow.NoirColorButton.Enabled = false;
+                Program.MainWindow.MutedColorButton.Enabled = false;
+                Program.MainWindow.LowContrastColorButton.Enabled = false;
+                Program.MainWindow.HighContrastColorButton.Enabled = false;
+                Program.MainWindow.VividColorButton.Enabled = false;
+                Program.MainWindow.SaturationTrackbar.Enabled = false;
+                Program.MainWindow.HighlightsTrackbar.Enabled = false;
+                Program.MainWindow.MidtonesTrackbar.Enabled = false;
+                Program.MainWindow.ShadowsTrackbar.Enabled = false;
             }
         }
 
@@ -508,22 +540,6 @@ namespace AsylumLauncher
             DisplaySettingChanged = true;
         }
 
-        private void SpeedRunButton_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                Process.Start(new ProcessStartInfo { FileName = @"https://web.archive.org/web/20221015040849/https://www.speedrun.com/arkhamcity/guide/xiqk2", UseShellExecute = true });
-            }
-        }
-
-        private void SpeedRunLabel_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                Process.Start(new ProcessStartInfo { FileName = @"https://web.archive.org/web/20221015040849/https://www.speedrun.com/arkhamcity/guide/xiqk2", UseShellExecute = true });
-            }
-        }
-
         private void MouseSmoothingBox_Click(object sender, EventArgs e)
         {
             this.ControlSettingChanged = true;
@@ -537,6 +553,35 @@ namespace AsylumLauncher
         private void CTDownButton1_Click(object sender, EventArgs e)
         {
             new InputForm(CTDownButton1).ShowDialog();
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo { FileName = @"https://web.archive.org/web/20230310012657/https://www.speedrun.com/arkhamasylum/guide/ng47r", UseShellExecute = true });
+        }
+
+        private void SaturationTrackbar_Scroll(object sender, EventArgs e)
+        {
+            SaturationValueLabel.Text = SaturationTrackbar.Value.ToString() + "%";
+            DisplaySettingChanged = true;
+        }
+
+        private void HighlightsTrackbar_Scroll(object sender, EventArgs e)
+        {
+            HighlightsValueLabel.Text = HighlightsTrackbar.Value.ToString() + "%";
+            DisplaySettingChanged = true;
+        }
+
+        private void MidtonesTrackbar_Scroll(object sender, EventArgs e)
+        {
+            MidtonesValueLabel.Text = MidtonesTrackbar.Value.ToString() + "%";
+            DisplaySettingChanged = true;
+        }
+
+        private void ShadowsTrackbar_Scroll(object sender, EventArgs e)
+        {
+            ShadowsValueLabel.Text = ShadowsTrackbar.Value.ToString() + "%";
+            DisplaySettingChanged = true;
         }
     }
 }

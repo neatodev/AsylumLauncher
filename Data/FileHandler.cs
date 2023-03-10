@@ -75,7 +75,7 @@ namespace AsylumLauncher
             if (File.Exists(UserInputPath))
             {
                 string[] UserLines = File.ReadAllLines(UserInputPath);
-                if (UserLines.Length < 62)
+                if (UserLines.Length < 63)
                 {
                     File.Delete(UserInputPath);
                     CreateConfigFile(UserInputPath, Resources.UserInput);
@@ -91,7 +91,7 @@ namespace AsylumLauncher
             {
                 BmInput.IsReadOnly = false;
                 string[] BMLines = File.ReadAllLines(BmInputPath);
-                if (BMLines.Length < 427)
+                if (BMLines.Length < 428)
                 {
                     File.Delete(BmInputPath);
                     CreateConfigFile(BmInputPath, Resources.BmInput);

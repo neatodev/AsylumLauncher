@@ -114,7 +114,27 @@
             this.GrappleLabel = new System.Windows.Forms.Label();
             this.GrappleButton1 = new System.Windows.Forms.Button();
             this.MiscTab = new System.Windows.Forms.TabPage();
+            this.AdvancedColorBox = new System.Windows.Forms.GroupBox();
+            this.ShadowsValueLabel = new System.Windows.Forms.Label();
+            this.MidtonesValueLabel = new System.Windows.Forms.Label();
+            this.HighlightsValueLabel = new System.Windows.Forms.Label();
+            this.SaturationValueLabel = new System.Windows.Forms.Label();
+            this.LowContrastColorButton = new System.Windows.Forms.Button();
+            this.HighContrastColorButton = new System.Windows.Forms.Button();
+            this.MutedColorButton = new System.Windows.Forms.Button();
+            this.VividColorButton = new System.Windows.Forms.Button();
+            this.NoirColorButton = new System.Windows.Forms.Button();
+            this.DefaultColorButton = new System.Windows.Forms.Button();
+            this.ShadowsTrackbar = new System.Windows.Forms.TrackBar();
+            this.MidtonesTrackbar = new System.Windows.Forms.TrackBar();
+            this.HighlightsTrackbar = new System.Windows.Forms.TrackBar();
+            this.SaturationTrackbar = new System.Windows.Forms.TrackBar();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.DebugMenuButton = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.DebugMenuLabel = new System.Windows.Forms.Label();
@@ -135,6 +155,8 @@
             this.CustomFoV2Button = new System.Windows.Forms.Button();
             this.ResetFoVButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.CentreCameraLabel = new System.Windows.Forms.Label();
+            this.CentreCameraButton = new System.Windows.Forms.Button();
             this.SpeedRunLabel = new System.Windows.Forms.Label();
             this.CustomFoV1ValueLabel = new System.Windows.Forms.Label();
             this.SpeedRunButton = new System.Windows.Forms.Button();
@@ -155,8 +177,6 @@
             this.CPULabel = new System.Windows.Forms.Label();
             this.StartGameButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CentreCameraButton = new System.Windows.Forms.Button();
-            this.CentreCameraLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.DisplayTab.SuspendLayout();
             this.PresetBox.SuspendLayout();
@@ -165,6 +185,11 @@
             this.ControlTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.MiscTab.SuspendLayout();
+            this.AdvancedColorBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShadowsTrackbar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MidtonesTrackbar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HighlightsTrackbar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaturationTrackbar)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomFoV1Trackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MouseSensitivityTrackbar)).BeginInit();
@@ -932,7 +957,6 @@
             this.groupBox2.Size = new System.Drawing.Size(683, 470);
             this.groupBox2.TabIndex = 145;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "MAIN";
             // 
             // CTDownLabel
             // 
@@ -1356,6 +1380,7 @@
             // MiscTab
             // 
             this.MiscTab.AutoScroll = true;
+            this.MiscTab.Controls.Add(this.AdvancedColorBox);
             this.MiscTab.Controls.Add(this.groupBox4);
             this.MiscTab.ForeColor = System.Drawing.Color.Black;
             this.MiscTab.Location = new System.Drawing.Point(4, 38);
@@ -1366,9 +1391,239 @@
             this.MiscTab.Text = "         EXTRA         ";
             this.MiscTab.UseVisualStyleBackColor = true;
             // 
+            // AdvancedColorBox
+            // 
+            this.AdvancedColorBox.AutoSize = true;
+            this.AdvancedColorBox.Controls.Add(this.ShadowsValueLabel);
+            this.AdvancedColorBox.Controls.Add(this.MidtonesValueLabel);
+            this.AdvancedColorBox.Controls.Add(this.HighlightsValueLabel);
+            this.AdvancedColorBox.Controls.Add(this.SaturationValueLabel);
+            this.AdvancedColorBox.Controls.Add(this.LowContrastColorButton);
+            this.AdvancedColorBox.Controls.Add(this.HighContrastColorButton);
+            this.AdvancedColorBox.Controls.Add(this.MutedColorButton);
+            this.AdvancedColorBox.Controls.Add(this.VividColorButton);
+            this.AdvancedColorBox.Controls.Add(this.NoirColorButton);
+            this.AdvancedColorBox.Controls.Add(this.DefaultColorButton);
+            this.AdvancedColorBox.Controls.Add(this.ShadowsTrackbar);
+            this.AdvancedColorBox.Controls.Add(this.MidtonesTrackbar);
+            this.AdvancedColorBox.Controls.Add(this.HighlightsTrackbar);
+            this.AdvancedColorBox.Controls.Add(this.SaturationTrackbar);
+            this.AdvancedColorBox.Controls.Add(this.label14);
+            this.AdvancedColorBox.Controls.Add(this.label13);
+            this.AdvancedColorBox.Controls.Add(this.label12);
+            this.AdvancedColorBox.Controls.Add(this.label9);
+            this.AdvancedColorBox.ForeColor = System.Drawing.Color.Maroon;
+            this.AdvancedColorBox.Location = new System.Drawing.Point(3, 542);
+            this.AdvancedColorBox.Name = "AdvancedColorBox";
+            this.AdvancedColorBox.Size = new System.Drawing.Size(684, 421);
+            this.AdvancedColorBox.TabIndex = 182;
+            this.AdvancedColorBox.TabStop = false;
+            this.AdvancedColorBox.Text = "ADVANCED COLOR SETTINGS";
+            // 
+            // ShadowsValueLabel
+            // 
+            this.ShadowsValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ShadowsValueLabel.AutoSize = true;
+            this.ShadowsValueLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ShadowsValueLabel.ForeColor = System.Drawing.Color.Black;
+            this.ShadowsValueLabel.Location = new System.Drawing.Point(624, 315);
+            this.ShadowsValueLabel.Name = "ShadowsValueLabel";
+            this.ShadowsValueLabel.Size = new System.Drawing.Size(34, 26);
+            this.ShadowsValueLabel.TabIndex = 184;
+            this.ShadowsValueLabel.Text = "00";
+            this.ShadowsValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // MidtonesValueLabel
+            // 
+            this.MidtonesValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MidtonesValueLabel.AutoSize = true;
+            this.MidtonesValueLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MidtonesValueLabel.ForeColor = System.Drawing.Color.Black;
+            this.MidtonesValueLabel.Location = new System.Drawing.Point(624, 238);
+            this.MidtonesValueLabel.Name = "MidtonesValueLabel";
+            this.MidtonesValueLabel.Size = new System.Drawing.Size(34, 26);
+            this.MidtonesValueLabel.TabIndex = 182;
+            this.MidtonesValueLabel.Text = "00";
+            this.MidtonesValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // HighlightsValueLabel
+            // 
+            this.HighlightsValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HighlightsValueLabel.AutoSize = true;
+            this.HighlightsValueLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HighlightsValueLabel.ForeColor = System.Drawing.Color.Black;
+            this.HighlightsValueLabel.Location = new System.Drawing.Point(624, 161);
+            this.HighlightsValueLabel.Name = "HighlightsValueLabel";
+            this.HighlightsValueLabel.Size = new System.Drawing.Size(34, 26);
+            this.HighlightsValueLabel.TabIndex = 183;
+            this.HighlightsValueLabel.Text = "00";
+            this.HighlightsValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // SaturationValueLabel
+            // 
+            this.SaturationValueLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SaturationValueLabel.AutoSize = true;
+            this.SaturationValueLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaturationValueLabel.ForeColor = System.Drawing.Color.Black;
+            this.SaturationValueLabel.Location = new System.Drawing.Point(624, 84);
+            this.SaturationValueLabel.Name = "SaturationValueLabel";
+            this.SaturationValueLabel.Size = new System.Drawing.Size(34, 26);
+            this.SaturationValueLabel.TabIndex = 181;
+            this.SaturationValueLabel.Text = "00";
+            this.SaturationValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // LowContrastColorButton
+            // 
+            this.LowContrastColorButton.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LowContrastColorButton.ForeColor = System.Drawing.Color.Black;
+            this.LowContrastColorButton.Location = new System.Drawing.Point(356, 32);
+            this.LowContrastColorButton.Name = "LowContrastColorButton";
+            this.LowContrastColorButton.Size = new System.Drawing.Size(102, 37);
+            this.LowContrastColorButton.TabIndex = 180;
+            this.LowContrastColorButton.Text = "Log Profile 1";
+            this.LowContrastColorButton.UseVisualStyleBackColor = true;
+            // 
+            // HighContrastColorButton
+            // 
+            this.HighContrastColorButton.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HighContrastColorButton.ForeColor = System.Drawing.Color.Black;
+            this.HighContrastColorButton.Location = new System.Drawing.Point(572, 32);
+            this.HighContrastColorButton.Name = "HighContrastColorButton";
+            this.HighContrastColorButton.Size = new System.Drawing.Size(102, 37);
+            this.HighContrastColorButton.TabIndex = 179;
+            this.HighContrastColorButton.Text = "High Contrast";
+            this.HighContrastColorButton.UseVisualStyleBackColor = true;
+            // 
+            // MutedColorButton
+            // 
+            this.MutedColorButton.ForeColor = System.Drawing.Color.Black;
+            this.MutedColorButton.Location = new System.Drawing.Point(248, 32);
+            this.MutedColorButton.Name = "MutedColorButton";
+            this.MutedColorButton.Size = new System.Drawing.Size(102, 37);
+            this.MutedColorButton.TabIndex = 176;
+            this.MutedColorButton.Text = "Muted";
+            this.MutedColorButton.UseVisualStyleBackColor = true;
+            // 
+            // VividColorButton
+            // 
+            this.VividColorButton.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VividColorButton.ForeColor = System.Drawing.Color.Black;
+            this.VividColorButton.Location = new System.Drawing.Point(464, 32);
+            this.VividColorButton.Name = "VividColorButton";
+            this.VividColorButton.Size = new System.Drawing.Size(102, 37);
+            this.VividColorButton.TabIndex = 175;
+            this.VividColorButton.Text = "Log Profile 2";
+            this.VividColorButton.UseVisualStyleBackColor = true;
+            // 
+            // NoirColorButton
+            // 
+            this.NoirColorButton.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NoirColorButton.ForeColor = System.Drawing.Color.Black;
+            this.NoirColorButton.Location = new System.Drawing.Point(140, 32);
+            this.NoirColorButton.Name = "NoirColorButton";
+            this.NoirColorButton.Size = new System.Drawing.Size(102, 37);
+            this.NoirColorButton.TabIndex = 174;
+            this.NoirColorButton.Text = "Monochrome";
+            this.NoirColorButton.UseVisualStyleBackColor = true;
+            // 
+            // DefaultColorButton
+            // 
+            this.DefaultColorButton.ForeColor = System.Drawing.Color.Black;
+            this.DefaultColorButton.Location = new System.Drawing.Point(6, 32);
+            this.DefaultColorButton.Name = "DefaultColorButton";
+            this.DefaultColorButton.Size = new System.Drawing.Size(128, 37);
+            this.DefaultColorButton.TabIndex = 173;
+            this.DefaultColorButton.Text = "Default";
+            this.DefaultColorButton.UseVisualStyleBackColor = true;
+            // 
+            // ShadowsTrackbar
+            // 
+            this.ShadowsTrackbar.Location = new System.Drawing.Point(6, 344);
+            this.ShadowsTrackbar.Maximum = 125;
+            this.ShadowsTrackbar.Name = "ShadowsTrackbar";
+            this.ShadowsTrackbar.Size = new System.Drawing.Size(660, 45);
+            this.ShadowsTrackbar.TabIndex = 172;
+            this.ShadowsTrackbar.Value = 1;
+            this.ShadowsTrackbar.Scroll += new System.EventHandler(this.ShadowsTrackbar_Scroll);
+            // 
+            // MidtonesTrackbar
+            // 
+            this.MidtonesTrackbar.Location = new System.Drawing.Point(6, 267);
+            this.MidtonesTrackbar.Maximum = 125;
+            this.MidtonesTrackbar.Name = "MidtonesTrackbar";
+            this.MidtonesTrackbar.Size = new System.Drawing.Size(660, 45);
+            this.MidtonesTrackbar.TabIndex = 171;
+            this.MidtonesTrackbar.Value = 1;
+            this.MidtonesTrackbar.Scroll += new System.EventHandler(this.MidtonesTrackbar_Scroll);
+            // 
+            // HighlightsTrackbar
+            // 
+            this.HighlightsTrackbar.Location = new System.Drawing.Point(6, 190);
+            this.HighlightsTrackbar.Maximum = 125;
+            this.HighlightsTrackbar.Name = "HighlightsTrackbar";
+            this.HighlightsTrackbar.Size = new System.Drawing.Size(660, 45);
+            this.HighlightsTrackbar.TabIndex = 170;
+            this.HighlightsTrackbar.Value = 1;
+            this.HighlightsTrackbar.Scroll += new System.EventHandler(this.HighlightsTrackbar_Scroll);
+            // 
+            // SaturationTrackbar
+            // 
+            this.SaturationTrackbar.Location = new System.Drawing.Point(6, 113);
+            this.SaturationTrackbar.Maximum = 125;
+            this.SaturationTrackbar.Name = "SaturationTrackbar";
+            this.SaturationTrackbar.Size = new System.Drawing.Size(660, 45);
+            this.SaturationTrackbar.TabIndex = 166;
+            this.SaturationTrackbar.Value = 1;
+            this.SaturationTrackbar.Scroll += new System.EventHandler(this.SaturationTrackbar_Scroll);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(20, 315);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 26);
+            this.label14.TabIndex = 169;
+            this.label14.Text = "Shadows";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(20, 238);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 26);
+            this.label13.TabIndex = 168;
+            this.label13.Text = "Midtones";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(20, 161);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 26);
+            this.label12.TabIndex = 167;
+            this.label12.Text = "Highlights";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(20, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 26);
+            this.label9.TabIndex = 166;
+            this.label9.Text = "Saturation";
+            // 
             // groupBox4
             // 
             this.groupBox4.AutoSize = true;
+            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.DebugMenuButton);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.DebugMenuLabel);
@@ -1401,21 +1656,36 @@
             this.groupBox4.ForeColor = System.Drawing.Color.Maroon;
             this.groupBox4.Location = new System.Drawing.Point(3, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(684, 536);
+            this.groupBox4.Size = new System.Drawing.Size(684, 530);
             this.groupBox4.TabIndex = 181;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MAIN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(7, 187);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(319, 19);
+            this.label1.TabIndex = 178;
+            this.label1.Text = "*Speedrun settings! (click here to view guide)\r\n";
+            this.BasicToolTip.SetToolTip(this.label1, "Maps speedrun key based on https://www.speedrun.com/arkhamasylum/guide/ng47r.\r\n\'M" +
+        "ousewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\n");
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // DebugMenuButton
             // 
             this.DebugMenuButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DebugMenuButton.ForeColor = System.Drawing.Color.Black;
-            this.DebugMenuButton.Location = new System.Drawing.Point(491, 64);
+            this.DebugMenuButton.Location = new System.Drawing.Point(139, 146);
             this.DebugMenuButton.Name = "DebugMenuButton";
             this.DebugMenuButton.Size = new System.Drawing.Size(175, 35);
             this.DebugMenuButton.TabIndex = 167;
             this.DebugMenuButton.Text = "button1";
-            this.BasicToolTip.SetToolTip(this.DebugMenuButton, "Access console commands for cheats and debugging.");
+            this.BasicToolTip.SetToolTip(this.DebugMenuButton, "Maps speedrun key based on https://www.speedrun.com/arkhamasylum/guide/ng47r.\r\n\'M" +
+        "ousewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\n");
             this.DebugMenuButton.UseVisualStyleBackColor = true;
             this.DebugMenuButton.Click += new System.EventHandler(this.DebugMenuButton_Click);
             // 
@@ -1424,7 +1694,7 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(866, 177);
+            this.label16.Location = new System.Drawing.Point(861, 177);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(25, 19);
             this.label16.TabIndex = 167;
@@ -1436,19 +1706,20 @@
             this.DebugMenuLabel.AutoSize = true;
             this.DebugMenuLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DebugMenuLabel.ForeColor = System.Drawing.Color.Black;
-            this.DebugMenuLabel.Location = new System.Drawing.Point(373, 70);
+            this.DebugMenuLabel.Location = new System.Drawing.Point(7, 152);
             this.DebugMenuLabel.Name = "DebugMenuLabel";
-            this.DebugMenuLabel.Size = new System.Drawing.Size(112, 23);
+            this.DebugMenuLabel.Size = new System.Drawing.Size(126, 23);
             this.DebugMenuLabel.TabIndex = 166;
-            this.DebugMenuLabel.Text = "Debug Menu";
-            this.BasicToolTip.SetToolTip(this.DebugMenuLabel, "Enables Debugging options. Some functions may cause crashes.");
+            this.DebugMenuLabel.Text = "Skip Dialogue*";
+            this.BasicToolTip.SetToolTip(this.DebugMenuLabel, "Maps speedrun key based on https://www.speedrun.com/arkhamasylum/guide/ng47r.\r\n\'M" +
+        "ousewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\n");
             // 
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(866, 126);
+            this.label17.Location = new System.Drawing.Point(861, 126);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(25, 19);
             this.label17.TabIndex = 177;
@@ -1460,7 +1731,7 @@
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(866, 75);
+            this.label18.Location = new System.Drawing.Point(861, 75);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(25, 19);
             this.label18.TabIndex = 166;
@@ -1611,7 +1882,7 @@
             this.ResetFoVLabel.AutoSize = true;
             this.ResetFoVLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ResetFoVLabel.ForeColor = System.Drawing.Color.Black;
-            this.ResetFoVLabel.Location = new System.Drawing.Point(43, 152);
+            this.ResetFoVLabel.Location = new System.Drawing.Point(395, 70);
             this.ResetFoVLabel.Name = "ResetFoVLabel";
             this.ResetFoVLabel.Size = new System.Drawing.Size(90, 23);
             this.ResetFoVLabel.TabIndex = 143;
@@ -1636,7 +1907,7 @@
             // 
             this.ResetFoVButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ResetFoVButton.ForeColor = System.Drawing.Color.Black;
-            this.ResetFoVButton.Location = new System.Drawing.Point(139, 146);
+            this.ResetFoVButton.Location = new System.Drawing.Point(491, 64);
             this.ResetFoVButton.Name = "ResetFoVButton";
             this.ResetFoVButton.Size = new System.Drawing.Size(175, 35);
             this.ResetFoVButton.TabIndex = 144;
@@ -1658,20 +1929,46 @@
             this.label11.Text = "Custom FoV 2";
             this.BasicToolTip.SetToolTip(this.label11, "Choose custom field of view values using the slider.\r\n");
             // 
+            // CentreCameraLabel
+            // 
+            this.CentreCameraLabel.AutoSize = true;
+            this.CentreCameraLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CentreCameraLabel.ForeColor = System.Drawing.Color.Black;
+            this.CentreCameraLabel.Location = new System.Drawing.Point(5, 70);
+            this.CentreCameraLabel.Name = "CentreCameraLabel";
+            this.CentreCameraLabel.Size = new System.Drawing.Size(128, 23);
+            this.CentreCameraLabel.TabIndex = 145;
+            this.CentreCameraLabel.Text = "Centre Camera";
+            this.BasicToolTip.SetToolTip(this.CentreCameraLabel, "Camera will centre on player character. Requires running while pressing hotkey to" +
+        " trigger. \r\n- Advanced users can repurpose \'centre_camera\' file as a second Cust" +
+        "om Command function.");
+            // 
+            // CentreCameraButton
+            // 
+            this.CentreCameraButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CentreCameraButton.ForeColor = System.Drawing.Color.Black;
+            this.CentreCameraButton.Location = new System.Drawing.Point(139, 64);
+            this.CentreCameraButton.Name = "CentreCameraButton";
+            this.CentreCameraButton.Size = new System.Drawing.Size(175, 35);
+            this.CentreCameraButton.TabIndex = 146;
+            this.CentreCameraButton.Text = "button1";
+            this.BasicToolTip.SetToolTip(this.CentreCameraButton, "Camera will centre on player character. Requires running while pressing hotkey to" +
+        " trigger.\r\n");
+            this.CentreCameraButton.UseVisualStyleBackColor = true;
+            this.CentreCameraButton.Click += new System.EventHandler(this.CentreCameraButton_Click);
+            // 
             // SpeedRunLabel
             // 
             this.SpeedRunLabel.AutoSize = true;
             this.SpeedRunLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SpeedRunLabel.ForeColor = System.Drawing.Color.Black;
-            this.SpeedRunLabel.Location = new System.Drawing.Point(47, 70);
+            this.SpeedRunLabel.Location = new System.Drawing.Point(14, 111);
             this.SpeedRunLabel.Name = "SpeedRunLabel";
-            this.SpeedRunLabel.Size = new System.Drawing.Size(86, 23);
+            this.SpeedRunLabel.Size = new System.Drawing.Size(119, 23);
             this.SpeedRunLabel.TabIndex = 147;
-            this.SpeedRunLabel.Text = "Speedrun";
-            this.BasicToolTip.SetToolTip(this.SpeedRunLabel, "Maps speedrun key based on https://www.speedrun.com/arkhamcity/guide/xiqk2.\r\n\'Mou" +
-        "sewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\nRIGHT CLICK t" +
-        "o open the guide in your browser.");
-            this.SpeedRunLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SpeedRunLabel_MouseDown);
+            this.SpeedRunLabel.Text = "Open Grates*";
+            this.BasicToolTip.SetToolTip(this.SpeedRunLabel, "Maps speedrun key based on https://www.speedrun.com/arkhamasylum/guide/ng47r.\r\n\'M" +
+        "ousewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\n");
             // 
             // CustomFoV1ValueLabel
             // 
@@ -1692,17 +1989,15 @@
             // 
             this.SpeedRunButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SpeedRunButton.ForeColor = System.Drawing.Color.Black;
-            this.SpeedRunButton.Location = new System.Drawing.Point(139, 64);
+            this.SpeedRunButton.Location = new System.Drawing.Point(139, 105);
             this.SpeedRunButton.Name = "SpeedRunButton";
             this.SpeedRunButton.Size = new System.Drawing.Size(175, 35);
             this.SpeedRunButton.TabIndex = 148;
             this.SpeedRunButton.Text = "SpeedRun";
-            this.BasicToolTip.SetToolTip(this.SpeedRunButton, "Maps speedrun key based on https://www.speedrun.com/arkhamcity/guide/xiqk2.\r\n\'Mou" +
-        "sewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\nRIGHT CLICK t" +
-        "o open the guide in your browser.");
+            this.BasicToolTip.SetToolTip(this.SpeedRunButton, "Maps speedrun key based on https://www.speedrun.com/arkhamasylum/guide/ng47r.\r\n\'M" +
+        "ousewheel Up\' or \'Mousewheel Down\' is recommended for this setting.\r\n");
             this.SpeedRunButton.UseVisualStyleBackColor = true;
             this.SpeedRunButton.Click += new System.EventHandler(this.SpeedRunButton_Click);
-            this.SpeedRunButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SpeedRunButton_MouseDown);
             // 
             // label7
             // 
@@ -1721,7 +2016,7 @@
             this.MouseSmoothingBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MouseSmoothingBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MouseSmoothingBox.ForeColor = System.Drawing.Color.Black;
-            this.MouseSmoothingBox.Location = new System.Drawing.Point(126, 187);
+            this.MouseSmoothingBox.Location = new System.Drawing.Point(478, 187);
             this.MouseSmoothingBox.Name = "MouseSmoothingBox";
             this.MouseSmoothingBox.Size = new System.Drawing.Size(188, 30);
             this.MouseSmoothingBox.TabIndex = 149;
@@ -1940,35 +2235,6 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
-            // CentreCameraButton
-            // 
-            this.CentreCameraButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CentreCameraButton.ForeColor = System.Drawing.Color.Black;
-            this.CentreCameraButton.Location = new System.Drawing.Point(139, 105);
-            this.CentreCameraButton.Name = "CentreCameraButton";
-            this.CentreCameraButton.Size = new System.Drawing.Size(175, 35);
-            this.CentreCameraButton.TabIndex = 146;
-            this.CentreCameraButton.Text = "button1";
-            this.BasicToolTip.SetToolTip(this.CentreCameraButton, "Camera will centre on player character. Requires running while pressing hotkey to" +
-        " trigger. \r\n- Advanced users can repurpose \'centre_camera\' file as a second Cust" +
-        "om Command function.");
-            this.CentreCameraButton.UseVisualStyleBackColor = true;
-            this.CentreCameraButton.Click += new System.EventHandler(this.CentreCameraButton_Click);
-            // 
-            // CentreCameraLabel
-            // 
-            this.CentreCameraLabel.AutoSize = true;
-            this.CentreCameraLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CentreCameraLabel.ForeColor = System.Drawing.Color.Black;
-            this.CentreCameraLabel.Location = new System.Drawing.Point(5, 111);
-            this.CentreCameraLabel.Name = "CentreCameraLabel";
-            this.CentreCameraLabel.Size = new System.Drawing.Size(128, 23);
-            this.CentreCameraLabel.TabIndex = 145;
-            this.CentreCameraLabel.Text = "Centre Camera";
-            this.BasicToolTip.SetToolTip(this.CentreCameraLabel, "Camera will centre on player character. Requires running while pressing hotkey to" +
-        " trigger. \r\n- Advanced users can repurpose \'centre_camera\' file as a second Cust" +
-        "om Command function.");
-            // 
             // AsylumLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1987,7 +2253,7 @@
             this.MinimizeBox = false;
             this.Name = "AsylumLauncher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Batman: Arkham City - Advanced Launcher";
+            this.Text = "Batman: Arkham Asylum - Improved Launcher";
             this.tabControl1.ResumeLayout(false);
             this.DisplayTab.ResumeLayout(false);
             this.DisplayTab.PerformLayout();
@@ -2002,6 +2268,12 @@
             this.groupBox2.PerformLayout();
             this.MiscTab.ResumeLayout(false);
             this.MiscTab.PerformLayout();
+            this.AdvancedColorBox.ResumeLayout(false);
+            this.AdvancedColorBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShadowsTrackbar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MidtonesTrackbar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HighlightsTrackbar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaturationTrackbar)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomFoV1Trackbar)).EndInit();
@@ -2143,5 +2415,25 @@
         public Button CTDownButton1;
         private Label CentreCameraLabel;
         public Button CentreCameraButton;
+        private Label label1;
+        public GroupBox AdvancedColorBox;
+        public Button LowContrastColorButton;
+        public Button HighContrastColorButton;
+        public Button MutedColorButton;
+        public Button VividColorButton;
+        public Button NoirColorButton;
+        public Button DefaultColorButton;
+        public TrackBar ShadowsTrackbar;
+        public TrackBar MidtonesTrackbar;
+        public TrackBar HighlightsTrackbar;
+        public TrackBar SaturationTrackbar;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label9;
+        public Label ShadowsValueLabel;
+        public Label MidtonesValueLabel;
+        public Label HighlightsValueLabel;
+        public Label SaturationValueLabel;
     }
 }

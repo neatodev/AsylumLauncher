@@ -72,9 +72,12 @@ namespace AsylumLauncher
             // Cape Stun
             Program.MainWindow.CapeStunButton.Text = TrimLine(UserInputLines[50]);
             Program.InputHandler.ButtonList.Add(Program.MainWindow.CapeStunButton);
-            // Speedrun Setting
+            // Speedrun Setting 1
             Program.MainWindow.SpeedRunButton.Text = TrimLine(UserInputLines[59]);
             Program.InputHandler.ButtonList.Add(Program.MainWindow.SpeedRunButton);
+            // Speedrun Setting 2
+            Program.MainWindow.DebugMenuButton.Text = TrimLine(UserInputLines[60]);
+            Program.InputHandler.ButtonList.Add(Program.MainWindow.DebugMenuButton);
             // Open Console
             Program.MainWindow.OpenConsoleButton.Text = TrimLine(UserInputLines[53]);
             Program.InputHandler.ButtonList.Add(Program.MainWindow.OpenConsoleButton);
@@ -100,9 +103,6 @@ namespace AsylumLauncher
             TrackbarValue = TrackbarValue.Substring(TrackbarValue.IndexOf("\"") + 5);
             Program.MainWindow.CustomFoV2Trackbar.Value = Int16.Parse(TrackbarValue.Substring(0, TrackbarValue.IndexOf("\"")));
             Program.MainWindow.CustomFoV2ValueLabel.Text = Program.MainWindow.CustomFoV2Trackbar.Value.ToString();
-            // Custom Command
-            //Program.MainWindow.CustomCommandButton.Text = TrimLine(UserInputLines[102]);
-            //Program.InputHandler.ButtonList.Add(Program.MainWindow.CustomCommandButton);
             // Centre Camera
             Program.MainWindow.CentreCameraButton.Text = TrimLine(UserInputLines[58]);
             Program.InputHandler.ButtonList.Add(Program.MainWindow.CentreCameraButton);

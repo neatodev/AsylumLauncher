@@ -11,6 +11,7 @@ namespace AsylumLauncher
         {
             InitDisplayBasic();
             InitDisplayAdvanced();
+            InitColors();
             InitTexturePackFix();
             Program.MainWindow.DisplaySettingChanged = false;
             Program.MainWindow.ApplySettingsButton.Enabled = false;
@@ -265,6 +266,25 @@ namespace AsylumLauncher
             {
                 Program.MainWindow.ReflectionBox.Checked = false;
             }
+        }
+
+        private void InitColors()
+        {
+            // Saturation
+            Program.MainWindow.SaturationTrackbar.Value = Program.IniHandler.ColorIniToLauncher(IniHandler.BmEngineData["Engine.Player"]["PP_DesaturationMultiplier"]);
+            Program.MainWindow.SaturationValueLabel.Text = Program.MainWindow.SaturationTrackbar.Value.ToString() + "%";
+
+            // Highlights
+            Program.MainWindow.HighlightsTrackbar.Value = Program.IniHandler.ColorIniToLauncher(IniHandler.BmEngineData["Engine.Player"]["PP_HighlightsMultiplier"]);
+            Program.MainWindow.HighlightsValueLabel.Text = Program.MainWindow.HighlightsTrackbar.Value.ToString() + "%";
+
+            // Midtones
+            Program.MainWindow.MidtonesTrackbar.Value = Program.IniHandler.ColorIniToLauncher(IniHandler.BmEngineData["Engine.Player"]["PP_MidTonesMultiplier"]);
+            Program.MainWindow.MidtonesValueLabel.Text = Program.MainWindow.MidtonesTrackbar.Value.ToString() + "%";
+
+            // Shadows
+            Program.MainWindow.ShadowsTrackbar.Value = Program.IniHandler.ColorIniToLauncher(IniHandler.BmEngineData["Engine.Player"]["PP_ShadowsMultiplier"]);
+            Program.MainWindow.ShadowsValueLabel.Text = Program.MainWindow.ShadowsTrackbar.Value.ToString() + "%";
         }
 
         private void InitTexturePackFix()
