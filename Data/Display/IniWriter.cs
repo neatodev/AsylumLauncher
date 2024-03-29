@@ -35,6 +35,7 @@ namespace AsylumLauncher
             WriteToTempFile();
             MergeBmEngine();
             WriteToUserEngine();
+            Program.FileHandler.RenameIntroVideoFiles();
             Program.FileHandler.BmEngine.IsReadOnly = true;
             Program.FileHandler.UserEngine.IsReadOnly = true;
             Program.FileHandler.BmInput.IsReadOnly = true;
@@ -156,12 +157,12 @@ namespace AsylumLauncher
             if (Framecap <= 24)
             {
                 Program.MainWindow.FrameCapTextBox.Text = "62";
-                IniHandler.BmEngineData["Engine.Engine"]["MaxSmoothedFrameRate"] = "62";
+                IniHandler.BmEngineData["Engine.GameEngine"]["MaxSmoothedFrameRate"] = "62";
             }
             else
             {
                 Framecap += 2;
-                IniHandler.BmEngineData["Engine.Engine"]["MaxSmoothedFrameRate"] = Framecap.ToString();
+                IniHandler.BmEngineData["Engine.GameEngine"]["MaxSmoothedFrameRate"] = Framecap.ToString();
             }
             Nlog.Info("WriteBmEngineBasic - Set Framerate Limit to {0}", (Framecap - 2).ToString());
 
@@ -222,32 +223,16 @@ namespace AsylumLauncher
             switch (Program.MainWindow.AntiAliasingBox.SelectedIndex)
             {
                 case 1:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "1";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "1xMSAA";
+                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "2";
                     break;
                 case 2:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "2";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "1xMSAA";
+                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "4";
                     break;
                 case 3:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "3";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "1xMSAA";
-                    break;
-                case 4:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "0";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "2xMSAA";
-                    break;
-                case 5:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "0";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "4xMSAA";
-                    break;
-                case 6:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "0";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "8xMSAA";
+                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "10";
                     break;
                 default:
-                    IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"] = "0";
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "1xMSAA";
+                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "1";
                     break;
             }
             Nlog.Info("WriteBmEngineAdvanced - Set FXAA to {0} and MSAA to {1}", IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"], IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"]);
@@ -386,20 +371,16 @@ namespace AsylumLauncher
             switch (Program.MainWindow.ShadowDrawDistBox.SelectedIndex)
             {
                 case 1:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "1.500000";
-                    IniHandler.BmEngineData["SystemSettings"]["TessellationDistance"] = "2000.000000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.008000";
                     break;
                 case 2:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "2.000000";
-                    IniHandler.BmEngineData["SystemSettings"]["TessellationDistance"] = "3000.000000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.008000";
                     break;
                 case 3:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "4.000000";
-                    IniHandler.BmEngineData["SystemSettings"]["TessellationDistance"] = "4000.000000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.002000";
                     break;
                 default:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "1.000000";
-                    IniHandler.BmEngineData["SystemSettings"]["TessellationDistance"] = "1000.000000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.012000";
                     break;
             }
             Nlog.Info("WriteBmEngineAdvanced - Set Shadow Draw Distance to {0}", IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"]);
@@ -418,42 +399,26 @@ namespace AsylumLauncher
             {
                 case 1:
                     IniHandler.BmEngineData["TextureStreaming"]["PoolSize"] = "1024";
-                    IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"] = "32";
                     break;
                 case 2:
                     IniHandler.BmEngineData["TextureStreaming"]["PoolSize"] = "2048";
-                    IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"] = "32";
                     break;
                 case 3:
                     IniHandler.BmEngineData["TextureStreaming"]["PoolSize"] = "3072";
-                    IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"] = "64";
                     break;
                 case 4:
                     IniHandler.BmEngineData["TextureStreaming"]["PoolSize"] = "4096";
-                    IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"] = "64";
                     break;
                 case 5:
                     IniHandler.BmEngineData["TextureStreaming"]["PoolSize"] = "0";
-                    IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"] = "64";
                     break;
                 default:
                     IniHandler.BmEngineData["TextureStreaming"]["PoolSize"] = "512";
-                    IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"] = "16";
                     break;
             }
             Nlog.Info("WriteBmEngineAdvanced - Set Poolsize to {0}. Set MemoryMargin to {1}", IniHandler.BmEngineData["TextureStreaming"]["PoolSize"], IniHandler.BmEngineData["TextureStreaming"]["MemoryMargin"]);
-
-            // Reflections
-            if (Program.MainWindow.ReflectionBox.Checked)
-            {
-                IniHandler.BmEngineData["SystemSettings"]["Reflections"] = "True";
-            }
-            else
-            {
-                IniHandler.BmEngineData["SystemSettings"]["Reflections"] = "False";
-            }
-            Nlog.Info("WriteBmEngineAdvanced - Set Reflections to {0}", IniHandler.BmEngineData["SystemSettings"]["Reflections"]);
         }
+
         private void WriteColors()
         {
             // Saturation
@@ -507,6 +472,7 @@ namespace AsylumLauncher
                 //TEXTUREGROUP_UI
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = Program.IniHandler.TexturePackDefaults[3];
             }
+            Nlog.Info("WriteTextureGroupLines - Set Texture Pack Fix to: {0}", Program.IniHandler.TexPackEnabled.All(x => x).ToString());
         }
     }
 }

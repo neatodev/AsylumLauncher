@@ -58,28 +58,28 @@ namespace AsylumLauncher
             // Next Gadget
             UserInputLines[25] = ConvertToConfigStyle(Program.MainWindow.NextGadgetButton1.Text, 25);
             // Cape Stun
-            UserInputLines[65] = ConvertToConfigStyle(Program.MainWindow.CapeStunButton.Text, 65);
+            UserInputLines[50] = ConvertToConfigStyle(Program.MainWindow.CapeStunButton.Text, 50);
             // Speedrun Setting
-            UserInputLines[94] = ConvertToConfigStyle(Program.MainWindow.SpeedRunButton.Text, 94);
+            UserInputLines[59] = ConvertToConfigStyle(Program.MainWindow.SpeedRunButton.Text, 59);
+            // Speedrun 2 Setting
+            UserInputLines[60] = ConvertToConfigStyle(Program.MainWindow.DebugMenuButton.Text, 60);
             // Open Console
-            UserInputLines[97] = ConvertToConfigStyle(Program.MainWindow.OpenConsoleButton.Text, 97);
-            UserInputLines[97] = SetTypeKey(UserInputLines[97]);
+            UserInputLines[53] = ConvertToConfigStyle(Program.MainWindow.OpenConsoleButton.Text, 53);
+            UserInputLines[53] = SetTypeKey(UserInputLines[53]);
             // Toggle HUD
-            UserInputLines[98] = ConvertToConfigStyle(Program.MainWindow.ToggleHudButton.Text, 98);
+            UserInputLines[54] = ConvertToConfigStyle(Program.MainWindow.ToggleHudButton.Text, 54);
             // Reset FoV
-            UserInputLines[99] = ConvertToConfigStyle(Program.MainWindow.ResetFoVButton.Text, 99);
+            UserInputLines[55] = ConvertToConfigStyle(Program.MainWindow.ResetFoVButton.Text, 55);
             // Custom FoV 1
-            UserInputLines[100] = ConvertToConfigStyle(Program.MainWindow.CustomFoV1Button.Text, 100);
-            UserInputLines[100] = UpdateFoVValue(UserInputLines[100], Program.MainWindow.CustomFoV1Trackbar.Value);
+            UserInputLines[56] = ConvertToConfigStyle(Program.MainWindow.CustomFoV1Button.Text, 56);
+            UserInputLines[56] = UpdateFoVValue(UserInputLines[56], Program.MainWindow.CustomFoV1Trackbar.Value);
             // Custom FoV 2
-            UserInputLines[101] = ConvertToConfigStyle(Program.MainWindow.CustomFoV2Button.Text, 101);
-            UserInputLines[101] = UpdateFoVValue(UserInputLines[101], Program.MainWindow.CustomFoV2Trackbar.Value);
+            UserInputLines[57] = ConvertToConfigStyle(Program.MainWindow.CustomFoV2Button.Text, 57);
+            UserInputLines[57] = UpdateFoVValue(UserInputLines[57], Program.MainWindow.CustomFoV2Trackbar.Value);
             // Centre Camera
-            UserInputLines[103] = ConvertToConfigStyle(Program.MainWindow.CentreCameraButton.Text, 103);
+            UserInputLines[58] = ConvertToConfigStyle(Program.MainWindow.CentreCameraButton.Text, 58);
             // View Map
-            UserInputLines[104] = ConvertToConfigStyle(Program.MainWindow.MapButton.Text, 104);
-            // Debug Menu
-            UserInputLines[105] = ConvertToConfigStyle(Program.MainWindow.DebugMenuButton.Text, 105);
+            UserInputLines[16] = ConvertToConfigStyle(Program.MainWindow.MapButton.Text, 16);
 
             using (StreamWriter UserInputFile = new(Program.FileHandler.UserInputPath))
             {

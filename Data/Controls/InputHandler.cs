@@ -145,9 +145,21 @@ namespace AsylumLauncher
 
         public void SetButton(Button Bt, string Text)
         {
+            string TxtName = Text;
+            if (TxtName.Contains("+"))
+            {
+                TxtName = TxtName.Substring(TxtName.IndexOf("+") + 1);
+                TxtName = TxtName.Trim();
+            }
             foreach (Button KeyButton in ButtonList)
             {
-                if (KeyButton.Text == Text)
+                string KeyButtonTrimmed = "";
+                if (KeyButton.Text.Contains("+"))
+                {
+                    KeyButtonTrimmed = KeyButton.Text.Substring(KeyButton.Text.IndexOf("+") + 1);
+                    KeyButtonTrimmed = KeyButtonTrimmed.Trim();
+                }
+                if (KeyButton.Text == Text || KeyButton.Text.Equals(TxtName) || KeyButtonTrimmed == Text)
                 {
                     KeyButton.Text = "Unbound";
                     KeyButton.ForeColor = Color.Maroon;
@@ -159,6 +171,7 @@ namespace AsylumLauncher
                 if (Bt.Name == KeyButton.Name)
                 {
                     KeyButton.Text = Text;
+                    KeyButton.ForeColor = Color.Black;
                     break;
                 }
             }

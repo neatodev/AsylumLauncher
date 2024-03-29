@@ -61,7 +61,7 @@
             Program.MainWindow.LightRayBox.Checked = true;
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
-            Program.MainWindow.AntiAliasingBox.SelectedIndex = 4;
+            Program.MainWindow.AntiAliasingBox.SelectedIndex = 2;
             Program.MainWindow.PhysXBox.SelectedIndex = 2;
             if (Program.MainWindow.PoolsizeBox.SelectedIndex != 2 && Program.MainWindow.TextureFixButton.Text == "ENABLE TEXTURE PACK FIX")
             {
@@ -74,6 +74,78 @@
             Program.MainWindow.AnisoBox.SelectedIndex = 2;
             Program.MainWindow.ShadowQualityBox.SelectedIndex = 2;
             Program.MainWindow.ShadowDrawDistBox.SelectedIndex = 3;
+        }
+
+        public static void SetColorDefault()
+        {
+            Program.MainWindow.SaturationTrackbar.Value = 100;
+            Program.MainWindow.SaturationValueLabel.Text = "100%";
+            Program.MainWindow.HighlightsTrackbar.Value = 100;
+            Program.MainWindow.HighlightsValueLabel.Text = "100%";
+            Program.MainWindow.MidtonesTrackbar.Value = 100;
+            Program.MainWindow.MidtonesValueLabel.Text = "100%";
+            Program.MainWindow.ShadowsTrackbar.Value = 100;
+            Program.MainWindow.ShadowsValueLabel.Text = "100%";
+        }
+
+        public static void SetColorNoir()
+        {
+            Program.MainWindow.SaturationTrackbar.Value = 0;
+            Program.MainWindow.SaturationValueLabel.Text = "0%";
+            Program.MainWindow.HighlightsTrackbar.Value = 100;
+            Program.MainWindow.HighlightsValueLabel.Text = "100%";
+            Program.MainWindow.MidtonesTrackbar.Value = 100;
+            Program.MainWindow.MidtonesValueLabel.Text = "100%";
+            Program.MainWindow.ShadowsTrackbar.Value = 100;
+            Program.MainWindow.ShadowsValueLabel.Text = "100%";
+        }
+
+        public static void SetColorVivid()
+        {
+            Program.MainWindow.SaturationTrackbar.Value = 90;
+            Program.MainWindow.SaturationValueLabel.Text = "90%";
+            Program.MainWindow.HighlightsTrackbar.Value = 30;
+            Program.MainWindow.HighlightsValueLabel.Text = "30%";
+            Program.MainWindow.MidtonesTrackbar.Value = 115;
+            Program.MainWindow.MidtonesValueLabel.Text = "115%";
+            Program.MainWindow.ShadowsTrackbar.Value = 120;
+            Program.MainWindow.ShadowsValueLabel.Text = "120%";
+        }
+
+        public static void SetColorMuted()
+        {
+            Program.MainWindow.SaturationTrackbar.Value = 85;
+            Program.MainWindow.SaturationValueLabel.Text = "85%";
+            Program.MainWindow.HighlightsTrackbar.Value = 100;
+            Program.MainWindow.HighlightsValueLabel.Text = "100%";
+            Program.MainWindow.MidtonesTrackbar.Value = 100;
+            Program.MainWindow.MidtonesValueLabel.Text = "100%";
+            Program.MainWindow.ShadowsTrackbar.Value = 100;
+            Program.MainWindow.ShadowsValueLabel.Text = "100%";
+        }
+
+        public static void SetColorHighContrast()
+        {
+            Program.MainWindow.SaturationTrackbar.Value = 105;
+            Program.MainWindow.SaturationValueLabel.Text = "105%";
+            Program.MainWindow.HighlightsTrackbar.Value = 105;
+            Program.MainWindow.HighlightsValueLabel.Text = "105%";
+            Program.MainWindow.MidtonesTrackbar.Value = 95;
+            Program.MainWindow.MidtonesValueLabel.Text = "95%";
+            Program.MainWindow.ShadowsTrackbar.Value = 100;
+            Program.MainWindow.ShadowsValueLabel.Text = "100%";
+        }
+
+        public static void SetColorLowContrast()
+        {
+            Program.MainWindow.SaturationTrackbar.Value = 95;
+            Program.MainWindow.SaturationValueLabel.Text = "95%";
+            Program.MainWindow.HighlightsTrackbar.Value = 80;
+            Program.MainWindow.HighlightsValueLabel.Text = "80%";
+            Program.MainWindow.MidtonesTrackbar.Value = 110;
+            Program.MainWindow.MidtonesValueLabel.Text = "110%";
+            Program.MainWindow.ShadowsTrackbar.Value = 110;
+            Program.MainWindow.ShadowsValueLabel.Text = "110%";
         }
     }
 }

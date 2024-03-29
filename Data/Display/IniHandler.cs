@@ -58,6 +58,7 @@ namespace AsylumLauncher
             BmEngineData.Sections.RemoveSection("IpDrv.UdpBeacon");
             BmEngineData.Sections.RemoveSection("StreamByURL");
             BmEngineData.Sections.RemoveSection("UnrealEd.EditorEngine");
+            BmEngineData.Sections.RemoveSection("Editor.EditorEngine");
             BmEngineData.Sections.RemoveSection("UnrealEd.UnrealEdEngine");
             BmEngineData.Sections.RemoveSection("Engine.DataStoreClient");
             BmEngineData.Sections.RemoveSection("DevOptions.Shaders");

@@ -68,7 +68,7 @@ namespace AsylumLauncher
             };
 
             // Framerate Cap
-            float Framecap = float.Parse(IniHandler.BmEngineData["Engine.GameEngine"]["MaxSmoothedFrameRate"]);
+            double Framecap = double.Parse(IniHandler.BmEngineData["Engine.GameEngine"]["MaxSmoothedFrameRate"]);
             Framecap -= 2;
             Program.MainWindow.FrameCapTextBox.Text = Framecap.ToString();
 
@@ -92,33 +92,20 @@ namespace AsylumLauncher
         private void InitDisplayAdvanced()
         {
             // Anti-Aliasing
-            switch (IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"])
+            switch (IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"])
             {
-                case "1":
+                case "2":
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 1;
                     break;
-                case "2":
+                case "4":
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 2;
                     break;
-                case "3":
+                case "10":
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
                     break;
                 default:
-                    if (IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] == "1xMSAA")
-                    {
-                        Program.MainWindow.AntiAliasingBox.SelectedIndex = 0;
-                        break;
-                    }
-                    else
-                    {
-                        Program.MainWindow.AntiAliasingBox.SelectedIndex = IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] switch
-                        {
-                            "2xMSAA" => 4,
-                            "4xMSAA" => 5,
-                            _ => 6,
-                        };
-                        break;
-                    }
+                    Program.MainWindow.AntiAliasingBox.SelectedIndex = 0;
+                    break;
             }
 
             // Anisotropic Filtering
@@ -153,10 +140,22 @@ namespace AsylumLauncher
             if (IniHandler.BmEngineData["SystemSettings"]["DepthOfField"] == "True")
             {
                 Program.MainWindow.DOFBox.Checked = true;
+                Program.MainWindow.AdvancedColorBox.Enabled = true;
             }
             else
             {
                 Program.MainWindow.DOFBox.Checked = false;
+                Program.MainWindow.AdvancedColorBox.Text = "Advanced Color Settings ('Depth of Field' must be enabled to edit.)";
+                Program.MainWindow.DefaultColorButton.Enabled = false;
+                Program.MainWindow.NoirColorButton.Enabled = false;
+                Program.MainWindow.MutedColorButton.Enabled = false;
+                Program.MainWindow.LowContrastColorButton.Enabled = false;
+                Program.MainWindow.HighContrastColorButton.Enabled = false;
+                Program.MainWindow.VividColorButton.Enabled = false;
+                Program.MainWindow.SaturationTrackbar.Enabled = false;
+                Program.MainWindow.HighlightsTrackbar.Enabled = false;
+                Program.MainWindow.MidtonesTrackbar.Enabled = false;
+                Program.MainWindow.ShadowsTrackbar.Enabled = false;
             }
 
             // Motion Blur
@@ -267,7 +266,6 @@ namespace AsylumLauncher
                 Program.MainWindow.ReflectionBox.Checked = false;
             }
         }
-
         private void InitColors()
         {
             // Saturation
@@ -315,6 +313,11 @@ namespace AsylumLauncher
                 Program.IniHandler.TexPackEnabled[4] = true;
             }
 
+            if (Program.IniHandler.TexPackEnabled.All(x => x))
+            {
+                Program.MainWindow.TextureFixButton.Text = "DISABLE TEXTURE PACK FIX";
+                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.TextureFixButton, "Disable Texture Pack Fix.");
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ namespace AsylumLauncher
         static void Main()
         {
             bool IsNewWindow = true;
-            using (Mutex mtx = new(true, "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}", out IsNewWindow))
+            using (Mutex mtx = new(true, "{7F85C5E9-214F-4F2A-A949-AA3978D5DAC2}", out IsNewWindow))
             {
                 if (IsNewWindow)
                 {
@@ -92,7 +92,7 @@ namespace AsylumLauncher
 
             FileTarget logfile = new("logfile")
             {
-                FileName = Directory.GetCurrentDirectory() + "\\logs\\citylauncher_report__" + CurrentTime + ".log"
+                FileName = Directory.GetCurrentDirectory() + "\\logs\\asylumlauncher_report__" + CurrentTime + ".log"
             };
             DirectoryInfo LogDirectory = new(Directory.GetCurrentDirectory() + "\\logs");
             DateTime OldestAllowedArchive = DateTime.Now - new TimeSpan(3, 0, 0, 0);

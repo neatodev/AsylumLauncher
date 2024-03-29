@@ -189,7 +189,7 @@ namespace AsylumLauncher
         {
             new InputForm(DetectiveModeButton1).ShowDialog();
         }
-      
+
         private void ToggleHudButton_Click(object sender, EventArgs e)
         {
             new InputForm(ToggleHudButton).ShowDialog();
@@ -257,7 +257,7 @@ namespace AsylumLauncher
                     {
                         ApplySettingsButton_Click();
                     }
-                    LaunchGame.StartInfo.FileName = "BatmanAC.exe";
+                    LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
                     LaunchGame.StartInfo.CreateNoWindow = true;
                     LaunchGame.Start();
                     new SoundPlayer(Properties.Resources.startup).PlaySync();

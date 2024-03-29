@@ -5,7 +5,12 @@ namespace AsylumLauncher
 {
     internal class FileHandler
     {
+        private bool IntroFilesRenamed;
         private readonly string CustomDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Custom");
+        private readonly string Startup = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Startup.swf");
+        private readonly string StartupNV = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\StartupNV.swf");
+        private readonly string StartupRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Startup.swf.bak");
+        private readonly string StartupNVRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\StartupNV.swf.bak");
         public readonly string ConfigDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config");
 
         public string BmEnginePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini");
@@ -17,10 +22,6 @@ namespace AsylumLauncher
         public FileInfo UserEngine = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\UserEngine.ini"));
         public FileInfo BmInput = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmInput.ini"));
 
-        private static readonly string ExeChecksumMD5_STEAM = "F18E985B0BE14210C9726C4A4EC8F5ED";
-        private static readonly string ExeChecksumMD5_EPIC = "96830C0F0026C06D548A9F57ADEE8E32";
-        private static readonly string ExeChecksumMD5_GOG = "6E8F9DE533738451F5166427CB378E0F";
-
         private static readonly Logger Nlog = LogManager.GetCurrentClassLogger();
 
 
@@ -28,6 +29,7 @@ namespace AsylumLauncher
         {
             CheckConfigFilesExist();
             CheckCustomFilesExist();
+            CheckIntroVideoFilesRenamed();
             Nlog.Info("Constructor - Successfully initialized FileHandler.");
         }
 
@@ -75,7 +77,7 @@ namespace AsylumLauncher
             if (File.Exists(UserInputPath))
             {
                 string[] UserLines = File.ReadAllLines(UserInputPath);
-                if (UserLines.Length < 63)
+                if (UserLines.Length < 110)
                 {
                     File.Delete(UserInputPath);
                     CreateConfigFile(UserInputPath, Resources.UserInput);
@@ -91,7 +93,7 @@ namespace AsylumLauncher
             {
                 BmInput.IsReadOnly = false;
                 string[] BMLines = File.ReadAllLines(BmInputPath);
-                if (BMLines.Length < 428)
+                if (BMLines.Length < 717)
                 {
                     File.Delete(BmInputPath);
                     CreateConfigFile(BmInputPath, Resources.BmInput);
@@ -152,27 +154,66 @@ namespace AsylumLauncher
 
         public static bool DetectGameExe()
         {
-            string GameExe = Path.Combine(Directory.GetCurrentDirectory(), "BatmanAC.exe");
+            string GameExe = Path.Combine(Directory.GetCurrentDirectory(), "ShippingPC-BmGame.exe");
             if (File.Exists(GameExe))
             {
-                string ExeChecksum = SetMD5(GameExe);
-                if (ExeChecksum == ExeChecksumMD5_STEAM || ExeChecksum == ExeChecksumMD5_EPIC || ExeChecksum == ExeChecksumMD5_GOG)
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }
 
-        private static string SetMD5(string ExeFile)
+        private void CheckIntroVideoFilesRenamed()
         {
-            using (var md5 = System.Security.Cryptography.MD5.Create())
+            if (!DetectGameExe())
             {
-                using (var stream = File.OpenRead(ExeFile))
-                {
-                    var hash = md5.ComputeHash(stream);
-                    return BitConverter.ToString(hash).Replace("-", "");
-                }
+                Program.MainWindow.SkipIntroBox.Enabled = false;
+                return;
+            }
+
+            if (File.Exists(Startup) && File.Exists(StartupNV) && File.Exists(StartupRenamed) && File.Exists(StartupNVRenamed))
+            {
+                File.Delete(StartupRenamed);
+                File.Delete(StartupNVRenamed);
+                Program.MainWindow.SkipIntroBox.Enabled = true;
+                Program.MainWindow.SkipIntroBox.Checked = false;
+                IntroFilesRenamed = false;
+            }
+
+            if (File.Exists(Startup) && File.Exists(StartupNV))
+            {
+                Program.MainWindow.SkipIntroBox.Enabled = true;
+                Program.MainWindow.SkipIntroBox.Checked = false;
+                IntroFilesRenamed = false;
+            }
+
+            if (File.Exists(StartupRenamed) && File.Exists(StartupNVRenamed))
+            {
+                Program.MainWindow.SkipIntroBox.Enabled = true;
+                Program.MainWindow.SkipIntroBox.Checked = true;
+                IntroFilesRenamed = true;
+            }
+        }
+
+        public void RenameIntroVideoFiles()
+        {
+            if (!Program.MainWindow.SkipIntroBox.Enabled || !Program.MainWindow.DisplaySettingChanged)
+            {
+                return;
+            }
+
+            if (!IntroFilesRenamed && Program.MainWindow.SkipIntroBox.Checked)
+            {
+                File.Move(Startup, StartupRenamed);
+                File.Move(StartupNV, StartupNVRenamed);
+                IntroFilesRenamed = !IntroFilesRenamed;
+                Nlog.Info("RenameIntroVideoFiles - Disabling Startup Movies.");
+            }
+            else if (IntroFilesRenamed && !Program.MainWindow.SkipIntroBox.Checked)
+            {
+                File.Move(StartupRenamed, Startup);
+                File.Move(StartupNVRenamed, StartupNV);
+                IntroFilesRenamed = !IntroFilesRenamed;
+                Nlog.Info("RenameIntroVideoFiles - Enabling Startup Movies.");
             }
         }
     }
