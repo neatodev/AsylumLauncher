@@ -7,10 +7,14 @@ namespace AsylumLauncher
     {
         private bool IntroFilesRenamed;
         private readonly string CustomDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Custom");
-        private readonly string Startup = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Startup.swf");
-        private readonly string StartupNV = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\StartupNV.swf");
-        private readonly string StartupRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Startup.swf.bak");
-        private readonly string StartupNVRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\StartupNV.swf.bak");
+        private readonly string Legal = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legal.bik");
+        private readonly string Legalus = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legalus.bik");
+        private readonly string NvidiaVid = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\nvidia.bik");
+        private readonly string UtLogo = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\UtLogo.bik");
+        private readonly string LegalRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legal.bik.bak");
+        private readonly string LegalusRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legalus.bik.bak");
+        private readonly string NvidiaVidRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\nvidia.bik.bak");
+        private readonly string UtLogoRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\UtLogo.bik.bak");
         public readonly string ConfigDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config");
 
         public string BmEnginePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini");
@@ -170,23 +174,25 @@ namespace AsylumLauncher
                 return;
             }
 
-            if (File.Exists(Startup) && File.Exists(StartupNV) && File.Exists(StartupRenamed) && File.Exists(StartupNVRenamed))
+            if (File.Exists(Legal) && File.Exists(Legalus) && File.Exists(NvidiaVid) && File.Exists(UtLogo) && File.Exists(LegalRenamed) && File.Exists(LegalusRenamed) && File.Exists(NvidiaVidRenamed) && File.Exists(UtLogoRenamed))
             {
-                File.Delete(StartupRenamed);
-                File.Delete(StartupNVRenamed);
+                File.Delete(LegalRenamed);
+                File.Delete(LegalusRenamed);
+                File.Delete(NvidiaVidRenamed);
+                File.Delete(UtLogoRenamed);
                 Program.MainWindow.SkipIntroBox.Enabled = true;
                 Program.MainWindow.SkipIntroBox.Checked = false;
                 IntroFilesRenamed = false;
             }
 
-            if (File.Exists(Startup) && File.Exists(StartupNV))
+            if (File.Exists(Legal) && File.Exists(Legalus) && File.Exists(NvidiaVid) && File.Exists(UtLogo))
             {
                 Program.MainWindow.SkipIntroBox.Enabled = true;
                 Program.MainWindow.SkipIntroBox.Checked = false;
                 IntroFilesRenamed = false;
             }
 
-            if (File.Exists(StartupRenamed) && File.Exists(StartupNVRenamed))
+            if (File.Exists(LegalRenamed) && File.Exists(LegalusRenamed) && File.Exists(NvidiaVidRenamed) && File.Exists(UtLogoRenamed))
             {
                 Program.MainWindow.SkipIntroBox.Enabled = true;
                 Program.MainWindow.SkipIntroBox.Checked = true;
@@ -203,15 +209,19 @@ namespace AsylumLauncher
 
             if (!IntroFilesRenamed && Program.MainWindow.SkipIntroBox.Checked)
             {
-                File.Move(Startup, StartupRenamed);
-                File.Move(StartupNV, StartupNVRenamed);
+                File.Move(Legal, LegalRenamed);
+                File.Move(Legalus, LegalusRenamed);
+                File.Move(NvidiaVid, NvidiaVidRenamed);
+                File.Move(UtLogo, UtLogoRenamed);
                 IntroFilesRenamed = !IntroFilesRenamed;
                 Nlog.Info("RenameIntroVideoFiles - Disabling Startup Movies.");
             }
             else if (IntroFilesRenamed && !Program.MainWindow.SkipIntroBox.Checked)
             {
-                File.Move(StartupRenamed, Startup);
-                File.Move(StartupNVRenamed, StartupNV);
+                File.Move(LegalRenamed, Legal);
+                File.Move(LegalusRenamed, Legalus);
+                File.Move(NvidiaVidRenamed, NvidiaVid);
+                File.Move(UtLogoRenamed, UtLogo);
                 IntroFilesRenamed = !IntroFilesRenamed;
                 Nlog.Info("RenameIntroVideoFiles - Enabling Startup Movies.");
             }
