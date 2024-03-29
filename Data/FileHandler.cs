@@ -7,14 +7,14 @@ namespace AsylumLauncher
     {
         private bool IntroFilesRenamed;
         private readonly string CustomDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Custom");
-        private readonly string Legal = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legal.bik");
-        private readonly string Legalus = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legalus.bik");
-        private readonly string NvidiaVid = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\nvidia.bik");
-        private readonly string UtLogo = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\UtLogo.bik");
-        private readonly string LegalRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legal.bik.bak");
-        private readonly string LegalusRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\Legalus.bik.bak");
-        private readonly string NvidiaVidRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\nvidia.bik.bak");
-        private readonly string UtLogoRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\BmGame\\Movies\\UtLogo.bik.bak");
+        private readonly string Legal = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\Legal.bik");
+        private readonly string Legalus = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\Legalus.bik");
+        private readonly string NvidiaVid = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\nvidia.bik");
+        private readonly string UtLogo = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\UtLogo.bik");
+        private readonly string LegalRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\Legal.bik.bak");
+        private readonly string LegalusRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\Legalus.bik.bak");
+        private readonly string NvidiaVidRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\nvidia.bik.bak");
+        private readonly string UtLogoRenamed = Path.Combine(Directory.GetCurrentDirectory(), "..\\BmGame\\Movies\\UtLogo.bik.bak");
         public readonly string ConfigDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config");
 
         public string BmEnginePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini");
