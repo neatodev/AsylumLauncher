@@ -71,6 +71,16 @@ namespace AsylumLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap blue {
+            get {
+                object obj = ResourceManager.GetObject("blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [BmGame.R3rdPersonCamera]
         ///EnableCameraAssist=True
         ///
@@ -359,16 +369,6 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icons8_microsoft_admin_48 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-microsoft-admin-48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Log_1_2 {
             get {
                 object obj = ResourceManager.GetObject("Log_1_2", resourceCulture);
@@ -382,6 +382,16 @@ namespace AsylumLauncher.Properties {
         public static System.Drawing.Bitmap Log_2_2 {
             get {
                 object obj = ResourceManager.GetObject("Log_2_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap monochrome {
+            get {
+                object obj = ResourceManager.GetObject("monochrome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using NLog;
+using System.Diagnostics;
 using System.Management;
 
 namespace AsylumLauncher

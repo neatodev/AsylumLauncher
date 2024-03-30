@@ -1,5 +1,6 @@
 ﻿using AsylumLauncher.Properties;
 using NLog;
+using System.Diagnostics;
 
 namespace AsylumLauncher
 {
@@ -225,6 +226,22 @@ namespace AsylumLauncher
                 IntroFilesRenamed = !IntroFilesRenamed;
                 Nlog.Info("RenameIntroVideoFiles - Enabling Startup Movies.");
             }
+        }
+
+        public void StartAsAdmin(string Name)
+        {
+            var pr = new Process
+            {
+                StartInfo =
+                {
+                    FileName = Name,
+                    UseShellExecute = true,
+                    Verb = "runas"
+                }
+            };
+
+            pr.Start();
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

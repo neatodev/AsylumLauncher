@@ -1,7 +1,9 @@
+using AsylumLauncher.Properties;
 using NLog;
 using System.Diagnostics;
 using System.Globalization;
 using System.Media;
+using System.Reflection;
 
 namespace AsylumLauncher
 {
@@ -34,6 +36,7 @@ namespace AsylumLauncher
         public AsylumLauncher()
         {
             InitializeComponent();
+            InitAdminPerms();
             ImgToolTip = new();
             ImgToolTip.InitialDelay = 50;
             ImgToolTip.AutoPopDelay = 5000000;
@@ -45,6 +48,16 @@ namespace AsylumLauncher
             ImgToolTip.SetToolTip(LowContrastColorButton, "Log Profile 1");
             ImgToolTip.SetToolTip(VividColorButton, "Log Profile 2");
             ImgToolTip.SetToolTip(HighContrastColorButton, "High Contrast");
+        }
+
+        private void InitAdminPerms()
+        {
+            if (Program.IsAdmin)
+            {
+                RunAsAdminButton.Enabled = false;
+                hbaoplusbox.Enabled = true;
+                RunAsAdminButton.BackgroundImage = Resources.monochrome;
+            }
         }
 
         private void ApplySettingsButton_Click(object sender, EventArgs e)
@@ -582,6 +595,11 @@ namespace AsylumLauncher
         {
             ShadowsValueLabel.Text = ShadowsTrackbar.Value.ToString() + "%";
             DisplaySettingChanged = true;
+        }
+
+        private void RunAsAdminButton_Click(object sender, EventArgs e)
+        {
+            Program.FileHandler.StartAsAdmin("AsylumLauncher.exe");
         }
     }
 }

@@ -37,6 +37,9 @@
             VanillaPresetButton = new Button();
             OptimizedPresetButton = new Button();
             AdvancedDisplayGroupBox = new GroupBox();
+            RunAsAdminButton = new Button();
+            hbaoplusbox = new ComboBox();
+            hbaolabel = new Label();
             ReflectionBox = new CheckBox();
             LensFlareBox = new CheckBox();
             LightRayBox = new CheckBox();
@@ -177,9 +180,6 @@
             CPULabel = new Label();
             StartGameButton = new Button();
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
-            hbaolabel = new Label();
-            RunAsAdminButton = new Button();
             tabControl1.SuspendLayout();
             DisplayTab.SuspendLayout();
             PresetBox.SuspendLayout();
@@ -288,7 +288,7 @@
             // 
             AdvancedDisplayGroupBox.AutoSize = true;
             AdvancedDisplayGroupBox.Controls.Add(RunAsAdminButton);
-            AdvancedDisplayGroupBox.Controls.Add(comboBox1);
+            AdvancedDisplayGroupBox.Controls.Add(hbaoplusbox);
             AdvancedDisplayGroupBox.Controls.Add(hbaolabel);
             AdvancedDisplayGroupBox.Controls.Add(ReflectionBox);
             AdvancedDisplayGroupBox.Controls.Add(LensFlareBox);
@@ -319,6 +319,44 @@
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
+            // 
+            // RunAsAdminButton
+            // 
+            RunAsAdminButton.BackgroundImage = Properties.Resources.blue;
+            RunAsAdminButton.BackgroundImageLayout = ImageLayout.Zoom;
+            RunAsAdminButton.ForeColor = Color.Black;
+            RunAsAdminButton.Location = new Point(287, 198);
+            RunAsAdminButton.Name = "RunAsAdminButton";
+            RunAsAdminButton.Size = new Size(24, 27);
+            RunAsAdminButton.TabIndex = 53;
+            BasicToolTip.SetToolTip(RunAsAdminButton, "Graphics are pushed significantly.");
+            RunAsAdminButton.UseVisualStyleBackColor = true;
+            RunAsAdminButton.Click += RunAsAdminButton_Click;
+            // 
+            // hbaoplusbox
+            // 
+            hbaoplusbox.DropDownStyle = ComboBoxStyle.DropDownList;
+            hbaoplusbox.Enabled = false;
+            hbaoplusbox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            hbaoplusbox.FormattingEnabled = true;
+            hbaoplusbox.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
+            hbaoplusbox.Location = new Point(129, 198);
+            hbaoplusbox.Name = "hbaoplusbox";
+            hbaoplusbox.Size = new Size(152, 27);
+            hbaoplusbox.TabIndex = 52;
+            BasicToolTip.SetToolTip(hbaoplusbox, resources.GetString("hbaoplusbox.ToolTip"));
+            // 
+            // hbaolabel
+            // 
+            hbaolabel.AutoSize = true;
+            hbaolabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            hbaolabel.ForeColor = Color.Black;
+            hbaolabel.Location = new Point(18, 201);
+            hbaolabel.Name = "hbaolabel";
+            hbaolabel.Size = new Size(105, 19);
+            hbaolabel.TabIndex = 51;
+            hbaolabel.Text = "Nvidia HBAO+";
+            BasicToolTip.SetToolTip(hbaolabel, resources.GetString("hbaolabel.ToolTip"));
             // 
             // ReflectionBox
             // 
@@ -2157,42 +2195,6 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
-            comboBox1.Location = new Point(129, 198);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(152, 27);
-            comboBox1.TabIndex = 52;
-            BasicToolTip.SetToolTip(comboBox1, resources.GetString("comboBox1.ToolTip"));
-            // 
-            // hbaolabel
-            // 
-            hbaolabel.AutoSize = true;
-            hbaolabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            hbaolabel.ForeColor = Color.Black;
-            hbaolabel.Location = new Point(18, 201);
-            hbaolabel.Name = "hbaolabel";
-            hbaolabel.Size = new Size(105, 19);
-            hbaolabel.TabIndex = 51;
-            hbaolabel.Text = "Nvidia HBAO+";
-            BasicToolTip.SetToolTip(hbaolabel, resources.GetString("hbaolabel.ToolTip"));
-            // 
-            // RunAsAdminButton
-            // 
-            RunAsAdminButton.BackgroundImage = Properties.Resources.icons8_microsoft_admin_48;
-            RunAsAdminButton.BackgroundImageLayout = ImageLayout.Zoom;
-            RunAsAdminButton.ForeColor = Color.Black;
-            RunAsAdminButton.Location = new Point(287, 198);
-            RunAsAdminButton.Name = "RunAsAdminButton";
-            RunAsAdminButton.Size = new Size(24, 27);
-            RunAsAdminButton.TabIndex = 53;
-            BasicToolTip.SetToolTip(RunAsAdminButton, "Graphics are pushed significantly.");
-            RunAsAdminButton.UseVisualStyleBackColor = true;
-            // 
             // AsylumLauncher
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -2392,7 +2394,7 @@
         public Label MidtonesValueLabel;
         public Label HighlightsValueLabel;
         public Label SaturationValueLabel;
-        public ComboBox comboBox1;
+        public ComboBox hbaoplusbox;
         private Label hbaolabel;
         private Button RunAsAdminButton;
     }
