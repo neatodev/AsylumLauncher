@@ -23,6 +23,8 @@ namespace AsylumLauncher
 
         public static InputHandler InputHandler;
 
+        public static NvidiaHandler NvidiaHandler;
+
         public static bool IsAdmin;
 
         [DllImport("user32.dll")]
@@ -84,6 +86,7 @@ namespace AsylumLauncher
             Nlog.Info("InitializeProgram - Starting logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
             ApplicationConfiguration.Initialize();
             MainWindow = new AsylumLauncher();
+            NvidiaHandler = new NvidiaHandler();
             FileHandler = new FileHandler();
             IniHandler = new IniHandler();
             InputHandler = new InputHandler();

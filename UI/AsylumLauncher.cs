@@ -55,6 +55,7 @@ namespace AsylumLauncher
             if (Program.IsAdmin)
             {
                 RunAsAdminButton.Enabled = false;
+                hbaopluscheckbox.Enabled = true;
                 RunAsAdminButton.BackgroundImage = Resources.monochrome;
             }
         }
@@ -599,6 +600,18 @@ namespace AsylumLauncher
         private void RunAsAdminButton_Click(object sender, EventArgs e)
         {
             Program.FileHandler.StartAsAdmin("AsylumLauncher.exe");
+        }
+
+        private void hbaopluscheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.NvidiaHandler.ToggleHbaoPlus(hbaopluscheckbox.Checked);
+            }
+            catch (NullReferenceException E)
+            {
+
+            }
         }
     }
 }

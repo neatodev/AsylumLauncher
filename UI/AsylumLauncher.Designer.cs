@@ -38,7 +38,7 @@
             OptimizedPresetButton = new Button();
             AdvancedDisplayGroupBox = new GroupBox();
             nvidiaBox = new GroupBox();
-            checkBox1 = new CheckBox();
+            hbaopluscheckbox = new CheckBox();
             RunAsAdminButton = new Button();
             PhysXBox = new ComboBox();
             PhysXLabel = new Label();
@@ -321,7 +321,7 @@
             // nvidiaBox
             // 
             nvidiaBox.AutoSize = true;
-            nvidiaBox.Controls.Add(checkBox1);
+            nvidiaBox.Controls.Add(hbaopluscheckbox);
             nvidiaBox.Controls.Add(RunAsAdminButton);
             nvidiaBox.Controls.Add(PhysXBox);
             nvidiaBox.Controls.Add(PhysXLabel);
@@ -334,19 +334,21 @@
             nvidiaBox.TabStop = false;
             nvidiaBox.Text = "Nvidia Settings";
             // 
-            // checkBox1
+            // hbaopluscheckbox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
-            checkBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.ForeColor = Color.Black;
-            checkBox1.Location = new Point(120, 65);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(124, 23);
-            checkBox1.TabIndex = 54;
-            checkBox1.Text = "Nvidia HBAO+";
-            BasicToolTip.SetToolTip(checkBox1, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
-            checkBox1.UseVisualStyleBackColor = true;
+            hbaopluscheckbox.AutoSize = true;
+            hbaopluscheckbox.CheckAlign = ContentAlignment.MiddleRight;
+            hbaopluscheckbox.Enabled = false;
+            hbaopluscheckbox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            hbaopluscheckbox.ForeColor = Color.Black;
+            hbaopluscheckbox.Location = new Point(120, 65);
+            hbaopluscheckbox.Name = "hbaopluscheckbox";
+            hbaopluscheckbox.Size = new Size(124, 23);
+            hbaopluscheckbox.TabIndex = 54;
+            hbaopluscheckbox.Text = "Nvidia HBAO+";
+            BasicToolTip.SetToolTip(hbaopluscheckbox, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
+            hbaopluscheckbox.UseVisualStyleBackColor = true;
+            hbaopluscheckbox.CheckedChanged += hbaopluscheckbox_CheckedChanged;
             // 
             // RunAsAdminButton
             // 
@@ -2401,6 +2403,6 @@
         public Label SaturationValueLabel;
         private Button RunAsAdminButton;
         private GroupBox nvidiaBox;
-        public CheckBox checkBox1;
+        public CheckBox hbaopluscheckbox;
     }
 }
