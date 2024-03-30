@@ -29,91 +29,90 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputForm));
-            this.label2 = new System.Windows.Forms.Label();
-            this.KeybindValueLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            label2 = new Label();
+            KeybindValueLabel = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            label4 = new Label();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(7, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 39);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "KEYBIND:";
-            this.label2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label4_MouseClick);
+            label2.AutoSize = true;
+            label2.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(7, 128);
+            label2.Name = "label2";
+            label2.Size = new Size(130, 39);
+            label2.TabIndex = 1;
+            label2.Text = "KEYBIND:";
+            label2.MouseClick += label4_MouseClick;
             // 
             // KeybindValueLabel
             // 
-            this.KeybindValueLabel.AutoSize = true;
-            this.KeybindValueLabel.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.KeybindValueLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.KeybindValueLabel.Location = new System.Drawing.Point(143, 128);
-            this.KeybindValueLabel.Name = "KeybindValueLabel";
-            this.KeybindValueLabel.Size = new System.Drawing.Size(0, 39);
-            this.KeybindValueLabel.TabIndex = 2;
-            this.KeybindValueLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label4_MouseClick);
+            KeybindValueLabel.AutoSize = true;
+            KeybindValueLabel.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            KeybindValueLabel.ForeColor = SystemColors.HotTrack;
+            KeybindValueLabel.Location = new Point(143, 128);
+            KeybindValueLabel.Name = "KeybindValueLabel";
+            KeybindValueLabel.Size = new Size(0, 39);
+            KeybindValueLabel.TabIndex = 2;
+            KeybindValueLabel.MouseClick += label4_MouseClick;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(7, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(584, 33);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Press ESCAPE (ESC) to close this window and abort.";
-            this.label3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label4_MouseClick);
+            label3.AutoSize = true;
+            label3.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(7, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(584, 33);
+            label3.TabIndex = 3;
+            label3.Text = "Press ESCAPE (ESC) to close this window and abort.";
+            label3.MouseClick += label4_MouseClick;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(7, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(464, 33);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Press BACKSPACE to delete the Keybind.\r\n";
-            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label4_MouseClick);
+            label1.AutoSize = true;
+            label1.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(7, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(464, 33);
+            label1.TabIndex = 4;
+            label1.Text = "Press BACKSPACE to delete the Keybind.\r\n";
+            label1.MouseClick += label4_MouseClick;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(7, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(420, 33);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Confirm Keybind by pressing ENTER.";
-            this.label4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label4_MouseClick);
+            label4.AutoSize = true;
+            label4.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(7, 77);
+            label4.Name = "label4";
+            label4.Size = new Size(420, 33);
+            label4.TabIndex = 5;
+            label4.Text = "Confirm Keybind by pressing ENTER.";
+            label4.MouseClick += label4_MouseClick;
             // 
             // InputForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(587, 188);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.KeybindValueLabel);
-            this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "InputForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InputForm";
-            this.Load += new System.EventHandler(this.InputForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.InputForm_Paint);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSize = true;
+            BackColor = Color.White;
+            ClientSize = new Size(587, 188);
+            Controls.Add(label4);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(KeybindValueLabel);
+            Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "InputForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "InputForm";
+            Load += InputForm_Load;
+            Paint += InputForm_Paint;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

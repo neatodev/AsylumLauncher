@@ -155,17 +155,18 @@ namespace AsylumLauncher
             if (ModifierString != "" && KeyString != "")
             {
                 KeybindValueLabel.Text = ModifierString + " + " + KeyString;
-            } 
+            }
             else if (ModifierString != "" && KeyString == "")
             {
                 KeybindValueLabel.Text = ModifierString;
-            } 
+            }
             else
             {
                 KeybindValueLabel.Text = KeyString;
             }
 
-            switch (e.KeyCode) { 
+            switch (e.KeyCode)
+            {
                 case Keys.Escape:
                     this.Close();
                     break;
