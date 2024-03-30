@@ -307,7 +307,7 @@
             AdvancedDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             AdvancedDisplayGroupBox.Location = new Point(3, 339);
             AdvancedDisplayGroupBox.Name = "AdvancedDisplayGroupBox";
-            AdvancedDisplayGroupBox.Size = new Size(683, 282);
+            AdvancedDisplayGroupBox.Size = new Size(683, 257);
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
