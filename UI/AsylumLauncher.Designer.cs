@@ -37,9 +37,11 @@
             VanillaPresetButton = new Button();
             OptimizedPresetButton = new Button();
             AdvancedDisplayGroupBox = new GroupBox();
+            nvidiaBox = new GroupBox();
+            checkBox1 = new CheckBox();
             RunAsAdminButton = new Button();
-            hbaoplusbox = new ComboBox();
-            hbaolabel = new Label();
+            PhysXBox = new ComboBox();
+            PhysXLabel = new Label();
             ReflectionBox = new CheckBox();
             LensFlareBox = new CheckBox();
             LightRayBox = new CheckBox();
@@ -52,11 +54,9 @@
             AmbientOcclusionBox = new CheckBox();
             PoolsizeBox = new ComboBox();
             PoolsizeLabel = new Label();
-            PhysXBox = new ComboBox();
             ShadowDrawDistBox = new ComboBox();
             ShadowDrawLabel = new Label();
             ShadowQualityBox = new ComboBox();
-            PhysXLabel = new Label();
             AntiAliasingBox = new ComboBox();
             AnisoBox = new ComboBox();
             AntiAliasingLabel = new Label();
@@ -184,6 +184,7 @@
             DisplayTab.SuspendLayout();
             PresetBox.SuspendLayout();
             AdvancedDisplayGroupBox.SuspendLayout();
+            nvidiaBox.SuspendLayout();
             BasicDisplayGroupBox.SuspendLayout();
             ControlTab.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -240,7 +241,7 @@
             PresetBox.Controls.Add(DarkKnightPresetButton);
             PresetBox.Controls.Add(VanillaPresetButton);
             PresetBox.Controls.Add(OptimizedPresetButton);
-            PresetBox.ForeColor = Color.Maroon;
+            PresetBox.ForeColor = SystemColors.HotTrack;
             PresetBox.Location = new Point(3, 232);
             PresetBox.Name = "PresetBox";
             PresetBox.Size = new Size(683, 101);
@@ -287,9 +288,7 @@
             // AdvancedDisplayGroupBox
             // 
             AdvancedDisplayGroupBox.AutoSize = true;
-            AdvancedDisplayGroupBox.Controls.Add(RunAsAdminButton);
-            AdvancedDisplayGroupBox.Controls.Add(hbaoplusbox);
-            AdvancedDisplayGroupBox.Controls.Add(hbaolabel);
+            AdvancedDisplayGroupBox.Controls.Add(nvidiaBox);
             AdvancedDisplayGroupBox.Controls.Add(ReflectionBox);
             AdvancedDisplayGroupBox.Controls.Add(LensFlareBox);
             AdvancedDisplayGroupBox.Controls.Add(LightRayBox);
@@ -302,30 +301,57 @@
             AdvancedDisplayGroupBox.Controls.Add(AmbientOcclusionBox);
             AdvancedDisplayGroupBox.Controls.Add(PoolsizeBox);
             AdvancedDisplayGroupBox.Controls.Add(PoolsizeLabel);
-            AdvancedDisplayGroupBox.Controls.Add(PhysXBox);
             AdvancedDisplayGroupBox.Controls.Add(ShadowDrawDistBox);
             AdvancedDisplayGroupBox.Controls.Add(ShadowDrawLabel);
             AdvancedDisplayGroupBox.Controls.Add(ShadowQualityBox);
-            AdvancedDisplayGroupBox.Controls.Add(PhysXLabel);
             AdvancedDisplayGroupBox.Controls.Add(AntiAliasingBox);
             AdvancedDisplayGroupBox.Controls.Add(AnisoBox);
             AdvancedDisplayGroupBox.Controls.Add(AntiAliasingLabel);
             AdvancedDisplayGroupBox.Controls.Add(MaxShadowLabel);
             AdvancedDisplayGroupBox.Controls.Add(AnisotropyLabel);
-            AdvancedDisplayGroupBox.ForeColor = Color.Maroon;
+            AdvancedDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             AdvancedDisplayGroupBox.Location = new Point(3, 339);
             AdvancedDisplayGroupBox.Name = "AdvancedDisplayGroupBox";
-            AdvancedDisplayGroupBox.Size = new Size(683, 257);
+            AdvancedDisplayGroupBox.Size = new Size(683, 275);
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
+            // 
+            // nvidiaBox
+            // 
+            nvidiaBox.Controls.Add(checkBox1);
+            nvidiaBox.Controls.Add(RunAsAdminButton);
+            nvidiaBox.Controls.Add(PhysXBox);
+            nvidiaBox.Controls.Add(PhysXLabel);
+            nvidiaBox.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            nvidiaBox.ForeColor = Color.ForestGreen;
+            nvidiaBox.Location = new Point(429, 135);
+            nvidiaBox.Name = "nvidiaBox";
+            nvidiaBox.Size = new Size(240, 108);
+            nvidiaBox.TabIndex = 54;
+            nvidiaBox.TabStop = false;
+            nvidiaBox.Text = "NVIDIA SETTINGS";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox1.ForeColor = Color.ForestGreen;
+            checkBox1.Location = new Point(80, 72);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(124, 23);
+            checkBox1.TabIndex = 54;
+            checkBox1.Text = "Nvidia HBAO+";
+            BasicToolTip.SetToolTip(checkBox1, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // RunAsAdminButton
             // 
             RunAsAdminButton.BackgroundImage = Properties.Resources.blue;
             RunAsAdminButton.BackgroundImageLayout = ImageLayout.Zoom;
             RunAsAdminButton.ForeColor = Color.Black;
-            RunAsAdminButton.Location = new Point(287, 198);
+            RunAsAdminButton.Location = new Point(208, 68);
             RunAsAdminButton.Name = "RunAsAdminButton";
             RunAsAdminButton.Size = new Size(24, 27);
             RunAsAdminButton.TabIndex = 53;
@@ -333,30 +359,30 @@
             RunAsAdminButton.UseVisualStyleBackColor = true;
             RunAsAdminButton.Click += RunAsAdminButton_Click;
             // 
-            // hbaoplusbox
+            // PhysXBox
             // 
-            hbaoplusbox.DropDownStyle = ComboBoxStyle.DropDownList;
-            hbaoplusbox.Enabled = false;
-            hbaoplusbox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            hbaoplusbox.FormattingEnabled = true;
-            hbaoplusbox.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
-            hbaoplusbox.Location = new Point(129, 198);
-            hbaoplusbox.Name = "hbaoplusbox";
-            hbaoplusbox.Size = new Size(152, 27);
-            hbaoplusbox.TabIndex = 52;
-            BasicToolTip.SetToolTip(hbaoplusbox, resources.GetString("hbaoplusbox.ToolTip"));
+            PhysXBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            PhysXBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            PhysXBox.FormattingEnabled = true;
+            PhysXBox.Items.AddRange(new object[] { "Off", "Medium", "High" });
+            PhysXBox.Location = new Point(80, 35);
+            PhysXBox.Name = "PhysXBox";
+            PhysXBox.Size = new Size(152, 27);
+            PhysXBox.TabIndex = 38;
+            BasicToolTip.SetToolTip(PhysXBox, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
+            PhysXBox.SelectedIndexChanged += PhysXBox_SelectedIndexChanged;
             // 
-            // hbaolabel
+            // PhysXLabel
             // 
-            hbaolabel.AutoSize = true;
-            hbaolabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            hbaolabel.ForeColor = Color.Black;
-            hbaolabel.Location = new Point(18, 201);
-            hbaolabel.Name = "hbaolabel";
-            hbaolabel.Size = new Size(105, 19);
-            hbaolabel.TabIndex = 51;
-            hbaolabel.Text = "Nvidia HBAO+";
-            BasicToolTip.SetToolTip(hbaolabel, resources.GetString("hbaolabel.ToolTip"));
+            PhysXLabel.AutoSize = true;
+            PhysXLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            PhysXLabel.ForeColor = Color.Black;
+            PhysXLabel.Location = new Point(24, 38);
+            PhysXLabel.Name = "PhysXLabel";
+            PhysXLabel.Size = new Size(50, 19);
+            PhysXLabel.TabIndex = 24;
+            PhysXLabel.Text = "PhysX";
+            BasicToolTip.SetToolTip(PhysXLabel, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
             // 
             // ReflectionBox
             // 
@@ -364,7 +390,7 @@
             ReflectionBox.CheckAlign = ContentAlignment.MiddleRight;
             ReflectionBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             ReflectionBox.ForeColor = Color.Black;
-            ReflectionBox.Location = new Point(556, 32);
+            ReflectionBox.Location = new Point(559, 32);
             ReflectionBox.Name = "ReflectionBox";
             ReflectionBox.Size = new Size(102, 23);
             ReflectionBox.TabIndex = 50;
@@ -379,7 +405,7 @@
             LensFlareBox.CheckAlign = ContentAlignment.MiddleRight;
             LensFlareBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LensFlareBox.ForeColor = Color.Black;
-            LensFlareBox.Location = new Point(449, 61);
+            LensFlareBox.Location = new Point(444, 61);
             LensFlareBox.Name = "LensFlareBox";
             LensFlareBox.Size = new Size(101, 23);
             LensFlareBox.TabIndex = 49;
@@ -394,7 +420,7 @@
             LightRayBox.CheckAlign = ContentAlignment.MiddleRight;
             LightRayBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LightRayBox.ForeColor = Color.Black;
-            LightRayBox.Location = new Point(177, 61);
+            LightRayBox.Location = new Point(187, 61);
             LightRayBox.Name = "LightRayBox";
             LightRayBox.Size = new Size(104, 23);
             LightRayBox.TabIndex = 48;
@@ -409,7 +435,7 @@
             BloomBox.CheckAlign = ContentAlignment.MiddleRight;
             BloomBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BloomBox.ForeColor = Color.Black;
-            BloomBox.Location = new Point(586, 61);
+            BloomBox.Location = new Point(589, 61);
             BloomBox.Name = "BloomBox";
             BloomBox.Size = new Size(72, 23);
             BloomBox.TabIndex = 47;
@@ -424,7 +450,7 @@
             DistortionBox.CheckAlign = ContentAlignment.MiddleRight;
             DistortionBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DistortionBox.ForeColor = Color.Black;
-            DistortionBox.Location = new Point(454, 32);
+            DistortionBox.Location = new Point(449, 32);
             DistortionBox.Name = "DistortionBox";
             DistortionBox.Size = new Size(96, 23);
             DistortionBox.TabIndex = 46;
@@ -439,7 +465,7 @@
             DynShadowBox.CheckAlign = ContentAlignment.MiddleRight;
             DynShadowBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DynShadowBox.ForeColor = Color.Black;
-            DynShadowBox.Location = new Point(287, 32);
+            DynShadowBox.Location = new Point(20, 61);
             DynShadowBox.Name = "DynShadowBox";
             DynShadowBox.Size = new Size(152, 23);
             DynShadowBox.TabIndex = 45;
@@ -454,7 +480,7 @@
             DynLightBox.CheckAlign = ContentAlignment.MiddleRight;
             DynLightBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DynLightBox.ForeColor = Color.Black;
-            DynLightBox.Location = new Point(326, 61);
+            DynLightBox.Location = new Point(316, 61);
             DynLightBox.Name = "DynLightBox";
             DynLightBox.Size = new Size(113, 23);
             DynLightBox.TabIndex = 44;
@@ -469,7 +495,7 @@
             MotionBlurBox.CheckAlign = ContentAlignment.MiddleRight;
             MotionBlurBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MotionBlurBox.ForeColor = Color.Black;
-            MotionBlurBox.Location = new Point(171, 32);
+            MotionBlurBox.Location = new Point(181, 32);
             MotionBlurBox.Name = "MotionBlurBox";
             MotionBlurBox.Size = new Size(110, 23);
             MotionBlurBox.TabIndex = 43;
@@ -484,7 +510,7 @@
             DOFBox.CheckAlign = ContentAlignment.MiddleRight;
             DOFBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DOFBox.ForeColor = Color.Black;
-            DOFBox.Location = new Point(48, 61);
+            DOFBox.Location = new Point(305, 32);
             DOFBox.Name = "DOFBox";
             DOFBox.Size = new Size(124, 23);
             DOFBox.TabIndex = 42;
@@ -514,7 +540,7 @@
             PoolsizeBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeBox.FormattingEnabled = true;
             PoolsizeBox.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
-            PoolsizeBox.Location = new Point(129, 165);
+            PoolsizeBox.Location = new Point(155, 198);
             PoolsizeBox.Name = "PoolsizeBox";
             PoolsizeBox.Size = new Size(152, 27);
             PoolsizeBox.TabIndex = 40;
@@ -526,25 +552,12 @@
             PoolsizeLabel.AutoSize = true;
             PoolsizeLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeLabel.ForeColor = Color.Black;
-            PoolsizeLabel.Location = new Point(1, 168);
+            PoolsizeLabel.Location = new Point(27, 201);
             PoolsizeLabel.Name = "PoolsizeLabel";
             PoolsizeLabel.Size = new Size(122, 19);
             PoolsizeLabel.TabIndex = 39;
             PoolsizeLabel.Text = "Texture Memory";
             BasicToolTip.SetToolTip(PoolsizeLabel, resources.GetString("PoolsizeLabel.ToolTip"));
-            // 
-            // PhysXBox
-            // 
-            PhysXBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            PhysXBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            PhysXBox.FormattingEnabled = true;
-            PhysXBox.Items.AddRange(new object[] { "Off", "Medium", "High" });
-            PhysXBox.Location = new Point(129, 132);
-            PhysXBox.Name = "PhysXBox";
-            PhysXBox.Size = new Size(152, 27);
-            PhysXBox.TabIndex = 38;
-            BasicToolTip.SetToolTip(PhysXBox, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
-            PhysXBox.SelectedIndexChanged += PhysXBox_SelectedIndexChanged;
             // 
             // ShadowDrawDistBox
             // 
@@ -552,7 +565,7 @@
             ShadowDrawDistBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             ShadowDrawDistBox.FormattingEnabled = true;
             ShadowDrawDistBox.Items.AddRange(new object[] { "Low (Default)", "Medium", "High", "Very High" });
-            ShadowDrawDistBox.Location = new Point(517, 165);
+            ShadowDrawDistBox.Location = new Point(155, 165);
             ShadowDrawDistBox.Name = "ShadowDrawDistBox";
             ShadowDrawDistBox.Size = new Size(152, 27);
             ShadowDrawDistBox.TabIndex = 37;
@@ -564,12 +577,13 @@
             ShadowDrawLabel.AutoSize = true;
             ShadowDrawLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             ShadowDrawLabel.ForeColor = Color.Black;
-            ShadowDrawLabel.Location = new Point(380, 168);
+            ShadowDrawLabel.Location = new Point(18, 168);
             ShadowDrawLabel.Name = "ShadowDrawLabel";
             ShadowDrawLabel.Size = new Size(131, 19);
             ShadowDrawLabel.TabIndex = 36;
             ShadowDrawLabel.Text = "Shadow Coverage";
             BasicToolTip.SetToolTip(ShadowDrawLabel, "Increases shadow and tessellation draw distance. Tessellation range only increases in interiors.");
+            ShadowDrawLabel.Click += ShadowDrawLabel_Click;
             // 
             // ShadowQualityBox
             // 
@@ -577,24 +591,12 @@
             ShadowQualityBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             ShadowQualityBox.FormattingEnabled = true;
             ShadowQualityBox.Items.AddRange(new object[] { "Low (Default)", "Medium", "High", "Very High" });
-            ShadowQualityBox.Location = new Point(517, 132);
+            ShadowQualityBox.Location = new Point(155, 132);
             ShadowQualityBox.Name = "ShadowQualityBox";
             ShadowQualityBox.Size = new Size(152, 27);
             ShadowQualityBox.TabIndex = 26;
             BasicToolTip.SetToolTip(ShadowQualityBox, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
             ShadowQualityBox.SelectedIndexChanged += ShadowQualityBox_SelectedIndexChanged;
-            // 
-            // PhysXLabel
-            // 
-            PhysXLabel.AutoSize = true;
-            PhysXLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            PhysXLabel.ForeColor = Color.Black;
-            PhysXLabel.Location = new Point(25, 135);
-            PhysXLabel.Name = "PhysXLabel";
-            PhysXLabel.Size = new Size(98, 19);
-            PhysXLabel.TabIndex = 24;
-            PhysXLabel.Text = "Nvidia PhysX";
-            BasicToolTip.SetToolTip(PhysXLabel, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
             // 
             // AntiAliasingBox
             // 
@@ -602,7 +604,7 @@
             AntiAliasingBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AntiAliasingBox.FormattingEnabled = true;
             AntiAliasingBox.Items.AddRange(new object[] { "Off", "2x MSAA", "4x MSAA", "8xQ MSAA" });
-            AntiAliasingBox.Location = new Point(129, 99);
+            AntiAliasingBox.Location = new Point(155, 99);
             AntiAliasingBox.Name = "AntiAliasingBox";
             AntiAliasingBox.Size = new Size(152, 27);
             AntiAliasingBox.TabIndex = 9;
@@ -615,7 +617,7 @@
             AnisoBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisoBox.FormattingEnabled = true;
             AnisoBox.Items.AddRange(new object[] { "4x (Default)", "8x", "16x" });
-            AnisoBox.Location = new Point(517, 99);
+            AnisoBox.Location = new Point(509, 99);
             AnisoBox.Name = "AnisoBox";
             AnisoBox.Size = new Size(152, 27);
             AnisoBox.TabIndex = 8;
@@ -627,7 +629,7 @@
             AntiAliasingLabel.AutoSize = true;
             AntiAliasingLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AntiAliasingLabel.ForeColor = Color.Black;
-            AntiAliasingLabel.Location = new Point(28, 102);
+            AntiAliasingLabel.Location = new Point(54, 102);
             AntiAliasingLabel.Name = "AntiAliasingLabel";
             AntiAliasingLabel.Size = new Size(95, 19);
             AntiAliasingLabel.TabIndex = 1;
@@ -639,7 +641,7 @@
             MaxShadowLabel.AutoSize = true;
             MaxShadowLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MaxShadowLabel.ForeColor = Color.Black;
-            MaxShadowLabel.Location = new Point(393, 135);
+            MaxShadowLabel.Location = new Point(31, 135);
             MaxShadowLabel.Name = "MaxShadowLabel";
             MaxShadowLabel.Size = new Size(118, 19);
             MaxShadowLabel.TabIndex = 5;
@@ -651,7 +653,7 @@
             AnisotropyLabel.AutoSize = true;
             AnisotropyLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisotropyLabel.ForeColor = Color.Black;
-            AnisotropyLabel.Location = new Point(363, 102);
+            AnisotropyLabel.Location = new Point(355, 102);
             AnisotropyLabel.Name = "AnisotropyLabel";
             AnisotropyLabel.Size = new Size(148, 19);
             AnisotropyLabel.TabIndex = 0;
@@ -2220,6 +2222,8 @@
             PresetBox.ResumeLayout(false);
             AdvancedDisplayGroupBox.ResumeLayout(false);
             AdvancedDisplayGroupBox.PerformLayout();
+            nvidiaBox.ResumeLayout(false);
+            nvidiaBox.PerformLayout();
             BasicDisplayGroupBox.ResumeLayout(false);
             BasicDisplayGroupBox.PerformLayout();
             ControlTab.ResumeLayout(false);
@@ -2394,8 +2398,8 @@
         public Label MidtonesValueLabel;
         public Label HighlightsValueLabel;
         public Label SaturationValueLabel;
-        public ComboBox hbaoplusbox;
-        private Label hbaolabel;
         private Button RunAsAdminButton;
+        private GroupBox nvidiaBox;
+        public CheckBox checkBox1;
     }
 }

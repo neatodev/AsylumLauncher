@@ -55,7 +55,6 @@ namespace AsylumLauncher
             if (Program.IsAdmin)
             {
                 RunAsAdminButton.Enabled = false;
-                hbaoplusbox.Enabled = true;
                 RunAsAdminButton.BackgroundImage = Resources.monochrome;
             }
         }
@@ -600,6 +599,11 @@ namespace AsylumLauncher
         private void RunAsAdminButton_Click(object sender, EventArgs e)
         {
             Program.FileHandler.StartAsAdmin("AsylumLauncher.exe");
+        }
+
+        private void ShadowDrawLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
