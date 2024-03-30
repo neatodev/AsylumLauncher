@@ -228,15 +228,6 @@ namespace AsylumLauncher
                 Program.MainWindow.LightRayBox.Checked = false;
             }
 
-            // Shadow Draw Distance
-            Program.MainWindow.ShadowDrawDistBox.SelectedIndex = IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] switch
-            {
-                "1.500000" => 1,
-                "2.000000" => 2,
-                "4.000000" => 3,
-                _ => 0,
-            };
-
             // PhysX
             Program.MainWindow.PhysXBox.SelectedIndex = IniHandler.BmEngineData["Engine.Engine"]["PhysXLevel"] switch
             {
@@ -255,16 +246,6 @@ namespace AsylumLauncher
                 "0" => 5,
                 _ => 0,
             };
-
-            // Reflections
-            if (IniHandler.BmEngineData["SystemSettings"]["Reflections"] == "True")
-            {
-                Program.MainWindow.ReflectionBox.Checked = true;
-            }
-            else
-            {
-                Program.MainWindow.ReflectionBox.Checked = false;
-            }
         }
         private void InitColors()
         {

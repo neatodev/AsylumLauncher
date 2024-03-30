@@ -42,7 +42,6 @@
             RunAsAdminButton = new Button();
             PhysXBox = new ComboBox();
             PhysXLabel = new Label();
-            ReflectionBox = new CheckBox();
             LensFlareBox = new CheckBox();
             LightRayBox = new CheckBox();
             BloomBox = new CheckBox();
@@ -54,8 +53,6 @@
             AmbientOcclusionBox = new CheckBox();
             PoolsizeBox = new ComboBox();
             PoolsizeLabel = new Label();
-            ShadowDrawDistBox = new ComboBox();
-            ShadowDrawLabel = new Label();
             ShadowQualityBox = new ComboBox();
             AntiAliasingBox = new ComboBox();
             AnisoBox = new ComboBox();
@@ -289,7 +286,6 @@
             // 
             AdvancedDisplayGroupBox.AutoSize = true;
             AdvancedDisplayGroupBox.Controls.Add(nvidiaBox);
-            AdvancedDisplayGroupBox.Controls.Add(ReflectionBox);
             AdvancedDisplayGroupBox.Controls.Add(LensFlareBox);
             AdvancedDisplayGroupBox.Controls.Add(LightRayBox);
             AdvancedDisplayGroupBox.Controls.Add(BloomBox);
@@ -301,8 +297,6 @@
             AdvancedDisplayGroupBox.Controls.Add(AmbientOcclusionBox);
             AdvancedDisplayGroupBox.Controls.Add(PoolsizeBox);
             AdvancedDisplayGroupBox.Controls.Add(PoolsizeLabel);
-            AdvancedDisplayGroupBox.Controls.Add(ShadowDrawDistBox);
-            AdvancedDisplayGroupBox.Controls.Add(ShadowDrawLabel);
             AdvancedDisplayGroupBox.Controls.Add(ShadowQualityBox);
             AdvancedDisplayGroupBox.Controls.Add(AntiAliasingBox);
             AdvancedDisplayGroupBox.Controls.Add(AnisoBox);
@@ -327,7 +321,7 @@
             nvidiaBox.Controls.Add(PhysXLabel);
             nvidiaBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nvidiaBox.ForeColor = Color.LimeGreen;
-            nvidiaBox.Location = new Point(387, 135);
+            nvidiaBox.Location = new Point(381, 99);
             nvidiaBox.Name = "nvidiaBox";
             nvidiaBox.Size = new Size(280, 115);
             nvidiaBox.TabIndex = 54;
@@ -387,21 +381,6 @@
             PhysXLabel.TabIndex = 24;
             PhysXLabel.Text = "PhysX";
             BasicToolTip.SetToolTip(PhysXLabel, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
-            // 
-            // ReflectionBox
-            // 
-            ReflectionBox.AutoSize = true;
-            ReflectionBox.CheckAlign = ContentAlignment.MiddleRight;
-            ReflectionBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            ReflectionBox.ForeColor = Color.Black;
-            ReflectionBox.Location = new Point(559, 32);
-            ReflectionBox.Name = "ReflectionBox";
-            ReflectionBox.Size = new Size(102, 23);
-            ReflectionBox.TabIndex = 50;
-            ReflectionBox.Text = "Reflections";
-            BasicToolTip.SetToolTip(ReflectionBox, "Environment will reflect light sources.");
-            ReflectionBox.UseVisualStyleBackColor = true;
-            ReflectionBox.CheckedChanged += ReflectionBox_CheckedChanged;
             // 
             // LensFlareBox
             // 
@@ -544,7 +523,7 @@
             PoolsizeBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeBox.FormattingEnabled = true;
             PoolsizeBox.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
-            PoolsizeBox.Location = new Point(155, 198);
+            PoolsizeBox.Location = new Point(160, 165);
             PoolsizeBox.Name = "PoolsizeBox";
             PoolsizeBox.Size = new Size(152, 27);
             PoolsizeBox.TabIndex = 40;
@@ -556,37 +535,12 @@
             PoolsizeLabel.AutoSize = true;
             PoolsizeLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeLabel.ForeColor = Color.Black;
-            PoolsizeLabel.Location = new Point(27, 201);
+            PoolsizeLabel.Location = new Point(32, 168);
             PoolsizeLabel.Name = "PoolsizeLabel";
             PoolsizeLabel.Size = new Size(122, 19);
             PoolsizeLabel.TabIndex = 39;
             PoolsizeLabel.Text = "Texture Memory";
             BasicToolTip.SetToolTip(PoolsizeLabel, resources.GetString("PoolsizeLabel.ToolTip"));
-            // 
-            // ShadowDrawDistBox
-            // 
-            ShadowDrawDistBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            ShadowDrawDistBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            ShadowDrawDistBox.FormattingEnabled = true;
-            ShadowDrawDistBox.Items.AddRange(new object[] { "Low (Default)", "Medium", "High", "Very High" });
-            ShadowDrawDistBox.Location = new Point(155, 165);
-            ShadowDrawDistBox.Name = "ShadowDrawDistBox";
-            ShadowDrawDistBox.Size = new Size(152, 27);
-            ShadowDrawDistBox.TabIndex = 37;
-            BasicToolTip.SetToolTip(ShadowDrawDistBox, "Increases shadow and tessellation draw distance. Tessellation range only increases in interiors.\r\n");
-            ShadowDrawDistBox.SelectedIndexChanged += ShadowDrawDistBox_SelectedIndexChanged;
-            // 
-            // ShadowDrawLabel
-            // 
-            ShadowDrawLabel.AutoSize = true;
-            ShadowDrawLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            ShadowDrawLabel.ForeColor = Color.Black;
-            ShadowDrawLabel.Location = new Point(18, 168);
-            ShadowDrawLabel.Name = "ShadowDrawLabel";
-            ShadowDrawLabel.Size = new Size(131, 19);
-            ShadowDrawLabel.TabIndex = 36;
-            ShadowDrawLabel.Text = "Shadow Coverage";
-            BasicToolTip.SetToolTip(ShadowDrawLabel, "Increases shadow and tessellation draw distance. Tessellation range only increases in interiors.");
             // 
             // ShadowQualityBox
             // 
@@ -594,7 +548,7 @@
             ShadowQualityBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             ShadowQualityBox.FormattingEnabled = true;
             ShadowQualityBox.Items.AddRange(new object[] { "Low (Default)", "Medium", "High", "Very High" });
-            ShadowQualityBox.Location = new Point(155, 132);
+            ShadowQualityBox.Location = new Point(160, 132);
             ShadowQualityBox.Name = "ShadowQualityBox";
             ShadowQualityBox.Size = new Size(152, 27);
             ShadowQualityBox.TabIndex = 26;
@@ -607,7 +561,7 @@
             AntiAliasingBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AntiAliasingBox.FormattingEnabled = true;
             AntiAliasingBox.Items.AddRange(new object[] { "Off", "2x MSAA", "4x MSAA", "8xQ MSAA" });
-            AntiAliasingBox.Location = new Point(155, 99);
+            AntiAliasingBox.Location = new Point(160, 99);
             AntiAliasingBox.Name = "AntiAliasingBox";
             AntiAliasingBox.Size = new Size(152, 27);
             AntiAliasingBox.TabIndex = 9;
@@ -620,7 +574,7 @@
             AnisoBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisoBox.FormattingEnabled = true;
             AnisoBox.Items.AddRange(new object[] { "4x (Default)", "8x", "16x" });
-            AnisoBox.Location = new Point(509, 99);
+            AnisoBox.Location = new Point(160, 198);
             AnisoBox.Name = "AnisoBox";
             AnisoBox.Size = new Size(152, 27);
             AnisoBox.TabIndex = 8;
@@ -632,7 +586,7 @@
             AntiAliasingLabel.AutoSize = true;
             AntiAliasingLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AntiAliasingLabel.ForeColor = Color.Black;
-            AntiAliasingLabel.Location = new Point(54, 102);
+            AntiAliasingLabel.Location = new Point(59, 102);
             AntiAliasingLabel.Name = "AntiAliasingLabel";
             AntiAliasingLabel.Size = new Size(95, 19);
             AntiAliasingLabel.TabIndex = 1;
@@ -644,7 +598,7 @@
             MaxShadowLabel.AutoSize = true;
             MaxShadowLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MaxShadowLabel.ForeColor = Color.Black;
-            MaxShadowLabel.Location = new Point(31, 135);
+            MaxShadowLabel.Location = new Point(36, 135);
             MaxShadowLabel.Name = "MaxShadowLabel";
             MaxShadowLabel.Size = new Size(118, 19);
             MaxShadowLabel.TabIndex = 5;
@@ -656,7 +610,7 @@
             AnisotropyLabel.AutoSize = true;
             AnisotropyLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisotropyLabel.ForeColor = Color.Black;
-            AnisotropyLabel.Location = new Point(355, 102);
+            AnisotropyLabel.Location = new Point(6, 201);
             AnisotropyLabel.Name = "AnisotropyLabel";
             AnisotropyLabel.Size = new Size(148, 19);
             AnisotropyLabel.TabIndex = 0;
@@ -2354,7 +2308,6 @@
         private Label MapLabel;
         private Button StartGameButton;
         private LinkLabel TempLabel;
-        public CheckBox ReflectionBox;
         public Button ApplySettingsButton;
         public Label GPULabel;
         public Label CPULabel;
@@ -2375,8 +2328,6 @@
         private LinkLabel PayPalLabel;
         public Button TextureFixButton;
         public ToolTip BasicToolTip;
-        public ComboBox ShadowDrawDistBox;
-        private Label ShadowDrawLabel;
         private Label CTDownLabel;
         public Button CTDownButton1;
         private Label CentreCameraLabel;

@@ -367,24 +367,6 @@ namespace AsylumLauncher
             }
             Nlog.Info("WriteBmEngineAdvanced - Set Light Rays to {0}", IniHandler.BmEngineData["SystemSettings"]["bAllowLightShafts"]);
 
-            // Shadow Draw Distance
-            switch (Program.MainWindow.ShadowDrawDistBox.SelectedIndex)
-            {
-                case 1:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.008000";
-                    break;
-                case 2:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.008000";
-                    break;
-                case 3:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.002000";
-                    break;
-                default:
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"] = "0.012000";
-                    break;
-            }
-            Nlog.Info("WriteBmEngineAdvanced - Set Shadow Draw Distance to {0}", IniHandler.BmEngineData["SystemSettings"]["ShadowTexelsPerPixel"]);
-
             // PhysX
             IniHandler.BmEngineData["Engine.Engine"]["PhysXLevel"] = Program.MainWindow.PhysXBox.SelectedIndex switch
             {
