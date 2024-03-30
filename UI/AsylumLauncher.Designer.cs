@@ -677,7 +677,7 @@
             BasicDisplayGroupBox.Controls.Add(ResolutionLabel);
             BasicDisplayGroupBox.Controls.Add(LanguageLabel);
             BasicDisplayGroupBox.Controls.Add(FullscreenLabel);
-            BasicDisplayGroupBox.ForeColor = Color.Maroon;
+            BasicDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             BasicDisplayGroupBox.Location = new Point(3, 3);
             BasicDisplayGroupBox.Name = "BasicDisplayGroupBox";
             BasicDisplayGroupBox.Size = new Size(683, 229);
@@ -1393,7 +1393,7 @@
             AdvancedColorBox.Controls.Add(label13);
             AdvancedColorBox.Controls.Add(label12);
             AdvancedColorBox.Controls.Add(label9);
-            AdvancedColorBox.ForeColor = Color.Maroon;
+            AdvancedColorBox.ForeColor = SystemColors.HotTrack;
             AdvancedColorBox.Location = new Point(3, 542);
             AdvancedColorBox.Name = "AdvancedColorBox";
             AdvancedColorBox.Size = new Size(684, 421);
@@ -1634,7 +1634,7 @@
             groupBox4.Controls.Add(MouseSmoothingBox);
             groupBox4.Controls.Add(CustomFoV1Button);
             groupBox4.Controls.Add(label6);
-            groupBox4.ForeColor = Color.Maroon;
+            groupBox4.ForeColor = SystemColors.HotTrack;
             groupBox4.Location = new Point(3, 6);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(684, 530);
@@ -2147,7 +2147,7 @@
             // GPULabel
             // 
             GPULabel.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            GPULabel.ForeColor = Color.Maroon;
+            GPULabel.ForeColor = SystemColors.HotTrack;
             GPULabel.Location = new Point(392, 15);
             GPULabel.Name = "GPULabel";
             GPULabel.RightToLeft = RightToLeft.No;
@@ -2160,7 +2160,7 @@
             // CPULabel
             // 
             CPULabel.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CPULabel.ForeColor = Color.Maroon;
+            CPULabel.ForeColor = SystemColors.HotTrack;
             CPULabel.Location = new Point(6, 15);
             CPULabel.Name = "CPULabel";
             CPULabel.Size = new Size(361, 18);

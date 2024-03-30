@@ -476,7 +476,7 @@ namespace AsylumLauncher
             {
                 e.Graphics.DrawString(tabControl1.TabPages[e.Index].Text,
                     tabControl1.TabPages[e.Index].Font,
-                    Brushes.Firebrick,
+                    SystemBrushes.HotTrack,
                     new PointF(e.Bounds.X + 3, e.Bounds.Y + 3));
             }
             else
