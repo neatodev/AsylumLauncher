@@ -608,10 +608,7 @@ namespace AsylumLauncher
             {
                 Program.NvidiaHandler.ToggleHbaoPlus(hbaopluscheckbox.Checked);
             }
-            catch (NullReferenceException E)
-            {
-
-            }
+            catch (NullReferenceException) { }
         }
     }
 }

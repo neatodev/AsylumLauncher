@@ -2401,8 +2401,8 @@
         public Label MidtonesValueLabel;
         public Label HighlightsValueLabel;
         public Label SaturationValueLabel;
-        private Button RunAsAdminButton;
         private GroupBox nvidiaBox;
         public CheckBox hbaopluscheckbox;
+        public Button RunAsAdminButton;
     }
 }
