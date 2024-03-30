@@ -26,6 +26,7 @@ namespace AsylumLauncher
         public string UserInputPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\UserInput.ini");
         private string BmGamePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmGame.ini");
         public FileInfo BmEngine = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini"));
+        public FileInfo UserInput = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\UserInput.ini"));
         public FileInfo UserEngine = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\UserEngine.ini"));
         public FileInfo BmInput = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmInput.ini"));
 
@@ -83,6 +84,7 @@ namespace AsylumLauncher
 
             if (File.Exists(UserInputPath))
             {
+                UserInput.IsReadOnly = false;
                 string[] UserLines = File.ReadAllLines(UserInputPath);
                 if (UserLines.Length < 63)
                 {
