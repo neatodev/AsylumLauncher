@@ -22,7 +22,7 @@ namespace AsylumLauncher.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AsylumLauncher.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AsylumLauncher.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace AsylumLauncher.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About_Image_4_border {
+        public static System.Drawing.Bitmap About_Image_4_border {
             get {
                 object obj = ResourceManager.GetObject("About_Image_4_border", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -75,11 +75,11 @@ namespace AsylumLauncher.Properties {
         ///EnableCameraAssist=True
         ///
         ///[IniVersion]
-        ///0=1648928426.000000
+        ///0=1577365085.000000
         ///
         ///.
         /// </summary>
-        internal static string BmCamera {
+        public static string BmCamera {
             get {
                 return ResourceManager.GetString("BmCamera", resourceCulture);
             }
@@ -120,9 +120,52 @@ namespace AsylumLauncher.Properties {
         ///VendorMobileTag=Go
         ///0x014F [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BmCompat {
+        public static string BmCompat {
             get {
                 return ResourceManager.GetString("BmCompat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [AnimSetViewer]
+        ///CheckSingleInfluenceLOD=True
+        ///
+        ///[UnrealEd.KismetBindings]
+        ///Bindings=(Key=&quot;O&quot;,SeqObjClassName=&quot;Engine.SeqVar_Object&quot;)
+        ///Bindings=(Key=&quot;S&quot;,SeqObjClassName=&quot;Engine.SeqAct_PlaySound&quot;)
+        ///Bindings=(Key=&quot;P&quot;,SeqObjClassName=&quot;Engine.SeqVar_Player&quot;)
+        ///Bindings=(Key=&quot;I&quot;,SeqObjClassName=&quot;Engine.SeqVar_Int&quot;)
+        ///Bindings=(Key=&quot;I&quot;,bControl=true,SeqObjClassName=&quot;Engine.SeqCond_CompareInt&quot;)
+        ///Bindings=(Key=&quot;F&quot;,SeqObjClassName=&quot;Engine.SeqVar_Float&quot;)
+        ///Bindings=(Key=&quot;F&quot;,bControl=true,SeqObjClassName=&quot;Engine.SeqCond_ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BmEditor {
+            get {
+                return ResourceManager.GetString("BmEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Editor.EditorUserSettings]
+        ///AllowFlightCameraToRemapKeys=True
+        ///PreviewThumbnailBackgroundColor=(R=0,G=0,B=0)
+        ///PreviewThumbnailTranslucentMaterialBackgroundColor=(R=127,G=127,B=127)
+        ///bAutoSaveEnable=True
+        ///AutoSaveTimeMinutes=10
+        ///
+        ///[WindowPosManager]
+        ///DlgAddSpecial=879,571,328,226,0
+        ///DlgActorSearch=379,262,881,507,0
+        ///DlgActorFactory=783,544,553,311,0
+        ///DlgBuildProgress=560,475,806,180,0
+        ///SurfaceProperties=647,491,514,477,0
+        ///DockingContainer=64,33,940,1076,0
+        ///FloatingFrame_DockingContainer=64,33,940,1076,0
+        ///Dl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BmEditorUserSettings {
+            get {
+                return ResourceManager.GetString("BmEditorUserSettings", resourceCulture);
             }
         }
         
@@ -130,27 +173,27 @@ namespace AsylumLauncher.Properties {
         ///   Looks up a localized string similar to [URL]
         ///Protocol=unreal
         ///Name=Player
-        ///Map=Frontend.umap
-        ///LocalMap=Frontend.umap
-        ///LocalOptions=?Game=BmGame.RGIFrontend
+        ///Map=Boot.umap
+        ///LocalMap=Boot.umap
         ///TransitionMap=Entry
         ///MapExt=umap
         ///EXEName=BmGame.exe
         ///DebugEXEName=DEBUG-BmGame.exe
         ///SaveExt=usa
         ///Port=7777
-        ///PeerPort=7778
-        ///GameName=Batman: Arkham City
+        ///GameName=Batman
         ///GameNameShort=Bm
         ///
         ///[Engine.Engine]
         ///NetworkDevice=IpDrv.TcpNetDriver
-        ///FallbackNetworkDevice=IpDrv.TcpNetDriver
         ///ConsoleClassName=Engine.Console
         ///GameViewportClientClassName=BmGame.RGFxGameViewportClient
-        ///LocalPlayerClassName=Engine.LocalP [rest of string was truncated]&quot;;.
+        ///LocalPlayerClassName=Engine.LocalPlayer
+        ///DataStoreClientClassName=Engine.DataStoreClient
+        ///StorageDeviceManagerClassName=Engine.StorageDeviceManager
+        ///La [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BmEngine {
+        public static string BmEngine {
             get {
                 return ResourceManager.GetString("BmEngine", resourceCulture);
             }
@@ -161,7 +204,7 @@ namespace AsylumLauncher.Properties {
         ///DefaultGame=BmGame.RGameInfo
         ///DefaultServerGame=BmGame.RGameInfo
         ///bAdminCanPause=false
-        ///MaxPlayers=2
+        ///MaxPlayers=1
         ///GameDifficulty=+1.0
         ///bChangeLevels=True
         ///MaxSpectators=0
@@ -176,17 +219,16 @@ namespace AsylumLauncher.Properties {
         ///[Engine.AccessControl]
         ///IPPolicies=ACCEPT;*
         ///
+        ///[Engine.GameReplicationInfo]
+        ///ServerName=Another Server
+        ///ShortName=Server
+        ///MessageOfTheDay=
+        ///
         ///[DefaultPlayer]
         ///Name=Player
-        ///Team=255
-        ///
-        ///[Engine.HUD]
-        ///bMessageBeep=true
-        ///HudCanvasScale=0.95
-        ///ConsoleMessageCount=4
-        ///Console [rest of string was truncated]&quot;;.
+        ///t [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BmGame {
+        public static string BmGame {
             get {
                 return ResourceManager.GetString("BmGame", resourceCulture);
             }
@@ -207,7 +249,7 @@ namespace AsylumLauncher.Properties {
         ///Bindings=(Name=&quot;MoveBackward&quot;,Command=&quot;Axis aBaseY Speed=-1.0&quot;)
         ///Bindings=(Name=&quot;TurnLeft&quot;,Command=&quot;Axis aBaseX S [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BmInput {
+        public static string BmInput {
             get {
                 return ResourceManager.GetString("BmInput", resourceCulture);
             }
@@ -230,9 +272,10 @@ namespace AsylumLauncher.Properties {
         ///bAllowEagerLightmapEncode=False
         ///bUseBilinearFilterLightmaps=True
         ///bRepackLightAndShadowMapTextures=False
-        ///bAllow64bitProcess=True [rest of string was truncated]&quot;;.
+        ///bAllow64bitProcess=True
+        ///DefaultStaticMe [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BmLightmass {
+        public static string BmLightmass {
             get {
                 return ResourceManager.GetString("BmLightmass", resourceCulture);
             }
@@ -240,26 +283,35 @@ namespace AsylumLauncher.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to [Engine.UIInteraction]
+        ///UISkinName=DefaultUISkin.DefaultSkin
         ///UIJoystickDeadZone=0.9
         ///UIAxisMultiplier=1.0
         ///AxisRepeatDelay=0.2
         ///MouseButtonRepeatDelay=0.15
         ///DoubleClickTriggerSeconds=0.5
         ///DoubleClickPixelTolerance=1
-        ///ConfiguredAxisEmulationDefinitions=(AxisInputKey=MouseX,AdjacentAxisInputKey=MouseY,bEmulateButtonPress=False)
-        ///ConfiguredAxisEmulationDefinitions=(AxisInputKey=MouseY,AdjacentAxisInputKey=MouseX,bEmulateButtonPress=False)
-        ///ConfiguredAxisEmulationDefinitions=(AxisInputKey=XboxTypeS_LeftX,AdjacentAxisInputKey=XboxTypeS_LeftY,bEmula [rest of string was truncated]&quot;;.
+        ///ToolTipInitialDelaySeconds=0.25
+        ///ToolTipExpirationSeconds=5.0
+        ///UISoundCueNames=GenericError
+        ///UISoundCueNames=MouseEnter
+        ///UISoundCueNames=MouseExit
+        ///UISoundCueNames=Clicked
+        ///UISoundCueNames=Focused
+        ///UISoundCueNames=SceneOpened
+        ///UISoundCueNames=SceneClosed
+        ///UISoundCueNames=ListSubmit
+        ///UISoundCue [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BmUI {
+        public static string BmUI {
             get {
                 return ResourceManager.GetString("BmUI", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to set R3rdPersonCamera WalkCamConfig (StateFreeCameraSitOffsetMin=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraSitOffsetMax=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraPullOffset=(X=0.000000,Y=0.000000,Z=0.000000),CameraPivotOffset=(X=0.000000,Y=0.000000,Z=65.000000),ZoomedOffset=(X=0.000000,Y=0.000000,Z=80.000000),maxPitch=14500.000000,MinPitch=-13000.000000,MinFreeCameraDistance=300.000000,MaxFreeCameraDistance=300.000000,ShortCamSpringConst=250.000000,LongCamSpringConst=250.000000,DefaultCameraP [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to set R3rdPersonCamera WalkCamConfig (StateFreeCameraSitOffsetMin=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraSitOffsetMax=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraPullOffset=(X=0.000000,Y=0.000000,Z=0.000000),CameraPivotOffset=(X=0.000000,Y=0.000000,Z=65.000000),ZoomedOffset=(X=0.000000,Y=0.000000,Z=80.000000),maxPitch=14500.000000,MinPitch=-100000.000000,MinFreeCameraDistance=300.000000,MaxFreeCameraDistance=300.000000,ShortCamSpringConst=250.000000,LongCamSpringConst=250.000000,DefaultCamera [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string centre_camera {
+        public static string centre_camera {
             get {
                 return ResourceManager.GetString("centre_camera", resourceCulture);
             }
@@ -268,7 +320,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized string similar to //Type custom commands here and execute them with the keybind you set using the advanced launcher. .
         /// </summary>
-        internal static string custom_commands {
+        public static string custom_commands {
             get {
                 return ResourceManager.GetString("custom_commands", resourceCulture);
             }
@@ -277,7 +329,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Default_2 {
+        public static System.Drawing.Bitmap Default_2 {
             get {
                 object obj = ResourceManager.GetObject("Default_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -285,29 +337,9 @@ namespace AsylumLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] GlobalShaderCache_PC_D3D_SM3 {
-            get {
-                object obj = ResourceManager.GetObject("GlobalShaderCache-PC-D3D-SM3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] GlobalShaderCache_PC_D3D_SM5 {
-            get {
-                object obj = ResourceManager.GetObject("GlobalShaderCache-PC-D3D-SM5", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap High_Contrast_2 {
+        public static System.Drawing.Bitmap High_Contrast_2 {
             get {
                 object obj = ResourceManager.GetObject("High_Contrast_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -317,7 +349,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon icon2 {
+        public static System.Drawing.Icon icon2 {
             get {
                 object obj = ResourceManager.GetObject("icon2", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -327,7 +359,17 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Log_1_2 {
+        public static System.Drawing.Bitmap icons8_microsoft_admin_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-microsoft-admin-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Log_1_2 {
             get {
                 object obj = ResourceManager.GetObject("Log_1_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -337,7 +379,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Log_2_2 {
+        public static System.Drawing.Bitmap Log_2_2 {
             get {
                 object obj = ResourceManager.GetObject("Log_2_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -347,7 +389,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Monochrome_2 {
+        public static System.Drawing.Bitmap Monochrome_2 {
             get {
                 object obj = ResourceManager.GetObject("Monochrome_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -357,7 +399,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Muted_2 {
+        public static System.Drawing.Bitmap Muted_2 {
             get {
                 object obj = ResourceManager.GetObject("Muted_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -367,7 +409,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Phase1 {
+        public static System.Drawing.Bitmap Phase1 {
             get {
                 object obj = ResourceManager.GetObject("Phase1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -377,7 +419,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Phase2 {
+        public static System.Drawing.Bitmap Phase2 {
             get {
                 object obj = ResourceManager.GetObject("Phase2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -387,7 +429,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Phase3 {
+        public static System.Drawing.Bitmap Phase3 {
             get {
                 object obj = ResourceManager.GetObject("Phase3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -397,7 +439,7 @@ namespace AsylumLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream startup {
+        public static System.IO.UnmanagedMemoryStream startup {
             get {
                 return ResourceManager.GetStream("startup", resourceCulture);
             }
@@ -409,32 +451,32 @@ namespace AsylumLauncher.Properties {
         ///
         ///[SystemSettings]
         ///Fullscreen=True
-        ///UseVsync=True
-        ///AllowD3D10=False
-        ///AllowD3D11=False
-        ///ResX=1600
-        ///ResY=900
+        ///UseVsync=False
+        ///AllowD3D10=True
+        ///ResX=1
+        ///ResY=1
         ///EffectsLevel=3
-        ///MultisampleMode=FXAA-HI
+        ///MaxMultisamples=1
         ///DynamicLights=True
+        ///DepthOfField=True
         ///LensFlares=True
-        ///bAllowLightShafts=True
+        ///Bloom=True
         ///DynamicShadows=True
-        ///MotionBlur=True
+        ///MotionBlur=False
         ///Distortion=True
-        ///Reflections=True
+        ///FogVolumes=True
+        ///DisableSphericalHarmonicLights=False
         ///AmbientOcclusion=True
         ///DetailMode=2
-        ///MaxShadowResolution=512
-        ///IniVersion=6.9
+        ///MaxShadowResolution=1024
+        ///Stereo=False
+        ///IniVersion=5.8
         ///
         ///[Engine.Engine]
         ///bOnScreenKismetWarnings=FALSE
-        ///bSubtitlesEnabled=FALSE
-        ///PhysXLevel=1
-        /// [rest of string was truncated]&quot;;.
+        ///bSubtitl [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string UserEngine {
+        public static string UserEngine {
             get {
                 return ResourceManager.GetString("UserEngine", resourceCulture);
             }
@@ -446,19 +488,20 @@ namespace AsylumLauncher.Properties {
         ///
         ///[BmGame.RPlayerController]
         ///!CI_KeyboardMap=&quot;&quot;
-        ///.CI_KeyboardMap=&quot;&quot;		;CI_None
-        ///.CI_KeyboardMap=&quot;_Start&quot;		;CI_UI_Start
-        ///.CI_KeyboardMap=&quot;_Select&quot;		;CI_UI_Select
-        ///.CI_KeyboardMap=&quot;Enter&quot;		;CI_UI_A
-        ///.CI_KeyboardMap=&quot;Escape&quot;		;CI_UI_B
-        ///.CI_KeyboardMap=&quot;RightControl&quot;		;CI_UI_X
-        ///.CI_KeyboardMap=&quot;Backspace&quot;		;CI_UI_Y
-        ///.CI_KeyboardMap=&quot;_ShoulderL&quot;		;CI_UI_L1
-        ///.CI_KeyboardMap=&quot;_TriggerL&quot;		;CI_UI_L2
-        ///.CI_KeyboardMap=&quot;_A&quot;		;CI_UI_L3
-        ///.CI_KeyboardMap=&quot;_Shoulde [rest of string was truncated]&quot;;.
+        ///CI_KeyboardMap=&quot;&quot;		;CI_None
+        ///.CI_KeyboardMap=&quot;Space&quot;			;CI_Interact
+        ///.CI_KeyboardMap=&quot;_MMB&quot;			;CI_B
+        ///.CI_KeyboardMap=&quot;_LMB&quot;			;CI_X
+        ///.CI_KeyboardMap=&quot;_RMB&quot;			;CI_Y
+        ///.CI_KeyboardMap=&quot;X&quot;			;CI_VisionModes
+        ///.CI_KeyboardMap=&quot;_RMB&quot;			;CI_AimGadget
+        ///.CI_KeyboardMap=&quot;_LMB&quot;			;CI_UseGadget
+        ///.CI_KeyboardMap=&quot;F&quot;			;CI_UseGrapple
+        ///.CI_KeyboardMap=&quot;&quot;		;CI_UseScanner
+        ///.CI_KeyboardMap=&quot;Tab&quot;		;CI_Map
+        ///.CI_KeyboardM [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string UserGame {
+        public static string UserGame {
             get {
                 return ResourceManager.GetString("UserGame", resourceCulture);
             }
@@ -469,11 +512,11 @@ namespace AsylumLauncher.Properties {
         ///BasedOn=..\BmGame\Config\DefaultInput.ini
         ///
         ///[Engine.PlayerInput]
-        ///IniVersion=6.9
-        ///.Bindings=(Name=&quot;W&quot;,Command=&quot;MoveForward | DebugMenuUpPressed | OnRelease DebugMenuUpReleased | Axis aRawLHJoyUp Speed=1.0&quot;, Shift=false, Control=false, Alt=false, bIgnoreShift=false, bIgnoreCtrl=false, bIgnoreAlt=false):META:COM_FORWARD,0,-1,-1,&quot;&quot;,false,true,CI_Movement,CI_LeftStick,CI_LeftStickUp,CI_LeftStickUpAndDown
-        ///.Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward | DebugMenuDownPressed | OnRelease DebugMenuDow [rest of string was truncated]&quot;;.
+        ///IniVersion=5.8
+        ///.Bindings=(Name=&quot;W&quot;,Command=&quot;MoveForward | DebugMenuUpPressed | OnRelease DebugMenuUpReleased | Axis aRawLHJoyUp Speed=1.0&quot;, Shift=false, Control=false, Alt=false, bIgnoreShift=false, bIgnoreCtrl=false, bIgnoreAlt=false):META:COM_FORWARD,0,-1,-1,&quot;&quot;,false,false,CI_Movement,CI_LeftStick,CI_LeftStickUp
+        ///.Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward | DebugMenuDownPressed | OnRelease DebugMenuDownReleased | Axis aRaw [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string UserInput {
+        public static string UserInput {
             get {
                 return ResourceManager.GetString("UserInput", resourceCulture);
             }

@@ -488,7 +488,7 @@ namespace AsylumLauncher
 
         private void NeatoLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://steamcommunity.com/id/frofoo/", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://www.nexusmods.com/users/81089053", UseShellExecute = true });
         }
 
         private void GPUnityLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

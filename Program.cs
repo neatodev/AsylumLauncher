@@ -4,6 +4,7 @@ using NLog.Targets;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 
 namespace AsylumLauncher
 {
@@ -21,6 +22,8 @@ namespace AsylumLauncher
         public static FileHandler FileHandler;
 
         public static InputHandler InputHandler;
+
+        public static bool IsAdmin;
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -41,6 +44,7 @@ namespace AsylumLauncher
             {
                 if (IsNewWindow)
                 {
+                    IsAdmin = CheckIsAdmin();
                     SetupCulture();
                     SetupLogger();
                     InitializeProgram();
@@ -58,6 +62,15 @@ namespace AsylumLauncher
                         }
                     }
                 }
+            }
+        }
+
+        private static bool CheckIsAdmin()
+        {
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                var principal = new WindowsPrincipal(identity);
+                return principal?.IsInRole(WindowsBuiltInRole.Administrator) ?? false;
             }
         }
 
