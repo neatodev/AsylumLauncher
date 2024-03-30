@@ -309,36 +309,38 @@
             AdvancedDisplayGroupBox.Controls.Add(AntiAliasingLabel);
             AdvancedDisplayGroupBox.Controls.Add(MaxShadowLabel);
             AdvancedDisplayGroupBox.Controls.Add(AnisotropyLabel);
+            AdvancedDisplayGroupBox.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             AdvancedDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             AdvancedDisplayGroupBox.Location = new Point(3, 339);
             AdvancedDisplayGroupBox.Name = "AdvancedDisplayGroupBox";
-            AdvancedDisplayGroupBox.Size = new Size(683, 275);
+            AdvancedDisplayGroupBox.Size = new Size(683, 282);
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
             // 
             // nvidiaBox
             // 
+            nvidiaBox.AutoSize = true;
             nvidiaBox.Controls.Add(checkBox1);
             nvidiaBox.Controls.Add(RunAsAdminButton);
             nvidiaBox.Controls.Add(PhysXBox);
             nvidiaBox.Controls.Add(PhysXLabel);
-            nvidiaBox.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            nvidiaBox.ForeColor = Color.ForestGreen;
-            nvidiaBox.Location = new Point(429, 135);
+            nvidiaBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            nvidiaBox.ForeColor = Color.LimeGreen;
+            nvidiaBox.Location = new Point(387, 135);
             nvidiaBox.Name = "nvidiaBox";
-            nvidiaBox.Size = new Size(240, 108);
+            nvidiaBox.Size = new Size(280, 115);
             nvidiaBox.TabIndex = 54;
             nvidiaBox.TabStop = false;
-            nvidiaBox.Text = "NVIDIA SETTINGS";
+            nvidiaBox.Text = "Nvidia Settings";
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
             checkBox1.CheckAlign = ContentAlignment.MiddleRight;
             checkBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.ForeColor = Color.ForestGreen;
-            checkBox1.Location = new Point(80, 72);
+            checkBox1.ForeColor = Color.Black;
+            checkBox1.Location = new Point(120, 65);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(124, 23);
             checkBox1.TabIndex = 54;
@@ -351,7 +353,7 @@
             RunAsAdminButton.BackgroundImage = Properties.Resources.blue;
             RunAsAdminButton.BackgroundImageLayout = ImageLayout.Zoom;
             RunAsAdminButton.ForeColor = Color.Black;
-            RunAsAdminButton.Location = new Point(208, 68);
+            RunAsAdminButton.Location = new Point(250, 62);
             RunAsAdminButton.Name = "RunAsAdminButton";
             RunAsAdminButton.Size = new Size(24, 27);
             RunAsAdminButton.TabIndex = 53;
@@ -365,7 +367,7 @@
             PhysXBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PhysXBox.FormattingEnabled = true;
             PhysXBox.Items.AddRange(new object[] { "Off", "Medium", "High" });
-            PhysXBox.Location = new Point(80, 35);
+            PhysXBox.Location = new Point(122, 25);
             PhysXBox.Name = "PhysXBox";
             PhysXBox.Size = new Size(152, 27);
             PhysXBox.TabIndex = 38;
@@ -377,7 +379,7 @@
             PhysXLabel.AutoSize = true;
             PhysXLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PhysXLabel.ForeColor = Color.Black;
-            PhysXLabel.Location = new Point(24, 38);
+            PhysXLabel.Location = new Point(66, 30);
             PhysXLabel.Name = "PhysXLabel";
             PhysXLabel.Size = new Size(50, 19);
             PhysXLabel.TabIndex = 24;
@@ -583,7 +585,6 @@
             ShadowDrawLabel.TabIndex = 36;
             ShadowDrawLabel.Text = "Shadow Coverage";
             BasicToolTip.SetToolTip(ShadowDrawLabel, "Increases shadow and tessellation draw distance. Tessellation range only increases in interiors.");
-            ShadowDrawLabel.Click += ShadowDrawLabel_Click;
             // 
             // ShadowQualityBox
             // 
