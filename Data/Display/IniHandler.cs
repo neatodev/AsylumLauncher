@@ -13,17 +13,88 @@ namespace AsylumLauncher
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
 
-        public string[] TexturePackDefaults = { "(MinLODSize=256,MaxLODSize=2048,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)",
-                                                "(MinLODSize=128,MaxLODSize=2048,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)",
-                                                "(MinLODSize=128,MaxLODSize=1024,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)",
-                                                "(MinLODSize=1024,MaxLODSize=2048,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)"};
+        public string[] TexturePackDefaults = { "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=512,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=512,LODBias=0)",
+                                                "(MinLODSize=1024,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=1024,LODBias=0)"};
 
-        public string[] TexturePackEnabled = { "(MinLODSize=256,MaxLODSize=4096,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)",
-                                               "(MinLODSize=128,MaxLODSize=4096,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)",
-                                               "(MinLODSize=128,MaxLODSize=8192,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)",
-                                               "(MinLODSize=1024,MaxLODSize=4096,LODBias=0,MinMagFilter=Aniso,MipFilter=Point,MipGenSettings=TMGS_SimpleAverage)"};
+        public string[] TexturePackEnabled = { "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=4096,LODBias=0)", // Character
+                                                "(MinLODSize=512,MaxLODSize=4096,LODBias=0)", // Character Normal
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=512,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=512,LODBias=0)",
+                                                "(MinLODSize=1024,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=256,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=2048,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=1024,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=1024,LODBias=0)"};
 
-        public bool[] TexPackEnabled = { false, false, false, false, false };
+        public string[] TexturePackMaximum = { "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=512,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=1024,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=1,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
+                                                "(MinLODSize=128,MaxLODSize=4096,LODBias=0)"};
+
+        public bool[] TexPackEnabled = new bool[26];
 
         public IniHandler()
         {

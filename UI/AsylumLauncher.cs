@@ -526,8 +526,6 @@ namespace AsylumLauncher
         {
             if (Program.IniHandler.TexPackEnabled.All(x => x))
             {
-                Program.MainWindow.TextureFixButton.Text = "ENABLE TEXTURE PACK FIX";
-                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.TextureFixButton, "Enable for HD Texture Pack support. Raises the maximum texture resolution rendered by the game.");
                 if (Program.MainWindow.PoolsizeBox.SelectedIndex >= 2)
                 {
                     Program.MainWindow.PoolsizeBox.SelectedIndex = 0;
@@ -539,8 +537,6 @@ namespace AsylumLauncher
             }
             else
             {
-                Program.MainWindow.TextureFixButton.Text = "DISABLE TEXTURE PACK FIX";
-                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.TextureFixButton, "Disable Texture Pack Fix. It is currently enabled.");
                 if (Program.MainWindow.PoolsizeBox.SelectedIndex < 2)
                 {
                     Program.MainWindow.PoolsizeBox.SelectedIndex = 2;
@@ -609,6 +605,11 @@ namespace AsylumLauncher
                 Program.NvidiaHandler.ToggleHbaoPlus(hbaopluscheckbox.Checked);
             }
             catch (NullReferenceException) { }
+        }
+
+        private void texpacksupportbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplaySettingChanged = true;
         }
     }
 }

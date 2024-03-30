@@ -422,37 +422,92 @@ namespace AsylumLauncher
 
         private void WriteTextureGroupLines()
         {
-            if (Program.IniHandler.TexPackEnabled.All(x => x))
+            if (Program.MainWindow.texpacksupportbox.SelectedIndex == 2)
             {
-                //TEXTUREGROUP_Character
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] = Program.IniHandler.TexturePackEnabled[0];
-                //TEXTUREGROUP_CharacterNormalMap
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] = Program.IniHandler.TexturePackEnabled[1];
-                //TEXTUREGROUP_World_Hi
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] = Program.IniHandler.TexturePackEnabled[2];
-                //TEXTUREGROUP_WorldNormalMap_Hi
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackEnabled[2];
-                //TEXTUREGROUP_UI
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = Program.IniHandler.TexturePackEnabled[3];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = Program.IniHandler.TexturePackMaximum[0];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = Program.IniHandler.TexturePackMaximum[1];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular"] = Program.IniHandler.TexturePackMaximum[2];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] = Program.IniHandler.TexturePackMaximum[3];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] = Program.IniHandler.TexturePackMaximum[4];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterSpecular"] = Program.IniHandler.TexturePackMaximum[5];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon"] = Program.IniHandler.TexturePackMaximum[6];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponNormalMap"] = Program.IniHandler.TexturePackMaximum[7];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponSpecular"] = Program.IniHandler.TexturePackMaximum[8];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Vehicle"] = Program.IniHandler.TexturePackMaximum[9];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleNormalMap"] = Program.IniHandler.TexturePackMaximum[10];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleSpecular"] = Program.IniHandler.TexturePackMaximum[11];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"] = Program.IniHandler.TexturePackMaximum[12];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects"] = Program.IniHandler.TexturePackMaximum[13];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_EffectsNotFiltered"] = Program.IniHandler.TexturePackMaximum[14];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Skybox"] = Program.IniHandler.TexturePackMaximum[15];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = Program.IniHandler.TexturePackMaximum[16];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"] = Program.IniHandler.TexturePackMaximum[17];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_RenderTarget"] = Program.IniHandler.TexturePackMaximum[18];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3P"] = Program.IniHandler.TexturePackMaximum[19];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PNormalMap"] = Program.IniHandler.TexturePackMaximum[20];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PSpecular"] = Program.IniHandler.TexturePackMaximum[21];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] = Program.IniHandler.TexturePackMaximum[22];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackMaximum[23];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackMaximum[24];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackMaximum[25];
             }
+            else if (Program.MainWindow.texpacksupportbox.SelectedIndex == 1)
+            {
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = Program.IniHandler.TexturePackEnabled[0];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = Program.IniHandler.TexturePackEnabled[1];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular"] = Program.IniHandler.TexturePackEnabled[2];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] = Program.IniHandler.TexturePackEnabled[3];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] = Program.IniHandler.TexturePackEnabled[4];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterSpecular"] = Program.IniHandler.TexturePackEnabled[5];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon"] = Program.IniHandler.TexturePackEnabled[6];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponNormalMap"] = Program.IniHandler.TexturePackEnabled[7];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponSpecular"] = Program.IniHandler.TexturePackEnabled[8];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Vehicle"] = Program.IniHandler.TexturePackEnabled[9];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleNormalMap"] = Program.IniHandler.TexturePackEnabled[10];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleSpecular"] = Program.IniHandler.TexturePackEnabled[11];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"] = Program.IniHandler.TexturePackEnabled[12];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects"] = Program.IniHandler.TexturePackEnabled[13];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_EffectsNotFiltered"] = Program.IniHandler.TexturePackEnabled[14];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Skybox"] = Program.IniHandler.TexturePackEnabled[15];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = Program.IniHandler.TexturePackEnabled[16];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"] = Program.IniHandler.TexturePackEnabled[17];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_RenderTarget"] = Program.IniHandler.TexturePackEnabled[18];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3P"] = Program.IniHandler.TexturePackEnabled[19];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PNormalMap"] = Program.IniHandler.TexturePackEnabled[20];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PSpecular"] = Program.IniHandler.TexturePackEnabled[21];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] = Program.IniHandler.TexturePackEnabled[22];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackEnabled[23];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackEnabled[24];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackEnabled[25];
+            } 
             else
             {
-                //TEXTUREGROUP_Character
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] = Program.IniHandler.TexturePackDefaults[0];
-                //TEXTUREGROUP_CharacterNormalMap
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] = Program.IniHandler.TexturePackDefaults[1];
-                //TEXTUREGROUP_World_Hi
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] = Program.IniHandler.TexturePackDefaults[1];
-                //TEXTUREGROUP_WorldNormalMap_Hi
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackDefaults[1];
-                //TEXTUREGROUP_World
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = Program.IniHandler.TexturePackDefaults[2];
-                //TEXTUREGROUP_WorldNormalMap
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = Program.IniHandler.TexturePackDefaults[2];
-                //TEXTUREGROUP_WorldSpecular
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = Program.IniHandler.TexturePackDefaults[0];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = Program.IniHandler.TexturePackDefaults[1];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular"] = Program.IniHandler.TexturePackDefaults[2];
-                //TEXTUREGROUP_UI
-                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = Program.IniHandler.TexturePackDefaults[3];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] = Program.IniHandler.TexturePackDefaults[3];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] = Program.IniHandler.TexturePackDefaults[4];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterSpecular"] = Program.IniHandler.TexturePackDefaults[5];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon"] = Program.IniHandler.TexturePackDefaults[6];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponNormalMap"] = Program.IniHandler.TexturePackDefaults[7];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponSpecular"] = Program.IniHandler.TexturePackDefaults[8];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Vehicle"] = Program.IniHandler.TexturePackDefaults[9];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleNormalMap"] = Program.IniHandler.TexturePackDefaults[10];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleSpecular"] = Program.IniHandler.TexturePackDefaults[11];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"] = Program.IniHandler.TexturePackDefaults[12];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects"] = Program.IniHandler.TexturePackDefaults[13];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_EffectsNotFiltered"] = Program.IniHandler.TexturePackDefaults[14];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Skybox"] = Program.IniHandler.TexturePackDefaults[15];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = Program.IniHandler.TexturePackDefaults[16];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"] = Program.IniHandler.TexturePackDefaults[17];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_RenderTarget"] = Program.IniHandler.TexturePackDefaults[18];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3P"] = Program.IniHandler.TexturePackDefaults[19];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PNormalMap"] = Program.IniHandler.TexturePackDefaults[20];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PSpecular"] = Program.IniHandler.TexturePackDefaults[21];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] = Program.IniHandler.TexturePackDefaults[22];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackDefaults[23];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackDefaults[24];
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackDefaults[25];
             }
             Nlog.Info("WriteTextureGroupLines - Set Texture Pack Fix to: {0}", Program.IniHandler.TexPackEnabled.All(x => x).ToString());
         }

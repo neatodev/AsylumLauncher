@@ -60,6 +60,8 @@
             MaxShadowLabel = new Label();
             AnisotropyLabel = new Label();
             BasicDisplayGroupBox = new GroupBox();
+            texpacksupportbox = new ComboBox();
+            texpacklabel = new Label();
             SkipIntroBox = new CheckBox();
             LanguageBox = new ComboBox();
             FrameCapTextBox = new MaskedTextBox();
@@ -172,7 +174,6 @@
             ApplySettingsButton = new Button();
             ManualModeButton = new Button();
             BasicToolTip = new ToolTip(components);
-            TextureFixButton = new Button();
             GPULabel = new Label();
             CPULabel = new Label();
             StartGameButton = new Button();
@@ -620,6 +621,8 @@
             // BasicDisplayGroupBox
             // 
             BasicDisplayGroupBox.AutoSize = true;
+            BasicDisplayGroupBox.Controls.Add(texpacksupportbox);
+            BasicDisplayGroupBox.Controls.Add(texpacklabel);
             BasicDisplayGroupBox.Controls.Add(SkipIntroBox);
             BasicDisplayGroupBox.Controls.Add(LanguageBox);
             BasicDisplayGroupBox.Controls.Add(FrameCapTextBox);
@@ -637,10 +640,35 @@
             BasicDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             BasicDisplayGroupBox.Location = new Point(3, 3);
             BasicDisplayGroupBox.Name = "BasicDisplayGroupBox";
-            BasicDisplayGroupBox.Size = new Size(683, 229);
+            BasicDisplayGroupBox.Size = new Size(683, 238);
             BasicDisplayGroupBox.TabIndex = 13;
             BasicDisplayGroupBox.TabStop = false;
             BasicDisplayGroupBox.Text = "BASIC";
+            // 
+            // texpacksupportbox
+            // 
+            texpacksupportbox.DropDownStyle = ComboBoxStyle.DropDownList;
+            texpacksupportbox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            texpacksupportbox.FormattingEnabled = true;
+            texpacksupportbox.Items.AddRange(new object[] { "Disabled", "Asylum Reborn", "Maximum" });
+            texpacksupportbox.Location = new Point(517, 71);
+            texpacksupportbox.Name = "texpacksupportbox";
+            texpacksupportbox.Size = new Size(152, 27);
+            texpacksupportbox.TabIndex = 18;
+            BasicToolTip.SetToolTip(texpacksupportbox, "Replaces the Detail Level option from the original launcher and covers every value.\r\n- Highest setting is required for the HD Texture Pack. ");
+            texpacksupportbox.SelectedIndexChanged += texpacksupportbox_SelectedIndexChanged;
+            // 
+            // texpacklabel
+            // 
+            texpacklabel.AutoSize = true;
+            texpacklabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            texpacklabel.ForeColor = Color.Black;
+            texpacklabel.Location = new Point(355, 74);
+            texpacklabel.Name = "texpacklabel";
+            texpacklabel.Size = new Size(156, 19);
+            texpacklabel.TabIndex = 17;
+            texpacklabel.Text = "Texture Pack Support";
+            BasicToolTip.SetToolTip(texpacklabel, "Replaces the Detail Level option from the original launcher and covers every value.\r\n- Highest setting is required for the HD Texture Pack. ");
             // 
             // SkipIntroBox
             // 
@@ -649,7 +677,7 @@
             SkipIntroBox.Enabled = false;
             SkipIntroBox.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             SkipIntroBox.ForeColor = Color.Black;
-            SkipIntroBox.Location = new Point(67, 138);
+            SkipIntroBox.Location = new Point(67, 137);
             SkipIntroBox.Name = "SkipIntroBox";
             SkipIntroBox.Size = new Size(214, 27);
             SkipIntroBox.TabIndex = 16;
@@ -664,7 +692,7 @@
             LanguageBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LanguageBox.FormattingEnabled = true;
             LanguageBox.Items.AddRange(new object[] { "English", "Deutsch", "Español (México)", "Español (España)", "Français", "Italiano", "やまと", "한국인", "Polskie", "Português", "Русский" });
-            LanguageBox.Location = new Point(517, 104);
+            LanguageBox.Location = new Point(517, 137);
             LanguageBox.Name = "LanguageBox";
             LanguageBox.Size = new Size(152, 27);
             LanguageBox.TabIndex = 14;
@@ -689,9 +717,9 @@
             // ResetDisplayButton
             // 
             ResetDisplayButton.ForeColor = Color.Black;
-            ResetDisplayButton.Location = new Point(517, 138);
+            ResetDisplayButton.Location = new Point(517, 170);
             ResetDisplayButton.Name = "ResetDisplayButton";
-            ResetDisplayButton.Size = new Size(152, 59);
+            ResetDisplayButton.Size = new Size(152, 36);
             ResetDisplayButton.TabIndex = 4;
             ResetDisplayButton.Text = "RESET DISPLAY";
             BasicToolTip.SetToolTip(ResetDisplayButton, "Resets display settings to their defaults.\r\nWill affect 'Community Patch Support' setting.");
@@ -742,7 +770,7 @@
             DetailModeBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DetailModeBox.FormattingEnabled = true;
             DetailModeBox.Items.AddRange(new object[] { "Low", "Medium", "High" });
-            DetailModeBox.Location = new Point(517, 71);
+            DetailModeBox.Location = new Point(517, 104);
             DetailModeBox.Name = "DetailModeBox";
             DetailModeBox.Size = new Size(152, 27);
             DetailModeBox.TabIndex = 10;
@@ -754,7 +782,7 @@
             DetailModeLabel.AutoSize = true;
             DetailModeLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DetailModeLabel.ForeColor = Color.Black;
-            DetailModeLabel.Location = new Point(397, 74);
+            DetailModeLabel.Location = new Point(397, 107);
             DetailModeLabel.Name = "DetailModeLabel";
             DetailModeLabel.Size = new Size(114, 19);
             DetailModeLabel.TabIndex = 4;
@@ -802,7 +830,7 @@
             LanguageLabel.AutoSize = true;
             LanguageLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LanguageLabel.ForeColor = Color.Black;
-            LanguageLabel.Location = new Point(437, 107);
+            LanguageLabel.Location = new Point(437, 140);
             LanguageLabel.Name = "LanguageLabel";
             LanguageLabel.Size = new Size(74, 19);
             LanguageLabel.TabIndex = 5;
@@ -2089,18 +2117,6 @@
             BasicToolTip.InitialDelay = 50;
             BasicToolTip.ReshowDelay = 20;
             // 
-            // TextureFixButton
-            // 
-            TextureFixButton.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            TextureFixButton.Location = new Point(16, 566);
-            TextureFixButton.Name = "TextureFixButton";
-            TextureFixButton.Size = new Size(237, 67);
-            TextureFixButton.TabIndex = 9;
-            TextureFixButton.Text = "ENABLE TEXTURE PACK FIX";
-            BasicToolTip.SetToolTip(TextureFixButton, "Enable for HD Texture Pack support. Raises the maximum texture resolution rendered by the game.");
-            TextureFixButton.UseVisualStyleBackColor = true;
-            TextureFixButton.Click += TextureFixButton_Click;
-            // 
             // GPULabel
             // 
             GPULabel.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -2161,7 +2177,6 @@
             AutoScroll = true;
             ClientSize = new Size(741, 752);
             Controls.Add(groupBox1);
-            Controls.Add(TextureFixButton);
             Controls.Add(StartGameButton);
             Controls.Add(ManualModeButton);
             Controls.Add(ApplySettingsButton);
@@ -2326,7 +2341,6 @@
         private LinkLabel NeatoLabel;
         private LinkLabel GPUnityLabel;
         private LinkLabel PayPalLabel;
-        public Button TextureFixButton;
         public ToolTip BasicToolTip;
         private Label CTDownLabel;
         public Button CTDownButton1;
@@ -2355,5 +2369,7 @@
         private GroupBox nvidiaBox;
         public CheckBox hbaopluscheckbox;
         public Button RunAsAdminButton;
+        public ComboBox texpacksupportbox;
+        private Label texpacklabel;
     }
 }

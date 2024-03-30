@@ -268,36 +268,128 @@ namespace AsylumLauncher
 
         private void InitTexturePackFix()
         {
-            //TEXTUREGROUP_Character
-            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] == Program.IniHandler.TexturePackEnabled[0])
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[0] = true;
             }
-            //TEXTUREGROUP_CharacterNormalMap
-            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] == Program.IniHandler.TexturePackEnabled[1])
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[1] = true;
             }
-            //TEXTUREGROUP_World_Hi
-            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] == Program.IniHandler.TexturePackEnabled[2])
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[2] = true;
             }
-            //TEXTUREGROUP_WorldNormalMap_Hi
-            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] == Program.IniHandler.TexturePackEnabled[2])
+
+            //// Asylum Reborn
+            //TEXTUREGROUP_Character
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] == Program.IniHandler.TexturePackEnabled[3])
             {
                 Program.IniHandler.TexPackEnabled[3] = true;
             }
-            //TEXTUREGROUP_UI
-            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] == Program.IniHandler.TexturePackEnabled[3])
+            //TEXTUREGROUP_CharacterNormalMap
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] == Program.IniHandler.TexturePackEnabled[4])
             {
                 Program.IniHandler.TexPackEnabled[4] = true;
+            }
+            ////
+
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterSpecular"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[5] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[6] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponNormalMap"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[7] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponSpecular"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[8] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Vehicle"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[9] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleNormalMap"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[10] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleSpecular"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[11] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[12] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[13] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_EffectsNotFiltered"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[14] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Skybox"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[15] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[16] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[17] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_RenderTarget"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[18] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3P"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[19] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PNormalMap"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[20] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PSpecular"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[21] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[22] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[23] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[24] = true;
+            }
+            if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[25] = true;
             }
 
             if (Program.IniHandler.TexPackEnabled.All(x => x))
             {
-                Program.MainWindow.TextureFixButton.Text = "DISABLE TEXTURE PACK FIX";
-                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.TextureFixButton, "Disable Texture Pack Fix.");
+                Program.MainWindow.texpacksupportbox.SelectedIndex = 2;
+            } 
+            else if (Program.IniHandler.TexPackEnabled[3] && Program.IniHandler.TexPackEnabled[4])
+            {
+                Program.MainWindow.texpacksupportbox.SelectedIndex = 1;
+            }
+            else
+            {
+                Program.MainWindow.texpacksupportbox.SelectedIndex = 0;
             }
         }
     }
