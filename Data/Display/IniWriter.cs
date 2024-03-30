@@ -156,7 +156,7 @@ namespace AsylumLauncher
             short Framecap = short.Parse(Program.MainWindow.FrameCapTextBox.Text.Trim());
             if (Framecap <= 24)
             {
-                Program.MainWindow.FrameCapTextBox.Text = "62";
+                Program.MainWindow.FrameCapTextBox.Text = "60";
                 IniHandler.BmEngineData["Engine.GameEngine"]["MaxSmoothedFrameRate"] = "62";
             }
             else
