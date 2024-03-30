@@ -44,7 +44,7 @@ namespace AsylumLauncher
                 //NVIDIA.Initialize();
                 Program.MainWindow.RunAsAdminButton.Enabled = false;
                 Program.MainWindow.hbaopluscheckbox.Enabled = false;
-                Nlog.Warn("Constructor - Caught NVIDIANotSupportedException: {0}.", e);
+                Nlog.Warn("Constructor - Caught NVIDIANotSupportedException: {0}", e);
             }
             catch (Exception e)
             {
