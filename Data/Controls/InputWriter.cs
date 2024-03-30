@@ -124,7 +124,7 @@ namespace AsylumLauncher
             {
                 for (int i = 0; i < BmInputFileLines.Count; i++)
                 {
-                    if (i == 224)
+                    if (i == 209)
                     {
                         for (int j = 5; j < UserInputLines.Length; j++)
                         {
