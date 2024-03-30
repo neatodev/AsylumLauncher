@@ -40,7 +40,6 @@ namespace AsylumLauncher
                     _session.Save();
                     Nlog.Warn("Constructor - NVIDIA profile not found. Creating profile: {0}", profile.ToString());
                 }
-
                 _prof = _session.FindProfileByName("Batman: Arkham Asylum");
                 Nlog.Info("Constructor - NVIDIA profile fully processed.");
             }
@@ -48,6 +47,10 @@ namespace AsylumLauncher
             {
                 NVIDIA.Initialize();
                 Nlog.Warn("Constructor - Caught NVIDIANotSupportedException: {0}.", e);
+            }
+            catch (Exception e)
+            {
+                Nlog.Error("Constructor - Unexpected critical error at NVAPI initialization: {0}", e);
             }
         }
 
