@@ -611,5 +611,10 @@ namespace AsylumLauncher
         {
             DisplaySettingChanged = true;
         }
+
+        private void shadowcoveragebox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplaySettingChanged = true;
+        }
     }
 }

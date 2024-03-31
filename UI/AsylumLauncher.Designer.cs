@@ -328,6 +328,7 @@
             shadowcoveragebox.Size = new Size(152, 27);
             shadowcoveragebox.TabIndex = 56;
             BasicToolTip.SetToolTip(shadowcoveragebox, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
+            shadowcoveragebox.SelectedIndexChanged += shadowcoveragebox_SelectedIndexChanged;
             // 
             // shadowcoveragelabel
             // 
