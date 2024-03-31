@@ -223,19 +223,19 @@ namespace AsylumLauncher
             switch (Program.MainWindow.AntiAliasingBox.SelectedIndex)
             {
                 case 1:
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "2";
+                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "2";
                     break;
                 case 2:
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "4";
+                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "4";
                     break;
                 case 3:
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "10";
+                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "10";
                     break;
                 default:
-                    IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"] = "1";
+                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "1";
                     break;
             }
-            Nlog.Info("WriteBmEngineAdvanced - Set FXAA to {0} and MSAA to {1}", IniHandler.BmEngineData["SystemSettings"]["PostProcessAAType"], IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"]);
+            Nlog.Info("WriteBmEngineAdvanced - Set MaxMultisamples to {0}", IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"]);
 
             // Anisotropic Filtering
             IniHandler.BmEngineData["SystemSettings"]["MaxAnisotropy"] = Program.MainWindow.AnisoBox.SelectedIndex switch
@@ -262,22 +262,22 @@ namespace AsylumLauncher
             {
                 case 1:
                     IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"] = "1024";
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.024000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowFilterRadius"] = "5.0";
                     break;
                 case 2:
                     IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"] = "2048";
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.048000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowFilterRadius"] = "5.0";
                     break;
                 case 3:
                     IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"] = "4096";
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.096000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowFilterRadius"] = "3.0";
                     break;
                 default:
                     IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"] = "512";
-                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.012000";
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowFilterRadius"] = "2.000000";
                     break;
             }
-            Nlog.Info("WriteBmEngineAdvanced - Set Shadow Quality to {0} and Shadow Depth Bias to {1}", IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"], IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"]);
+            Nlog.Info("WriteBmEngineAdvanced - Set MaxShadowResolution to {0} and ShadowFilterRadius to {1}", IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"], IniHandler.BmEngineData["SystemSettings"]["ShadowFilterRadius"]);
 
             // Depth of Field
             if (Program.MainWindow.DOFBox.Checked)
@@ -301,16 +301,16 @@ namespace AsylumLauncher
             }
             Nlog.Info("WriteBmEngineAdvanced - Set Motion Blur to {0}", IniHandler.BmEngineData["SystemSettings"]["MotionBlur"]);
 
-            // Dynamic Lighting
+            // Fog Volumes
             if (Program.MainWindow.DynLightBox.Checked)
             {
-                IniHandler.BmEngineData["SystemSettings"]["CompositeDynamicLights"] = "True";
+                IniHandler.BmEngineData["SystemSettings"]["FogVolumes"] = "True";
             }
             else
             {
-                IniHandler.BmEngineData["SystemSettings"]["CompositeDynamicLights"] = "False";
+                IniHandler.BmEngineData["SystemSettings"]["FogVolumes"] = "False";
             }
-            Nlog.Info("WriteBmEngineAdvanced - Set Dynamic Lighting to {0}", IniHandler.BmEngineData["SystemSettings"]["CompositeDynamicLights"]);
+            Nlog.Info("WriteBmEngineAdvanced - Set Fog Volumes to {0}", IniHandler.BmEngineData["SystemSettings"]["FogVolumes"]);
 
             // Dynamic Shadows
             if (Program.MainWindow.DynShadowBox.Checked)
@@ -356,16 +356,16 @@ namespace AsylumLauncher
             }
             Nlog.Info("WriteBmEngineAdvanced - Set Bloom to {0}", IniHandler.BmEngineData["SystemSettings"]["Bloom"]);
 
-            // Light Rays
+            // SH Lighting
             if (Program.MainWindow.LightRayBox.Checked)
             {
-                IniHandler.BmEngineData["SystemSettings"]["bAllowLightShafts"] = "True";
+                IniHandler.BmEngineData["SystemSettings"]["DisableSphericalHarmonicLights"] = "False";
             }
             else
             {
-                IniHandler.BmEngineData["SystemSettings"]["bAllowLightShafts"] = "False";
+                IniHandler.BmEngineData["SystemSettings"]["DisableSphericalHarmonicLights"] = "True";
             }
-            Nlog.Info("WriteBmEngineAdvanced - Set Light Rays to {0}", IniHandler.BmEngineData["SystemSettings"]["bAllowLightShafts"]);
+            Nlog.Info("WriteBmEngineAdvanced - Set DisableSphericalHarmonicLights to {0}", IniHandler.BmEngineData["SystemSettings"]["DisableSphericalHarmonicLights"]);
 
             // PhysX
             IniHandler.BmEngineData["Engine.Engine"]["PhysXLevel"] = Program.MainWindow.PhysXBox.SelectedIndex switch

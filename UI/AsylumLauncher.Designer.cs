@@ -178,6 +178,8 @@
             CPULabel = new Label();
             StartGameButton = new Button();
             groupBox1 = new GroupBox();
+            shadowcoveragebox = new ComboBox();
+            shadowcoveragelabel = new Label();
             tabControl1.SuspendLayout();
             DisplayTab.SuspendLayout();
             PresetBox.SuspendLayout();
@@ -286,6 +288,8 @@
             // AdvancedDisplayGroupBox
             // 
             AdvancedDisplayGroupBox.AutoSize = true;
+            AdvancedDisplayGroupBox.Controls.Add(shadowcoveragebox);
+            AdvancedDisplayGroupBox.Controls.Add(shadowcoveragelabel);
             AdvancedDisplayGroupBox.Controls.Add(nvidiaBox);
             AdvancedDisplayGroupBox.Controls.Add(LensFlareBox);
             AdvancedDisplayGroupBox.Controls.Add(LightRayBox);
@@ -308,7 +312,7 @@
             AdvancedDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             AdvancedDisplayGroupBox.Location = new Point(3, 339);
             AdvancedDisplayGroupBox.Name = "AdvancedDisplayGroupBox";
-            AdvancedDisplayGroupBox.Size = new Size(683, 257);
+            AdvancedDisplayGroupBox.Size = new Size(683, 282);
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
@@ -322,7 +326,7 @@
             nvidiaBox.Controls.Add(PhysXLabel);
             nvidiaBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nvidiaBox.ForeColor = Color.LimeGreen;
-            nvidiaBox.Location = new Point(381, 99);
+            nvidiaBox.Location = new Point(381, 135);
             nvidiaBox.Name = "nvidiaBox";
             nvidiaBox.Size = new Size(280, 115);
             nvidiaBox.TabIndex = 54;
@@ -524,7 +528,7 @@
             PoolsizeBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeBox.FormattingEnabled = true;
             PoolsizeBox.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
-            PoolsizeBox.Location = new Point(160, 165);
+            PoolsizeBox.Location = new Point(160, 198);
             PoolsizeBox.Name = "PoolsizeBox";
             PoolsizeBox.Size = new Size(152, 27);
             PoolsizeBox.TabIndex = 40;
@@ -536,7 +540,7 @@
             PoolsizeLabel.AutoSize = true;
             PoolsizeLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeLabel.ForeColor = Color.Black;
-            PoolsizeLabel.Location = new Point(32, 168);
+            PoolsizeLabel.Location = new Point(32, 201);
             PoolsizeLabel.Name = "PoolsizeLabel";
             PoolsizeLabel.Size = new Size(122, 19);
             PoolsizeLabel.TabIndex = 39;
@@ -575,7 +579,7 @@
             AnisoBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisoBox.FormattingEnabled = true;
             AnisoBox.Items.AddRange(new object[] { "4x (Default)", "8x", "16x" });
-            AnisoBox.Location = new Point(160, 198);
+            AnisoBox.Location = new Point(503, 102);
             AnisoBox.Name = "AnisoBox";
             AnisoBox.Size = new Size(152, 27);
             AnisoBox.TabIndex = 8;
@@ -611,7 +615,7 @@
             AnisotropyLabel.AutoSize = true;
             AnisotropyLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisotropyLabel.ForeColor = Color.Black;
-            AnisotropyLabel.Location = new Point(6, 201);
+            AnisotropyLabel.Location = new Point(349, 105);
             AnisotropyLabel.Name = "AnisotropyLabel";
             AnisotropyLabel.Size = new Size(148, 19);
             AnisotropyLabel.TabIndex = 0;
@@ -2170,6 +2174,30 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             // 
+            // shadowcoveragebox
+            // 
+            shadowcoveragebox.DropDownStyle = ComboBoxStyle.DropDownList;
+            shadowcoveragebox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            shadowcoveragebox.FormattingEnabled = true;
+            shadowcoveragebox.Items.AddRange(new object[] { "Medium (Default)", "High", "Very High" });
+            shadowcoveragebox.Location = new Point(160, 165);
+            shadowcoveragebox.Name = "shadowcoveragebox";
+            shadowcoveragebox.Size = new Size(152, 27);
+            shadowcoveragebox.TabIndex = 56;
+            BasicToolTip.SetToolTip(shadowcoveragebox, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
+            // 
+            // shadowcoveragelabel
+            // 
+            shadowcoveragelabel.AutoSize = true;
+            shadowcoveragelabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            shadowcoveragelabel.ForeColor = Color.Black;
+            shadowcoveragelabel.Location = new Point(23, 168);
+            shadowcoveragelabel.Name = "shadowcoveragelabel";
+            shadowcoveragelabel.Size = new Size(131, 19);
+            shadowcoveragelabel.TabIndex = 55;
+            shadowcoveragelabel.Text = "Shadow Coverage";
+            BasicToolTip.SetToolTip(shadowcoveragelabel, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
+            // 
             // AsylumLauncher
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -2371,5 +2399,7 @@
         public Button RunAsAdminButton;
         public ComboBox texpacksupportbox;
         private Label texpacklabel;
+        public ComboBox shadowcoveragebox;
+        private Label shadowcoveragelabel;
     }
 }

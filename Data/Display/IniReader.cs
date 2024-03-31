@@ -92,7 +92,7 @@ namespace AsylumLauncher
         private void InitDisplayAdvanced()
         {
             // Anti-Aliasing
-            switch (IniHandler.BmEngineData["SystemSettings"]["MultisampleMode"])
+            switch (IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"])
             {
                 case "2":
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 1;
@@ -168,8 +168,8 @@ namespace AsylumLauncher
                 Program.MainWindow.MotionBlurBox.Checked = false;
             }
 
-            // Dynamic Lighting
-            if (IniHandler.BmEngineData["SystemSettings"]["CompositeDynamicLights"] == "True")
+            // Fog Volumes
+            if (IniHandler.BmEngineData["SystemSettings"]["FogVolumes"] == "True")
             {
                 Program.MainWindow.DynLightBox.Checked = true;
             }
@@ -218,8 +218,8 @@ namespace AsylumLauncher
                 Program.MainWindow.BloomBox.Checked = false;
             }
 
-            // Light Rays
-            if (IniHandler.BmEngineData["SystemSettings"]["bAllowLightShafts"] == "True")
+            // SH Lighting
+            if (IniHandler.BmEngineData["SystemSettings"]["DisableSphericalHarmonicLights"] == "False")
             {
                 Program.MainWindow.LightRayBox.Checked = true;
             }
