@@ -36,15 +36,21 @@ namespace AsylumLauncher
         ///     Offers more configuration options, enables compatibility with High-Res Texture Packs
         ///     and automatically takes care of the ReadOnly properties of each file, removing
         ///     any requirement to manually edit .ini files. Guarantees a much more comfortable user experience.
-        ///     @author Neato (https://steamcommunity.com/id/frofoo)
+        ///     @author Neato (https://www.nexusmods.com/users/81089053)
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             bool IsNewWindow = true;
             using (Mutex mtx = new(true, "{7F85C5E9-214F-4F2A-A949-AA3978D5DAC2}", out IsNewWindow))
             {
-                if (IsNewWindow)
+                if (args.Contains("-nolauncher"))
+                {
+                    SetupCulture();
+                    SetupLogger();
+                    LauncherBypass();
+                }
+                else if (IsNewWindow)
                 {
                     IsAdmin = CheckIsAdmin();
                     SetupCulture();
@@ -124,6 +130,26 @@ namespace AsylumLauncher
             config.AddRule(LogLevel.Debug, LogLevel.Warn, logfile);
             LogManager.Configuration = config;
             Nlog.Debug("SetupLogger - Elevated Privileges: {0}", IsAdmin.ToString());
+        }
+
+        private static void LauncherBypass()
+        {
+            Nlog.Info("LauncherBypass - Starting logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
+            using (Process LaunchGame = new())
+            {
+                if (FileHandler.DetectGameExe())
+                {
+                    LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
+                    LaunchGame.StartInfo.CreateNoWindow = true;
+                    LaunchGame.Start();
+                    Nlog.Info("LauncherBypass - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
+                    Application.Exit();
+                }
+                else
+                {
+                    MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
+                }
+            }
         }
     }
 }

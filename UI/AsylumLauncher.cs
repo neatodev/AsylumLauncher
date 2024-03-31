@@ -279,7 +279,7 @@ namespace AsylumLauncher
                 }
                 else
                 {
-                    MessageBox.Show("Could not find 'BatmanAC.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
+                    MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
                 }
             }
         }
