@@ -260,6 +260,21 @@ namespace AsylumLauncher
             }
             Nlog.Info("WriteBmEngineAdvanced - Set MaxShadowResolution to {0} and ShadowFilterRadius to {1}", IniHandler.BmEngineData["SystemSettings"]["MaxShadowResolution"], IniHandler.BmEngineData["SystemSettings"]["ShadowFilterRadius"]);
 
+            // Shadow Coverage
+            switch (Program.MainWindow.shadowcoveragebox.SelectedIndex)
+            {
+                case 1:
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.010000";
+                    break;
+                case 2:
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.008000";
+                    break;
+                default:
+                    IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"] = "0.012000";
+                    break;
+            }
+            Nlog.Info("WriteBmEngineAdvanced - Set ShadowDepthBias to {0}", IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"]);
+
             // Depth of Field
             if (Program.MainWindow.DOFBox.Checked)
             {

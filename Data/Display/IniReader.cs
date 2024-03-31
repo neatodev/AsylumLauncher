@@ -117,6 +117,20 @@ namespace AsylumLauncher
                     break;
             }
 
+            // Shadow Coverage
+            switch (IniHandler.BmEngineData["SystemSettings"]["ShadowDepthBias"])
+            {
+                case "0.010000":
+                    Program.MainWindow.shadowcoveragebox.SelectedIndex = 1;
+                    break;
+                case "0.008000":
+                    Program.MainWindow.shadowcoveragebox.SelectedIndex = 2;
+                    break;
+                default:
+                    Program.MainWindow.shadowcoveragebox.SelectedIndex = 0;
+                    break;
+            }
+
             // Anisotropic Filtering
             Program.MainWindow.AnisoBox.SelectedIndex = IniHandler.BmEngineData["SystemSettings"]["MaxAnisotropy"] switch
             {
