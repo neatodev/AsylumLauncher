@@ -135,6 +135,17 @@ namespace AsylumLauncher
             }
             Nlog.Info("WriteBmEngineBasic - Set Fullscreen to {0}", IniHandler.BmEngineData["SystemSettings"]["Fullscreen"]);
 
+            // Smooth Frames
+            if (Program.MainWindow.smoothframebox.Checked)
+            {
+                IniHandler.BmEngineData["Engine.GameEngine"]["bSmoothFrameRate"] = "True";
+            }
+            else
+            {
+                IniHandler.BmEngineData["Engine.GameEngine"]["bSmoothFrameRate"] = "False";
+            }
+            Nlog.Info("WriteBmEngineBasic - Set bSmoothFrameRate to {0}", IniHandler.BmEngineData["Engine.GameEngine"]["bSmoothFrameRate"]);
+
             // VSync
             if (Program.MainWindow.VsyncBox.SelectedIndex == 0)
             {

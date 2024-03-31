@@ -49,6 +49,16 @@ namespace AsylumLauncher
                 Program.MainWindow.FullscreenBox.SelectedIndex = 1;
             }
 
+            // Smooth Frames
+            if (IniHandler.BmEngineData["Engine.GameEngine"]["bSmoothFrameRate"].ToLower().Contains("true"))
+            {
+                Program.MainWindow.smoothframebox.Checked = true;
+            }
+            else
+            {
+                Program.MainWindow.smoothframebox.Checked = false;
+            }
+
             // VSync
             if (IniHandler.BmEngineData["SystemSettings"]["UseVsync"] == "True")
             {

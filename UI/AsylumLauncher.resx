@@ -121,16 +121,33 @@
     <value>17, 17</value>
   </metadata>
   <data name="PoolsizeBox.ToolTip" xml:space="preserve">
-    <value>Allocates GPU memory to texture streaming and should be set to a portion of the GPU ram.
-2GB minimum is recommended for a smooth experience with the HD Texture Pack.
+    <value>Allocates graphics memory to texture streaming. Value should be lower than GPU memory size. 
+2GB is recommended for the HD Texture Pack.
 
-- 'Infinite'= Streaming limit will be removed. Useful for in-game texture dumping and debugging, but may cause crashes.</value>
+"Infinite" = Streaming limit will be removed. Useful for in-game texture dumping and debugging, but may cause crashes.
+</value>
   </data>
   <data name="PoolsizeLabel.ToolTip" xml:space="preserve">
-    <value>Allocates GPU memory to texture streaming and should be set to a portion of the GPU ram.
-2GB minimum is recommended for a smooth experience with the HD Texture Pack.
+    <value>Allocates graphics memory to texture streaming. Value should be lower than GPU memory size. 
+2GB is recommended for the HD Texture Pack.
 
-- 'Infinite'= Streaming limit will be removed. Useful for in-game texture dumping and debugging, but may cause crashes.</value>
+"Infinite" = Streaming limit will be removed. Useful for in-game texture dumping and debugging, but may cause crashes.
+</value>
+  </data>
+  <data name="texpacksupportbox.ToolTip" xml:space="preserve">
+    <value>Disabled - Vanilla texture settings.
+
+Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
+
+Maximum - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or similar) to be installed or will result in crashes. Compatible with Asylum Reborn Texture Pack.</value>
+  </data>
+  <data name="texpacklabel.ToolTip" xml:space="preserve">
+    <value>Disabled - Vanilla texture settings.
+
+Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
+
+Maximum - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or similar) to be installed or will result in crashes. Compatible with Asylum Reborn Texture Pack.
+</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

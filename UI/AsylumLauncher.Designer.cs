@@ -37,6 +37,7 @@
             VanillaPresetButton = new Button();
             OptimizedPresetButton = new Button();
             AdvancedDisplayGroupBox = new GroupBox();
+            smoothframebox = new CheckBox();
             shadowcoveragebox = new ComboBox();
             shadowcoveragelabel = new Label();
             nvidiaBox = new GroupBox();
@@ -256,8 +257,8 @@
             DarkKnightPresetButton.Name = "DarkKnightPresetButton";
             DarkKnightPresetButton.Size = new Size(214, 37);
             DarkKnightPresetButton.TabIndex = 17;
-            DarkKnightPresetButton.Text = "ULTRA";
-            BasicToolTip.SetToolTip(DarkKnightPresetButton, "Graphics are pushed significantly.");
+            DarkKnightPresetButton.Text = "ASYLUM REBORN";
+            BasicToolTip.SetToolTip(DarkKnightPresetButton, "A new way to play.");
             DarkKnightPresetButton.UseVisualStyleBackColor = true;
             DarkKnightPresetButton.Click += DarkKnightPresetButton_Click;
             // 
@@ -281,13 +282,14 @@
             OptimizedPresetButton.Size = new Size(214, 37);
             OptimizedPresetButton.TabIndex = 16;
             OptimizedPresetButton.Text = "OPTIMIZED";
-            BasicToolTip.SetToolTip(OptimizedPresetButton, "More balanced and performant settings.\r\n- Recommended baseline for improved graphics.");
+            BasicToolTip.SetToolTip(OptimizedPresetButton, "Balanced and performant settings.");
             OptimizedPresetButton.UseVisualStyleBackColor = true;
             OptimizedPresetButton.Click += button2_Click;
             // 
             // AdvancedDisplayGroupBox
             // 
             AdvancedDisplayGroupBox.AutoSize = true;
+            AdvancedDisplayGroupBox.Controls.Add(smoothframebox);
             AdvancedDisplayGroupBox.Controls.Add(shadowcoveragebox);
             AdvancedDisplayGroupBox.Controls.Add(shadowcoveragelabel);
             AdvancedDisplayGroupBox.Controls.Add(nvidiaBox);
@@ -316,6 +318,21 @@
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
+            // 
+            // smoothframebox
+            // 
+            smoothframebox.AutoSize = true;
+            smoothframebox.CheckAlign = ContentAlignment.MiddleRight;
+            smoothframebox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            smoothframebox.ForeColor = Color.Black;
+            smoothframebox.Location = new Point(173, 32);
+            smoothframebox.Name = "smoothframebox";
+            smoothframebox.Size = new Size(134, 23);
+            smoothframebox.TabIndex = 57;
+            smoothframebox.Text = "Smooth Frames";
+            BasicToolTip.SetToolTip(smoothframebox, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
+            smoothframebox.UseVisualStyleBackColor = true;
+            smoothframebox.CheckedChanged += smoothframebox_CheckedChanged;
             // 
             // shadowcoveragebox
             // 
@@ -351,7 +368,7 @@
             nvidiaBox.Controls.Add(PhysXLabel);
             nvidiaBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nvidiaBox.ForeColor = Color.LimeGreen;
-            nvidiaBox.Location = new Point(381, 135);
+            nvidiaBox.Location = new Point(389, 135);
             nvidiaBox.Name = "nvidiaBox";
             nvidiaBox.Size = new Size(280, 115);
             nvidiaBox.TabIndex = 54;
@@ -370,7 +387,7 @@
             hbaopluscheckbox.Size = new Size(124, 23);
             hbaopluscheckbox.TabIndex = 54;
             hbaopluscheckbox.Text = "Nvidia HBAO+";
-            BasicToolTip.SetToolTip(hbaopluscheckbox, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
+            BasicToolTip.SetToolTip(hbaopluscheckbox, "High-end ambient occlusion solution for rendering realistic shadowing around objects.");
             hbaopluscheckbox.UseVisualStyleBackColor = true;
             hbaopluscheckbox.CheckedChanged += hbaopluscheckbox_CheckedChanged;
             // 
@@ -383,7 +400,7 @@
             RunAsAdminButton.Name = "RunAsAdminButton";
             RunAsAdminButton.Size = new Size(24, 27);
             RunAsAdminButton.TabIndex = 53;
-            BasicToolTip.SetToolTip(RunAsAdminButton, "Graphics are pushed significantly.");
+            BasicToolTip.SetToolTip(RunAsAdminButton, "Restarts the launcher with elevated permissions (as administrator) in order to edit the HBAO+ flag.");
             RunAsAdminButton.UseVisualStyleBackColor = true;
             RunAsAdminButton.Click += RunAsAdminButton_Click;
             // 
@@ -397,7 +414,7 @@
             PhysXBox.Name = "PhysXBox";
             PhysXBox.Size = new Size(152, 27);
             PhysXBox.TabIndex = 38;
-            BasicToolTip.SetToolTip(PhysXBox, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
+            BasicToolTip.SetToolTip(PhysXBox, "Demanding Feature. Smoke simulations, breakable tiles, debris etc. \r\n\"High\" will cause performance issues in certain areas.\r\n\"Medium\" is recommended.");
             PhysXBox.SelectedIndexChanged += PhysXBox_SelectedIndexChanged;
             // 
             // PhysXLabel
@@ -410,7 +427,7 @@
             PhysXLabel.Size = new Size(50, 19);
             PhysXLabel.TabIndex = 24;
             PhysXLabel.Text = "PhysX";
-            BasicToolTip.SetToolTip(PhysXLabel, "Demanding Feature. Adds breakable fences, cloth physics, smoke simulations etc.");
+            BasicToolTip.SetToolTip(PhysXLabel, "Demanding Feature. Smoke simulations, breakable tiles, debris etc. \r\n\"High\" will cause performance issues in certain areas.\r\n\"Medium\" is recommended.\r\n");
             // 
             // LensFlareBox
             // 
@@ -418,12 +435,12 @@
             LensFlareBox.CheckAlign = ContentAlignment.MiddleRight;
             LensFlareBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LensFlareBox.ForeColor = Color.Black;
-            LensFlareBox.Location = new Point(444, 61);
+            LensFlareBox.Location = new Point(443, 61);
             LensFlareBox.Name = "LensFlareBox";
             LensFlareBox.Size = new Size(101, 23);
             LensFlareBox.TabIndex = 49;
             LensFlareBox.Text = "Lens Flares";
-            BasicToolTip.SetToolTip(LensFlareBox, "Simulates perspective-based flares when looking at bright lights. \r\n- Requires Depth of Field to be enabled.");
+            BasicToolTip.SetToolTip(LensFlareBox, "Simulates perspective-based flares when looking at bright lights. \r\nRequires Depth of Field to be enabled.");
             LensFlareBox.UseVisualStyleBackColor = true;
             LensFlareBox.CheckedChanged += LensFlareBox_CheckedChanged;
             // 
@@ -433,12 +450,12 @@
             LightRayBox.CheckAlign = ContentAlignment.MiddleRight;
             LightRayBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LightRayBox.ForeColor = Color.Black;
-            LightRayBox.Location = new Point(187, 61);
+            LightRayBox.Location = new Point(559, 32);
             LightRayBox.Name = "LightRayBox";
             LightRayBox.Size = new Size(104, 23);
             LightRayBox.TabIndex = 48;
             LightRayBox.Text = "SH Lighting\r\n";
-            BasicToolTip.SetToolTip(LightRayBox, "Simulates light traversal in the atmosphere.");
+            BasicToolTip.SetToolTip(LightRayBox, "Adds additional lighting to the game.");
             LightRayBox.UseVisualStyleBackColor = true;
             LightRayBox.CheckedChanged += LightRayBox_CheckedChanged;
             // 
@@ -448,12 +465,12 @@
             BloomBox.CheckAlign = ContentAlignment.MiddleRight;
             BloomBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BloomBox.ForeColor = Color.Black;
-            BloomBox.Location = new Point(589, 61);
+            BloomBox.Location = new Point(591, 61);
             BloomBox.Name = "BloomBox";
             BloomBox.Size = new Size(72, 23);
             BloomBox.TabIndex = 47;
             BloomBox.Text = "Bloom";
-            BasicToolTip.SetToolTip(BloomBox, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
+            BasicToolTip.SetToolTip(BloomBox, "Adds a soft glow to bright areas. \r\nRequires Depth of Field to be enabled.");
             BloomBox.UseVisualStyleBackColor = true;
             BloomBox.CheckedChanged += BloomBox_CheckedChanged;
             // 
@@ -463,12 +480,12 @@
             DistortionBox.CheckAlign = ContentAlignment.MiddleRight;
             DistortionBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DistortionBox.ForeColor = Color.Black;
-            DistortionBox.Location = new Point(449, 32);
+            DistortionBox.Location = new Point(448, 32);
             DistortionBox.Name = "DistortionBox";
             DistortionBox.Size = new Size(96, 23);
             DistortionBox.TabIndex = 46;
             DistortionBox.Text = "Distortion";
-            BasicToolTip.SetToolTip(DistortionBox, "Dynamically distorts areas of the screen to enhance certain actions.");
+            BasicToolTip.SetToolTip(DistortionBox, "Distorts areas of the screen for certain actions.");
             DistortionBox.UseVisualStyleBackColor = true;
             DistortionBox.CheckedChanged += DistortionBox_CheckedChanged;
             // 
@@ -478,12 +495,12 @@
             DynShadowBox.CheckAlign = ContentAlignment.MiddleRight;
             DynShadowBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DynShadowBox.ForeColor = Color.Black;
-            DynShadowBox.Location = new Point(20, 61);
+            DynShadowBox.Location = new Point(11, 61);
             DynShadowBox.Name = "DynShadowBox";
             DynShadowBox.Size = new Size(152, 23);
             DynShadowBox.TabIndex = 45;
             DynShadowBox.Text = "Dynamic Shadows";
-            BasicToolTip.SetToolTip(DynShadowBox, "Enables real-time shadows.");
+            BasicToolTip.SetToolTip(DynShadowBox, "Enables real-time shadow casting.");
             DynShadowBox.UseVisualStyleBackColor = true;
             DynShadowBox.CheckedChanged += DynShadowBox_CheckedChanged;
             // 
@@ -493,12 +510,12 @@
             DynLightBox.CheckAlign = ContentAlignment.MiddleRight;
             DynLightBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DynLightBox.ForeColor = Color.Black;
-            DynLightBox.Location = new Point(316, 61);
+            DynLightBox.Location = new Point(324, 61);
             DynLightBox.Name = "DynLightBox";
             DynLightBox.Size = new Size(113, 23);
             DynLightBox.TabIndex = 44;
             DynLightBox.Text = "Fog Volumes";
-            BasicToolTip.SetToolTip(DynLightBox, "Improves game lighting.");
+            BasicToolTip.SetToolTip(DynLightBox, "Enables fog in specific areas.");
             DynLightBox.UseVisualStyleBackColor = true;
             DynLightBox.CheckedChanged += DynLightBox_CheckedChanged;
             // 
@@ -508,12 +525,12 @@
             MotionBlurBox.CheckAlign = ContentAlignment.MiddleRight;
             MotionBlurBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MotionBlurBox.ForeColor = Color.Black;
-            MotionBlurBox.Location = new Point(181, 32);
+            MotionBlurBox.Location = new Point(197, 61);
             MotionBlurBox.Name = "MotionBlurBox";
             MotionBlurBox.Size = new Size(110, 23);
             MotionBlurBox.TabIndex = 43;
             MotionBlurBox.Text = "Motion Blur";
-            BasicToolTip.SetToolTip(MotionBlurBox, "Emphasizes movement using blur to connect motion between frames.");
+            BasicToolTip.SetToolTip(MotionBlurBox, "Emphasizes movement using blur.");
             MotionBlurBox.UseVisualStyleBackColor = true;
             MotionBlurBox.CheckedChanged += MotionBlurBox_CheckedChanged;
             // 
@@ -523,12 +540,12 @@
             DOFBox.CheckAlign = ContentAlignment.MiddleRight;
             DOFBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DOFBox.ForeColor = Color.Black;
-            DOFBox.Location = new Point(305, 32);
+            DOFBox.Location = new Point(313, 32);
             DOFBox.Name = "DOFBox";
             DOFBox.Size = new Size(124, 23);
             DOFBox.TabIndex = 42;
             DOFBox.Text = "Depth of Field";
-            BasicToolTip.SetToolTip(DOFBox, "Adds selective focus to improve depth perception. Will obscure view distance with a blur pass. This effect is tied with colour grading filters and certain post-processing effects.");
+            BasicToolTip.SetToolTip(DOFBox, "Adds selective focus to improve depth perception. Will obscure view distance with a blur pass. This effect is tied with colour grading filters and bloom.");
             DOFBox.UseVisualStyleBackColor = true;
             DOFBox.CheckedChanged += DOFBox_CheckedChanged;
             // 
@@ -538,12 +555,12 @@
             AmbientOcclusionBox.CheckAlign = ContentAlignment.MiddleRight;
             AmbientOcclusionBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AmbientOcclusionBox.ForeColor = Color.Black;
-            AmbientOcclusionBox.Location = new Point(15, 32);
+            AmbientOcclusionBox.Location = new Point(6, 32);
             AmbientOcclusionBox.Name = "AmbientOcclusionBox";
             AmbientOcclusionBox.Size = new Size(157, 23);
             AmbientOcclusionBox.TabIndex = 41;
             AmbientOcclusionBox.Text = "Ambient Occlusion";
-            BasicToolTip.SetToolTip(AmbientOcclusionBox, "Improves ambient lighting. HBAO is used instead of SSAO if DirectX 11 is enabled. ");
+            BasicToolTip.SetToolTip(AmbientOcclusionBox, "Improves ambient lighting by adding shadows to crevices.");
             AmbientOcclusionBox.UseVisualStyleBackColor = true;
             AmbientOcclusionBox.CheckedChanged += AmbientOcclusionBox_CheckedChanged;
             // 
@@ -595,7 +612,7 @@
             AntiAliasingBox.Name = "AntiAliasingBox";
             AntiAliasingBox.Size = new Size(152, 27);
             AntiAliasingBox.TabIndex = 9;
-            BasicToolTip.SetToolTip(AntiAliasingBox, "Cleans up edge aliasing. MSAA may induce stutter. Reshade SMAA suggested for sharp and stable AA.");
+            BasicToolTip.SetToolTip(AntiAliasingBox, "Cleans up edge aliasing. Very demanding.");
             AntiAliasingBox.SelectedIndexChanged += AntiAliasingBox_SelectedIndexChanged;
             // 
             // AnisoBox
@@ -604,7 +621,7 @@
             AnisoBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisoBox.FormattingEnabled = true;
             AnisoBox.Items.AddRange(new object[] { "4x (Default)", "8x", "16x" });
-            AnisoBox.Location = new Point(503, 102);
+            AnisoBox.Location = new Point(511, 99);
             AnisoBox.Name = "AnisoBox";
             AnisoBox.Size = new Size(152, 27);
             AnisoBox.TabIndex = 8;
@@ -621,7 +638,7 @@
             AntiAliasingLabel.Size = new Size(95, 19);
             AntiAliasingLabel.TabIndex = 1;
             AntiAliasingLabel.Text = "Anti-Aliasing";
-            BasicToolTip.SetToolTip(AntiAliasingLabel, "Cleans up edge aliasing. MSAA may induce stutter. Reshade SMAA suggested for sharp and stable AA.");
+            BasicToolTip.SetToolTip(AntiAliasingLabel, "Cleans up edge aliasing. Very demanding.\r\n");
             // 
             // MaxShadowLabel
             // 
@@ -640,7 +657,7 @@
             AnisotropyLabel.AutoSize = true;
             AnisotropyLabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AnisotropyLabel.ForeColor = Color.Black;
-            AnisotropyLabel.Location = new Point(349, 105);
+            AnisotropyLabel.Location = new Point(357, 102);
             AnisotropyLabel.Name = "AnisotropyLabel";
             AnisotropyLabel.Size = new Size(148, 19);
             AnisotropyLabel.TabIndex = 0;
@@ -684,7 +701,7 @@
             texpacksupportbox.Name = "texpacksupportbox";
             texpacksupportbox.Size = new Size(152, 27);
             texpacksupportbox.TabIndex = 18;
-            BasicToolTip.SetToolTip(texpacksupportbox, "Replaces the Detail Level option from the original launcher and covers every value.\r\n- Highest setting is required for the HD Texture Pack. ");
+            BasicToolTip.SetToolTip(texpacksupportbox, resources.GetString("texpacksupportbox.ToolTip"));
             texpacksupportbox.SelectedIndexChanged += texpacksupportbox_SelectedIndexChanged;
             // 
             // texpacklabel
@@ -697,7 +714,7 @@
             texpacklabel.Size = new Size(156, 19);
             texpacklabel.TabIndex = 17;
             texpacklabel.Text = "Texture Pack Support";
-            BasicToolTip.SetToolTip(texpacklabel, "Replaces the Detail Level option from the original launcher and covers every value.\r\n- Highest setting is required for the HD Texture Pack. ");
+            BasicToolTip.SetToolTip(texpacklabel, resources.GetString("texpacklabel.ToolTip"));
             // 
             // SkipIntroBox
             // 
@@ -706,7 +723,7 @@
             SkipIntroBox.Enabled = false;
             SkipIntroBox.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             SkipIntroBox.ForeColor = Color.Black;
-            SkipIntroBox.Location = new Point(67, 137);
+            SkipIntroBox.Location = new Point(66, 136);
             SkipIntroBox.Name = "SkipIntroBox";
             SkipIntroBox.Size = new Size(214, 27);
             SkipIntroBox.TabIndex = 16;
@@ -738,7 +755,7 @@
             FrameCapTextBox.Size = new Size(31, 27);
             FrameCapTextBox.TabIndex = 11;
             FrameCapTextBox.TextAlign = HorizontalAlignment.Right;
-            BasicToolTip.SetToolTip(FrameCapTextBox, "Limits amount of rendered frames per second. The value should be the refresh rate of the panel or higher.\r\n- Entering values lower than 25 will reset the setting to the default value (60).");
+            BasicToolTip.SetToolTip(FrameCapTextBox, "Framerate limiter. The value should be the refresh rate of the panel or higher.\r\n\r\nEntering values lower than 25 will reset the setting to the default value (60).");
             FrameCapTextBox.ValidatingType = typeof(int);
             FrameCapTextBox.MaskChanged += FrameCapTextBox_MaskChanged;
             FrameCapTextBox.TextChanged += FrameCapTextBox_TextChanged;
@@ -840,7 +857,7 @@
             FrameCapLabel.Size = new Size(117, 19);
             FrameCapLabel.TabIndex = 2;
             FrameCapLabel.Text = "Framerate Limit";
-            BasicToolTip.SetToolTip(FrameCapLabel, "Limits amount of rendered frames per second. The value should be the refresh rate of the panel or higher.\r\n- Entering values lower than 25 will reset the setting to the default value (60).");
+            BasicToolTip.SetToolTip(FrameCapLabel, "Framerate limiter. The value should be the refresh rate of the panel or higher.\r\n\r\nEntering values lower than 25 will reset the setting to the default value (60).\r\n");
             // 
             // ResolutionLabel
             // 
@@ -1994,7 +2011,7 @@
             MouseSmoothingBox.CheckAlign = ContentAlignment.MiddleRight;
             MouseSmoothingBox.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             MouseSmoothingBox.ForeColor = Color.Black;
-            MouseSmoothingBox.Location = new Point(478, 187);
+            MouseSmoothingBox.Location = new Point(477, 187);
             MouseSmoothingBox.Name = "MouseSmoothingBox";
             MouseSmoothingBox.Size = new Size(188, 30);
             MouseSmoothingBox.TabIndex = 149;
@@ -2402,5 +2419,6 @@
         private Label texpacklabel;
         public ComboBox shadowcoveragebox;
         private Label shadowcoveragelabel;
+        public CheckBox smoothframebox;
     }
 }

@@ -609,10 +609,20 @@ namespace AsylumLauncher
 
         private void texpacksupportbox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if ((texpacksupportbox.SelectedIndex == 1 || texpacksupportbox.SelectedIndex == 2) && (PoolsizeBox.SelectedIndex == 0 || PoolsizeBox.SelectedIndex == 1))
+            {
+                PoolsizeBox.SelectedIndex = 2;
+            }
+
             DisplaySettingChanged = true;
         }
 
         private void shadowcoveragebox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplaySettingChanged = true;
+        }
+
+        private void smoothframebox_CheckedChanged(object sender, EventArgs e)
         {
             DisplaySettingChanged = true;
         }
