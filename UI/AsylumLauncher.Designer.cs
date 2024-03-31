@@ -37,6 +37,8 @@
             VanillaPresetButton = new Button();
             OptimizedPresetButton = new Button();
             AdvancedDisplayGroupBox = new GroupBox();
+            shadowcoveragebox = new ComboBox();
+            shadowcoveragelabel = new Label();
             nvidiaBox = new GroupBox();
             hbaopluscheckbox = new CheckBox();
             RunAsAdminButton = new Button();
@@ -178,8 +180,6 @@
             CPULabel = new Label();
             StartGameButton = new Button();
             groupBox1 = new GroupBox();
-            shadowcoveragebox = new ComboBox();
-            shadowcoveragelabel = new Label();
             tabControl1.SuspendLayout();
             DisplayTab.SuspendLayout();
             PresetBox.SuspendLayout();
@@ -316,6 +316,30 @@
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
+            // 
+            // shadowcoveragebox
+            // 
+            shadowcoveragebox.DropDownStyle = ComboBoxStyle.DropDownList;
+            shadowcoveragebox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            shadowcoveragebox.FormattingEnabled = true;
+            shadowcoveragebox.Items.AddRange(new object[] { "Medium (Default)", "High", "Very High" });
+            shadowcoveragebox.Location = new Point(160, 165);
+            shadowcoveragebox.Name = "shadowcoveragebox";
+            shadowcoveragebox.Size = new Size(152, 27);
+            shadowcoveragebox.TabIndex = 56;
+            BasicToolTip.SetToolTip(shadowcoveragebox, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
+            // 
+            // shadowcoveragelabel
+            // 
+            shadowcoveragelabel.AutoSize = true;
+            shadowcoveragelabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            shadowcoveragelabel.ForeColor = Color.Black;
+            shadowcoveragelabel.Location = new Point(23, 168);
+            shadowcoveragelabel.Name = "shadowcoveragelabel";
+            shadowcoveragelabel.Size = new Size(131, 19);
+            shadowcoveragelabel.TabIndex = 55;
+            shadowcoveragelabel.Text = "Shadow Coverage";
+            BasicToolTip.SetToolTip(shadowcoveragelabel, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
             // 
             // nvidiaBox
             // 
@@ -695,7 +719,7 @@
             LanguageBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LanguageBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LanguageBox.FormattingEnabled = true;
-            LanguageBox.Items.AddRange(new object[] { "English", "Deutsch", "Español (México)", "Español (España)", "Français", "Italiano", "やまと", "한국인", "Polskie", "Português", "Русский" });
+            LanguageBox.Items.AddRange(new object[] { "English", "Deutsch", "Español", "Français", "Italiano" });
             LanguageBox.Location = new Point(517, 137);
             LanguageBox.Name = "LanguageBox";
             LanguageBox.Size = new Size(152, 27);
@@ -2173,30 +2197,6 @@
             groupBox1.Size = new Size(741, 38);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
-            // 
-            // shadowcoveragebox
-            // 
-            shadowcoveragebox.DropDownStyle = ComboBoxStyle.DropDownList;
-            shadowcoveragebox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            shadowcoveragebox.FormattingEnabled = true;
-            shadowcoveragebox.Items.AddRange(new object[] { "Medium (Default)", "High", "Very High" });
-            shadowcoveragebox.Location = new Point(160, 165);
-            shadowcoveragebox.Name = "shadowcoveragebox";
-            shadowcoveragebox.Size = new Size(152, 27);
-            shadowcoveragebox.TabIndex = 56;
-            BasicToolTip.SetToolTip(shadowcoveragebox, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
-            // 
-            // shadowcoveragelabel
-            // 
-            shadowcoveragelabel.AutoSize = true;
-            shadowcoveragelabel.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            shadowcoveragelabel.ForeColor = Color.Black;
-            shadowcoveragelabel.Location = new Point(23, 168);
-            shadowcoveragelabel.Name = "shadowcoveragelabel";
-            shadowcoveragelabel.Size = new Size(131, 19);
-            shadowcoveragelabel.TabIndex = 55;
-            shadowcoveragelabel.Text = "Shadow Coverage";
-            BasicToolTip.SetToolTip(shadowcoveragelabel, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
             // 
             // AsylumLauncher
             // 

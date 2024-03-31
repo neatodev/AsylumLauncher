@@ -8,7 +8,7 @@ namespace AsylumLauncher
         private readonly string BmEnginePath;
         private readonly string UserEnginePath;
         private string BmEngineTemp;
-        private string UserEngineLangValue;
+        private string UserEngineLangValue = "Undefined";
         readonly FileIniDataParser DataParser;
         readonly string[] ExcludedEntries = { "LightComplexityColors", "ShaderComplexityColors" };
 
@@ -91,18 +91,21 @@ namespace AsylumLauncher
         {
             string[] UserEngine = File.ReadAllLines(UserEnginePath);
 
-            using (StreamWriter UserEngineFile = new(UserEnginePath))
+            if (UserEngineLangValue != "Undefined")
             {
-                foreach (string Line in UserEngine)
+                using (StreamWriter UserEngineFile = new(UserEnginePath))
                 {
-                    if (Line.Contains("Language"))
+                    foreach (string Line in UserEngine)
                     {
-                        UserEngineFile.WriteLine(UserEngineLangValue);
-                        continue;
+                        if (Line.Contains("Language"))
+                        {
+                            UserEngineFile.WriteLine(UserEngineLangValue);
+                            continue;
+                        }
+                        UserEngineFile.WriteLine(Line);
                     }
-                    UserEngineFile.WriteLine(Line);
+                    UserEngineFile.Close();
                 }
-                UserEngineFile.Close();
             }
         }
 
@@ -169,49 +172,27 @@ namespace AsylumLauncher
             // Language
             switch (Program.MainWindow.LanguageBox.SelectedIndex)
             {
+                case 0:
+                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Int";
+                    UserEngineLangValue = "Language=Int";
+                    break;
                 case 1:
                     IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Deu";
                     UserEngineLangValue = "Language=Deu";
                     break;
                 case 2:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Esm";
-                    UserEngineLangValue = "Language=Esm";
-                    break;
-                case 3:
                     IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Esn";
                     UserEngineLangValue = "Language=Esn";
                     break;
-                case 4:
+                case 3:
                     IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Fra";
                     UserEngineLangValue = "Language=Fra";
                     break;
-                case 5:
+                case 4:
                     IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Ita";
                     UserEngineLangValue = "Language=Ita";
                     break;
-                case 6:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Jpn";
-                    UserEngineLangValue = "Language=Jpn";
-                    break;
-                case 7:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Kor";
-                    UserEngineLangValue = "Language=Kor";
-                    break;
-                case 8:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Pol";
-                    UserEngineLangValue = "Language=Pol";
-                    break;
-                case 9:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Por";
-                    UserEngineLangValue = "Language=Por";
-                    break;
-                case 10:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Rus";
-                    UserEngineLangValue = "Language=Rus";
-                    break;
                 default:
-                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Int";
-                    UserEngineLangValue = "Language=Int";
                     break;
             }
             Nlog.Info("WriteBmEngineBasic - Set Language to {0}", UserEngineLangValue);

@@ -73,20 +73,29 @@ namespace AsylumLauncher
             Program.MainWindow.FrameCapTextBox.Text = Framecap.ToString();
 
             // Language
-            Program.MainWindow.LanguageBox.SelectedIndex = IniHandler.BmEngineData["Engine.Engine"]["Language"] switch
+            string language = new System.Globalization.CultureInfo("en-US").TextInfo.ToTitleCase(IniHandler.BmEngineData["Engine.Engine"]["Language"]);
+            switch (language)
             {
-                "Deu" => 1,
-                "Esm" => 2,
-                "Esn" => 3,
-                "Fra" => 4,
-                "Ita" => 5,
-                "Jpn" => 6,
-                "Kor" => 7,
-                "Pol" => 8,
-                "Por" => 9,
-                "Rus" => 10,
-                _ => 0,
-            };
+                case "Int":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 0;
+                    break;
+                case "Deu":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 1;
+                    break;
+                case "Esn":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 2;
+                    break;
+                case "Fra":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 3;
+                    break;
+                case "Ita":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 4;
+                    break;
+                default:
+                    Program.MainWindow.LanguageBox.Items.Add("Unofficial");
+                    Program.MainWindow.LanguageBox.SelectedIndex = 5;
+                    break;
+            }
         }
 
         private void InitDisplayAdvanced()
