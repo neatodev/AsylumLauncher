@@ -81,6 +81,7 @@
             ControlTab = new TabPage();
             ResetControlButton = new Button();
             groupBox2 = new GroupBox();
+            label2 = new Label();
             CTDownLabel = new Label();
             CTDownButton1 = new Button();
             ForwardLabel = new Label();
@@ -914,6 +915,7 @@
             // groupBox2
             // 
             groupBox2.AutoSize = true;
+            groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(CTDownLabel);
             groupBox2.Controls.Add(CTDownButton1);
             groupBox2.Controls.Add(ForwardLabel);
@@ -957,12 +959,23 @@
             groupBox2.TabIndex = 145;
             groupBox2.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(399, 219);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 23);
+            label2.TabIndex = 147;
+            label2.Text = "Cape Stun";
+            // 
             // CTDownLabel
             // 
             CTDownLabel.AutoSize = true;
             CTDownLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CTDownLabel.ForeColor = Color.Black;
-            CTDownLabel.Location = new Point(336, 397);
+            CTDownLabel.Location = new Point(334, 408);
             CTDownLabel.Name = "CTDownLabel";
             CTDownLabel.Size = new Size(154, 23);
             CTDownLabel.TabIndex = 145;
@@ -973,9 +986,9 @@
             // 
             CTDownButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CTDownButton1.ForeColor = Color.Black;
-            CTDownButton1.Location = new Point(495, 391);
+            CTDownButton1.Location = new Point(494, 402);
             CTDownButton1.Name = "CTDownButton1";
-            CTDownButton1.Size = new Size(174, 35);
+            CTDownButton1.Size = new Size(175, 35);
             CTDownButton1.TabIndex = 146;
             CTDownButton1.Text = "button1";
             CTDownButton1.UseVisualStyleBackColor = true;
@@ -1041,7 +1054,7 @@
             // 
             CapeStunButton.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CapeStunButton.ForeColor = Color.Black;
-            CapeStunButton.Location = new Point(494, 237);
+            CapeStunButton.Location = new Point(494, 289);
             CapeStunButton.Name = "CapeStunButton";
             CapeStunButton.Size = new Size(175, 35);
             CapeStunButton.TabIndex = 142;
@@ -1054,7 +1067,7 @@
             LeftLabel.AutoSize = true;
             LeftLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             LeftLabel.ForeColor = Color.Black;
-            LeftLabel.Location = new Point(448, 39);
+            LeftLabel.Location = new Point(448, 38);
             LeftLabel.Name = "LeftLabel";
             LeftLabel.Size = new Size(40, 23);
             LeftLabel.TabIndex = 3;
@@ -1076,7 +1089,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(437, 317);
+            label8.Location = new Point(436, 327);
             label8.Name = "label8";
             label8.Size = new Size(52, 69);
             label8.TabIndex = 107;
@@ -1088,7 +1101,7 @@
             CapeStunLabel.AutoSize = true;
             CapeStunLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CapeStunLabel.ForeColor = Color.Black;
-            CapeStunLabel.Location = new Point(399, 243);
+            CapeStunLabel.Location = new Point(399, 295);
             CapeStunLabel.Name = "CapeStunLabel";
             CapeStunLabel.Size = new Size(89, 23);
             CapeStunLabel.TabIndex = 141;
@@ -1099,7 +1112,7 @@
             DetectiveModeLabel.AutoSize = true;
             DetectiveModeLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             DetectiveModeLabel.ForeColor = Color.Black;
-            DetectiveModeLabel.Location = new Point(350, 284);
+            DetectiveModeLabel.Location = new Point(350, 254);
             DetectiveModeLabel.Name = "DetectiveModeLabel";
             DetectiveModeLabel.Size = new Size(138, 23);
             DetectiveModeLabel.TabIndex = 9;
@@ -1193,9 +1206,9 @@
             // 
             DetectiveModeButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             DetectiveModeButton1.ForeColor = Color.Black;
-            DetectiveModeButton1.Location = new Point(494, 278);
+            DetectiveModeButton1.Location = new Point(494, 248);
             DetectiveModeButton1.Name = "DetectiveModeButton1";
-            DetectiveModeButton1.Size = new Size(174, 35);
+            DetectiveModeButton1.Size = new Size(175, 35);
             DetectiveModeButton1.TabIndex = 30;
             DetectiveModeButton1.Text = "button1";
             DetectiveModeButton1.UseVisualStyleBackColor = true;
@@ -1230,7 +1243,7 @@
             GadgetSecLabel.AutoSize = true;
             GadgetSecLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             GadgetSecLabel.ForeColor = Color.Black;
-            GadgetSecLabel.Location = new Point(336, 202);
+            GadgetSecLabel.Location = new Point(335, 196);
             GadgetSecLabel.Name = "GadgetSecLabel";
             GadgetSecLabel.Size = new Size(153, 23);
             GadgetSecLabel.TabIndex = 36;
@@ -1241,9 +1254,9 @@
             // 
             GadgetSecButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             GadgetSecButton1.ForeColor = Color.Black;
-            GadgetSecButton1.Location = new Point(495, 196);
+            GadgetSecButton1.Location = new Point(494, 196);
             GadgetSecButton1.Name = "GadgetSecButton1";
-            GadgetSecButton1.Size = new Size(174, 35);
+            GadgetSecButton1.Size = new Size(175, 46);
             GadgetSecButton1.TabIndex = 38;
             GadgetSecButton1.Text = "button1";
             GadgetSecButton1.UseVisualStyleBackColor = true;
@@ -1266,7 +1279,7 @@
             PrevGadgetButton1.ForeColor = Color.Black;
             PrevGadgetButton1.Location = new Point(494, 114);
             PrevGadgetButton1.Name = "PrevGadgetButton1";
-            PrevGadgetButton1.Size = new Size(174, 35);
+            PrevGadgetButton1.Size = new Size(175, 35);
             PrevGadgetButton1.TabIndex = 41;
             PrevGadgetButton1.Text = "button1";
             PrevGadgetButton1.UseVisualStyleBackColor = true;
@@ -1321,9 +1334,9 @@
             // 
             RGUButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             RGUButton1.ForeColor = Color.Black;
-            RGUButton1.Location = new Point(495, 319);
+            RGUButton1.Location = new Point(494, 330);
             RGUButton1.Name = "RGUButton1";
-            RGUButton1.Size = new Size(174, 66);
+            RGUButton1.Size = new Size(175, 66);
             RGUButton1.TabIndex = 20;
             RGUButton1.Text = "button1";
             RGUButton1.UseVisualStyleBackColor = true;
@@ -2240,7 +2253,7 @@
             MinimizeBox = false;
             Name = "AsylumLauncher";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Batman: Arkham Asylum - Advanced Launcher 2";
+            Text = "Batman: Arkham Asylum - Advanced Launcher";
             tabControl1.ResumeLayout(false);
             DisplayTab.ResumeLayout(false);
             DisplayTab.PerformLayout();
@@ -2427,5 +2440,6 @@
         public ComboBox shadowcoveragebox;
         private Label shadowcoveragelabel;
         public CheckBox smoothframebox;
+        private Label label2;
     }
 }
