@@ -425,7 +425,7 @@
             LensFlareBox.Size = new Size(101, 23);
             LensFlareBox.TabIndex = 49;
             LensFlareBox.Text = "Lens Flares";
-            BasicToolTip.SetToolTip(LensFlareBox, "Simulates perspective-based flares when looking at bright lights. \r\nRequires Depth of Field to be enabled.");
+            BasicToolTip.SetToolTip(LensFlareBox, "Simulates perspective-based flares when looking at bright lights.");
             LensFlareBox.UseVisualStyleBackColor = true;
             LensFlareBox.CheckedChanged += LensFlareBox_CheckedChanged;
             // 
