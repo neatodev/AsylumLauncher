@@ -329,7 +329,7 @@
             shadowcoveragebox.Name = "shadowcoveragebox";
             shadowcoveragebox.Size = new Size(152, 27);
             shadowcoveragebox.TabIndex = 56;
-            BasicToolTip.SetToolTip(shadowcoveragebox, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
+            BasicToolTip.SetToolTip(shadowcoveragebox, "Adjusts self-shadowing amount. Increase Shadow Quality before pushing this setting.");
             shadowcoveragebox.SelectedIndexChanged += shadowcoveragebox_SelectedIndexChanged;
             // 
             // shadowcoveragelabel
@@ -342,7 +342,7 @@
             shadowcoveragelabel.Size = new Size(131, 19);
             shadowcoveragelabel.TabIndex = 55;
             shadowcoveragelabel.Text = "Shadow Coverage";
-            BasicToolTip.SetToolTip(shadowcoveragelabel, "Increases the quality of shadow rendering by increasing the shadowmap resolution.");
+            BasicToolTip.SetToolTip(shadowcoveragelabel, "Adjusts self-shadowing amount. Increase Shadow Quality before pushing this setting.");
             // 
             // nvidiaBox
             // 
@@ -440,7 +440,7 @@
             LightRayBox.Size = new Size(104, 23);
             LightRayBox.TabIndex = 48;
             LightRayBox.Text = "SH Lighting\r\n";
-            BasicToolTip.SetToolTip(LightRayBox, "Adds additional lighting to the game.");
+            BasicToolTip.SetToolTip(LightRayBox, "Spherical Harmonic Lights - Adds additional lighting to the game.");
             LightRayBox.UseVisualStyleBackColor = true;
             LightRayBox.CheckedChanged += LightRayBox_CheckedChanged;
             // 
@@ -530,7 +530,7 @@
             DOFBox.Size = new Size(124, 23);
             DOFBox.TabIndex = 42;
             DOFBox.Text = "Depth of Field";
-            BasicToolTip.SetToolTip(DOFBox, "Adds selective focus to improve depth perception. Will obscure view distance with a blur pass. This effect is tied with colour grading filters and bloom.");
+            BasicToolTip.SetToolTip(DOFBox, "Adds selective focus to improve depth perception. Obscures view distance with a blur pass.\r\n\r\nThis effect is tied with color grading filters and bloom. ");
             DOFBox.UseVisualStyleBackColor = true;
             DOFBox.CheckedChanged += DOFBox_CheckedChanged;
             // 
