@@ -1481,6 +1481,7 @@
             LowContrastColorButton.TabIndex = 180;
             LowContrastColorButton.Text = "Log Profile 1";
             LowContrastColorButton.UseVisualStyleBackColor = true;
+            LowContrastColorButton.Click += LowContrastColorButton_Click;
             // 
             // HighContrastColorButton
             // 
@@ -1492,6 +1493,7 @@
             HighContrastColorButton.TabIndex = 179;
             HighContrastColorButton.Text = "High Contrast";
             HighContrastColorButton.UseVisualStyleBackColor = true;
+            HighContrastColorButton.Click += HighContrastColorButton_Click;
             // 
             // MutedColorButton
             // 
@@ -1502,6 +1504,7 @@
             MutedColorButton.TabIndex = 176;
             MutedColorButton.Text = "Muted";
             MutedColorButton.UseVisualStyleBackColor = true;
+            MutedColorButton.Click += MutedColorButton_Click;
             // 
             // VividColorButton
             // 
@@ -1513,6 +1516,7 @@
             VividColorButton.TabIndex = 175;
             VividColorButton.Text = "Log Profile 2";
             VividColorButton.UseVisualStyleBackColor = true;
+            VividColorButton.Click += VividColorButton_Click;
             // 
             // NoirColorButton
             // 
@@ -1524,6 +1528,7 @@
             NoirColorButton.TabIndex = 174;
             NoirColorButton.Text = "Monochrome";
             NoirColorButton.UseVisualStyleBackColor = true;
+            NoirColorButton.Click += NoirColorButton_Click;
             // 
             // DefaultColorButton
             // 
@@ -1534,6 +1539,7 @@
             DefaultColorButton.TabIndex = 173;
             DefaultColorButton.Text = "Default";
             DefaultColorButton.UseVisualStyleBackColor = true;
+            DefaultColorButton.Click += DefaultColorButton_Click;
             // 
             // ShadowsTrackbar
             // 

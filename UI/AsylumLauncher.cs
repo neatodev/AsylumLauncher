@@ -630,5 +630,41 @@ namespace AsylumLauncher
         {
             DisplaySettingChanged = true;
         }
+
+        private void DefaultColorButton_Click(object sender, EventArgs e)
+        {
+            PresetHandler.SetColorDefault();
+            DisplaySettingChanged = true;
+        }
+
+        private void NoirColorButton_Click(object sender, EventArgs e)
+        {
+            PresetHandler.SetColorNoir();
+            DisplaySettingChanged = true;
+        }
+
+        private void MutedColorButton_Click(object sender, EventArgs e)
+        {
+            PresetHandler.SetColorMuted();
+            DisplaySettingChanged = true;
+        }
+
+        private void LowContrastColorButton_Click(object sender, EventArgs e)
+        {
+            PresetHandler.SetColorLowContrast();
+            DisplaySettingChanged = true;
+        }
+
+        private void VividColorButton_Click(object sender, EventArgs e)
+        {
+            PresetHandler.SetColorVivid();
+            DisplaySettingChanged = true;
+        }
+
+        private void HighContrastColorButton_Click(object sender, EventArgs e)
+        {
+            PresetHandler.SetColorHighContrast();
+            DisplaySettingChanged = true;
+        }
     }
 }
