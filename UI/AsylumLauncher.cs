@@ -11,6 +11,7 @@ namespace AsylumLauncher
     {
         private bool DisplaySetting = false;
         private bool ControlSetting = false;
+        private bool FirstStart = false;
         private ImageTooltip ImgToolTip;
         public bool DisplaySettingChanged
         {
@@ -609,16 +610,17 @@ namespace AsylumLauncher
 
         private void texpacksupportbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((texpacksupportbox.SelectedIndex == 1 || texpacksupportbox.SelectedIndex == 2) && (PoolsizeBox.SelectedIndex == 0 || PoolsizeBox.SelectedIndex == 1))
+            if ((texpacksupportbox.SelectedIndex == 1 || texpacksupportbox.SelectedIndex == 2) && (PoolsizeBox.SelectedIndex == 0 || PoolsizeBox.SelectedIndex == 1) && FirstStart)
             {
                 PoolsizeBox.SelectedIndex = 2;
             }
 
-            if (texpacksupportbox.SelectedIndex == 2)
+            if (texpacksupportbox.SelectedIndex == 2 && FirstStart)
             {
                 MessageBox.Show("Only select \"Maximum\" if you have AsylumHD or an equivalent texture pack installed that covers ALL texture groups.", "Selecting this option may cause errors!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             DisplaySettingChanged = true;
+            FirstStart = true;
         }
 
         private void shadowcoveragebox_SelectedIndexChanged(object sender, EventArgs e)
