@@ -247,7 +247,14 @@ namespace AsylumLauncher
                 }
             };
 
-            pr.Start();
+            try 
+            {
+                pr.Start();
+
+            } catch (Exception)
+            {
+                return;
+            }
             Process.GetCurrentProcess().Kill();
         }
     }
