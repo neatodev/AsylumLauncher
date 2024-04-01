@@ -139,14 +139,14 @@
 
 Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
 
-Maximum - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or similar) to be installed or will result in crashes. Compatible with Asylum Reborn Texture Pack.</value>
+Maximum - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or equivalent) to be installed or will result in crashes. Compatible with Asylum Reborn Texture Pack.</value>
   </data>
   <data name="texpacklabel.ToolTip" xml:space="preserve">
     <value>Disabled - Vanilla texture settings.
 
 Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
 
-Maximum - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or similar) to be installed or will result in crashes. Compatible with Asylum Reborn Texture Pack.
+Maximum - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or equivalent) to be installed or will result in crashes. Compatible with Asylum Reborn Texture Pack.
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

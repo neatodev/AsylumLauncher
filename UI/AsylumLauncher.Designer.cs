@@ -37,7 +37,6 @@
             VanillaPresetButton = new Button();
             OptimizedPresetButton = new Button();
             AdvancedDisplayGroupBox = new GroupBox();
-            smoothframebox = new CheckBox();
             shadowcoveragebox = new ComboBox();
             shadowcoveragelabel = new Label();
             nvidiaBox = new GroupBox();
@@ -63,12 +62,12 @@
             MaxShadowLabel = new Label();
             AnisotropyLabel = new Label();
             BasicDisplayGroupBox = new GroupBox();
+            smoothframebox = new CheckBox();
             texpacksupportbox = new ComboBox();
             texpacklabel = new Label();
             SkipIntroBox = new CheckBox();
             LanguageBox = new ComboBox();
             FrameCapTextBox = new MaskedTextBox();
-            ResetDisplayButton = new Button();
             ResolutionBox = new ComboBox();
             VsyncBox = new ComboBox();
             FullscreenBox = new ComboBox();
@@ -174,6 +173,7 @@
             NeatoLabel = new LinkLabel();
             GPUnityLabel = new LinkLabel();
             TempLabel = new LinkLabel();
+            ResetDisplayButton = new Button();
             ApplySettingsButton = new Button();
             ManualModeButton = new Button();
             BasicToolTip = new ToolTip(components);
@@ -289,7 +289,6 @@
             // AdvancedDisplayGroupBox
             // 
             AdvancedDisplayGroupBox.AutoSize = true;
-            AdvancedDisplayGroupBox.Controls.Add(smoothframebox);
             AdvancedDisplayGroupBox.Controls.Add(shadowcoveragebox);
             AdvancedDisplayGroupBox.Controls.Add(shadowcoveragelabel);
             AdvancedDisplayGroupBox.Controls.Add(nvidiaBox);
@@ -318,21 +317,6 @@
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
-            // 
-            // smoothframebox
-            // 
-            smoothframebox.AutoSize = true;
-            smoothframebox.CheckAlign = ContentAlignment.MiddleRight;
-            smoothframebox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            smoothframebox.ForeColor = Color.Black;
-            smoothframebox.Location = new Point(173, 32);
-            smoothframebox.Name = "smoothframebox";
-            smoothframebox.Size = new Size(134, 23);
-            smoothframebox.TabIndex = 57;
-            smoothframebox.Text = "Smooth Frames";
-            BasicToolTip.SetToolTip(smoothframebox, "Enunciates lighting by adding a glow to bright areas. \r\n- Requires Depth of Field to be enabled.");
-            smoothframebox.UseVisualStyleBackColor = true;
-            smoothframebox.CheckedChanged += smoothframebox_CheckedChanged;
             // 
             // shadowcoveragebox
             // 
@@ -435,7 +419,7 @@
             LensFlareBox.CheckAlign = ContentAlignment.MiddleRight;
             LensFlareBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LensFlareBox.ForeColor = Color.Black;
-            LensFlareBox.Location = new Point(443, 61);
+            LensFlareBox.Location = new Point(469, 61);
             LensFlareBox.Name = "LensFlareBox";
             LensFlareBox.Size = new Size(101, 23);
             LensFlareBox.TabIndex = 49;
@@ -450,7 +434,7 @@
             LightRayBox.CheckAlign = ContentAlignment.MiddleRight;
             LightRayBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LightRayBox.ForeColor = Color.Black;
-            LightRayBox.Location = new Point(559, 32);
+            LightRayBox.Location = new Point(197, 32);
             LightRayBox.Name = "LightRayBox";
             LightRayBox.Size = new Size(104, 23);
             LightRayBox.TabIndex = 48;
@@ -465,7 +449,7 @@
             BloomBox.CheckAlign = ContentAlignment.MiddleRight;
             BloomBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BloomBox.ForeColor = Color.Black;
-            BloomBox.Location = new Point(591, 61);
+            BloomBox.Location = new Point(591, 32);
             BloomBox.Name = "BloomBox";
             BloomBox.Size = new Size(72, 23);
             BloomBox.TabIndex = 47;
@@ -480,7 +464,7 @@
             DistortionBox.CheckAlign = ContentAlignment.MiddleRight;
             DistortionBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DistortionBox.ForeColor = Color.Black;
-            DistortionBox.Location = new Point(448, 32);
+            DistortionBox.Location = new Point(474, 32);
             DistortionBox.Name = "DistortionBox";
             DistortionBox.Size = new Size(96, 23);
             DistortionBox.TabIndex = 46;
@@ -510,7 +494,7 @@
             DynLightBox.CheckAlign = ContentAlignment.MiddleRight;
             DynLightBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DynLightBox.ForeColor = Color.Black;
-            DynLightBox.Location = new Point(324, 61);
+            DynLightBox.Location = new Point(333, 61);
             DynLightBox.Name = "DynLightBox";
             DynLightBox.Size = new Size(113, 23);
             DynLightBox.TabIndex = 44;
@@ -525,7 +509,7 @@
             MotionBlurBox.CheckAlign = ContentAlignment.MiddleRight;
             MotionBlurBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MotionBlurBox.ForeColor = Color.Black;
-            MotionBlurBox.Location = new Point(197, 61);
+            MotionBlurBox.Location = new Point(191, 61);
             MotionBlurBox.Name = "MotionBlurBox";
             MotionBlurBox.Size = new Size(110, 23);
             MotionBlurBox.TabIndex = 43;
@@ -540,7 +524,7 @@
             DOFBox.CheckAlign = ContentAlignment.MiddleRight;
             DOFBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             DOFBox.ForeColor = Color.Black;
-            DOFBox.Location = new Point(313, 32);
+            DOFBox.Location = new Point(322, 32);
             DOFBox.Name = "DOFBox";
             DOFBox.Size = new Size(124, 23);
             DOFBox.TabIndex = 42;
@@ -667,12 +651,12 @@
             // BasicDisplayGroupBox
             // 
             BasicDisplayGroupBox.AutoSize = true;
+            BasicDisplayGroupBox.Controls.Add(smoothframebox);
             BasicDisplayGroupBox.Controls.Add(texpacksupportbox);
             BasicDisplayGroupBox.Controls.Add(texpacklabel);
             BasicDisplayGroupBox.Controls.Add(SkipIntroBox);
             BasicDisplayGroupBox.Controls.Add(LanguageBox);
             BasicDisplayGroupBox.Controls.Add(FrameCapTextBox);
-            BasicDisplayGroupBox.Controls.Add(ResetDisplayButton);
             BasicDisplayGroupBox.Controls.Add(ResolutionBox);
             BasicDisplayGroupBox.Controls.Add(VsyncBox);
             BasicDisplayGroupBox.Controls.Add(FullscreenBox);
@@ -686,10 +670,25 @@
             BasicDisplayGroupBox.ForeColor = SystemColors.HotTrack;
             BasicDisplayGroupBox.Location = new Point(3, 3);
             BasicDisplayGroupBox.Name = "BasicDisplayGroupBox";
-            BasicDisplayGroupBox.Size = new Size(683, 238);
+            BasicDisplayGroupBox.Size = new Size(683, 220);
             BasicDisplayGroupBox.TabIndex = 13;
             BasicDisplayGroupBox.TabStop = false;
             BasicDisplayGroupBox.Text = "BASIC";
+            // 
+            // smoothframebox
+            // 
+            smoothframebox.AutoSize = true;
+            smoothframebox.CheckAlign = ContentAlignment.MiddleRight;
+            smoothframebox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            smoothframebox.ForeColor = Color.Black;
+            smoothframebox.Location = new Point(101, 137);
+            smoothframebox.Name = "smoothframebox";
+            smoothframebox.Size = new Size(180, 23);
+            smoothframebox.TabIndex = 57;
+            smoothframebox.Text = "Smoothed Frame Rate";
+            BasicToolTip.SetToolTip(smoothframebox, "May improve GPU utilisation above 60fps.");
+            smoothframebox.UseVisualStyleBackColor = true;
+            smoothframebox.CheckedChanged += smoothframebox_CheckedChanged;
             // 
             // texpacksupportbox
             // 
@@ -721,11 +720,11 @@
             SkipIntroBox.AutoSize = true;
             SkipIntroBox.CheckAlign = ContentAlignment.MiddleRight;
             SkipIntroBox.Enabled = false;
-            SkipIntroBox.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            SkipIntroBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SkipIntroBox.ForeColor = Color.Black;
-            SkipIntroBox.Location = new Point(66, 136);
+            SkipIntroBox.Location = new Point(95, 165);
             SkipIntroBox.Name = "SkipIntroBox";
-            SkipIntroBox.Size = new Size(214, 27);
+            SkipIntroBox.Size = new Size(186, 23);
             SkipIntroBox.TabIndex = 16;
             SkipIntroBox.Text = "Disable Startup Movies";
             BasicToolTip.SetToolTip(SkipIntroBox, "Skips intro logos.");
@@ -759,18 +758,6 @@
             FrameCapTextBox.ValidatingType = typeof(int);
             FrameCapTextBox.MaskChanged += FrameCapTextBox_MaskChanged;
             FrameCapTextBox.TextChanged += FrameCapTextBox_TextChanged;
-            // 
-            // ResetDisplayButton
-            // 
-            ResetDisplayButton.ForeColor = Color.Black;
-            ResetDisplayButton.Location = new Point(517, 170);
-            ResetDisplayButton.Name = "ResetDisplayButton";
-            ResetDisplayButton.Size = new Size(152, 36);
-            ResetDisplayButton.TabIndex = 4;
-            ResetDisplayButton.Text = "RESET DISPLAY";
-            BasicToolTip.SetToolTip(ResetDisplayButton, "Resets display settings to their defaults.\r\nWill affect 'Community Patch Support' setting.");
-            ResetDisplayButton.UseVisualStyleBackColor = true;
-            ResetDisplayButton.Click += ResetDisplayButton_Click;
             // 
             // ResolutionBox
             // 
@@ -2132,6 +2119,19 @@
             TempLabel.TextAlign = ContentAlignment.MiddleCenter;
             TempLabel.LinkClicked += TempLabel_LinkClicked;
             // 
+            // ResetDisplayButton
+            // 
+            ResetDisplayButton.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ResetDisplayButton.ForeColor = Color.Black;
+            ResetDisplayButton.Location = new Point(19, 566);
+            ResetDisplayButton.Name = "ResetDisplayButton";
+            ResetDisplayButton.Size = new Size(230, 67);
+            ResetDisplayButton.TabIndex = 4;
+            ResetDisplayButton.Text = "RESET DISPLAY";
+            BasicToolTip.SetToolTip(ResetDisplayButton, "Resets display settings to their defaults.\r\nWill affect 'Community Patch Support' setting.");
+            ResetDisplayButton.UseVisualStyleBackColor = true;
+            ResetDisplayButton.Click += ResetDisplayButton_Click;
+            // 
             // ApplySettingsButton
             // 
             ApplySettingsButton.Enabled = false;
@@ -2148,7 +2148,7 @@
             // ManualModeButton
             // 
             ManualModeButton.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            ManualModeButton.Location = new Point(259, 566);
+            ManualModeButton.Location = new Point(257, 566);
             ManualModeButton.Name = "ManualModeButton";
             ManualModeButton.Size = new Size(230, 67);
             ManualModeButton.TabIndex = 2;
@@ -2227,6 +2227,7 @@
             Controls.Add(ManualModeButton);
             Controls.Add(ApplySettingsButton);
             Controls.Add(tabControl1);
+            Controls.Add(ResetDisplayButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
