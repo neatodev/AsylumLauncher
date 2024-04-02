@@ -89,10 +89,9 @@ namespace AsylumLauncher
 
         private void WriteToUserEngine()
         {
-            string[] UserEngine = File.ReadAllLines(UserEnginePath);
-
             if (UserEngineLangValue != "Undefined")
             {
+                string[] UserEngine = File.ReadAllLines(UserEnginePath);
                 using (StreamWriter UserEngineFile = new(UserEnginePath))
                 {
                     foreach (string Line in UserEngine)
