@@ -2147,7 +2147,7 @@
             ResetDisplayButton.Size = new Size(230, 67);
             ResetDisplayButton.TabIndex = 4;
             ResetDisplayButton.Text = "RESET DISPLAY";
-            BasicToolTip.SetToolTip(ResetDisplayButton, "Resets display settings to their defaults.\r\nWill affect 'Community Patch Support' setting.");
+            BasicToolTip.SetToolTip(ResetDisplayButton, "Resets display settings to their defaults.");
             ResetDisplayButton.UseVisualStyleBackColor = true;
             ResetDisplayButton.Click += ResetDisplayButton_Click;
             // 
