@@ -596,7 +596,7 @@ namespace AsylumLauncher
 
         private void RunAsAdminButton_Click(object sender, EventArgs e)
         {
-            Program.FileHandler.StartAsAdmin("AsylumLauncher.exe");
+            Program.FileHandler.StartAsAdmin(Process.GetCurrentProcess().ProcessName + ".exe");
         }
 
         private void hbaopluscheckbox_CheckedChanged(object sender, EventArgs e)
