@@ -16,10 +16,14 @@
 	  <Title>Batman: Arkham Asylum - Improved Launcher</Title>
 	  <Authors>Neato, GPUnity, EVERGREEN</Authors>
 	  <Company>neatodev</Company>
-	  <Product>Batman: Arkham Asylum - Improved Launcher</Product>
-	  <Description>(C) 2023 | CC BY-NC-SA 4.0</Description>
+	  <Product>Batman: Arkham Asylum - Advanced Launcher 2.0</Product>
+	  <Description>(C) 2024 | CC BY-NC-SA 4.0</Description>
 	  <Copyright>neatodev</Copyright>
 	  <RepositoryType>git</RepositoryType>
+	  <AssemblyVersion>2.0.0.0</AssemblyVersion>
+	  <FileVersion>2.0.0.0</FileVersion>
+	  <PackageId>$(AssemblyName)</PackageId>
+	  <AssemblyName>BmLauncher</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
