@@ -126,8 +126,8 @@ namespace AsylumLauncher
                 }
             }
 
-            config.AddRule(LogLevel.Debug, LogLevel.Warn, logconsole);
-            config.AddRule(LogLevel.Debug, LogLevel.Warn, logfile);
+            config.AddRule(LogLevel.Debug, LogLevel.Error, logconsole);
+            config.AddRule(LogLevel.Debug, LogLevel.Error, logfile);
             LogManager.Configuration = config;
             Nlog.Debug("SetupLogger - Elevated Privileges: {0}", IsAdmin.ToString());
         }
