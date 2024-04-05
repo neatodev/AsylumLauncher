@@ -319,16 +319,6 @@ namespace AsylumLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] calibri {
-            get {
-                object obj = ResourceManager.GetObject("calibri", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to set R3rdPersonCamera WalkCamConfig (StateFreeCameraSitOffsetMin=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraSitOffsetMax=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraPullOffset=(X=0.000000,Y=0.000000,Z=0.000000),CameraPivotOffset=(X=0.000000,Y=0.000000,Z=65.000000),ZoomedOffset=(X=0.000000,Y=0.000000,Z=80.000000),maxPitch=14500.000000,MinPitch=-100000.000000,MinFreeCameraDistance=300.000000,MaxFreeCameraDistance=300.000000,ShortCamSpringConst=250.000000,LongCamSpringConst=250.000000,DefaultCamera [rest of string was truncated]&quot;;.
         /// </summary>
         public static string centre_camera {
@@ -373,16 +363,6 @@ namespace AsylumLauncher.Properties {
             get {
                 object obj = ResourceManager.GetObject("icon2", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] impact {
-            get {
-                object obj = ResourceManager.GetObject("impact", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

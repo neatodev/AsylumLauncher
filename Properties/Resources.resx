@@ -202,10 +202,4 @@
   <data name="UserInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UserInput.ini;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="calibri" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calibri.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="impact" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\impact.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
 </root>

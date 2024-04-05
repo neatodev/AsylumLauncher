@@ -3,7 +3,6 @@ using NLog;
 using System.Diagnostics;
 using System.Globalization;
 using System.Media;
-using System.Reflection;
 
 namespace AsylumLauncher
 {

@@ -27,7 +27,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FontsInstaller" Version="1.3.0" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
     <PackageReference Include="NLog" Version="5.1.2" />
     <PackageReference Include="NvAPIWrapper.Net" Version="0.8.1.101" />

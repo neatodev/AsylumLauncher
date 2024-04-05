@@ -2,10 +2,10 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 using System.Diagnostics;
+using System.Drawing.Text;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
-using WK.Libraries.FontsInstallerNS;
 
 namespace AsylumLauncher
 {
@@ -25,6 +25,8 @@ namespace AsylumLauncher
         public static InputHandler InputHandler;
 
         public static NvidiaHandler NvidiaHandler;
+
+        public static PrivateFontCollection FontC;
 
         public static bool IsAdmin;
 
@@ -136,34 +138,38 @@ namespace AsylumLauncher
 
         private static void InitFonts()
         {
-            var FontInstaller = new FontsInstaller();
-            FontInstaller.TestingMode = false;
-            var TempPath = Path.GetTempPath();
-            bool calibri, impact = false;
-            File.WriteAllBytes(Path.Combine(TempPath, "calibri.ttf"), Properties.Resources.calibri);
-            File.WriteAllBytes(Path.Combine(TempPath, "impact.ttf"), Properties.Resources.impact);
-            calibri = FontInstaller.IsFontInstalled(Path.Combine(TempPath, "calibri.ttf"));
-            impact = FontInstaller.IsFontInstalled(Path.Combine(TempPath, "impact.ttf"));
+            FontC = new PrivateFontCollection();
+            bool calibri = IsFontInstalled("calibri");
+            bool impact = IsFontInstalled("impact");
 
             if (!impact && !calibri)
             {
                 Nlog.Warn("InitFonts - Impact and Calibri are not installed. May cause display issues.");
-                MessageBox.Show("It looks like the fonts \"Calibri\" and \"Impact\" aren't installed on your system. This may lead to display and scaling issues inside of the application.", "Missing fonts!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("The fonts \"Calibri\" and \"Impact\" are missing on your system. This may lead to display and scaling issues inside of the application.", "Missing fonts!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             } 
             else if (!impact)
             {
                 Nlog.Warn("InitFonts - Impact is not installed. May cause display issues.");
-                MessageBox.Show("It looks like the font \"Impact\" isn't installed on your system. This may lead to display and scaling issues inside of the application.", "Missing font!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("The font \"Impact\" is missing on your system. This may lead to display and scaling issues inside of the application.", "Missing font!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             } 
             else if (!calibri)
             {
                 Nlog.Warn("InitFonts - Calibri is not installed. May cause display issues.");
-                MessageBox.Show("It looks like the font \"Calibri\" isn't installed on your system. This may lead to display and scaling issues inside of the application.", "Missing font!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("The font \"Calibri\" is missing on your system. This may lead to display and scaling issues inside of the application.", "Missing font!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             Nlog.Info("InitFonts - Necessary fonts installed.");
+        }
+
+        private static bool IsFontInstalled (string FontFamily)
+        {
+            using (Font f = new Font(FontFamily, 10f, FontStyle.Regular))
+            {
+                StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
+                return (string.Compare(FontFamily,f.Name, comparison) == 0);
+            }
         }
 
         private static void LauncherBypass()
