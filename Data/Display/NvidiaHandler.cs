@@ -56,8 +56,6 @@ namespace AsylumLauncher
 
         public void ToggleHbaoPlus(bool Active)
         {
-            Int16 CompValue = 0;
-
             if (Active)
             {
                 try
