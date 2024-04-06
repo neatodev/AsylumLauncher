@@ -121,6 +121,18 @@ namespace AsylumLauncher
             {
                 Program.MainWindow.MouseSmoothingBox.Checked = false;
             }
+
+            foreach (Button KeyButton in Program.InputHandler.ButtonList)
+            {
+                if (!KeyButton.Text.Contains("Unbound"))
+                {
+                    KeyButton.ForeColor = Color.Black;
+                }
+                else
+                {
+                    KeyButton.ForeColor = Color.RoyalBlue;
+                }
+            }
         }
 
         private string TrimLine(string Line)
