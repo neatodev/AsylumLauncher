@@ -4,6 +4,7 @@ using NLog.Targets;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Globalization;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
@@ -25,8 +26,6 @@ namespace AsylumLauncher
         public static InputHandler InputHandler;
 
         public static NvidiaHandler NvidiaHandler;
-
-        public static PrivateFontCollection FontC;
 
         public static bool IsAdmin;
 
@@ -93,6 +92,8 @@ namespace AsylumLauncher
         private static void InitializeProgram()
         {
             Nlog.Info("InitializeProgram - Starting logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
+            Nlog.Info("InitializeProgram - Current application version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            Nlog.Info("InitializeProgram - Elevated Privileges: {0}", IsAdmin.ToString());
             ApplicationConfiguration.Initialize();
             InitFonts();
             MainWindow = new AsylumLauncher();
@@ -133,12 +134,10 @@ namespace AsylumLauncher
             config.AddRule(LogLevel.Debug, LogLevel.Error, logconsole);
             config.AddRule(LogLevel.Debug, LogLevel.Error, logfile);
             LogManager.Configuration = config;
-            Nlog.Debug("SetupLogger - Elevated Privileges: {0}", IsAdmin.ToString());
         }
 
         private static void InitFonts()
         {
-            FontC = new PrivateFontCollection();
             bool calibri = IsFontInstalled("calibri");
             bool impact = IsFontInstalled("impact");
 
