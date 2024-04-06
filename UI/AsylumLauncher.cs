@@ -264,7 +264,7 @@ namespace AsylumLauncher
             {
                 if (FileHandler.DetectGameExe())
                 {
-                    this.StartGameButton.Image = (Image)Properties.Resources.Phase3;
+                    this.StartGameButton.Image = (Image)Resources.Phase3;
                     this.ActiveControl = null;
                     if (ApplySettingsButton.Enabled)
                     {
@@ -273,7 +273,7 @@ namespace AsylumLauncher
                     LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
                     LaunchGame.StartInfo.CreateNoWindow = true;
                     LaunchGame.Start();
-                    new SoundPlayer(Properties.Resources.startup).PlaySync();
+                    new SoundPlayer(Resources.startup).PlaySync();
                     Nlog.Info("StartGameButton_Click - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
                     Application.Exit();
                 }
@@ -477,7 +477,7 @@ namespace AsylumLauncher
             {
                 e.Graphics.DrawString(tabControl1.TabPages[e.Index].Text,
                     tabControl1.TabPages[e.Index].Font,
-                    SystemBrushes.HotTrack,
+                    Brushes.RoyalBlue,
                     new PointF(e.Bounds.X + 3, e.Bounds.Y + 3));
             }
             else

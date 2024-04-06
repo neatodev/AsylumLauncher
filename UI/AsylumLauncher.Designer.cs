@@ -243,7 +243,7 @@
             PresetBox.Controls.Add(DarkKnightPresetButton);
             PresetBox.Controls.Add(VanillaPresetButton);
             PresetBox.Controls.Add(OptimizedPresetButton);
-            PresetBox.ForeColor = SystemColors.HotTrack;
+            PresetBox.ForeColor = Color.RoyalBlue;
             PresetBox.Location = new Point(3, 232);
             PresetBox.Name = "PresetBox";
             PresetBox.Size = new Size(683, 101);
@@ -311,7 +311,7 @@
             AdvancedDisplayGroupBox.Controls.Add(MaxShadowLabel);
             AdvancedDisplayGroupBox.Controls.Add(AnisotropyLabel);
             AdvancedDisplayGroupBox.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            AdvancedDisplayGroupBox.ForeColor = SystemColors.HotTrack;
+            AdvancedDisplayGroupBox.ForeColor = Color.RoyalBlue;
             AdvancedDisplayGroupBox.Location = new Point(3, 339);
             AdvancedDisplayGroupBox.Name = "AdvancedDisplayGroupBox";
             AdvancedDisplayGroupBox.Size = new Size(683, 282);
@@ -668,7 +668,7 @@
             BasicDisplayGroupBox.Controls.Add(ResolutionLabel);
             BasicDisplayGroupBox.Controls.Add(LanguageLabel);
             BasicDisplayGroupBox.Controls.Add(FullscreenLabel);
-            BasicDisplayGroupBox.ForeColor = SystemColors.HotTrack;
+            BasicDisplayGroupBox.ForeColor = Color.RoyalBlue;
             BasicDisplayGroupBox.Location = new Point(3, 3);
             BasicDisplayGroupBox.Name = "BasicDisplayGroupBox";
             BasicDisplayGroupBox.Size = new Size(683, 220);
@@ -1424,7 +1424,7 @@
             AdvancedColorBox.Controls.Add(label13);
             AdvancedColorBox.Controls.Add(label12);
             AdvancedColorBox.Controls.Add(label9);
-            AdvancedColorBox.ForeColor = SystemColors.HotTrack;
+            AdvancedColorBox.ForeColor = Color.RoyalBlue;
             AdvancedColorBox.Location = new Point(3, 542);
             AdvancedColorBox.Name = "AdvancedColorBox";
             AdvancedColorBox.Size = new Size(684, 421);
@@ -1671,7 +1671,7 @@
             groupBox4.Controls.Add(MouseSmoothingBox);
             groupBox4.Controls.Add(CustomFoV1Button);
             groupBox4.Controls.Add(label6);
-            groupBox4.ForeColor = SystemColors.HotTrack;
+            groupBox4.ForeColor = Color.RoyalBlue;
             groupBox4.Location = new Point(3, 6);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(684, 530);
@@ -2185,7 +2185,7 @@
             // GPULabel
             // 
             GPULabel.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            GPULabel.ForeColor = SystemColors.HotTrack;
+            GPULabel.ForeColor = Color.RoyalBlue;
             GPULabel.Location = new Point(392, 15);
             GPULabel.Name = "GPULabel";
             GPULabel.RightToLeft = RightToLeft.No;
@@ -2198,7 +2198,7 @@
             // CPULabel
             // 
             CPULabel.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CPULabel.ForeColor = SystemColors.HotTrack;
+            CPULabel.ForeColor = Color.RoyalBlue;
             CPULabel.Location = new Point(6, 15);
             CPULabel.Name = "CPULabel";
             CPULabel.Size = new Size(361, 18);

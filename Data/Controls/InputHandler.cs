@@ -162,7 +162,7 @@ namespace AsylumLauncher
                 if (KeyButton.Text == Text || KeyButton.Text.Equals(TxtName) || KeyButtonTrimmed == Text)
                 {
                     KeyButton.Text = "Unbound";
-                    KeyButton.ForeColor = SystemColors.HotTrack;
+                    KeyButton.ForeColor = Color.RoyalBlue;
                 }
             }
 

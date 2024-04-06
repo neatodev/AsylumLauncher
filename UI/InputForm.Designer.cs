@@ -52,7 +52,7 @@
             // 
             KeybindValueLabel.AutoSize = true;
             KeybindValueLabel.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            KeybindValueLabel.ForeColor = SystemColors.HotTrack;
+            KeybindValueLabel.ForeColor = Color.RoyalBlue;
             KeybindValueLabel.Location = new Point(143, 128);
             KeybindValueLabel.Name = "KeybindValueLabel";
             KeybindValueLabel.Size = new Size(0, 39);
