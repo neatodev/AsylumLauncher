@@ -1,5 +1,6 @@
 ﻿using IniParser;
 using NLog;
+using System.Text.RegularExpressions;
 
 namespace AsylumLauncher
 {
@@ -428,7 +429,37 @@ namespace AsylumLauncher
 
         private void WriteTextureGroupLines()
         {
-            if (Program.MainWindow.texpacksupportbox.SelectedIndex == 2)
+            if (Program.MainWindow.texpacksupportbox.SelectedIndex == 3)
+            {
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[0], "MaxLODSize=" + Program.IniHandler.CustomLines[0]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[1], "MaxLODSize=" + Program.IniHandler.CustomLines[1]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[2], "MaxLODSize=" + Program.IniHandler.CustomLines[2]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[3], "MaxLODSize=" + Program.IniHandler.CustomLines[3]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[4], "MaxLODSize=" + Program.IniHandler.CustomLines[4]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterSpecular"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[5], "MaxLODSize=" + Program.IniHandler.CustomLines[5]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[6], "MaxLODSize=" + Program.IniHandler.CustomLines[6]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponNormalMap"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[7], "MaxLODSize=" + Program.IniHandler.CustomLines[7]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponSpecular"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[8], "MaxLODSize=" + Program.IniHandler.CustomLines[8]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Vehicle"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[9], "MaxLODSize=" + Program.IniHandler.CustomLines[9]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleNormalMap"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[10], "MaxLODSize=" + Program.IniHandler.CustomLines[10]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleSpecular"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[11], "MaxLODSize=" + Program.IniHandler.CustomLines[11]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[12], "MaxLODSize=" + Program.IniHandler.CustomLines[12]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[13], "MaxLODSize=" + Program.IniHandler.CustomLines[13]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_EffectsNotFiltered"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[14], "MaxLODSize=" + Program.IniHandler.CustomLines[14]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Skybox"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[15], "MaxLODSize=" + Program.IniHandler.CustomLines[15]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[16], "MaxLODSize=" + Program.IniHandler.CustomLines[16]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[17], "MaxLODSize=" + Program.IniHandler.CustomLines[17]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_RenderTarget"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[18], "MaxLODSize=" + Program.IniHandler.CustomLines[18]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3P"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[19], "MaxLODSize=" + Program.IniHandler.CustomLines[19]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PNormalMap"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[20], "MaxLODSize=" + Program.IniHandler.CustomLines[20]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PSpecular"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[21], "MaxLODSize=" + Program.IniHandler.CustomLines[21]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[22], "MaxLODSize=" + Program.IniHandler.CustomLines[22]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[23], "MaxLODSize=" + Program.IniHandler.CustomLines[23]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[24], "MaxLODSize=" + Program.IniHandler.CustomLines[24]);
+                IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = ConcatTexString(Program.IniHandler.TexturePackMaximum[25], "MaxLODSize=" + Program.IniHandler.CustomLines[25]);
+                Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Custom");
+            }
+            else if (Program.MainWindow.texpacksupportbox.SelectedIndex == 2)
             {
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = Program.IniHandler.TexturePackMaximum[0];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = Program.IniHandler.TexturePackMaximum[1];
@@ -456,6 +487,7 @@ namespace AsylumLauncher
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackMaximum[23];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackMaximum[24];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackMaximum[25];
+                Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Maximum");
             }
             else if (Program.MainWindow.texpacksupportbox.SelectedIndex == 1)
             {
@@ -485,6 +517,7 @@ namespace AsylumLauncher
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackEnabled[23];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackEnabled[24];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackEnabled[25];
+                Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Asylum Reborn");
             } 
             else
             {
@@ -514,8 +547,15 @@ namespace AsylumLauncher
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackDefaults[23];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackDefaults[24];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackDefaults[25];
+                Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Disabled");
             }
-            Nlog.Info("WriteTextureGroupLines - Set Texture Pack Fix to: {0}", Program.IniHandler.TexPackEnabled.All(x => x).ToString());
+        }
+
+        private string ConcatTexString(string TexLine, string NewValue)
+        {
+            string CleanedNewValue = Regex.Replace(NewValue, @"\s", string.Empty);
+            string Result = TexLine.Replace("MaxLODSize=4096", CleanedNewValue);
+            return Result;
         }
     }
 }

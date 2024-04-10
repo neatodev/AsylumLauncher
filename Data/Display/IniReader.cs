@@ -304,14 +304,18 @@ namespace AsylumLauncher
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[0] = true;
+                Program.IniHandler.TexPackDisabled[0] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[1] = true;
+                Program.IniHandler.TexPackDisabled[1] = false;
+
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[2] = true;
+                Program.IniHandler.TexPackDisabled[2] = false;
             }
 
             //// Asylum Reborn
@@ -319,110 +323,164 @@ namespace AsylumLauncher
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Character"] == Program.IniHandler.TexturePackEnabled[3])
             {
                 Program.IniHandler.TexPackEnabled[3] = true;
+                Program.IniHandler.TexPackDisabled[3] = false;
             }
             //TEXTUREGROUP_CharacterNormalMap
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterNormalMap"] == Program.IniHandler.TexturePackEnabled[4])
             {
                 Program.IniHandler.TexPackEnabled[4] = true;
+                Program.IniHandler.TexPackDisabled[4] = false;
             }
             ////
 
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_CharacterSpecular"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[5] = true;
+                Program.IniHandler.TexPackDisabled[5] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[6] = true;
+                Program.IniHandler.TexPackDisabled[6] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponNormalMap"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[7] = true;
+                Program.IniHandler.TexPackDisabled[7] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WeaponSpecular"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[8] = true;
+                Program.IniHandler.TexPackDisabled[8] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Vehicle"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[9] = true;
+                Program.IniHandler.TexPackDisabled[9] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleNormalMap"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[10] = true;
+                Program.IniHandler.TexPackDisabled[10] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_VehicleSpecular"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[11] = true;
+                Program.IniHandler.TexPackDisabled[11] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[12] = true;
             }
+            if (!IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Cinematic"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[12] = false;
+                Program.IniHandler.TexPackDisabled[12] = false;
+            }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[13] = true;
+                Program.IniHandler.TexPackDisabled[13] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_EffectsNotFiltered"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[14] = true;
+                Program.IniHandler.TexPackDisabled[14] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Skybox"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[15] = true;
+                Program.IniHandler.TexPackDisabled[15] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_UI"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[16] = true;
+                Program.IniHandler.TexPackDisabled[16] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[17] = true;
             }
+            if (!IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_LightAndShadowMap"].Contains("MaxLODSize=4096"))
+            {
+                Program.IniHandler.TexPackEnabled[17] = false;
+                Program.IniHandler.TexPackDisabled[17] = false;
+            }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_RenderTarget"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[18] = true;
+                Program.IniHandler.TexPackDisabled[18] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3P"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[19] = true;
+                Program.IniHandler.TexPackDisabled[19] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PNormalMap"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[20] = true;
+                Program.IniHandler.TexPackDisabled[20] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Weapon3PSpecular"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[21] = true;
+                Program.IniHandler.TexPackDisabled[21] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World_Hi"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[22] = true;
+                Program.IniHandler.TexPackDisabled[22] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[23] = true;
+                Program.IniHandler.TexPackDisabled[23] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[24] = true;
+                Program.IniHandler.TexPackDisabled[24] = false;
             }
             if (IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"].Contains("MaxLODSize=4096"))
             {
                 Program.IniHandler.TexPackEnabled[25] = true;
+                Program.IniHandler.TexPackDisabled[25] = false;
+            }
+
+            bool[] IsVanillaExceptReborn = new bool[24];
+
+            for (int i = 0; i < Program.IniHandler.TexPackDisabled.Length; i++)
+            {
+                if (i == 3 || i == 4)
+                {
+                    continue;
+                }
+
+                if (i > 4)
+                {
+                    IsVanillaExceptReborn[i - 2] = Program.IniHandler.TexPackDisabled[i];
+                } 
+                else
+                {
+                    IsVanillaExceptReborn[i] = Program.IniHandler.TexPackDisabled[i];
+                }
             }
 
             if (Program.IniHandler.TexPackEnabled.All(x => x))
             {
                 Program.MainWindow.texpacksupportbox.SelectedIndex = 2;
-            } 
-            else if (Program.IniHandler.TexPackEnabled[3] && Program.IniHandler.TexPackEnabled[4])
+            }
+            else if (Program.IniHandler.TexPackDisabled.All(x => x))
+            {
+                Program.MainWindow.texpacksupportbox.SelectedIndex = 0;
+            }
+            else if (Program.IniHandler.TexPackEnabled[3] && Program.IniHandler.TexPackEnabled[4] && IsVanillaExceptReborn.All( x => x))
             {
                 Program.MainWindow.texpacksupportbox.SelectedIndex = 1;
             }
             else
             {
-                Program.MainWindow.texpacksupportbox.SelectedIndex = 0;
+                Program.MainWindow.texpacksupportbox.SelectedIndex = 3;
             }
         }
     }

@@ -618,6 +618,11 @@ namespace AsylumLauncher
             {
                 MessageBox.Show("Only select \"Maximum\" if you have AsylumHD or an equivalent texture pack installed that covers ALL texture groups.", "Selecting this option may cause errors!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            if (texpacksupportbox.SelectedIndex == 3 && FirstStart)
+            {
+                new ManualTexGroupsForm().Show();
+            }
             DisplaySettingChanged = true;
             FirstStart = true;
         }

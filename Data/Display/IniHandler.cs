@@ -94,6 +94,10 @@ namespace AsylumLauncher
                                                 "(MinLODSize=256,MaxLODSize=4096,LODBias=0)",
                                                 "(MinLODSize=128,MaxLODSize=4096,LODBias=0)"};
 
+        public string[] CustomLines = new string[26];
+
+        public bool[] TexPackDisabled = new bool[26];
+
         public bool[] TexPackEnabled = new bool[26];
 
         public IniHandler()
@@ -101,7 +105,16 @@ namespace AsylumLauncher
             BmEngineData = SetIniData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini"));
             BmInputData = SetIniData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmInput.ini"));
             RemoveSections();
+            InitTexPackDisabledBools();
             Nlog.Info("Constructor - Successfully initialized IniHandler.");
+        }
+
+        private void InitTexPackDisabledBools()
+        {
+            for (int i = 0; i < TexPackDisabled.Length; i++)
+            {
+                TexPackDisabled[i] = true;
+            }
         }
 
         private IniData SetIniData(string Path)
@@ -211,6 +224,14 @@ namespace AsylumLauncher
             RemoveSections();
             new IniReader().InitDisplay();
             Nlog.Info("ResetDisplay - Successfully reset display settings.");
+        }
+
+        public string ReturnTexGroupValue(string TexGroupString)
+        {
+            TexGroupString = TexGroupString.Substring(TexGroupString.IndexOf(",") + 1);
+            TexGroupString = TexGroupString.Substring(0, TexGroupString.IndexOf(","));
+            TexGroupString = TexGroupString.Substring(TexGroupString.IndexOf("=") + 1);
+            return TexGroupString;
         }
     }
 }
