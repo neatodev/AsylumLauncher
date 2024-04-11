@@ -522,33 +522,6 @@ namespace AsylumLauncher
             }
         }
 
-        private void TextureFixButton_Click(object sender, EventArgs e)
-        {
-            if (Program.IniHandler.TexPackEnabled.All(x => x))
-            {
-                if (Program.MainWindow.PoolsizeBox.SelectedIndex >= 2)
-                {
-                    Program.MainWindow.PoolsizeBox.SelectedIndex = 0;
-                }
-                for (int i = 0; Program.IniHandler.TexPackEnabled.Length > i; i++)
-                {
-                    Program.IniHandler.TexPackEnabled[i] = false;
-                }
-            }
-            else
-            {
-                if (Program.MainWindow.PoolsizeBox.SelectedIndex < 2)
-                {
-                    Program.MainWindow.PoolsizeBox.SelectedIndex = 2;
-                }
-                for (int i = 0; Program.IniHandler.TexPackEnabled.Length > i; i++)
-                {
-                    Program.IniHandler.TexPackEnabled[i] = true;
-                }
-            }
-            DisplaySettingChanged = true;
-        }
-
         private void MouseSmoothingBox_Click(object sender, EventArgs e)
         {
             this.ControlSettingChanged = true;
@@ -621,7 +594,7 @@ namespace AsylumLauncher
 
             if (texpacksupportbox.SelectedIndex == 3 && FirstStart)
             {
-                new ManualTexGroupsForm().Show();
+                new ManualTexGroupsForm().ShowDialog();
             }
             DisplaySettingChanged = true;
             FirstStart = true;

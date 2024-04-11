@@ -203,5 +203,10 @@ namespace AsylumLauncher
             Program.IniHandler.CustomLines[25] = effectshimaskbox.Text.Trim();
             Program.MainWindow.DisplaySettingChanged = true;
         }
+
+        private void ManualTexGroupsForm_Load(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
     }
 }

@@ -360,7 +360,7 @@
             // worldmaskbox
             // 
             worldmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldmaskbox.Location = new Point(564, 23);
+            worldmaskbox.Location = new Point(428, 23);
             worldmaskbox.Mask = "0000";
             worldmaskbox.Name = "worldmaskbox";
             worldmaskbox.PromptChar = ' ';
@@ -371,7 +371,7 @@
             // worldnormalmaskbox
             // 
             worldnormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldnormalmaskbox.Location = new Point(564, 53);
+            worldnormalmaskbox.Location = new Point(428, 53);
             worldnormalmaskbox.Mask = "0000";
             worldnormalmaskbox.Name = "worldnormalmaskbox";
             worldnormalmaskbox.PromptChar = ' ';
@@ -382,7 +382,7 @@
             // worldspecularmaskbox
             // 
             worldspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldspecularmaskbox.Location = new Point(587, 89);
+            worldspecularmaskbox.Location = new Point(451, 89);
             worldspecularmaskbox.Mask = "0000";
             worldspecularmaskbox.Name = "worldspecularmaskbox";
             worldspecularmaskbox.PromptChar = ' ';
@@ -393,7 +393,7 @@
             // charactermaskbox
             // 
             charactermaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            charactermaskbox.Location = new Point(587, 127);
+            charactermaskbox.Location = new Point(451, 127);
             charactermaskbox.Mask = "0000";
             charactermaskbox.Name = "charactermaskbox";
             charactermaskbox.PromptChar = ' ';
@@ -404,7 +404,7 @@
             // characternormalmaskbox
             // 
             characternormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            characternormalmaskbox.Location = new Point(596, 164);
+            characternormalmaskbox.Location = new Point(460, 164);
             characternormalmaskbox.Mask = "0000";
             characternormalmaskbox.Name = "characternormalmaskbox";
             characternormalmaskbox.PromptChar = ' ';
@@ -415,7 +415,7 @@
             // characterspecularmaskbox
             // 
             characterspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            characterspecularmaskbox.Location = new Point(596, 201);
+            characterspecularmaskbox.Location = new Point(460, 201);
             characterspecularmaskbox.Mask = "0000";
             characterspecularmaskbox.Name = "characterspecularmaskbox";
             characterspecularmaskbox.PromptChar = ' ';
@@ -426,7 +426,7 @@
             // weaponmaskbox
             // 
             weaponmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weaponmaskbox.Location = new Point(596, 248);
+            weaponmaskbox.Location = new Point(460, 248);
             weaponmaskbox.Mask = "0000";
             weaponmaskbox.Name = "weaponmaskbox";
             weaponmaskbox.PromptChar = ' ';
@@ -437,7 +437,7 @@
             // weaponnormalmaskbox
             // 
             weaponnormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weaponnormalmaskbox.Location = new Point(596, 283);
+            weaponnormalmaskbox.Location = new Point(460, 283);
             weaponnormalmaskbox.Mask = "0000";
             weaponnormalmaskbox.Name = "weaponnormalmaskbox";
             weaponnormalmaskbox.PromptChar = ' ';
@@ -448,7 +448,7 @@
             // skyboxmaskbox
             // 
             skyboxmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            skyboxmaskbox.Location = new Point(441, 585);
+            skyboxmaskbox.Location = new Point(305, 585);
             skyboxmaskbox.Mask = "0000";
             skyboxmaskbox.Name = "skyboxmaskbox";
             skyboxmaskbox.PromptChar = ' ';
@@ -459,7 +459,7 @@
             // effectsnotfilteredmaskbox
             // 
             effectsnotfilteredmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            effectsnotfilteredmaskbox.Location = new Point(441, 546);
+            effectsnotfilteredmaskbox.Location = new Point(305, 546);
             effectsnotfilteredmaskbox.Mask = "0000";
             effectsnotfilteredmaskbox.Name = "effectsnotfilteredmaskbox";
             effectsnotfilteredmaskbox.PromptChar = ' ';
@@ -470,7 +470,7 @@
             // effectsmaskbox
             // 
             effectsmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            effectsmaskbox.Location = new Point(441, 507);
+            effectsmaskbox.Location = new Point(305, 507);
             effectsmaskbox.Mask = "0000";
             effectsmaskbox.Name = "effectsmaskbox";
             effectsmaskbox.PromptChar = ' ';
@@ -481,7 +481,7 @@
             // cinematicmaskbox
             // 
             cinematicmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cinematicmaskbox.Location = new Point(441, 466);
+            cinematicmaskbox.Location = new Point(305, 466);
             cinematicmaskbox.Mask = "0000";
             cinematicmaskbox.Name = "cinematicmaskbox";
             cinematicmaskbox.PromptChar = ' ';
@@ -492,7 +492,7 @@
             // vehiclespecularmaskbox
             // 
             vehiclespecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vehiclespecularmaskbox.Location = new Point(441, 429);
+            vehiclespecularmaskbox.Location = new Point(305, 429);
             vehiclespecularmaskbox.Mask = "0000";
             vehiclespecularmaskbox.Name = "vehiclespecularmaskbox";
             vehiclespecularmaskbox.PromptChar = ' ';
@@ -503,7 +503,7 @@
             // vehiclenormalmaskbox
             // 
             vehiclenormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vehiclenormalmaskbox.Location = new Point(441, 391);
+            vehiclenormalmaskbox.Location = new Point(305, 391);
             vehiclenormalmaskbox.Mask = "0000";
             vehiclenormalmaskbox.Name = "vehiclenormalmaskbox";
             vehiclenormalmaskbox.PromptChar = ' ';
@@ -514,7 +514,7 @@
             // vehiclemaskbox
             // 
             vehiclemaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vehiclemaskbox.Location = new Point(587, 355);
+            vehiclemaskbox.Location = new Point(451, 355);
             vehiclemaskbox.Mask = "0000";
             vehiclemaskbox.Name = "vehiclemaskbox";
             vehiclemaskbox.PromptChar = ' ';
@@ -525,7 +525,7 @@
             // weaponspecularmaskbox
             // 
             weaponspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weaponspecularmaskbox.Location = new Point(596, 321);
+            weaponspecularmaskbox.Location = new Point(460, 321);
             weaponspecularmaskbox.Mask = "0000";
             weaponspecularmaskbox.Name = "weaponspecularmaskbox";
             weaponspecularmaskbox.PromptChar = ' ';
@@ -536,7 +536,7 @@
             // worldnormalhimaskbox
             // 
             worldnormalhimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldnormalhimaskbox.Location = new Point(441, 890);
+            worldnormalhimaskbox.Location = new Point(305, 890);
             worldnormalhimaskbox.Mask = "0000";
             worldnormalhimaskbox.Name = "worldnormalhimaskbox";
             worldnormalhimaskbox.PromptChar = ' ';
@@ -547,7 +547,7 @@
             // worldhimaskbox
             // 
             worldhimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldhimaskbox.Location = new Point(441, 851);
+            worldhimaskbox.Location = new Point(305, 851);
             worldhimaskbox.Mask = "0000";
             worldhimaskbox.Name = "worldhimaskbox";
             worldhimaskbox.PromptChar = ' ';
@@ -558,7 +558,7 @@
             // weapon3pspecularmaskbox
             // 
             weapon3pspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weapon3pspecularmaskbox.Location = new Point(441, 812);
+            weapon3pspecularmaskbox.Location = new Point(305, 812);
             weapon3pspecularmaskbox.Mask = "0000";
             weapon3pspecularmaskbox.Name = "weapon3pspecularmaskbox";
             weapon3pspecularmaskbox.PromptChar = ' ';
@@ -569,7 +569,7 @@
             // weapon3pnormalmaskbox
             // 
             weapon3pnormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weapon3pnormalmaskbox.Location = new Point(441, 771);
+            weapon3pnormalmaskbox.Location = new Point(305, 771);
             weapon3pnormalmaskbox.Mask = "0000";
             weapon3pnormalmaskbox.Name = "weapon3pnormalmaskbox";
             weapon3pnormalmaskbox.PromptChar = ' ';
@@ -580,7 +580,7 @@
             // weapon3pmaskbox
             // 
             weapon3pmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weapon3pmaskbox.Location = new Point(441, 734);
+            weapon3pmaskbox.Location = new Point(305, 734);
             weapon3pmaskbox.Mask = "0000";
             weapon3pmaskbox.Name = "weapon3pmaskbox";
             weapon3pmaskbox.PromptChar = ' ';
@@ -591,7 +591,7 @@
             // rendertargetmaskbox
             // 
             rendertargetmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            rendertargetmaskbox.Location = new Point(441, 696);
+            rendertargetmaskbox.Location = new Point(305, 696);
             rendertargetmaskbox.Mask = "0000";
             rendertargetmaskbox.Name = "rendertargetmaskbox";
             rendertargetmaskbox.PromptChar = ' ';
@@ -602,7 +602,7 @@
             // lightandshadowmaskbox
             // 
             lightandshadowmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lightandshadowmaskbox.Location = new Point(441, 660);
+            lightandshadowmaskbox.Location = new Point(305, 660);
             lightandshadowmaskbox.Mask = "0000";
             lightandshadowmaskbox.Name = "lightandshadowmaskbox";
             lightandshadowmaskbox.PromptChar = ' ';
@@ -613,7 +613,7 @@
             // uimaskbox
             // 
             uimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            uimaskbox.Location = new Point(441, 626);
+            uimaskbox.Location = new Point(305, 626);
             uimaskbox.Mask = "0000";
             uimaskbox.Name = "uimaskbox";
             uimaskbox.PromptChar = ' ';
@@ -624,7 +624,7 @@
             // effectshimaskbox
             // 
             effectshimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            effectshimaskbox.Location = new Point(441, 970);
+            effectshimaskbox.Location = new Point(305, 970);
             effectshimaskbox.Mask = "0000";
             effectshimaskbox.Name = "effectshimaskbox";
             effectshimaskbox.PromptChar = ' ';
@@ -635,7 +635,7 @@
             // worldspecularhimaskbox
             // 
             worldspecularhimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldspecularhimaskbox.Location = new Point(441, 931);
+            worldspecularhimaskbox.Location = new Point(305, 931);
             worldspecularhimaskbox.Mask = "0000";
             worldspecularhimaskbox.Name = "worldspecularhimaskbox";
             worldspecularhimaskbox.PromptChar = ' ';
@@ -721,6 +721,8 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Define Maximum Texture Resolution";
+            TopMost = true;
+            Load += ManualTexGroupsForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
