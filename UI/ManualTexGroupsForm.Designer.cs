@@ -219,7 +219,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.Black;
-            label13.Location = new Point(292, 507);
+            label13.Location = new Point(289, 511);
             label13.Name = "label13";
             label13.Size = new Size(54, 19);
             label13.TabIndex = 22;
@@ -360,288 +360,289 @@
             // worldmaskbox
             // 
             worldmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldmaskbox.Location = new Point(428, 23);
+            worldmaskbox.Location = new Point(500, 23);
             worldmaskbox.Mask = "0000";
             worldmaskbox.Name = "worldmaskbox";
             worldmaskbox.PromptChar = ' ';
+            worldmaskbox.ResetOnPrompt = false;
             worldmaskbox.Size = new Size(47, 23);
             worldmaskbox.TabIndex = 35;
-            worldmaskbox.TextChanged += worldmaskbox_TextChanged;
+            worldmaskbox.Leave += worldmaskbox_Leave;
             // 
             // worldnormalmaskbox
             // 
             worldnormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldnormalmaskbox.Location = new Point(428, 53);
+            worldnormalmaskbox.Location = new Point(500, 53);
             worldnormalmaskbox.Mask = "0000";
             worldnormalmaskbox.Name = "worldnormalmaskbox";
             worldnormalmaskbox.PromptChar = ' ';
             worldnormalmaskbox.Size = new Size(47, 23);
             worldnormalmaskbox.TabIndex = 36;
-            worldnormalmaskbox.TextChanged += worldnormalmaskbox_TextChanged;
+            worldnormalmaskbox.Leave += worldnormalmaskbox_Leave;
             // 
             // worldspecularmaskbox
             // 
             worldspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldspecularmaskbox.Location = new Point(451, 89);
+            worldspecularmaskbox.Location = new Point(523, 89);
             worldspecularmaskbox.Mask = "0000";
             worldspecularmaskbox.Name = "worldspecularmaskbox";
             worldspecularmaskbox.PromptChar = ' ';
             worldspecularmaskbox.Size = new Size(47, 23);
             worldspecularmaskbox.TabIndex = 37;
-            worldspecularmaskbox.TextChanged += worldspecularmaskbox_TextChanged;
+            worldspecularmaskbox.Leave += worldspecularmaskbox_Leave;
             // 
             // charactermaskbox
             // 
             charactermaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            charactermaskbox.Location = new Point(451, 127);
+            charactermaskbox.Location = new Point(523, 127);
             charactermaskbox.Mask = "0000";
             charactermaskbox.Name = "charactermaskbox";
             charactermaskbox.PromptChar = ' ';
             charactermaskbox.Size = new Size(47, 23);
             charactermaskbox.TabIndex = 38;
-            charactermaskbox.TextChanged += charactermaskbox_TextChanged;
+            charactermaskbox.Leave += charactermaskbox_Leave;
             // 
             // characternormalmaskbox
             // 
             characternormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            characternormalmaskbox.Location = new Point(460, 164);
+            characternormalmaskbox.Location = new Point(532, 164);
             characternormalmaskbox.Mask = "0000";
             characternormalmaskbox.Name = "characternormalmaskbox";
             characternormalmaskbox.PromptChar = ' ';
             characternormalmaskbox.Size = new Size(47, 23);
             characternormalmaskbox.TabIndex = 39;
-            characternormalmaskbox.TextChanged += characternormalmaskbox_TextChanged;
+            characternormalmaskbox.Leave += characternormalmaskbox_Leave;
             // 
             // characterspecularmaskbox
             // 
             characterspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            characterspecularmaskbox.Location = new Point(460, 201);
+            characterspecularmaskbox.Location = new Point(532, 201);
             characterspecularmaskbox.Mask = "0000";
             characterspecularmaskbox.Name = "characterspecularmaskbox";
             characterspecularmaskbox.PromptChar = ' ';
             characterspecularmaskbox.Size = new Size(47, 23);
             characterspecularmaskbox.TabIndex = 40;
-            characterspecularmaskbox.TextChanged += characterspecularmaskbox_TextChanged;
+            characterspecularmaskbox.Leave += characterspecularmaskbox_Leave;
             // 
             // weaponmaskbox
             // 
             weaponmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weaponmaskbox.Location = new Point(460, 248);
+            weaponmaskbox.Location = new Point(532, 248);
             weaponmaskbox.Mask = "0000";
             weaponmaskbox.Name = "weaponmaskbox";
             weaponmaskbox.PromptChar = ' ';
             weaponmaskbox.Size = new Size(47, 23);
             weaponmaskbox.TabIndex = 41;
-            weaponmaskbox.TextChanged += weaponmaskbox_TextChanged;
+            weaponmaskbox.Leave += weaponmaskbox_Leave;
             // 
             // weaponnormalmaskbox
             // 
             weaponnormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weaponnormalmaskbox.Location = new Point(460, 283);
+            weaponnormalmaskbox.Location = new Point(532, 283);
             weaponnormalmaskbox.Mask = "0000";
             weaponnormalmaskbox.Name = "weaponnormalmaskbox";
             weaponnormalmaskbox.PromptChar = ' ';
             weaponnormalmaskbox.Size = new Size(47, 23);
             weaponnormalmaskbox.TabIndex = 42;
-            weaponnormalmaskbox.TextChanged += weaponnormalmaskbox_TextChanged;
+            weaponnormalmaskbox.Leave += weaponnormalmaskbox_Leave;
             // 
             // skyboxmaskbox
             // 
             skyboxmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            skyboxmaskbox.Location = new Point(305, 585);
+            skyboxmaskbox.Location = new Point(523, 566);
             skyboxmaskbox.Mask = "0000";
             skyboxmaskbox.Name = "skyboxmaskbox";
             skyboxmaskbox.PromptChar = ' ';
             skyboxmaskbox.Size = new Size(47, 23);
             skyboxmaskbox.TabIndex = 50;
-            skyboxmaskbox.TextChanged += skyboxmaskbox_TextChanged;
+            skyboxmaskbox.Leave += skyboxmaskbox_Leave;
             // 
             // effectsnotfilteredmaskbox
             // 
             effectsnotfilteredmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            effectsnotfilteredmaskbox.Location = new Point(305, 546);
+            effectsnotfilteredmaskbox.Location = new Point(523, 526);
             effectsnotfilteredmaskbox.Mask = "0000";
             effectsnotfilteredmaskbox.Name = "effectsnotfilteredmaskbox";
             effectsnotfilteredmaskbox.PromptChar = ' ';
             effectsnotfilteredmaskbox.Size = new Size(47, 23);
             effectsnotfilteredmaskbox.TabIndex = 49;
-            effectsnotfilteredmaskbox.TextChanged += effectsnotfilteredmaskbox_TextChanged;
+            effectsnotfilteredmaskbox.Leave += effectsnotfilteredmaskbox_Leave;
             // 
             // effectsmaskbox
             // 
             effectsmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            effectsmaskbox.Location = new Point(305, 507);
+            effectsmaskbox.Location = new Point(532, 497);
             effectsmaskbox.Mask = "0000";
             effectsmaskbox.Name = "effectsmaskbox";
             effectsmaskbox.PromptChar = ' ';
             effectsmaskbox.Size = new Size(47, 23);
             effectsmaskbox.TabIndex = 48;
-            effectsmaskbox.TextChanged += effectsmaskbox_TextChanged;
+            effectsmaskbox.Leave += effectsmaskbox_Leave;
             // 
             // cinematicmaskbox
             // 
             cinematicmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cinematicmaskbox.Location = new Point(305, 466);
+            cinematicmaskbox.Location = new Point(532, 458);
             cinematicmaskbox.Mask = "0000";
             cinematicmaskbox.Name = "cinematicmaskbox";
             cinematicmaskbox.PromptChar = ' ';
             cinematicmaskbox.Size = new Size(47, 23);
             cinematicmaskbox.TabIndex = 47;
-            cinematicmaskbox.TextChanged += cinematicmaskbox_TextChanged;
+            cinematicmaskbox.Leave += cinematicmaskbox_Leave;
             // 
             // vehiclespecularmaskbox
             // 
             vehiclespecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vehiclespecularmaskbox.Location = new Point(305, 429);
+            vehiclespecularmaskbox.Location = new Point(532, 429);
             vehiclespecularmaskbox.Mask = "0000";
             vehiclespecularmaskbox.Name = "vehiclespecularmaskbox";
             vehiclespecularmaskbox.PromptChar = ' ';
             vehiclespecularmaskbox.Size = new Size(47, 23);
             vehiclespecularmaskbox.TabIndex = 46;
-            vehiclespecularmaskbox.TextChanged += vehiclespecularmaskbox_TextChanged;
+            vehiclespecularmaskbox.Leave += vehiclespecularmaskbox_Leave;
             // 
             // vehiclenormalmaskbox
             // 
             vehiclenormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vehiclenormalmaskbox.Location = new Point(305, 391);
+            vehiclenormalmaskbox.Location = new Point(523, 391);
             vehiclenormalmaskbox.Mask = "0000";
             vehiclenormalmaskbox.Name = "vehiclenormalmaskbox";
             vehiclenormalmaskbox.PromptChar = ' ';
             vehiclenormalmaskbox.Size = new Size(47, 23);
             vehiclenormalmaskbox.TabIndex = 45;
-            vehiclenormalmaskbox.TextChanged += vehiclenormalmaskbox_TextChanged;
+            vehiclenormalmaskbox.Leave += vehiclenormalmaskbox_Leave;
             // 
             // vehiclemaskbox
             // 
             vehiclemaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            vehiclemaskbox.Location = new Point(451, 355);
+            vehiclemaskbox.Location = new Point(523, 355);
             vehiclemaskbox.Mask = "0000";
             vehiclemaskbox.Name = "vehiclemaskbox";
             vehiclemaskbox.PromptChar = ' ';
             vehiclemaskbox.Size = new Size(47, 23);
             vehiclemaskbox.TabIndex = 44;
-            vehiclemaskbox.TextChanged += vehiclemaskbox_TextChanged;
+            vehiclemaskbox.Leave += vehiclemaskbox_Leave;
             // 
             // weaponspecularmaskbox
             // 
             weaponspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weaponspecularmaskbox.Location = new Point(460, 321);
+            weaponspecularmaskbox.Location = new Point(532, 321);
             weaponspecularmaskbox.Mask = "0000";
             weaponspecularmaskbox.Name = "weaponspecularmaskbox";
             weaponspecularmaskbox.PromptChar = ' ';
             weaponspecularmaskbox.Size = new Size(47, 23);
             weaponspecularmaskbox.TabIndex = 43;
-            weaponspecularmaskbox.TextChanged += weaponspecularmaskbox_TextChanged;
+            weaponspecularmaskbox.Leave += weaponspecularmaskbox_Leave;
             // 
             // worldnormalhimaskbox
             // 
             worldnormalhimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldnormalhimaskbox.Location = new Point(305, 890);
+            worldnormalhimaskbox.Location = new Point(523, 860);
             worldnormalhimaskbox.Mask = "0000";
             worldnormalhimaskbox.Name = "worldnormalhimaskbox";
             worldnormalhimaskbox.PromptChar = ' ';
             worldnormalhimaskbox.Size = new Size(47, 23);
             worldnormalhimaskbox.TabIndex = 58;
-            worldnormalhimaskbox.TextChanged += worldnormalhimaskbox_TextChanged;
+            worldnormalhimaskbox.Leave += worldnormalhimaskbox_Leave;
             // 
             // worldhimaskbox
             // 
             worldhimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldhimaskbox.Location = new Point(305, 851);
+            worldhimaskbox.Location = new Point(523, 820);
             worldhimaskbox.Mask = "0000";
             worldhimaskbox.Name = "worldhimaskbox";
             worldhimaskbox.PromptChar = ' ';
             worldhimaskbox.Size = new Size(47, 23);
             worldhimaskbox.TabIndex = 57;
-            worldhimaskbox.TextChanged += worldhimaskbox_TextChanged;
+            worldhimaskbox.Leave += worldhimaskbox_Leave;
             // 
             // weapon3pspecularmaskbox
             // 
             weapon3pspecularmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weapon3pspecularmaskbox.Location = new Point(305, 812);
+            weapon3pspecularmaskbox.Location = new Point(523, 791);
             weapon3pspecularmaskbox.Mask = "0000";
             weapon3pspecularmaskbox.Name = "weapon3pspecularmaskbox";
             weapon3pspecularmaskbox.PromptChar = ' ';
             weapon3pspecularmaskbox.Size = new Size(47, 23);
             weapon3pspecularmaskbox.TabIndex = 56;
-            weapon3pspecularmaskbox.TextChanged += weapon3pspecularmaskbox_TextChanged;
+            weapon3pspecularmaskbox.Leave += weapon3pspecularmaskbox_Leave;
             // 
             // weapon3pnormalmaskbox
             // 
             weapon3pnormalmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weapon3pnormalmaskbox.Location = new Point(305, 771);
+            weapon3pnormalmaskbox.Location = new Point(523, 753);
             weapon3pnormalmaskbox.Mask = "0000";
             weapon3pnormalmaskbox.Name = "weapon3pnormalmaskbox";
             weapon3pnormalmaskbox.PromptChar = ' ';
             weapon3pnormalmaskbox.Size = new Size(47, 23);
             weapon3pnormalmaskbox.TabIndex = 55;
-            weapon3pnormalmaskbox.TextChanged += weapon3pnormalmaskbox_TextChanged;
+            weapon3pnormalmaskbox.Leave += weapon3pnormalmaskbox_Leave;
             // 
             // weapon3pmaskbox
             // 
             weapon3pmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            weapon3pmaskbox.Location = new Point(305, 734);
+            weapon3pmaskbox.Location = new Point(523, 715);
             weapon3pmaskbox.Mask = "0000";
             weapon3pmaskbox.Name = "weapon3pmaskbox";
             weapon3pmaskbox.PromptChar = ' ';
             weapon3pmaskbox.Size = new Size(47, 23);
             weapon3pmaskbox.TabIndex = 54;
-            weapon3pmaskbox.TextChanged += weapon3pmaskbox_TextChanged;
+            weapon3pmaskbox.Leave += weapon3pmaskbox_Leave;
             // 
             // rendertargetmaskbox
             // 
             rendertargetmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            rendertargetmaskbox.Location = new Point(305, 696);
+            rendertargetmaskbox.Location = new Point(532, 674);
             rendertargetmaskbox.Mask = "0000";
             rendertargetmaskbox.Name = "rendertargetmaskbox";
             rendertargetmaskbox.PromptChar = ' ';
             rendertargetmaskbox.Size = new Size(47, 23);
             rendertargetmaskbox.TabIndex = 53;
-            rendertargetmaskbox.TextChanged += rendertargetmaskbox_TextChanged;
+            rendertargetmaskbox.Leave += rendertargetmaskbox_Leave;
             // 
             // lightandshadowmaskbox
             // 
             lightandshadowmaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lightandshadowmaskbox.Location = new Point(305, 660);
+            lightandshadowmaskbox.Location = new Point(523, 645);
             lightandshadowmaskbox.Mask = "0000";
             lightandshadowmaskbox.Name = "lightandshadowmaskbox";
             lightandshadowmaskbox.PromptChar = ' ';
             lightandshadowmaskbox.Size = new Size(47, 23);
             lightandshadowmaskbox.TabIndex = 52;
-            lightandshadowmaskbox.TextChanged += lightandshadowmaskbox_TextChanged;
+            lightandshadowmaskbox.Leave += lightandshadowmaskbox_Leave;
             // 
             // uimaskbox
             // 
             uimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            uimaskbox.Location = new Point(305, 626);
+            uimaskbox.Location = new Point(523, 607);
             uimaskbox.Mask = "0000";
             uimaskbox.Name = "uimaskbox";
             uimaskbox.PromptChar = ' ';
             uimaskbox.Size = new Size(47, 23);
             uimaskbox.TabIndex = 51;
-            uimaskbox.TextChanged += uimaskbox_TextChanged;
+            uimaskbox.Leave += uimaskbox_Leave;
             // 
             // effectshimaskbox
             // 
             effectshimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            effectshimaskbox.Location = new Point(305, 970);
+            effectshimaskbox.Location = new Point(523, 947);
             effectshimaskbox.Mask = "0000";
             effectshimaskbox.Name = "effectshimaskbox";
             effectshimaskbox.PromptChar = ' ';
             effectshimaskbox.Size = new Size(47, 23);
             effectshimaskbox.TabIndex = 60;
-            effectshimaskbox.TextChanged += effectshimaskbox_TextChanged;
+            effectshimaskbox.Leave += effectshimaskbox_Leave;
             // 
             // worldspecularhimaskbox
             // 
             worldspecularhimaskbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            worldspecularhimaskbox.Location = new Point(305, 931);
+            worldspecularhimaskbox.Location = new Point(532, 890);
             worldspecularhimaskbox.Mask = "0000";
             worldspecularhimaskbox.Name = "worldspecularhimaskbox";
             worldspecularhimaskbox.PromptChar = ' ';
             worldspecularhimaskbox.Size = new Size(47, 23);
             worldspecularhimaskbox.TabIndex = 59;
-            worldspecularhimaskbox.TextChanged += worldspecularhimaskbox_TextChanged;
+            worldspecularhimaskbox.Leave += worldspecularhimaskbox_Leave;
             // 
             // label8
             // 
@@ -722,6 +723,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Define Maximum Texture Resolution";
             TopMost = true;
+            FormClosing += ManualTexGroupsForm_FormClosing;
             Load += ManualTexGroupsForm_Load;
             ResumeLayout(false);
             PerformLayout();

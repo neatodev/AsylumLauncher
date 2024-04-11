@@ -40,6 +40,7 @@ namespace AsylumLauncher
             Program.FileHandler.BmEngine.IsReadOnly = true;
             Program.FileHandler.UserEngine.IsReadOnly = true;
             Program.FileHandler.BmInput.IsReadOnly = true;
+            new IniReader().InitCustomLines();
             Nlog.Info("WriteAll - Successfully wrote settings to 'BmEngine.ini' and 'UserEngine.ini'.");
         }
 
