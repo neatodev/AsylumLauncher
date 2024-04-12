@@ -49,7 +49,14 @@ namespace AsylumLauncher
         private void worldmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(worldmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            } 
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -67,7 +74,14 @@ namespace AsylumLauncher
         private void worldnormalmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(worldnormalmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -85,7 +99,14 @@ namespace AsylumLauncher
         private void worldspecularmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(worldspecularmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -103,7 +124,14 @@ namespace AsylumLauncher
         private void charactermaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(charactermaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 512)
             {
@@ -121,7 +149,14 @@ namespace AsylumLauncher
         private void characternormalmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(characternormalmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 512)
             {
@@ -139,7 +174,14 @@ namespace AsylumLauncher
         private void characterspecularmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(characterspecularmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -157,7 +199,14 @@ namespace AsylumLauncher
         private void weaponmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(weaponmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -175,7 +224,14 @@ namespace AsylumLauncher
         private void weaponnormalmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(weaponnormalmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -193,7 +249,14 @@ namespace AsylumLauncher
         private void weaponspecularmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(weaponspecularmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -211,7 +274,14 @@ namespace AsylumLauncher
         private void vehiclemaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(vehiclemaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 512)
             {
@@ -229,7 +299,14 @@ namespace AsylumLauncher
         private void vehiclenormalmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(vehiclenormalmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -247,7 +324,14 @@ namespace AsylumLauncher
         private void vehiclespecularmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(vehiclespecularmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -265,7 +349,14 @@ namespace AsylumLauncher
         private void cinematicmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(cinematicmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 1)
             {
@@ -283,7 +374,14 @@ namespace AsylumLauncher
         private void effectsmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(effectsmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -301,7 +399,14 @@ namespace AsylumLauncher
         private void effectsnotfilteredmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(effectsnotfilteredmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -319,7 +424,14 @@ namespace AsylumLauncher
         private void skyboxmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(skyboxmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -337,7 +449,14 @@ namespace AsylumLauncher
         private void uimaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(uimaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 1024)
             {
@@ -355,7 +474,14 @@ namespace AsylumLauncher
         private void lightandshadowmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(lightandshadowmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 1)
             {
@@ -373,7 +499,14 @@ namespace AsylumLauncher
         private void rendertargetmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(rendertargetmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 1)
             {
@@ -391,7 +524,14 @@ namespace AsylumLauncher
         private void weapon3pmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(weapon3pmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -409,7 +549,14 @@ namespace AsylumLauncher
         private void weapon3pnormalmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(weapon3pnormalmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -427,7 +574,14 @@ namespace AsylumLauncher
         private void weapon3pspecularmaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(weapon3pspecularmaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
@@ -445,7 +599,14 @@ namespace AsylumLauncher
         private void worldhimaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(worldhimaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -463,7 +624,14 @@ namespace AsylumLauncher
         private void worldnormalhimaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(worldnormalhimaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -481,7 +649,14 @@ namespace AsylumLauncher
         private void worldspecularhimaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(worldspecularhimaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 256)
             {
@@ -499,7 +674,14 @@ namespace AsylumLauncher
         private void effectshimaskbox_Leave(object sender, EventArgs e)
         {
             string MinValText = Regex.Replace(effectshimaskbox.Text, @"\s", string.Empty);
-            Int16 MinValue = Int16.Parse(MinValText.Trim());
+            Int16 MinValue = 0;
+            try
+            {
+                MinValue = Int16.Parse(MinValText.Trim());
+            }
+            catch (Exception)
+            {
+            }
 
             if (MinValue > 128)
             {
