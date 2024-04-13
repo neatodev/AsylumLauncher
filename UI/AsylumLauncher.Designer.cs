@@ -2229,6 +2229,7 @@
             // StartGameButton
             // 
             StartGameButton.BackColor = Color.Transparent;
+            StartGameButton.BackgroundImage = Properties.Resources.Phase1;
             StartGameButton.BackgroundImageLayout = ImageLayout.Stretch;
             StartGameButton.FlatAppearance.BorderColor = Color.LightGray;
             StartGameButton.FlatAppearance.MouseDownBackColor = Color.Transparent;

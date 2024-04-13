@@ -495,12 +495,12 @@ namespace AsylumLauncher
 
         private void StartGameButton_MouseEnter(object sender, EventArgs e)
         {
-            this.StartGameButton.Image = (Image)Resources.Phase2;
+            this.StartGameButton.BackgroundImage = (Image)Resources.Phase2;
         }
 
         private void StartGameButton_MouseLeave(object sender, EventArgs e)
         {
-            this.StartGameButton.Image = (Image)Resources.Phase1;
+            this.StartGameButton.BackgroundImage = (Image)Resources.Phase1;
         }
 
         private void NeatoLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -522,7 +522,7 @@ namespace AsylumLauncher
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.StartGameButton.Image = (Image)Resources.Phase3;
+                this.StartGameButton.BackgroundImage = (Image)Resources.Phase3;
             }
         }
 
