@@ -273,7 +273,7 @@ namespace AsylumLauncher
                     LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
                     LaunchGame.StartInfo.CreateNoWindow = true;
                     LaunchGame.Start();
-                    new SoundPlayer(Resources.startup).PlaySync();
+                    PlayRandomStartupSound();
                     Nlog.Info("StartGameButton_Click - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
                     Application.Exit();
                 }
@@ -281,6 +281,29 @@ namespace AsylumLauncher
                 {
                     MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        private void PlayRandomStartupSound()
+        {
+            Random rnd = new Random();
+
+            int SoundPicker = rnd.Next(0, 4);
+
+            switch (SoundPicker)
+            {
+                case 0:
+                    new SoundPlayer(Resources.Laugh1).PlaySync();
+                    break;
+                case 1:
+                    new SoundPlayer(Resources.Laugh2).PlaySync();
+                    break;
+                case 2:
+                    new SoundPlayer(Resources.Laugh3).PlaySync();
+                    break;
+                case 3:
+                    new SoundPlayer(Resources.Laugh5).PlaySync();
+                    break;
             }
         }
 
