@@ -24,7 +24,12 @@
 	  <FileVersion>2.0.0.0</FileVersion>
 	  <PackageId>$(AssemblyName)</PackageId>
 	  <AssemblyName>BmLauncher</AssemblyName>
+	  <ApplicationIcon>Resources\icon2.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon2.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
