@@ -182,6 +182,7 @@
             CPULabel = new Label();
             StartGameButton = new Button();
             groupBox1 = new GroupBox();
+            linkLabel1 = new LinkLabel();
             tabControl1.SuspendLayout();
             DisplayTab.SuspendLayout();
             PresetBox.SuspendLayout();
@@ -2054,6 +2055,7 @@
             // 
             AboutTab.BackgroundImage = Properties.Resources.About_Image_4_border;
             AboutTab.BackgroundImageLayout = ImageLayout.Stretch;
+            AboutTab.Controls.Add(linkLabel1);
             AboutTab.Controls.Add(PayPalLabel);
             AboutTab.Controls.Add(NeatoLabel);
             AboutTab.Controls.Add(GPUnityLabel);
@@ -2090,12 +2092,12 @@
             NeatoLabel.AutoSize = true;
             NeatoLabel.BackColor = Color.Transparent;
             NeatoLabel.DisabledLinkColor = Color.Transparent;
-            NeatoLabel.Font = new Font("Calibri", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            NeatoLabel.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             NeatoLabel.ForeColor = Color.Transparent;
             NeatoLabel.LinkColor = Color.Transparent;
-            NeatoLabel.Location = new Point(396, 260);
+            NeatoLabel.Location = new Point(528, 166);
             NeatoLabel.Name = "NeatoLabel";
-            NeatoLabel.Size = new Size(64, 26);
+            NeatoLabel.Size = new Size(56, 23);
             NeatoLabel.TabIndex = 2;
             NeatoLabel.TabStop = true;
             NeatoLabel.Text = "Neato";
@@ -2108,12 +2110,12 @@
             GPUnityLabel.AutoSize = true;
             GPUnityLabel.BackColor = Color.Transparent;
             GPUnityLabel.DisabledLinkColor = Color.Transparent;
-            GPUnityLabel.Font = new Font("Calibri", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            GPUnityLabel.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
             GPUnityLabel.ForeColor = Color.Transparent;
             GPUnityLabel.LinkColor = Color.Transparent;
-            GPUnityLabel.Location = new Point(470, 260);
+            GPUnityLabel.Location = new Point(603, 167);
             GPUnityLabel.Name = "GPUnityLabel";
-            GPUnityLabel.Size = new Size(82, 26);
+            GPUnityLabel.Size = new Size(61, 19);
             GPUnityLabel.TabIndex = 1;
             GPUnityLabel.TabStop = true;
             GPUnityLabel.Text = "GPUnity";
@@ -2126,12 +2128,12 @@
             TempLabel.AutoSize = true;
             TempLabel.BackColor = Color.Transparent;
             TempLabel.DisabledLinkColor = Color.Transparent;
-            TempLabel.Font = new Font("Calibri", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            TempLabel.Font = new Font("Calibri", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             TempLabel.ForeColor = Color.Transparent;
             TempLabel.LinkColor = Color.Transparent;
-            TempLabel.Location = new Point(155, 203);
+            TempLabel.Location = new Point(360, 123);
             TempLabel.Name = "TempLabel";
-            TempLabel.Size = new Size(423, 59);
+            TempLabel.Size = new Size(306, 42);
             TempLabel.TabIndex = 0;
             TempLabel.TabStop = true;
             TempLabel.Text = "Developed by Neato";
@@ -2234,6 +2236,24 @@
             groupBox1.Size = new Size(741, 38);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = Color.Transparent;
+            linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.Transparent;
+            linkLabel1.DisabledLinkColor = Color.Transparent;
+            linkLabel1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel1.ForeColor = Color.Transparent;
+            linkLabel1.LinkColor = Color.Transparent;
+            linkLabel1.Location = new Point(536, 220);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(88, 19);
+            linkLabel1.TabIndex = 4;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "EVERGREEN";
+            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // AsylumLauncher
             // 
@@ -2441,5 +2461,6 @@
         private Label shadowcoveragelabel;
         public CheckBox smoothframebox;
         private Label label2;
+        private LinkLabel linkLabel1;
     }
 }

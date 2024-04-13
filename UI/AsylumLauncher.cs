@@ -286,7 +286,7 @@ namespace AsylumLauncher
 
         private void TempLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://github.com/neatodev/AsylumLauncher", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://neatodev.github.io/CityLauncher/", UseShellExecute = true });
         }
 
         private void ResolutionBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -644,6 +644,20 @@ namespace AsylumLauncher
         {
             PresetHandler.SetColorHighContrast();
             DisplaySettingChanged = true;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Random number = new Random();
+
+            if ((number.NextDouble() * (100.0 - 1.0)) + 1.0 <= 7.0)
+            {
+                Process.Start(new ProcessStartInfo { FileName = @"https://en.wikipedia.org/wiki/Baguette", UseShellExecute = true });
+            }
+            else
+            {
+                Process.Start(new ProcessStartInfo { FileName = @"https://www.nexusmods.com/users/6875632", UseShellExecute = true });
+            }
         }
     }
 }
