@@ -10,7 +10,7 @@ namespace AsylumLauncher
     {
         private bool DisplaySetting = false;
         private bool ControlSetting = false;
-        private bool FirstStart = false;
+        public bool FirstStart = false;
         private ImageTooltip ImgToolTip;
         public bool DisplaySettingChanged
         {

@@ -222,6 +222,8 @@ namespace AsylumLauncher
             Program.FileHandler.CreateConfigFile(Program.FileHandler.BmEnginePath, Resources.BmEngine);
             BmEngineData = SetIniData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini"));
             RemoveSections();
+            Program.MainWindow.FirstStart = false;
+            Program.FileHandler.BmEngine.IsReadOnly = true;
             new IniReader().InitDisplay();
             Nlog.Info("ResetDisplay - Successfully reset display settings.");
         }
