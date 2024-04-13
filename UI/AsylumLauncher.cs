@@ -306,7 +306,7 @@ namespace AsylumLauncher
 
         private void DetailModeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (texpacksupportbox.SelectedIndex == 1 || texpacksupportbox.SelectedIndex == 2) 
+            if (texpacksupportbox.SelectedIndex == 1 || texpacksupportbox.SelectedIndex == 2)
             {
                 DetailModeBox.SelectedIndex = 2;
             }
@@ -593,7 +593,7 @@ namespace AsylumLauncher
 
             if (texpacksupportbox.SelectedIndex == 2 && FirstStart)
             {
-                MessageBox.Show("Only select \"Maximum\" if you have AsylumHD or an equivalent texture pack installed that covers ALL texture groups.", "Selecting this option may cause errors!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Only select \"Ultra HD\" if you have AsylumHD or an equivalent texture pack installed that covers ALL texture groups.", "Selecting this option may cause errors!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (texpacksupportbox.SelectedIndex == 3 && FirstStart)

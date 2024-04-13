@@ -697,7 +697,7 @@
             texpacksupportbox.DropDownStyle = ComboBoxStyle.DropDownList;
             texpacksupportbox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             texpacksupportbox.FormattingEnabled = true;
-            texpacksupportbox.Items.AddRange(new object[] { "Disabled", "Asylum Reborn", "Maximum", "Custom" });
+            texpacksupportbox.Items.AddRange(new object[] { "Disabled", "Asylum Reborn", "Ultra HD", "Custom" });
             texpacksupportbox.Location = new Point(517, 71);
             texpacksupportbox.Name = "texpacksupportbox";
             texpacksupportbox.Size = new Size(152, 27);
