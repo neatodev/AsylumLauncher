@@ -6,18 +6,22 @@
         {
             Program.MainWindow.DetailModeBox.SelectedIndex = 2;
             Program.MainWindow.AmbientOcclusionBox.Checked = true;
-            Program.MainWindow.MotionBlurBox.Checked = true;
+            Program.MainWindow.MotionBlurBox.Checked = false;
             Program.MainWindow.DynShadowBox.Checked = true;
             Program.MainWindow.DistortionBox.Checked = true;
             Program.MainWindow.DOFBox.Checked = true;
             Program.MainWindow.LightRayBox.Checked = true;
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
-            Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
-            Program.MainWindow.PhysXBox.SelectedIndex = 2;
-            Program.MainWindow.PoolsizeBox.SelectedIndex = 0;
+            Program.MainWindow.AntiAliasingBox.SelectedIndex = 1;
+            Program.MainWindow.PhysXBox.SelectedIndex = 0;
+            Program.MainWindow.PoolsizeBox.SelectedIndex = 1;
             Program.MainWindow.AnisoBox.SelectedIndex = 0;
             Program.MainWindow.ShadowQualityBox.SelectedIndex = 0;
+            Program.MainWindow.shadowcoveragebox.SelectedIndex = 0;
+            Program.MainWindow.FrameCapTextBox.Text = "60";
+            Program.MainWindow.VsyncBox.SelectedIndex = 1;
+            Program.MainWindow.smoothframebox.Checked = true;
         }
 
         public static void SetOptimized()
@@ -31,10 +35,14 @@
             Program.MainWindow.LightRayBox.Checked = true;
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
-            Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
+            Program.MainWindow.AntiAliasingBox.SelectedIndex = 1;
             Program.MainWindow.PhysXBox.SelectedIndex = 1;
+            Program.MainWindow.PoolsizeBox.SelectedIndex = 2;
             Program.MainWindow.AnisoBox.SelectedIndex = 2;
             Program.MainWindow.ShadowQualityBox.SelectedIndex = 2;
+            Program.MainWindow.shadowcoveragebox.SelectedIndex = 1;
+            Program.MainWindow.smoothframebox.Checked = true;
+            Program.MainWindow.smoothframebox.Checked = true;
         }
 
         public static void SetDarkKnight()
@@ -48,10 +56,14 @@
             Program.MainWindow.LightRayBox.Checked = true;
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
-            Program.MainWindow.AntiAliasingBox.SelectedIndex = 2;
-            Program.MainWindow.PhysXBox.SelectedIndex = 2;
+            Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
+            Program.MainWindow.PhysXBox.SelectedIndex = 1;
+            Program.MainWindow.PoolsizeBox.SelectedIndex = 4;
             Program.MainWindow.AnisoBox.SelectedIndex = 2;
-            Program.MainWindow.ShadowQualityBox.SelectedIndex = 2;
+            Program.MainWindow.ShadowQualityBox.SelectedIndex = 3;
+            Program.MainWindow.shadowcoveragebox.SelectedIndex = 2;
+            Program.MainWindow.smoothframebox.Checked = true;
+            Program.MainWindow.smoothframebox.Checked = true;
         }
 
         public static void SetColorDefault()
