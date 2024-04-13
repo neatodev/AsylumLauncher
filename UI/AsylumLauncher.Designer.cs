@@ -170,6 +170,7 @@
             CustomFoV1Button = new Button();
             label6 = new Label();
             AboutTab = new TabPage();
+            linkLabel1 = new LinkLabel();
             PayPalLabel = new LinkLabel();
             NeatoLabel = new LinkLabel();
             GPUnityLabel = new LinkLabel();
@@ -182,7 +183,6 @@
             CPULabel = new Label();
             StartGameButton = new Button();
             groupBox1 = new GroupBox();
-            linkLabel1 = new LinkLabel();
             tabControl1.SuspendLayout();
             DisplayTab.SuspendLayout();
             PresetBox.SuspendLayout();
@@ -2068,6 +2068,24 @@
             AboutTab.Text = "         ABOUT         ";
             AboutTab.UseVisualStyleBackColor = true;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = Color.Transparent;
+            linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.Transparent;
+            linkLabel1.DisabledLinkColor = Color.Transparent;
+            linkLabel1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel1.ForeColor = Color.Transparent;
+            linkLabel1.LinkColor = Color.Transparent;
+            linkLabel1.Location = new Point(536, 220);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(88, 19);
+            linkLabel1.TabIndex = 4;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "EVERGREEN";
+            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // PayPalLabel
             // 
             PayPalLabel.ActiveLinkColor = Color.Transparent;
@@ -2236,24 +2254,6 @@
             groupBox1.Size = new Size(741, 38);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.ActiveLinkColor = Color.Transparent;
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.Transparent;
-            linkLabel1.DisabledLinkColor = Color.Transparent;
-            linkLabel1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.ForeColor = Color.Transparent;
-            linkLabel1.LinkColor = Color.Transparent;
-            linkLabel1.Location = new Point(536, 220);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(88, 19);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "EVERGREEN";
-            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // AsylumLauncher
             // 
