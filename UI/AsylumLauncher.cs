@@ -306,6 +306,10 @@ namespace AsylumLauncher
 
         private void DetailModeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (texpacksupportbox.SelectedIndex == 1 || texpacksupportbox.SelectedIndex == 2) 
+            {
+                DetailModeBox.SelectedIndex = 2;
+            }
             DisplaySettingChanged = true;
         }
 
@@ -595,6 +599,11 @@ namespace AsylumLauncher
             if (texpacksupportbox.SelectedIndex == 3 && FirstStart)
             {
                 new ManualTexGroupsForm().ShowDialog();
+            }
+
+            if (DetailModeBox.SelectedIndex == 0 || DetailModeBox.SelectedIndex == 1)
+            {
+                DetailModeBox.SelectedIndex = 2;
             }
             DisplaySettingChanged = true;
             FirstStart = true;
