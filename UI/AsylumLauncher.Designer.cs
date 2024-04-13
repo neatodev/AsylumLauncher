@@ -2162,7 +2162,7 @@
             // 
             ResetDisplayButton.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             ResetDisplayButton.ForeColor = Color.Black;
-            ResetDisplayButton.Location = new Point(257, 566);
+            ResetDisplayButton.Location = new Point(16, 566);
             ResetDisplayButton.Name = "ResetDisplayButton";
             ResetDisplayButton.Size = new Size(228, 67);
             ResetDisplayButton.TabIndex = 4;
@@ -2187,7 +2187,7 @@
             // ManualModeButton
             // 
             ManualModeButton.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            ManualModeButton.Location = new Point(16, 566);
+            ManualModeButton.Location = new Point(255, 566);
             ManualModeButton.Name = "ManualModeButton";
             ManualModeButton.Size = new Size(230, 67);
             ManualModeButton.TabIndex = 2;

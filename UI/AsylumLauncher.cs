@@ -286,7 +286,7 @@ namespace AsylumLauncher
 
         private void TempLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://neatodev.github.io/CityLauncher/", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://neatodev.github.io/AsylumLauncher/", UseShellExecute = true });
         }
 
         private void ResolutionBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -491,12 +491,12 @@ namespace AsylumLauncher
 
         private void StartGameButton_MouseEnter(object sender, EventArgs e)
         {
-            this.StartGameButton.Image = (Image)Properties.Resources.Phase2;
+            this.StartGameButton.Image = (Image)Resources.Phase2;
         }
 
         private void StartGameButton_MouseLeave(object sender, EventArgs e)
         {
-            this.StartGameButton.Image = (Image)Properties.Resources.Phase1;
+            this.StartGameButton.Image = (Image)Resources.Phase1;
         }
 
         private void NeatoLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -518,7 +518,7 @@ namespace AsylumLauncher
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.StartGameButton.Image = (Image)Properties.Resources.Phase3;
+                this.StartGameButton.Image = (Image)Resources.Phase3;
             }
         }
 
