@@ -264,7 +264,7 @@ namespace AsylumLauncher
             {
                 if (FileHandler.DetectGameExe())
                 {
-                    this.StartGameButton.Image = (Image)Resources.Phase3;
+                    this.StartGameButton.BackgroundImage = (Image)Resources.Phase3;
                     this.ActiveControl = null;
                     if (ApplySettingsButton.Enabled)
                     {
