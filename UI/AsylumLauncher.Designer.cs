@@ -79,8 +79,8 @@
             LanguageLabel = new Label();
             FullscreenLabel = new Label();
             ControlTab = new TabPage();
-            ResetControlButton = new Button();
             groupBox2 = new GroupBox();
+            ResetControlButton = new Button();
             label2 = new Label();
             CTDownLabel = new Label();
             CTDownButton1 = new Button();
@@ -887,7 +887,6 @@
             // ControlTab
             // 
             ControlTab.AutoScroll = true;
-            ControlTab.Controls.Add(ResetControlButton);
             ControlTab.Controls.Add(groupBox2);
             ControlTab.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             ControlTab.ForeColor = Color.Black;
@@ -900,22 +899,10 @@
             ControlTab.Text = "          CONTROLS          ";
             ControlTab.UseVisualStyleBackColor = true;
             // 
-            // ResetControlButton
-            // 
-            ResetControlButton.AutoSize = true;
-            ResetControlButton.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ResetControlButton.Location = new Point(3, 479);
-            ResetControlButton.Name = "ResetControlButton";
-            ResetControlButton.Size = new Size(683, 44);
-            ResetControlButton.TabIndex = 3;
-            ResetControlButton.Text = "RESET CONTROLS";
-            BasicToolTip.SetToolTip(ResetControlButton, "Reverts keyboard mapping to vanilla setting. Will affect extra settings.");
-            ResetControlButton.UseVisualStyleBackColor = true;
-            ResetControlButton.Click += ResetControlButton_Click;
-            // 
             // groupBox2
             // 
             groupBox2.AutoSize = true;
+            groupBox2.Controls.Add(ResetControlButton);
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(CTDownLabel);
             groupBox2.Controls.Add(CTDownButton1);
@@ -956,16 +943,30 @@
             groupBox2.ForeColor = Color.Maroon;
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(683, 470);
+            groupBox2.Size = new Size(689, 517);
             groupBox2.TabIndex = 145;
             groupBox2.TabStop = false;
+            // 
+            // ResetControlButton
+            // 
+            ResetControlButton.AutoSize = true;
+            ResetControlButton.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ResetControlButton.ForeColor = Color.Black;
+            ResetControlButton.Location = new Point(8, 441);
+            ResetControlButton.Name = "ResetControlButton";
+            ResetControlButton.Size = new Size(661, 44);
+            ResetControlButton.TabIndex = 3;
+            ResetControlButton.Text = "RESET CONTROLS";
+            BasicToolTip.SetToolTip(ResetControlButton, "Reverts keyboard mapping to vanilla setting. Will affect extra settings.");
+            ResetControlButton.UseVisualStyleBackColor = true;
+            ResetControlButton.Click += ResetControlButton_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(399, 219);
+            label2.Location = new Point(399, 207);
             label2.Name = "label2";
             label2.Size = new Size(89, 23);
             label2.TabIndex = 147;
@@ -976,7 +977,7 @@
             CTDownLabel.AutoSize = true;
             CTDownLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CTDownLabel.ForeColor = Color.Black;
-            CTDownLabel.Location = new Point(334, 408);
+            CTDownLabel.Location = new Point(334, 396);
             CTDownLabel.Name = "CTDownLabel";
             CTDownLabel.Size = new Size(154, 23);
             CTDownLabel.TabIndex = 145;
@@ -987,7 +988,7 @@
             // 
             CTDownButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CTDownButton1.ForeColor = Color.Black;
-            CTDownButton1.Location = new Point(494, 402);
+            CTDownButton1.Location = new Point(494, 390);
             CTDownButton1.Name = "CTDownButton1";
             CTDownButton1.Size = new Size(175, 35);
             CTDownButton1.TabIndex = 146;
@@ -1000,7 +1001,7 @@
             ForwardLabel.AutoSize = true;
             ForwardLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ForwardLabel.ForeColor = Color.Black;
-            ForwardLabel.Location = new Point(51, 39);
+            ForwardLabel.Location = new Point(51, 27);
             ForwardLabel.Name = "ForwardLabel";
             ForwardLabel.Size = new Size(76, 23);
             ForwardLabel.TabIndex = 0;
@@ -1011,7 +1012,7 @@
             MapLabel.AutoSize = true;
             MapLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             MapLabel.ForeColor = Color.Black;
-            MapLabel.Location = new Point(67, 409);
+            MapLabel.Location = new Point(67, 397);
             MapLabel.Name = "MapLabel";
             MapLabel.Size = new Size(60, 23);
             MapLabel.TabIndex = 144;
@@ -1022,7 +1023,7 @@
             BackwardLabel.AutoSize = true;
             BackwardLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             BackwardLabel.ForeColor = Color.Black;
-            BackwardLabel.Location = new Point(40, 79);
+            BackwardLabel.Location = new Point(40, 67);
             BackwardLabel.Name = "BackwardLabel";
             BackwardLabel.Size = new Size(87, 23);
             BackwardLabel.TabIndex = 1;
@@ -1032,7 +1033,7 @@
             // 
             MapButton.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             MapButton.ForeColor = Color.Black;
-            MapButton.Location = new Point(133, 403);
+            MapButton.Location = new Point(133, 391);
             MapButton.Name = "MapButton";
             MapButton.Size = new Size(175, 35);
             MapButton.TabIndex = 143;
@@ -1045,7 +1046,7 @@
             RightLabel.AutoSize = true;
             RightLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             RightLabel.ForeColor = Color.Black;
-            RightLabel.Location = new Point(436, 79);
+            RightLabel.Location = new Point(436, 67);
             RightLabel.Name = "RightLabel";
             RightLabel.Size = new Size(52, 23);
             RightLabel.TabIndex = 2;
@@ -1055,7 +1056,7 @@
             // 
             CapeStunButton.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CapeStunButton.ForeColor = Color.Black;
-            CapeStunButton.Location = new Point(494, 289);
+            CapeStunButton.Location = new Point(494, 277);
             CapeStunButton.Name = "CapeStunButton";
             CapeStunButton.Size = new Size(175, 35);
             CapeStunButton.TabIndex = 142;
@@ -1068,7 +1069,7 @@
             LeftLabel.AutoSize = true;
             LeftLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             LeftLabel.ForeColor = Color.Black;
-            LeftLabel.Location = new Point(448, 38);
+            LeftLabel.Location = new Point(448, 26);
             LeftLabel.Name = "LeftLabel";
             LeftLabel.Size = new Size(40, 23);
             LeftLabel.TabIndex = 3;
@@ -1079,7 +1080,7 @@
             ZoomLabel.AutoSize = true;
             ZoomLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ZoomLabel.ForeColor = Color.Black;
-            ZoomLabel.Location = new Point(73, 246);
+            ZoomLabel.Location = new Point(73, 234);
             ZoomLabel.Name = "ZoomLabel";
             ZoomLabel.Size = new Size(54, 23);
             ZoomLabel.TabIndex = 6;
@@ -1090,7 +1091,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(436, 327);
+            label8.Location = new Point(436, 315);
             label8.Name = "label8";
             label8.Size = new Size(52, 69);
             label8.TabIndex = 107;
@@ -1102,7 +1103,7 @@
             CapeStunLabel.AutoSize = true;
             CapeStunLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CapeStunLabel.ForeColor = Color.Black;
-            CapeStunLabel.Location = new Point(399, 295);
+            CapeStunLabel.Location = new Point(399, 283);
             CapeStunLabel.Name = "CapeStunLabel";
             CapeStunLabel.Size = new Size(89, 23);
             CapeStunLabel.TabIndex = 141;
@@ -1113,7 +1114,7 @@
             DetectiveModeLabel.AutoSize = true;
             DetectiveModeLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             DetectiveModeLabel.ForeColor = Color.Black;
-            DetectiveModeLabel.Location = new Point(350, 254);
+            DetectiveModeLabel.Location = new Point(350, 242);
             DetectiveModeLabel.Name = "DetectiveModeLabel";
             DetectiveModeLabel.Size = new Size(138, 23);
             DetectiveModeLabel.TabIndex = 9;
@@ -1124,7 +1125,7 @@
             UseGadgetStrikeLabel.AutoSize = true;
             UseGadgetStrikeLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             UseGadgetStrikeLabel.ForeColor = Color.Black;
-            UseGadgetStrikeLabel.Location = new Point(26, 187);
+            UseGadgetStrikeLabel.Location = new Point(26, 175);
             UseGadgetStrikeLabel.Name = "UseGadgetStrikeLabel";
             UseGadgetStrikeLabel.Size = new Size(101, 46);
             UseGadgetStrikeLabel.TabIndex = 10;
@@ -1136,7 +1137,7 @@
             ACTLabel.AutoSize = true;
             ACTLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ACTLabel.ForeColor = Color.Black;
-            ACTLabel.Location = new Point(24, 112);
+            ACTLabel.Location = new Point(24, 100);
             ACTLabel.Name = "ACTLabel";
             ACTLabel.Size = new Size(103, 69);
             ACTLabel.TabIndex = 11;
@@ -1147,7 +1148,7 @@
             // 
             FwButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             FwButton1.ForeColor = Color.Black;
-            FwButton1.Location = new Point(133, 32);
+            FwButton1.Location = new Point(133, 20);
             FwButton1.Name = "FwButton1";
             FwButton1.Size = new Size(175, 35);
             FwButton1.TabIndex = 12;
@@ -1159,7 +1160,7 @@
             // 
             BwButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             BwButton1.ForeColor = Color.Black;
-            BwButton1.Location = new Point(133, 73);
+            BwButton1.Location = new Point(133, 61);
             BwButton1.Name = "BwButton1";
             BwButton1.Size = new Size(175, 35);
             BwButton1.TabIndex = 14;
@@ -1171,7 +1172,7 @@
             // 
             LeftButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             LeftButton1.ForeColor = Color.Black;
-            LeftButton1.Location = new Point(494, 32);
+            LeftButton1.Location = new Point(494, 20);
             LeftButton1.Name = "LeftButton1";
             LeftButton1.Size = new Size(175, 35);
             LeftButton1.TabIndex = 16;
@@ -1183,7 +1184,7 @@
             // 
             RightButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             RightButton1.ForeColor = Color.Black;
-            RightButton1.Location = new Point(494, 73);
+            RightButton1.Location = new Point(494, 61);
             RightButton1.Name = "RightButton1";
             RightButton1.Size = new Size(175, 35);
             RightButton1.TabIndex = 18;
@@ -1195,7 +1196,7 @@
             // 
             ZoomButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ZoomButton1.ForeColor = Color.Black;
-            ZoomButton1.Location = new Point(133, 239);
+            ZoomButton1.Location = new Point(133, 227);
             ZoomButton1.Name = "ZoomButton1";
             ZoomButton1.Size = new Size(175, 35);
             ZoomButton1.TabIndex = 24;
@@ -1207,7 +1208,7 @@
             // 
             DetectiveModeButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             DetectiveModeButton1.ForeColor = Color.Black;
-            DetectiveModeButton1.Location = new Point(494, 248);
+            DetectiveModeButton1.Location = new Point(494, 236);
             DetectiveModeButton1.Name = "DetectiveModeButton1";
             DetectiveModeButton1.Size = new Size(175, 35);
             DetectiveModeButton1.TabIndex = 30;
@@ -1219,7 +1220,7 @@
             // 
             UseGadgetStrikeButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             UseGadgetStrikeButton1.ForeColor = Color.Black;
-            UseGadgetStrikeButton1.Location = new Point(133, 187);
+            UseGadgetStrikeButton1.Location = new Point(133, 175);
             UseGadgetStrikeButton1.Name = "UseGadgetStrikeButton1";
             UseGadgetStrikeButton1.Size = new Size(175, 46);
             UseGadgetStrikeButton1.TabIndex = 32;
@@ -1231,7 +1232,7 @@
             // 
             ACTButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ACTButton1.ForeColor = Color.Black;
-            ACTButton1.Location = new Point(133, 114);
+            ACTButton1.Location = new Point(133, 102);
             ACTButton1.Name = "ACTButton1";
             ACTButton1.Size = new Size(175, 67);
             ACTButton1.TabIndex = 34;
@@ -1244,7 +1245,7 @@
             GadgetSecLabel.AutoSize = true;
             GadgetSecLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             GadgetSecLabel.ForeColor = Color.Black;
-            GadgetSecLabel.Location = new Point(335, 196);
+            GadgetSecLabel.Location = new Point(335, 184);
             GadgetSecLabel.Name = "GadgetSecLabel";
             GadgetSecLabel.Size = new Size(153, 23);
             GadgetSecLabel.TabIndex = 36;
@@ -1255,7 +1256,7 @@
             // 
             GadgetSecButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             GadgetSecButton1.ForeColor = Color.Black;
-            GadgetSecButton1.Location = new Point(494, 196);
+            GadgetSecButton1.Location = new Point(494, 184);
             GadgetSecButton1.Name = "GadgetSecButton1";
             GadgetSecButton1.Size = new Size(175, 46);
             GadgetSecButton1.TabIndex = 38;
@@ -1268,7 +1269,7 @@
             PrevGadgetLabel.AutoSize = true;
             PrevGadgetLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             PrevGadgetLabel.ForeColor = Color.Black;
-            PrevGadgetLabel.Location = new Point(358, 120);
+            PrevGadgetLabel.Location = new Point(358, 108);
             PrevGadgetLabel.Name = "PrevGadgetLabel";
             PrevGadgetLabel.Size = new Size(130, 23);
             PrevGadgetLabel.TabIndex = 39;
@@ -1278,7 +1279,7 @@
             // 
             PrevGadgetButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             PrevGadgetButton1.ForeColor = Color.Black;
-            PrevGadgetButton1.Location = new Point(494, 114);
+            PrevGadgetButton1.Location = new Point(494, 102);
             PrevGadgetButton1.Name = "PrevGadgetButton1";
             PrevGadgetButton1.Size = new Size(175, 35);
             PrevGadgetButton1.TabIndex = 41;
@@ -1291,7 +1292,7 @@
             NextGadgetLabel.AutoSize = true;
             NextGadgetLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             NextGadgetLabel.ForeColor = Color.Black;
-            NextGadgetLabel.Location = new Point(366, 161);
+            NextGadgetLabel.Location = new Point(366, 149);
             NextGadgetLabel.Name = "NextGadgetLabel";
             NextGadgetLabel.Size = new Size(122, 23);
             NextGadgetLabel.TabIndex = 42;
@@ -1301,7 +1302,7 @@
             // 
             NextGadgetButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             NextGadgetButton1.ForeColor = Color.Black;
-            NextGadgetButton1.Location = new Point(494, 155);
+            NextGadgetButton1.Location = new Point(494, 143);
             NextGadgetButton1.Name = "NextGadgetButton1";
             NextGadgetButton1.Size = new Size(175, 35);
             NextGadgetButton1.TabIndex = 44;
@@ -1314,7 +1315,7 @@
             CrouchLabel.AutoSize = true;
             CrouchLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CrouchLabel.ForeColor = Color.Black;
-            CrouchLabel.Location = new Point(62, 287);
+            CrouchLabel.Location = new Point(62, 275);
             CrouchLabel.Name = "CrouchLabel";
             CrouchLabel.Size = new Size(65, 23);
             CrouchLabel.TabIndex = 5;
@@ -1325,7 +1326,7 @@
             ToggleCrouchLabel.AutoSize = true;
             ToggleCrouchLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ToggleCrouchLabel.ForeColor = Color.Black;
-            ToggleCrouchLabel.Location = new Point(8, 328);
+            ToggleCrouchLabel.Location = new Point(8, 316);
             ToggleCrouchLabel.Name = "ToggleCrouchLabel";
             ToggleCrouchLabel.Size = new Size(119, 23);
             ToggleCrouchLabel.TabIndex = 8;
@@ -1335,7 +1336,7 @@
             // 
             RGUButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             RGUButton1.ForeColor = Color.Black;
-            RGUButton1.Location = new Point(494, 330);
+            RGUButton1.Location = new Point(494, 318);
             RGUButton1.Name = "RGUButton1";
             RGUButton1.Size = new Size(175, 66);
             RGUButton1.TabIndex = 20;
@@ -1347,7 +1348,7 @@
             // 
             CrouchButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             CrouchButton1.ForeColor = Color.Black;
-            CrouchButton1.Location = new Point(133, 280);
+            CrouchButton1.Location = new Point(133, 268);
             CrouchButton1.Name = "CrouchButton1";
             CrouchButton1.Size = new Size(175, 35);
             CrouchButton1.TabIndex = 22;
@@ -1359,7 +1360,7 @@
             // 
             ToggleCrouchButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             ToggleCrouchButton1.ForeColor = Color.Black;
-            ToggleCrouchButton1.Location = new Point(133, 321);
+            ToggleCrouchButton1.Location = new Point(133, 309);
             ToggleCrouchButton1.Name = "ToggleCrouchButton1";
             ToggleCrouchButton1.Size = new Size(175, 35);
             ToggleCrouchButton1.TabIndex = 28;
@@ -1372,7 +1373,7 @@
             GrappleLabel.AutoSize = true;
             GrappleLabel.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             GrappleLabel.ForeColor = Color.Black;
-            GrappleLabel.Location = new Point(54, 369);
+            GrappleLabel.Location = new Point(54, 357);
             GrappleLabel.Name = "GrappleLabel";
             GrappleLabel.Size = new Size(73, 23);
             GrappleLabel.TabIndex = 7;
@@ -1382,7 +1383,7 @@
             // 
             GrappleButton1.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             GrappleButton1.ForeColor = Color.Black;
-            GrappleButton1.Location = new Point(133, 362);
+            GrappleButton1.Location = new Point(133, 350);
             GrappleButton1.Name = "GrappleButton1";
             GrappleButton1.Size = new Size(175, 35);
             GrappleButton1.TabIndex = 26;
