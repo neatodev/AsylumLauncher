@@ -1,6 +1,6 @@
 remote_theme: BDHU/minimalist
 title: Developed by Neato
-description: "(C) 2022 | CC BY-NC-SA 4.0"
+description: "(C) 2024 | CC BY-NC-SA 4.0"
 logo: Resources/icon2.ico
 sidebar:
   - name: GitHub Profile
@@ -14,7 +14,7 @@ sidebar:
     link: https://raw.githubusercontent.com/neatodev/AsylumLauncher/main/LICENSE
   - name: Nexusmods Page
     icon: <img src="Resources/nexus_icon.ico" height="16" width="16" />
-    link: https://www.nexusmods.com/batmanarkhamcity/mods/406
+    link: https://www.nexusmods.com/batmanarkhamasylum/mods/117
   - name: Donate
     icon: <i class="fa-brands fa-paypal"></i>
     link: https://www.paypal.com/donate/?hosted_button_id=LG7YTKP4JYN5S
