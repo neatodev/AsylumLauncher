@@ -943,18 +943,18 @@
             groupBox2.ForeColor = Color.Maroon;
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(689, 517);
+            groupBox2.Size = new Size(689, 502);
             groupBox2.TabIndex = 145;
             groupBox2.TabStop = false;
             // 
             // ResetControlButton
             // 
             ResetControlButton.AutoSize = true;
-            ResetControlButton.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ResetControlButton.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             ResetControlButton.ForeColor = Color.Black;
-            ResetControlButton.Location = new Point(8, 441);
+            ResetControlButton.Location = new Point(8, 434);
             ResetControlButton.Name = "ResetControlButton";
-            ResetControlButton.Size = new Size(661, 44);
+            ResetControlButton.Size = new Size(661, 36);
             ResetControlButton.TabIndex = 3;
             ResetControlButton.Text = "RESET CONTROLS";
             BasicToolTip.SetToolTip(ResetControlButton, "Reverts keyboard mapping to vanilla setting. Will affect extra settings.");
