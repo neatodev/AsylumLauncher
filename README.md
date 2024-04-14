@@ -33,7 +33,7 @@ If you like this application, please consider donating.
 
 ## Installation
 
-Drag the contents of the .zip file into the 'Batman Arkham Asylum GOTY\Binaries' folder.
+Drag the contents of the .zip file into the **'Batman Arkham Asylum GOTY\Binaries'** folder.
 
 To find this folder for the ***Steam*** version, just right-click the game in Steam, select Properties->Local Files->Browse Local Files and navigate from there.
 
