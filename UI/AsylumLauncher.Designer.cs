@@ -315,7 +315,7 @@
             AdvancedDisplayGroupBox.ForeColor = Color.RoyalBlue;
             AdvancedDisplayGroupBox.Location = new Point(3, 339);
             AdvancedDisplayGroupBox.Name = "AdvancedDisplayGroupBox";
-            AdvancedDisplayGroupBox.Size = new Size(683, 282);
+            AdvancedDisplayGroupBox.Size = new Size(683, 283);
             AdvancedDisplayGroupBox.TabIndex = 15;
             AdvancedDisplayGroupBox.TabStop = false;
             AdvancedDisplayGroupBox.Text = "ADVANCED";
@@ -354,7 +354,7 @@
             nvidiaBox.Controls.Add(PhysXLabel);
             nvidiaBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             nvidiaBox.ForeColor = Color.LimeGreen;
-            nvidiaBox.Location = new Point(389, 135);
+            nvidiaBox.Location = new Point(389, 136);
             nvidiaBox.Name = "nvidiaBox";
             nvidiaBox.Size = new Size(280, 115);
             nvidiaBox.TabIndex = 54;

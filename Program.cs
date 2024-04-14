@@ -1,6 +1,7 @@
 using NLog;
 using NLog.Config;
 using NLog.Targets;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Globalization;
@@ -176,17 +177,25 @@ namespace AsylumLauncher
             Nlog.Info("LauncherBypass - Starting logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
             using (Process LaunchGame = new())
             {
-                if (FileHandler.DetectGameExe())
+                try
                 {
-                    LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
-                    LaunchGame.StartInfo.CreateNoWindow = true;
-                    LaunchGame.Start();
-                    Nlog.Info("LauncherBypass - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
-                    Application.Exit();
-                }
-                else
+                    if (FileHandler.DetectGameExe())
+                    {
+                        LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
+                        LaunchGame.StartInfo.CreateNoWindow = true;
+                        LaunchGame.Start();
+                        Nlog.Info("LauncherBypass - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } 
+                catch (Win32Exception e)
                 {
-                    MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
+                    Nlog.Error("StartGameButton_Click - \"ShippingPC-BmGame.exe\" does not appear to be a Windows executable file: {0}", e);
+                    MessageBox.Show("'ShippingPC-BmGame.exe' does not appear to be a Windows executable file!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

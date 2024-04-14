@@ -1,5 +1,6 @@
 using AsylumLauncher.Properties;
 using NLog;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Media;
@@ -262,24 +263,32 @@ namespace AsylumLauncher
         {
             using (Process LaunchGame = new())
             {
-                if (FileHandler.DetectGameExe())
+                try
                 {
-                    this.StartGameButton.BackgroundImage = (Image)Resources.Phase3;
-                    this.ActiveControl = null;
-                    if (ApplySettingsButton.Enabled)
+                    if (FileHandler.DetectGameExe())
                     {
-                        ApplySettingsButton_Click();
+                        this.StartGameButton.BackgroundImage = (Image)Resources.Phase3;
+                        this.ActiveControl = null;
+                        if (ApplySettingsButton.Enabled)
+                        {
+                            ApplySettingsButton_Click();
+                        }
+                        LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
+                        LaunchGame.StartInfo.CreateNoWindow = true;
+                        LaunchGame.Start();
+                        PlayRandomStartupSound();
+                        Nlog.Info("StartGameButton_Click - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
+                        Application.Exit();
                     }
-                    LaunchGame.StartInfo.FileName = "ShippingPC-BmGame.exe";
-                    LaunchGame.StartInfo.CreateNoWindow = true;
-                    LaunchGame.Start();
-                    PlayRandomStartupSound();
-                    Nlog.Info("StartGameButton_Click - Launching the game. Concluding logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
-                    Application.Exit();
+                    else
+                    {
+                        MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
+                    }
                 }
-                else
+                catch (Win32Exception ex)
                 {
-                    MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK);
+                    Nlog.Error("StartGameButton_Click - \"ShippingPC-BmGame.exe\" does not appear to be a working Windows executable file: {0}", ex);
+                    MessageBox.Show("'ShippingPC-BmGame.exe' does not appear to be a working Windows executable file!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
