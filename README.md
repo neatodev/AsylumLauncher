@@ -62,7 +62,7 @@ Install the **Calibri** and **Impact** fonts for your Wine environment so you do
 
 ## Bug Reports
 
-To file a bug report, or if you have suggestions for the Launcher in general, please file an [issue](https://github.com/neatodev/AsylumLauncher/issues/new). I read these regularly and should normally be able to respond within a day. Please also include the most recent asylumlauncher_report in the issue (if available). You can find the reports in the 'Batman Arkham Asylum GOTY\Binaries\logs' folder.
+To file a bug report, or if you have suggestions for the Launcher in general, please file an [issue](https://github.com/neatodev/AsylumLauncher/issues/new). I read these regularly and should normally be able to respond within a reasonable amount of time. Please also include the most recent asylumlauncher_report in the issue (if available). You can find the reports in the 'Batman Arkham Asylum GOTY\Binaries\logs' folder.
 
 ##### License: [![CC BY 4.0][cc-by-shield]][cc-by]
 
