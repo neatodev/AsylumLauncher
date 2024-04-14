@@ -194,7 +194,7 @@ namespace AsylumLauncher
                 } 
                 catch (Win32Exception e)
                 {
-                    Nlog.Error("StartGameButton_Click - \"ShippingPC-BmGame.exe\" does not appear to be a Windows executable file: {0}", e);
+                    Nlog.Error("LauncherBypass - \"ShippingPC-BmGame.exe\" does not appear to be a Windows executable file: {0}", e);
                     MessageBox.Show("'ShippingPC-BmGame.exe' does not appear to be a Windows executable file!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
