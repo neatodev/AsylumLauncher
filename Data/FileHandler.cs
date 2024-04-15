@@ -247,11 +247,12 @@ namespace AsylumLauncher
                 }
             };
 
-            try 
+            try
             {
                 pr.Start();
 
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 return;
             }

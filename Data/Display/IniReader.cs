@@ -1,5 +1,4 @@
 ﻿using NLog;
-using NvAPIWrapper.Native.GPU.Structures;
 
 namespace AsylumLauncher
 {
@@ -327,7 +326,7 @@ namespace AsylumLauncher
                 if (i > 4)
                 {
                     IsVanillaExceptReborn[i - 2] = Program.IniHandler.TexPackDisabled[i];
-                } 
+                }
                 else
                 {
                     IsVanillaExceptReborn[i] = Program.IniHandler.TexPackDisabled[i];
@@ -342,7 +341,7 @@ namespace AsylumLauncher
             {
                 Program.MainWindow.texpacksupportbox.SelectedIndex = 0;
             }
-            else if (Program.IniHandler.TexPackEnabled[3] && Program.IniHandler.TexPackEnabled[4] && IsVanillaExceptReborn.All( x => x))
+            else if (Program.IniHandler.TexPackEnabled[3] && Program.IniHandler.TexPackEnabled[4] && IsVanillaExceptReborn.All(x => x))
             {
                 Program.MainWindow.texpacksupportbox.SelectedIndex = 1;
             }

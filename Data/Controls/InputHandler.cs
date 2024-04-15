@@ -78,7 +78,7 @@ namespace AsylumLauncher
                 "Eight",
                 "Nine",
                 "Underscore",
-                "TAB", 
+                "TAB",
                 "LeftShift",
                 "LeftAlt"
             };

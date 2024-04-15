@@ -3,7 +3,6 @@ using NLog.Config;
 using NLog.Targets;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing.Text;
 using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -147,13 +146,13 @@ namespace AsylumLauncher
                 Nlog.Warn("InitFonts - Impact and Calibri are not installed. May cause display issues.");
                 MessageBox.Show("The fonts \"Calibri\" and \"Impact\" are missing on your system. This may lead to display and scaling issues inside of the application.", "Missing fonts!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            } 
+            }
             else if (!impact)
             {
                 Nlog.Warn("InitFonts - Impact is not installed. May cause display issues.");
                 MessageBox.Show("The font \"Impact\" is missing on your system. This may lead to display and scaling issues inside of the application.", "Missing font!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            } 
+            }
             else if (!calibri)
             {
                 Nlog.Warn("InitFonts - Calibri is not installed. May cause display issues.");
@@ -163,12 +162,12 @@ namespace AsylumLauncher
             Nlog.Info("InitFonts - Necessary fonts installed.");
         }
 
-        private static bool IsFontInstalled (string FontFamily)
+        private static bool IsFontInstalled(string FontFamily)
         {
             using (Font f = new Font(FontFamily, 10f, FontStyle.Regular))
             {
                 StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
-                return (string.Compare(FontFamily,f.Name, comparison) == 0);
+                return string.Compare(FontFamily, f.Name, comparison) == 0;
             }
         }
 
@@ -191,7 +190,7 @@ namespace AsylumLauncher
                     {
                         MessageBox.Show("Could not find 'ShippingPC-BmGame.exe'.\nIs the Launcher in the correct folder?", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                } 
+                }
                 catch (Win32Exception e)
                 {
                     Nlog.Error("LauncherBypass - \"ShippingPC-BmGame.exe\" does not appear to be a Windows executable file: {0}", e);

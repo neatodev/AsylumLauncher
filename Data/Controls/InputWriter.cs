@@ -95,7 +95,8 @@ namespace AsylumLauncher
                 if (!KeyButton.Text.Contains("Unbound"))
                 {
                     KeyButton.ForeColor = Color.Black;
-                } else
+                }
+                else
                 {
                     KeyButton.ForeColor = Color.RoyalBlue;
                 }

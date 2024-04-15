@@ -1,6 +1,5 @@
 ﻿using Microsoft.Win32;
 using NLog;
-using System.Diagnostics;
 using System.Globalization;
 using System.Management;
 using System.Reflection;
@@ -24,7 +23,8 @@ namespace AsylumLauncher
 
         private string InitializeCPU()
         {
-            try {
+            try
+            {
                 var CPU = new ManagementObjectSearcher("select * from Win32_Processor").Get().Cast<ManagementObject>().First();
                 uint Clockspeed = (uint)CPU["MaxClockSpeed"];
                 double GHzSpeed = (double)Clockspeed / 1000;
@@ -38,7 +38,8 @@ namespace AsylumLauncher
                 {
                     return CPUName + " @ " + Math.Round(GHzSpeed, 1) + "GHz";
                 }
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Nlog.Error("InitializeCPU - Could not read CPU information. Error: {0}", e);
                 Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.CPULabel, "Current date.");
@@ -65,7 +66,8 @@ namespace AsylumLauncher
                 }
                 Nlog.Info("InitializeGPUValues - Recognized GPU as {0} with a total VRAM amount of {1}.", (string)Registry.GetValue(RegDirectory, "DriverDesc", "Could not find GPU name."), ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0)));
                 return (string)Registry.GetValue(RegDirectory, "DriverDesc", "GPU not found.") + " " + ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0));
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Nlog.Error("InitializeGPUValues - Could not read Graphics Card information. Error: {0}", e);
                 Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.GPULabel, "Current version.");

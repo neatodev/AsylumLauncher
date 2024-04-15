@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Eventing.Reader;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace AsylumLauncher
 {
@@ -53,7 +52,7 @@ namespace AsylumLauncher
             try
             {
                 MinValue = Int16.Parse(MinValText.Trim());
-            } 
+            }
             catch (Exception)
             {
             }

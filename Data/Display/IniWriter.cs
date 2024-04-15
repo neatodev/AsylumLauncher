@@ -519,7 +519,7 @@ namespace AsylumLauncher
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackEnabled[24];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackEnabled[25];
                 Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Asylum Reborn");
-            } 
+            }
             else
             {
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = Program.IniHandler.TexturePackDefaults[0];
