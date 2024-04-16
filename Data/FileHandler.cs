@@ -49,12 +49,6 @@ namespace AsylumLauncher
                 Nlog.Warn("CheckCustomFilesExist - Can't find the 'Custom' directory. Creating it now.");
             }
 
-            if (!File.Exists(Path.Combine(CustomDirectoryPath, "centre_camera.txt")))
-            {
-                CreateConfigFile(Path.Combine(CustomDirectoryPath, "centre_camera.txt"), Resources.centre_camera);
-                Nlog.Warn("CheckCustomFilesExist - Can't find the 'centre_camera.txt' file. Creating it now.");
-            }
-
             if (!File.Exists(Path.Combine(CustomDirectoryPath, "custom_commands.txt")))
             {
                 CreateConfigFile(Path.Combine(CustomDirectoryPath, "custom_commands.txt"), Resources.custom_commands);

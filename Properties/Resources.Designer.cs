@@ -319,15 +319,6 @@ namespace AsylumLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to set R3rdPersonCamera WalkCamConfig (StateFreeCameraSitOffsetMin=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraSitOffsetMax=(X=0.000000,Y=0.000000,Z=0.000000),StateFreeCameraPullOffset=(X=0.000000,Y=0.000000,Z=0.000000),CameraPivotOffset=(X=0.000000,Y=0.000000,Z=65.000000),ZoomedOffset=(X=0.000000,Y=0.000000,Z=80.000000),maxPitch=14500.000000,MinPitch=-100000.000000,MinFreeCameraDistance=300.000000,MaxFreeCameraDistance=300.000000,ShortCamSpringConst=250.000000,LongCamSpringConst=250.000000,DefaultCamera [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string centre_camera {
-            get {
-                return ResourceManager.GetString("centre_camera", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to //Type custom commands here and execute them with the keybind you set using the advanced launcher. .
         /// </summary>
         public static string custom_commands {
