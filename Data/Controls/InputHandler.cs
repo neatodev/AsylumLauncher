@@ -175,6 +175,11 @@ namespace AsylumLauncher
                     break;
                 }
             }
+
+            if (Bt.Text.Equals("Unbound"))
+            {
+                Bt.ForeColor = Color.RoyalBlue;
+            }
         }
 
         public bool KeyIsBanned(KeyEventArgs e)
