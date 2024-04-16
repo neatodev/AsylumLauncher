@@ -94,12 +94,12 @@
         {
             Program.MainWindow.SaturationTrackbar.Value = 90;
             Program.MainWindow.SaturationValueLabel.Text = "90%";
-            Program.MainWindow.HighlightsTrackbar.Value = 30;
-            Program.MainWindow.HighlightsValueLabel.Text = "30%";
-            Program.MainWindow.MidtonesTrackbar.Value = 115;
-            Program.MainWindow.MidtonesValueLabel.Text = "115%";
-            Program.MainWindow.ShadowsTrackbar.Value = 120;
-            Program.MainWindow.ShadowsValueLabel.Text = "120%";
+            Program.MainWindow.HighlightsTrackbar.Value = 70;
+            Program.MainWindow.HighlightsValueLabel.Text = "70%";
+            Program.MainWindow.MidtonesTrackbar.Value = 110;
+            Program.MainWindow.MidtonesValueLabel.Text = "110%";
+            Program.MainWindow.ShadowsTrackbar.Value = 100;
+            Program.MainWindow.ShadowsValueLabel.Text = "100%";
         }
 
         public static void SetColorMuted()
@@ -128,14 +128,14 @@
 
         public static void SetColorLowContrast()
         {
-            Program.MainWindow.SaturationTrackbar.Value = 95;
-            Program.MainWindow.SaturationValueLabel.Text = "95%";
-            Program.MainWindow.HighlightsTrackbar.Value = 80;
-            Program.MainWindow.HighlightsValueLabel.Text = "80%";
-            Program.MainWindow.MidtonesTrackbar.Value = 110;
-            Program.MainWindow.MidtonesValueLabel.Text = "110%";
-            Program.MainWindow.ShadowsTrackbar.Value = 110;
-            Program.MainWindow.ShadowsValueLabel.Text = "110%";
+            Program.MainWindow.SaturationTrackbar.Value = 90;
+            Program.MainWindow.SaturationValueLabel.Text = "90%";
+            Program.MainWindow.HighlightsTrackbar.Value = 85;
+            Program.MainWindow.HighlightsValueLabel.Text = "85%";
+            Program.MainWindow.MidtonesTrackbar.Value = 100;
+            Program.MainWindow.MidtonesValueLabel.Text = "100%";
+            Program.MainWindow.ShadowsTrackbar.Value = 100;
+            Program.MainWindow.ShadowsValueLabel.Text = "100%";
         }
     }
 }
