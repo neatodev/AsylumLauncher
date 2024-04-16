@@ -96,7 +96,7 @@ namespace AsylumLauncher
             {
                 BmInput.IsReadOnly = false;
                 string[] BMLines = File.ReadAllLines(BmInputPath);
-                if (BMLines.Length < 425)
+                if (BMLines.Length < 426)
                 {
                     File.Delete(BmInputPath);
                     CreateConfigFile(BmInputPath, Resources.BmInput);
