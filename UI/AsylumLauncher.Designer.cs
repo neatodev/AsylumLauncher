@@ -259,7 +259,7 @@
             DarkKnightPresetButton.Name = "DarkKnightPresetButton";
             DarkKnightPresetButton.Size = new Size(214, 37);
             DarkKnightPresetButton.TabIndex = 17;
-            DarkKnightPresetButton.Text = "ASYLUM REBORN";
+            DarkKnightPresetButton.Text = "ULTRA";
             BasicToolTip.SetToolTip(DarkKnightPresetButton, "A new way to play.");
             DarkKnightPresetButton.UseVisualStyleBackColor = true;
             DarkKnightPresetButton.Click += DarkKnightPresetButton_Click;
