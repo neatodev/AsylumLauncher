@@ -558,7 +558,7 @@
             PoolsizeBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PoolsizeBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             PoolsizeBox.FormattingEnabled = true;
-            PoolsizeBox.Items.AddRange(new object[] { "512MB (Default)", "1GB", "2GB", "3GB", "4GB", "Infinite" });
+            PoolsizeBox.Items.AddRange(new object[] { "512MB", "1GB (Default)", "2GB", "3GB", "4GB", "Infinite" });
             PoolsizeBox.Location = new Point(160, 198);
             PoolsizeBox.Name = "PoolsizeBox";
             PoolsizeBox.Size = new Size(152, 27);
