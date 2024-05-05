@@ -39,7 +39,7 @@
             Program.MainWindow.PhysXBox.SelectedIndex = 1;
             Program.MainWindow.PoolsizeBox.SelectedIndex = 2;
             Program.MainWindow.AnisoBox.SelectedIndex = 2;
-            Program.MainWindow.ShadowQualityBox.SelectedIndex = 2;
+            Program.MainWindow.ShadowQualityBox.SelectedIndex = 1;
             Program.MainWindow.shadowcoveragebox.SelectedIndex = 1;
             Program.MainWindow.smoothframebox.Checked = true;
             Program.MainWindow.smoothframebox.Checked = true;
