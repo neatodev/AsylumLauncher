@@ -21,15 +21,15 @@ A standalone, dependency free executable is also available.
 
 ## Preview
 
-![AsylumLauncher Preview](https://user-images.githubusercontent.com/49599979/201522680-351ff4fb-92b9-4ce5-8193-f30a68c36d06.png)
+![AsylumLauncher Preview](https://github.com/user-attachments/assets/c133feaf-ed66-4231-8aa2-76ffd8423904)
 
 ## Download
 
-**Download: [Current Release](https://github.com/neatodev/AsylumLauncher/releases/latest)** or **[visit Nexusmods](https://www.nexusmods.com/batmanarkhamasylum/mods/117)**
+**[Download the latest version on Nexusmods](https://www.nexusmods.com/batmanarkhamasylum/mods/117)**
 
-If you like this application, please consider donating.
+If you like this application, please consider [donating](https://ko-fi.com/neatodev).
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=LG7YTKP4JYN5S)
+[![Donate](https://shields.io/badge/Kofi-Donate!-ff5f5f?logo=ko-fi&style=for-the-badgeKofi)](https://ko-fi.com/neatodev)
 
 ## Installation
 
