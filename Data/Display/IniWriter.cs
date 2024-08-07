@@ -204,6 +204,18 @@ namespace AsylumLauncher
                     IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Ita";
                     UserEngineLangValue = "Language=Ita";
                     break;
+                case 5:
+                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Pol";
+                    UserEngineLangValue = "Language=Pol";
+                    break;
+                case 6:
+                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Rus";
+                    UserEngineLangValue = "Language=Rus";
+                    break;
+                case 7:
+                    IniHandler.BmEngineData["Engine.Engine"]["Language"] = "Jpn";
+                    UserEngineLangValue = "Language=Jpn";
+                    break;
                 default:
                     break;
             }

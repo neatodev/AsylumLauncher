@@ -741,12 +741,12 @@
             LanguageBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LanguageBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LanguageBox.FormattingEnabled = true;
-            LanguageBox.Items.AddRange(new object[] { "English", "Deutsch", "Español", "Français", "Italiano" });
+            LanguageBox.Items.AddRange(new object[] { "English", "Deutsch", "Español", "Français", "Italiano", "* Polski", "* Русский", "* やまと" });
             LanguageBox.Location = new Point(517, 137);
             LanguageBox.Name = "LanguageBox";
             LanguageBox.Size = new Size(152, 27);
             LanguageBox.TabIndex = 14;
-            BasicToolTip.SetToolTip(LanguageBox, "Sets the voice and text language of the game.");
+            BasicToolTip.SetToolTip(LanguageBox, "Sets the voice and text language of the game.\r\n\r\n* Polish, Russian and Japanese languages are NOT supported natively. Additional patches are required.");
             LanguageBox.SelectedIndexChanged += LanguageBox_SelectedIndexChanged;
             // 
             // FrameCapTextBox
@@ -873,7 +873,7 @@
             LanguageLabel.Size = new Size(74, 19);
             LanguageLabel.TabIndex = 5;
             LanguageLabel.Text = "Language";
-            BasicToolTip.SetToolTip(LanguageLabel, "Sets the voice and text language of the game.");
+            BasicToolTip.SetToolTip(LanguageLabel, "Sets the voice and text language of the game.\r\n\r\n* Polish, Russian and Japanese languages are NOT supported natively. Additional patches are required.");
             // 
             // FullscreenLabel
             // 

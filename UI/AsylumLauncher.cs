@@ -12,6 +12,7 @@ namespace AsylumLauncher
         private bool DisplaySetting = false;
         private bool ControlSetting = false;
         public bool FirstStart = false;
+        private bool LangFirstStart = false;
         private ImageTooltip ImgToolTip;
         public bool DisplaySettingChanged
         {
@@ -347,6 +348,11 @@ namespace AsylumLauncher
 
         private void LanguageBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if ((LanguageBox.SelectedIndex == 5 || LanguageBox.SelectedIndex == 6 || LanguageBox.SelectedIndex == 7) && LangFirstStart) 
+            {
+                MessageBox.Show("This language will only work if you installed the required patch for it.\nYou are responsible for downloading and installing patches.", "Important!", MessageBoxButtons.OK);
+            }
+            LangFirstStart = true;
             DisplaySettingChanged = true;
         }
 

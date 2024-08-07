@@ -102,6 +102,15 @@ namespace AsylumLauncher
                 case "Ita":
                     Program.MainWindow.LanguageBox.SelectedIndex = 4;
                     break;
+                case "Pol":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 5;
+                    break;
+                case "Rus":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 6;
+                    break;
+                case "Jpn":
+                    Program.MainWindow.LanguageBox.SelectedIndex = 7;
+                    break;
                 default:
                     Program.MainWindow.LanguageBox.Items.Add("Unofficial");
                     Program.MainWindow.LanguageBox.SelectedIndex = 5;
