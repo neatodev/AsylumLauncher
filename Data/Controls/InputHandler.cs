@@ -7,6 +7,8 @@ namespace AsylumLauncher
     {
         public string UserInputFile;
 
+        public string BmInputFile;
+
         public string[] LinesConfigStyle;
 
         public string[] LinesHumanReadable;
@@ -22,6 +24,7 @@ namespace AsylumLauncher
         public InputHandler()
         {
             UserInputFile = Program.FileHandler.UserInputPath;
+            BmInputFile = Program.FileHandler.BmInputPath;
             LinesConfigStyle = FillConfigStyle();
             LinesHumanReadable = FillHumanReadable();
             Nlog.Info("Constructor - Successfully initialized InputHandler.");
@@ -197,7 +200,9 @@ namespace AsylumLauncher
         public void ResetControls()
         {
             File.Delete(UserInputFile);
+            File.Delete(BmInputFile);
             Program.FileHandler.CreateConfigFile(UserInputFile, Resources.UserInput);
+            Program.FileHandler.CreateConfigFile(BmInputFile, Resources.BmInput);
             foreach (Button KeyButton in ButtonList)
             {
                 KeyButton.ForeColor = Color.Black;
