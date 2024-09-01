@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using AsylumLauncher.Properties;
+using NLog;
 using System.Text.RegularExpressions;
 
 namespace AsylumLauncher
@@ -7,6 +8,7 @@ namespace AsylumLauncher
     {
         private string[] UserInputLines;
         private string[] BmInputLines = { "", "" };
+        private bool CustomBinds = false;
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
 
@@ -103,8 +105,11 @@ namespace AsylumLauncher
             }
         }
 
-        private void WriteBmInput()
+        public void WriteBmInput()
         {
+            Program.FileHandler.BmInput.IsReadOnly = false;
+            File.Delete(Program.FileHandler.BmInputPath);
+            Program.FileHandler.CreateConfigFile(Program.FileHandler.BmInputPath, Resources.BmInput);
             // Mouse Sensitivity
             BmInputLines[0] = Program.MainWindow.MouseSensitivityValueLabel.Text + ".0";
 
@@ -126,7 +131,6 @@ namespace AsylumLauncher
 
             BmInputFileLines[5] = "MouseSensitivity=" + BmInputLines[0];
             BmInputFileLines[7] = "bEnableMouseSmoothing=" + BmInputLines[1];
-            Program.FileHandler.BmInput.IsReadOnly = false;
             using (StreamWriter BmInputFile = new(Program.FileHandler.BmInputPath))
             {
                 for (int i = 0; i < BmInputFileLines.Count; i++)
@@ -137,9 +141,28 @@ namespace AsylumLauncher
                         {
                             try
                             {
-                                if (!UserInputLines[j].Contains(";"))
+                                if (UserInputLines[j].Contains("; Add your own custom keybinds below this line."))
                                 {
-                                    BmInputFile.WriteLine(UserInputLines[j].Substring(1));
+                                    BmInputFile.WriteLine("; Add your own custom keybinds below this line. (Automatically carried over from UserInput.ini, DO NOT MODIFY!)");
+                                    CustomBinds = true;
+                                }
+                                else if (!UserInputLines[j].Contains(";"))
+                                {
+                                    if (CustomBinds == true)
+                                    {
+                                        if (UserInputLines[j].Substring(0, 1).Contains("."))
+                                        {
+                                            BmInputFile.WriteLine(UserInputLines[j].Substring(1));
+                                        }
+                                        else
+                                        {
+                                            BmInputFile.WriteLine(UserInputLines[j]);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        BmInputFile.WriteLine(UserInputLines[j].Substring(1));
+                                    }
                                 }
                                 else
                                 {
@@ -159,6 +182,7 @@ namespace AsylumLauncher
                 BmInputFile.Close();
             }
             Program.FileHandler.BmInput.IsReadOnly = true;
+            CustomBinds = false;
         }
 
         private string ConvertToConfigStyle(string Text, int i)

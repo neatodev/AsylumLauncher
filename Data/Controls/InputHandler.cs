@@ -199,6 +199,7 @@ namespace AsylumLauncher
 
         public void ResetControls()
         {
+            Program.FileHandler.BmInput.IsReadOnly = false;
             File.Delete(UserInputFile);
             File.Delete(BmInputFile);
             Program.FileHandler.CreateConfigFile(UserInputFile, Resources.UserInput);
@@ -209,6 +210,7 @@ namespace AsylumLauncher
             }
             Program.FileHandler.BmInput.IsReadOnly = true;
             new InputReader().InitControls();
+            InputReader.InitBmInputLines();
             Nlog.Info("ResetControls - Sucessfully reset control scheme.");
         }
     }
