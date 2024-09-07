@@ -43,20 +43,25 @@ namespace AsylumLauncher
         [STAThread]
         static void Main(string[] args)
         {
+            bool logs = true;
             bool IsNewWindow = true;
             using (Mutex mtx = new(true, "{7F85C5E9-214F-4F2A-A949-AA3978D5DAC2}", out IsNewWindow))
             {
+                if (args.Contains("-nologs"))
+                {
+                    logs = false;
+                }
                 if (args.Contains("-nolauncher"))
                 {
                     SetupCulture();
-                    SetupLogger();
+                    SetupLogger(logs);
                     LauncherBypass();
                 }
                 else if (IsNewWindow)
                 {
                     IsAdmin = CheckIsAdmin();
                     SetupCulture();
-                    SetupLogger();
+                    SetupLogger(logs);
                     InitializeProgram();
                     Application.Run(MainWindow);
                 }
@@ -109,7 +114,7 @@ namespace AsylumLauncher
             new InputWriter().WriteBmInput();
         }
 
-        private static void SetupLogger()
+        private static void SetupLogger(bool logs)
         {
             LoggingConfiguration config = new();
             ConsoleTarget logconsole = new("logconsole");
@@ -118,10 +123,14 @@ namespace AsylumLauncher
                 Directory.CreateDirectory("logs");
             }
 
-            FileTarget logfile = new("logfile")
+            if (logs)
             {
-                FileName = Directory.GetCurrentDirectory() + "\\logs\\asylumlauncher_report__" + CurrentTime + ".log"
-            };
+                FileTarget logfile = new("logfile")
+                {
+                    FileName = Directory.GetCurrentDirectory() + "\\logs\\asylumlauncher_report__" + CurrentTime + ".log"
+                };
+                config.AddRule(LogLevel.Debug, LogLevel.Error, logfile);
+            }
             DirectoryInfo LogDirectory = new(Directory.GetCurrentDirectory() + "\\logs");
             DateTime OldestAllowedArchive = DateTime.Now - new TimeSpan(3, 0, 0, 0);
             foreach (FileInfo file in LogDirectory.GetFiles())
@@ -133,7 +142,6 @@ namespace AsylumLauncher
             }
 
             config.AddRule(LogLevel.Debug, LogLevel.Error, logconsole);
-            config.AddRule(LogLevel.Debug, LogLevel.Error, logfile);
             LogManager.Configuration = config;
         }
 
