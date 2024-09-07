@@ -375,7 +375,7 @@
             hbaopluscheckbox.Size = new Size(124, 23);
             hbaopluscheckbox.TabIndex = 54;
             hbaopluscheckbox.Text = "Nvidia HBAO+";
-            BasicToolTip.SetToolTip(hbaopluscheckbox, "High-end ambient occlusion solution for rendering realistic shadowing around objects.");
+            BasicToolTip.SetToolTip(hbaopluscheckbox, "High-end ambient occlusion solution for rendering realistic shadowing around objects.\r\n\r\nThe change will be applied instantly.");
             hbaopluscheckbox.UseVisualStyleBackColor = true;
             hbaopluscheckbox.CheckedChanged += hbaopluscheckbox_CheckedChanged;
             // 
