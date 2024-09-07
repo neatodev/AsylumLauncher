@@ -29,6 +29,8 @@ namespace AsylumLauncher
 
         public static bool IsAdmin;
 
+        public static bool CreateLogs = true;
+
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool SetForegroundWindow(IntPtr hWnd);
@@ -43,25 +45,24 @@ namespace AsylumLauncher
         [STAThread]
         static void Main(string[] args)
         {
-            bool logs = true;
             bool IsNewWindow = true;
             using (Mutex mtx = new(true, "{7F85C5E9-214F-4F2A-A949-AA3978D5DAC2}", out IsNewWindow))
             {
                 if (args.Contains("-nologs"))
                 {
-                    logs = false;
+                    CreateLogs = false;
                 }
                 if (args.Contains("-nolauncher"))
                 {
                     SetupCulture();
-                    SetupLogger(logs);
+                    SetupLogger(CreateLogs);
                     LauncherBypass();
                 }
                 else if (IsNewWindow)
                 {
                     IsAdmin = CheckIsAdmin();
                     SetupCulture();
-                    SetupLogger(logs);
+                    SetupLogger(CreateLogs);
                     InitializeProgram();
                     Application.Run(MainWindow);
                 }

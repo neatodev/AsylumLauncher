@@ -231,11 +231,18 @@ namespace AsylumLauncher
 
         public void StartAsAdmin(string Name)
         {
+            string Args = "";
+
+            if (!Program.CreateLogs)
+            {
+                Args = "-nologs";
+            }
             var pr = new Process
             {
                 StartInfo =
                 {
                     FileName = Name,
+                    Arguments = Args,
                     UseShellExecute = true,
                     Verb = "runas"
                 }
