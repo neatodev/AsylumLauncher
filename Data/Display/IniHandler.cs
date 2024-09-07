@@ -104,6 +104,7 @@ namespace AsylumLauncher
         {
             BmEngineData = SetIniData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmEngine.ini"));
             var BmInputLines = File.ReadAllLines(Program.FileHandler.BmInputPath);
+            Program.FileHandler.BmInput.IsReadOnly = false;
             File.Delete(Program.FileHandler.BmInputPath);
             Program.FileHandler.CreateConfigFile(Program.FileHandler.BmInputPath, Resources.BmInput);
             BmInputData = SetIniData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Square Enix\\Batman Arkham Asylum GOTY\\BmGame\\Config\\BmInput.ini"));

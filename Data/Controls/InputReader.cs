@@ -5,7 +5,7 @@ namespace AsylumLauncher
     internal class InputReader
     {
         private readonly string[] UserInputLines;
-        private static readonly string[] BmInputLines = { "", "" };
+        private static string[] BmInputLines = { "", "" };
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
 
