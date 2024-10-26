@@ -50,7 +50,6 @@ namespace AsylumLauncher
             ImgToolTip.SetToolTip(LowContrastColorButton, "Log Profile 1");
             ImgToolTip.SetToolTip(VividColorButton, "Log Profile 2");
             ImgToolTip.SetToolTip(HighContrastColorButton, "High Contrast");
-            this.TopMost = true;
         }
 
         private void InitAdminPerms()

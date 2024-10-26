@@ -24,6 +24,7 @@ namespace AsylumLauncher
             Program.MainWindow.ControlSettingChanged = true;
             CenterMouseCursor();
             Nlog.Info("Constructor - Created a new instance of InputForm for '{0}'.", InputButton.Name);
+            this.TopMost = true;
         }
 
         private void CenterMouseCursor()
