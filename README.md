@@ -7,6 +7,7 @@ This is a replacement application for the original BmLauncher.exe of the game. A
 - Very high customizability
 - Color settings (Including color palette presets)
 - Two pre-made color profiles for HDR injection
+- Option to boot directly into the game, skipping launcher screen
 - Customizable Field of View Hotkeys
 - Compatibility Fixes for Texture Packs such as [Asylum Reborn](https://www.nexusmods.com/batmanarkhamasylum/mods/1) and [others](https://www.nexusmods.com/batmanarkhamasylum/mods/177)!
 - NVIDIA API Implementation. Toggle HBAO+ directly in the Launcher! (Powered by [NvAPIWrapper](https://github.com/falahati/NvAPIWrapper))
