@@ -45,6 +45,7 @@ namespace AsylumLauncher
             UserInputLines[11] = ConvertToConfigStyle(Program.MainWindow.ZoomButton1.Text, 11);
             // Grapple
             UserInputLines[12] = ConvertToConfigStyle(Program.MainWindow.GrappleButton1.Text, 12);
+            UserInputLines[35] = ConvertToConfigStyle(Program.MainWindow.GrappleButton1.Text, 12);
             // Toggle Crouch
             UserInputLines[13] = ConvertToConfigStyle(Program.MainWindow.ToggleCrouchButton1.Text, 13);
             // Detective Mode
@@ -52,15 +53,18 @@ namespace AsylumLauncher
             // Gadget/Strike
             UserInputLines[19] = ConvertToConfigStyle(Program.MainWindow.UseGadgetStrikeButton1.Text, 19);
             // Combat Takedown
-            UserInputLines[17] = ConvertToConfigStyle(Program.MainWindow.UseGadgetStrikeButton1.Text, 17);
+            UserInputLines[17] = ConvertToConfigStyle(Program.MainWindow.CTDownButton1.Text, 17);
             // Aim Gadget/Counter/Takedown
-            UserInputLines[22] = ConvertToConfigStyle(Program.MainWindow.CTDownButton1.Text, 22);
+            UserInputLines[22] = ConvertToConfigStyle(Program.MainWindow.ACTButton1.Text, 22);
             // Gadget Secondary/Cape Stun
             UserInputLines[25] = ConvertToConfigStyle(Program.MainWindow.GadgetSecButton1.Text, 25);
+            UserInputLines[49] = ConvertToConfigStyle(Program.MainWindow.GadgetSecButton1.Text, 25);
             // Previous Gadget
             UserInputLines[14] = ConvertToConfigStyle(Program.MainWindow.PrevGadgetButton1.Text, 14);
+            UserInputLines[37] = ConvertToConfigStyle(Program.MainWindow.PrevGadgetButton1.Text, 14);
             // Next Gadget
             UserInputLines[15] = ConvertToConfigStyle(Program.MainWindow.NextGadgetButton1.Text, 15);
+            UserInputLines[38] = ConvertToConfigStyle(Program.MainWindow.NextGadgetButton1.Text, 15);
             // Cape Stun
             UserInputLines[50] = ConvertToConfigStyle(Program.MainWindow.CapeStunButton.Text, 50);
             // Speedrun Setting
