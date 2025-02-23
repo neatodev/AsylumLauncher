@@ -21,8 +21,8 @@
 	  <Copyright>https://github.com/neatodev</Copyright>
 	  <RepositoryType>git</RepositoryType>
 	  <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
-	  <AssemblyVersion>2.0.0.3</AssemblyVersion>
-	  <FileVersion>2.0.0.3</FileVersion>
+	  <AssemblyVersion>2.0.0.4</AssemblyVersion>
+	  <FileVersion>2.0.0.4</FileVersion>
 	  <PackageId>$(AssemblyName)</PackageId>
 	  <AssemblyName>BmLauncher</AssemblyName>
 	  <ApplicationIcon>Resources\icon2.ico</ApplicationIcon>
