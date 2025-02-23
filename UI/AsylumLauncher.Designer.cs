@@ -596,7 +596,7 @@
             AntiAliasingBox.DropDownStyle = ComboBoxStyle.DropDownList;
             AntiAliasingBox.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AntiAliasingBox.FormattingEnabled = true;
-            AntiAliasingBox.Items.AddRange(new object[] { "Off", "2x MSAA", "4x MSAA", "8xQ MSAA" });
+            AntiAliasingBox.Items.AddRange(new object[] { "Off", "2x MSAA", "4x MSAA", "8x MSAA" });
             AntiAliasingBox.Location = new Point(160, 99);
             AntiAliasingBox.Name = "AntiAliasingBox";
             AntiAliasingBox.Size = new Size(152, 27);

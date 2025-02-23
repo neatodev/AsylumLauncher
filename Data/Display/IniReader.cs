@@ -129,6 +129,9 @@ namespace AsylumLauncher
                 case "4":
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 2;
                     break;
+                case "8":
+                    Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
+                    break;
                 case "10":
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
                     break;

@@ -3,6 +3,7 @@ using NLog;
 using System.Globalization;
 using System.Management;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace AsylumLauncher
 {
@@ -11,6 +12,7 @@ namespace AsylumLauncher
         private string RegDirectory;
         public string GPUData = "";
         public string CPUData = "";
+        public bool NvidiaGPU = false;
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
 
@@ -65,7 +67,12 @@ namespace AsylumLauncher
                     return SetGPUNameVideoController();
                 }
                 Nlog.Info("InitializeGPUValues - Recognized GPU as {0} with a total VRAM amount of {1}.", (string)Registry.GetValue(RegDirectory, "DriverDesc", "Could not find GPU name."), ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0)));
-                return (string)Registry.GetValue(RegDirectory, "DriverDesc", "GPU not found.") + " " + ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0));
+                string GPUName = (string)Registry.GetValue(RegDirectory, "DriverDesc", "GPU not found.");
+                if (GPUName.ToUpper().Contains("NVIDIA"))
+                {
+                    NvidiaGPU = true;
+                }
+                return GPUName + " " + ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0));
             }
             catch (Exception e)
             {
@@ -95,12 +102,33 @@ namespace AsylumLauncher
             {
                 foreach (string s in GPUList)
                 {
-                    if (!s.Contains("NVIDIA") || !s.Contains("AMD"))
+                    // check for amd radeon, but exclude integrated graphics
+                    if (s.ToUpper().Contains("AMD") && (Regex.IsMatch(s, @"\s*00M\s*$", RegexOptions.IgnoreCase) 
+                        || Regex.IsMatch(s, @"\s*0*\s*$", RegexOptions.IgnoreCase) || Regex.IsMatch(s, @"\s*X*XTX\s*$", RegexOptions.IgnoreCase) 
+                        || Regex.IsMatch(s, @"\s*X*XT\s*$", RegexOptions.IgnoreCase)))
                     {
-                        continue;
+                            GPU = s;
+                            break;
                     }
-                    GPU = s;
-                    break;
+                }
+                foreach (string s in GPUList)
+                {
+                    // check for intel arc
+                    if (s.ToUpper().Contains("INTEL") && (s.ToUpper().Contains("ARC") || Regex.IsMatch(s, @"\s*A[^ ]*", RegexOptions.IgnoreCase)))
+                    {
+                        GPU = s;
+                        break;
+                    }
+                }
+                foreach (string s in GPUList)
+                {
+                    // prioritize nvidia
+                    if (s.ToUpper().Contains("NVIDIA"))
+                    {
+                        GPU = s;
+                        NvidiaGPU = true;
+                        break;
+                    }
                 }
             }
             Nlog.Warn("SetGPUNameVideoController - Used fallback method to determine GPU as {0}. Could not correctly determine VRAM amount. Your GPU drivers may be corrupted.", GPU);

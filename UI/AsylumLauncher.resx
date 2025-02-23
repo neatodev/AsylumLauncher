@@ -117,31 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="texpacksupportbox.ToolTip" xml:space="preserve">
-    <value>Disabled - Vanilla texture settings.
-
-Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
-
-Ultra HD - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or equivalent) to be installed or will result in crashes.
-Compatible with Asylum Reborn Texture Pack.
-
-Custom - Assign values for texture groups individually. Intended for advanced users and any subsequent texture packs requiring different values.
-</value>
-  </data>
-  <metadata name="BasicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="texpacklabel.ToolTip" xml:space="preserve">
-    <value>Disabled - Vanilla texture settings.
-
-Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
-
-Ultra HD - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or equivalent) to be installed or will result in crashes.
-Compatible with Asylum Reborn Texture Pack.
-
-Custom - Assign values for texture groups individually. Intended for advanced users and any subsequent texture packs requiring different values.
-</value>
-  </data>
   <metadata name="BasicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -157,6 +132,28 @@ Custom - Assign values for texture groups individually. Intended for advanced us
 2GB is recommended for the HD Texture Pack.
 
 "Infinite" = Streaming limit will be removed. Useful for in-game texture dumping and debugging, but may cause crashes.
+</value>
+  </data>
+  <data name="texpacksupportbox.ToolTip" xml:space="preserve">
+    <value>Disabled - Vanilla texture settings.
+
+Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
+
+Ultra HD - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or equivalent) to be installed or will result in crashes.
+Compatible with Asylum Reborn Texture Pack.
+
+Custom - Assign values for texture groups individually. Intended for advanced users and any subsequent texture packs requiring different values.
+</value>
+  </data>
+  <data name="texpacklabel.ToolTip" xml:space="preserve">
+    <value>Disabled - Vanilla texture settings.
+
+Asylum Reborn - 4K character textures and support for Asylum Reborn Texture Pack.
+
+Ultra HD - 4K texture support for every texture group. Requires AsylumHD by FCH823 (or equivalent) to be installed or will result in crashes.
+Compatible with Asylum Reborn Texture Pack.
+
+Custom - Assign values for texture groups individually. Intended for advanced users and any subsequent texture packs requiring different values.
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

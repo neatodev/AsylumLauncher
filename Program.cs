@@ -110,9 +110,18 @@ namespace AsylumLauncher
             var SystemHandler = new SystemHandler();
             MainWindow.GPULabel.Text = SystemHandler.GPUData;
             MainWindow.CPULabel.Text = SystemHandler.CPUData;
+            MSAAFix(SystemHandler);
             new IniReader().InitDisplay();
             new InputReader().InitControls();
             new InputWriter().WriteBmInput();
+        }
+
+        private static void MSAAFix(SystemHandler sys)
+        {
+            if (sys.NvidiaGPU)
+            {
+                MainWindow.AntiAliasingBox.Items[3] = "8xQ MSAA";
+            }
         }
 
         private static void SetupLogger(bool logs)
