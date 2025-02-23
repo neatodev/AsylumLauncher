@@ -40,7 +40,7 @@ namespace AsylumLauncher
         ///     Offers more configuration options, enables compatibility with High-Res Texture Packs
         ///     and automatically takes care of the ReadOnly properties of each file, removing
         ///     any requirement to manually edit .ini files. Guarantees a much more comfortable user experience.
-        ///     @author Neato (https://www.nexusmods.com/users/81089053)
+        ///     @author Neato (https://www.nexusmods.com/users/81089053 / https://github.com/neatodev)
         /// </summary>
         [STAThread]
         static void Main(string[] args)
