@@ -2335,7 +2335,6 @@
         private GroupBox AdvancedDisplayGroupBox;
         public ComboBox AntiAliasingBox;
         public ComboBox AnisoBox;
-        private Label AntiAliasingLabel;
         private Label MaxShadowLabel;
         private Label AnisotropyLabel;
         public ComboBox ShadowQualityBox;
@@ -2468,5 +2467,6 @@
         public CheckBox smoothframebox;
         private Label label2;
         private LinkLabel linkLabel1;
+        public Label AntiAliasingLabel;
     }
 }

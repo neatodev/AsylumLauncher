@@ -120,7 +120,9 @@ namespace AsylumLauncher
         {
             if (sys.NvidiaGPU)
             {
-                MainWindow.AntiAliasingBox.Items[3] = "8xQ MSAA";
+                MainWindow.AntiAliasingBox.Items.Add("8xQ MSAA");
+                MainWindow.BasicToolTip.SetToolTip(MainWindow.AntiAliasingLabel, "Cleans up edge aliasing. Very demanding.\n\n8xQ MSAA is an NVIDIA-exclusive anti-aliasing solution.\n'Q' stands for Quincunx, which uses 5 samples per pixel in a diagonal cross pattern, rather than a grid. It is more performant than regular 8x MSAA, but with a slight visual trade-off.");
+                MainWindow.BasicToolTip.SetToolTip(MainWindow.AntiAliasingBox, "Cleans up edge aliasing. Very demanding.\n\n8xQ MSAA is an NVIDIA-exclusive anti-aliasing solution.\n'Q' stands for Quincunx, which uses 5 samples per pixel in a diagonal cross pattern, rather than a grid. It is more performant than regular 8x MSAA, but with a slight visual trade-off.");
             }
         }
 

@@ -234,7 +234,10 @@ namespace AsylumLauncher
                     IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "4";
                     break;
                 case 3:
-                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = Program.MainWindow.AntiAliasingBox.Items[3] == "8xQ MSAA" ? "10" : "8";
+                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "8";
+                    break;
+                case 4:
+                    IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "10";
                     break;
                 default:
                     IniHandler.BmEngineData["SystemSettings"]["MaxMultisamples"] = "1";

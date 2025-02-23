@@ -133,7 +133,14 @@ namespace AsylumLauncher
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
                     break;
                 case "10":
-                    Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
+                    if (Program.MainWindow.AntiAliasingBox.Items.Count == 5)
+                    {
+                        Program.MainWindow.AntiAliasingBox.SelectedIndex = 4;
+                    }
+                    else
+                    {
+                        Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
+                    }
                     break;
                 default:
                     Program.MainWindow.AntiAliasingBox.SelectedIndex = 0;
