@@ -103,6 +103,7 @@ namespace AsylumLauncher
             ApplicationConfiguration.Initialize();
             InitFonts();
             MainWindow = new AsylumLauncher();
+            MainWindow.Text = MainWindow.Text + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             NvidiaHandler = new NvidiaHandler();
             FileHandler = new FileHandler();
             IniHandler = new IniHandler();
