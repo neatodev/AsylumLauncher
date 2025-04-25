@@ -2,17 +2,17 @@
 using NLog;
 using System.Globalization;
 using System.Management;
-using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace AsylumLauncher
 {
     internal class SystemHandler
     {
-        private string RegDirectory;
         public string GPUData = "";
         public string CPUData = "";
         public bool NvidiaGPU = false;
+        private static readonly Regex AmdDiscreteRegex = new Regex(@"\bRadeon\s+RX\s*\d{3,5}\s*(?:M|XT|XTX)?\b", RegexOptions.IgnoreCase);
+        private static readonly Regex IntelArcRegex = new Regex(@"\bArc\s+([A-Z]\d{3,5})(M)?\b", RegexOptions.IgnoreCase);
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
 
@@ -53,86 +53,151 @@ namespace AsylumLauncher
         {
             try
             {
-                RegDirectory = Path.Combine(Registry.LocalMachine.ToString(), "SYSTEM\\ControlSet001\\Control\\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\0000");
-                var key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\\ControlSet001\\Control\\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\0000");
-
-                if (key == null)
+                string basePath = @"SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}";
+                RegistryKey baseKey = Registry.LocalMachine.OpenSubKey(basePath);
+                if (baseKey == null)
                 {
-                    RegDirectory = Path.Combine(Registry.LocalMachine.ToString(), "SYSTEM\\ControlSet001\\Control\\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\0001");
+                    Nlog.Error("InitializeGPUValues - Registry base path not found.");
+                    return SetGPUNameVideoController();
                 }
 
-                var VRam = ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0));
-                if (VRam.Trim() == "")
+                string GPUName = null;
+                string RegPath = null;
+                object VRAM = null;
+                int priority = 4; // Lower = better
+
+                foreach (string subKeyName in baseKey.GetSubKeyNames())
+                {
+                    if (!Regex.IsMatch(subKeyName, @"^\d{4}$")) continue;
+
+                    string regPath = $@"{basePath}\{subKeyName}";
+                    using RegistryKey subKey = Registry.LocalMachine.OpenSubKey(regPath);
+                    if (subKey == null) continue;
+
+                    string driverDesc = subKey.GetValue("DriverDesc") as string;
+                    object vramValue = subKey.GetValue("HardwareInformation.qwMemorySize");
+
+                    if (string.IsNullOrWhiteSpace(driverDesc)) continue;
+
+                    string upper = driverDesc.ToUpper();
+
+                    // Priority 1: NVIDIA
+                    if (upper.Contains("NVIDIA"))
+                    {
+                        GPUName = driverDesc;
+                        RegPath = regPath;
+                        VRAM = vramValue;
+                        NvidiaGPU = true;
+                        break; // top priority, break early
+                    }
+
+                    // Priority 2: Intel Arc
+                    if (upper.Contains("INTEL") && IntelArcRegex.IsMatch(driverDesc))
+                    {
+                        if (priority > 2)
+                        {
+                            GPUName = driverDesc;
+                            RegPath = regPath;
+                            VRAM = vramValue;
+                            priority = 2;
+                        }
+                        continue;
+                    }
+
+                    // Priority 3: AMD Discrete (RX line)
+                    if (AmdDiscreteRegex.IsMatch(driverDesc))
+                    {
+                        if (priority >= 3)
+                        {
+                            GPUName = driverDesc;
+                            RegPath = regPath;
+                            VRAM = vramValue;
+                            priority = 3;
+                        }
+                    }
+                }
+
+                if (string.IsNullOrEmpty(GPUName))
                 {
                     return SetGPUNameVideoController();
                 }
-                Nlog.Info("InitializeGPUValues - Recognized GPU as {0} with a total VRAM amount of {1}.", (string)Registry.GetValue(RegDirectory, "DriverDesc", "Could not find GPU name."), ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0)));
-                string GPUName = (string)Registry.GetValue(RegDirectory, "DriverDesc", "GPU not found.");
-                if (GPUName.ToUpper().Contains("NVIDIA"))
-                {
-                    NvidiaGPU = true;
-                }
-                return GPUName + " " + ConvertVRamValue((object)Registry.GetValue(RegDirectory, "HardwareInformation.qwMemorySize", 0));
+                string VRamStr = ConvertVRamValue(VRAM);
+                Nlog.Info("InitializeGPUValues - Recognized GPU as {0} with a total VRAM amount of {1}.", GPUName, VRamStr);
+                return GPUName + " (" + VRamStr + ")";
             }
             catch (Exception e)
             {
                 Nlog.Error("InitializeGPUValues - Could not read Graphics Card information. Error: {0}", e);
-                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.GPULabel, "Current version.");
-                return "Application Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.GPULabel, "Something went wrong! This is where your GPU should be.");
+                return SetGPUNameVideoController();
             }
         }
 
+
         private string SetGPUNameVideoController()
         {
-            List<string> GPUList = new();
-            ManagementObjectSearcher search = new("SELECT * FROM Win32_VideoController");
-            foreach (ManagementBaseObject o in search.Get())
+            try
             {
-                ManagementObject obj = (ManagementObject)o;
-                foreach (PropertyData data in obj.Properties)
+                List<string> GPUList = new();
+                ManagementObjectSearcher search = new("SELECT * FROM Win32_VideoController");
+                foreach (ManagementBaseObject o in search.Get())
                 {
-                    if (data.Name == "Description")
+                    ManagementObject obj = (ManagementObject)o;
+                    foreach (PropertyData data in obj.Properties)
                     {
-                        GPUList.Add(data.Value.ToString());
+                        if (data.Name == "Description")
+                        {
+                            GPUList.Add(data.Value.ToString());
+                        }
                     }
                 }
-            }
-            var GPU = GPUList[0];
-            if (GPUList.Count > 1)
-            {
+                var GPU = GPUList[0];
+
+                // Priority scores: higher is better
+                int priority = 4;
+
                 foreach (string s in GPUList)
                 {
-                    // check for amd radeon, but exclude integrated graphics
-                    if (s.ToUpper().Contains("AMD") && (Regex.IsMatch(s, @"\s*00M\s*$", RegexOptions.IgnoreCase) 
-                        || Regex.IsMatch(s, @"\s*0*\s*$", RegexOptions.IgnoreCase) || Regex.IsMatch(s, @"\s*X*XTX\s*$", RegexOptions.IgnoreCase) 
-                        || Regex.IsMatch(s, @"\s*X*XT\s*$", RegexOptions.IgnoreCase)))
-                    {
-                            GPU = s;
-                            break;
-                    }
-                }
-                foreach (string s in GPUList)
-                {
-                    // check for intel arc
-                    if (s.ToUpper().Contains("INTEL") && (s.ToUpper().Contains("ARC") || Regex.IsMatch(s, @"\s*A[^ ]*", RegexOptions.IgnoreCase)))
-                    {
-                        GPU = s;
-                        break;
-                    }
-                }
-                foreach (string s in GPUList)
-                {
-                    // prioritize nvidia
-                    if (s.ToUpper().Contains("NVIDIA"))
+                    string upper = s.ToUpper();
+
+
+                    // Priority 1: NVIDIA
+                    if (upper.Contains("NVIDIA"))
                     {
                         GPU = s;
                         NvidiaGPU = true;
+                        priority = 1;
+
+                        // No need to keep scanning—NVIDIA is top priority
                         break;
                     }
+
+                    // Priority 2: Intel Arc
+                    else if (upper.Contains("INTEL") && IntelArcRegex.IsMatch(s))
+                    {
+                        if (priority > 2)
+                        {
+                            GPU = s;
+                            priority = 2;
+                        }
+                    }
+
+                    // Priority 3: AMD Radeon (discrete only)
+                    else if (AmdDiscreteRegex.IsMatch(s) && priority >= 3)
+                    {
+                        GPU = s;
+                        priority = 3;
+                    }
                 }
+                Nlog.Warn("SetGPUNameVideoController - Used fallback method to determine GPU as {0}. Could not correctly determine VRAM amount. Your GPU drivers may be corrupted.", GPU);
+                return GPU;
             }
-            Nlog.Warn("SetGPUNameVideoController - Used fallback method to determine GPU as {0}. Could not correctly determine VRAM amount. Your GPU drivers may be corrupted.", GPU);
-            return GPU;
+            catch (Exception e) 
+            {
+                Nlog.Error("SetGPUNameVideoController - Couldn't locate GPU with fallback method.");
+                Program.MainWindow.BasicToolTip.SetToolTip(Program.MainWindow.GPULabel, "Something went wrong! This is where your GPU should be.");
+                return "GPU not found!";
+            }
         }
 
         ///<Returns VRAM value in GB in most cases.</Returns>.</summary>
@@ -149,7 +214,7 @@ namespace AsylumLauncher
                     Affix = "GB";
                 }
                 VRamValue /= 1048576;
-                return "(" + VRamValue.ToString() + Affix + ")";
+                return VRamValue.ToString() + Affix;
             }
             catch (InvalidCastException)
             {
