@@ -62,7 +62,6 @@ namespace AsylumLauncher
                 }
 
                 string GPUName = null;
-                string RegPath = null;
                 object VRAM = null;
                 int priority = 4; // Lower = better
 
