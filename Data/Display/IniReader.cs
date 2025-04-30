@@ -366,7 +366,14 @@ namespace AsylumLauncher
             }
             else
             {
-                Program.MainWindow.texpacksupportbox.SelectedIndex = 3;
+                if (Program.IniHandler.CustomLines[0] == "2048" && Program.IniHandler.CustomLines[1] == "1024" && (Program.MainWindow.PhysXBox.SelectedIndex == 1 || Program.MainWindow.PhysXBox.SelectedIndex == 2))
+                {
+                    Program.MainWindow.texpacksupportbox.SelectedIndex = 2;
+                }
+                else
+                {
+                    Program.MainWindow.texpacksupportbox.SelectedIndex = 3;
+                }
             }
         }
 

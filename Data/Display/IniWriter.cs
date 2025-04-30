@@ -503,7 +503,25 @@ namespace AsylumLauncher
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap_Hi"] = Program.IniHandler.TexturePackMaximum[23];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldSpecular_Hi"] = Program.IniHandler.TexturePackMaximum[24];
                 IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_Effects_Hi"] = Program.IniHandler.TexturePackMaximum[25];
-                Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Maximum");
+                if (Program.MainWindow.PhysXBox.SelectedIndex == 1 || Program.MainWindow.PhysXBox.SelectedIndex == 2)
+                {
+                    Int16 World = Int16.Parse(Program.IniHandler.ReturnTexGroupValue(IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"]));
+                    Int16 WorldNormal = Int16.Parse(Program.IniHandler.ReturnTexGroupValue(IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"]));
+
+                    if (World > 2048)
+                    {
+                        IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_World"] = "(MinLODSize=256,MaxLODSize=2048,LODBias=0)";
+                    }
+                    if (WorldNormal > 1024)
+                    {
+                        IniHandler.BmEngineData["SystemSettings"]["TEXTUREGROUP_WorldNormalMap"] = "(MinLODSize=256,MaxLODSize=1024,LODBias=0)";
+                    }
+                    Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Ultra HD (PhysX Crash-Fix enabled)");
+                }
+                else
+                {
+                    Nlog.Info("WriteTextureGroupLines - Set Texture Pack Support to: Ultra HD");
+                }
             }
             else if (Program.MainWindow.texpacksupportbox.SelectedIndex == 1)
             {
