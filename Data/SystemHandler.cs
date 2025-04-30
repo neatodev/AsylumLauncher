@@ -11,8 +11,8 @@ namespace AsylumLauncher
         public string GPUData = "";
         public string CPUData = "";
         public bool NvidiaGPU = false;
-        private static readonly Regex AmdDiscreteRegex = new Regex(@"\bRadeon\s+RX\s*\d{3,5}\s*(?:M|XT|XTX)?\b", RegexOptions.IgnoreCase);
-        private static readonly Regex IntelArcRegex = new Regex(@"\bArc\s+([A-Z]\d{3,5})(M)?\b", RegexOptions.IgnoreCase);
+        private static readonly Regex AmdDiscreteRegex = new Regex(@"\b(?:AMD\s*\(?.*?\)?\s*)?Radeon(?:\s*\(?.*?\)?\s*)?(?:[^\w\r\n]*(?:RX|Pro|R\d|HD|Vega)?\s*\d{2,5}\s*(?:M|XT|XTX|VII)?)?\b",RegexOptions.IgnoreCase);
+        private static readonly Regex IntelArcRegex = new Regex(@"\b(?:Intel\s*\(?.*?\)?\s*)?Arc\s*[^\w\r\n]*([A-Z])\s*(\d{3,5})(M)?\b",RegexOptions.IgnoreCase);
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
 
@@ -82,22 +82,20 @@ namespace AsylumLauncher
                     string upper = driverDesc.ToUpper();
 
                     // Priority 1: NVIDIA
-                    if (upper.Contains("NVIDIA"))
+                    if (upper.Contains("NVIDIA") || upper.Contains("RTX") || upper.Contains("GTX"))
                     {
                         GPUName = driverDesc;
-                        RegPath = regPath;
                         VRAM = vramValue;
                         NvidiaGPU = true;
                         break; // top priority, break early
                     }
 
                     // Priority 2: Intel Arc
-                    if (upper.Contains("INTEL") && IntelArcRegex.IsMatch(driverDesc))
+                    if (IntelArcRegex.IsMatch(driverDesc))
                     {
                         if (priority > 2)
                         {
                             GPUName = driverDesc;
-                            RegPath = regPath;
                             VRAM = vramValue;
                             priority = 2;
                         }
@@ -107,10 +105,9 @@ namespace AsylumLauncher
                     // Priority 3: AMD Discrete (RX line)
                     if (AmdDiscreteRegex.IsMatch(driverDesc))
                     {
-                        if (priority >= 3)
+                        if (priority > 3)
                         {
                             GPUName = driverDesc;
-                            RegPath = regPath;
                             VRAM = vramValue;
                             priority = 3;
                         }
@@ -160,9 +157,8 @@ namespace AsylumLauncher
                 {
                     string upper = s.ToUpper();
 
-
                     // Priority 1: NVIDIA
-                    if (upper.Contains("NVIDIA"))
+                    if (upper.Contains("NVIDIA") || upper.Contains("RTX") || upper.Contains("GTX"))
                     {
                         GPU = s;
                         NvidiaGPU = true;
@@ -173,17 +169,14 @@ namespace AsylumLauncher
                     }
 
                     // Priority 2: Intel Arc
-                    else if (upper.Contains("INTEL") && IntelArcRegex.IsMatch(s))
+                    else if (IntelArcRegex.IsMatch(s) && priority > 2)
                     {
-                        if (priority > 2)
-                        {
                             GPU = s;
                             priority = 2;
-                        }
                     }
 
                     // Priority 3: AMD Radeon (discrete only)
-                    else if (AmdDiscreteRegex.IsMatch(s) && priority >= 3)
+                    else if (AmdDiscreteRegex.IsMatch(s) && priority > 3)
                     {
                         GPU = s;
                         priority = 3;
