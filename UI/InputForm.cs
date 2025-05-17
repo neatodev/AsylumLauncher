@@ -1,4 +1,5 @@
 ﻿using NLog;
+using System.Runtime.InteropServices;
 
 namespace AsylumLauncher
 {
@@ -13,6 +14,13 @@ namespace AsylumLauncher
         private Button Input;
 
         private static Logger Nlog = LogManager.GetCurrentClassLogger();
+
+        [DllImport("user32.dll")]
+        private static extern short GetKeyState(int KeyCode);
+
+        private const int VK_RSHIFT = 0xA1;
+        private const int VK_RCONTROL = 0xA3;
+        private const int VK_RMENU = 0xA5;
 
         public InputForm(Button InputButton)
         {
@@ -100,17 +108,21 @@ namespace AsylumLauncher
                 return;
             }
 
-            if (e.KeyCode is Keys.Shift or Keys.ShiftKey or Keys.LShiftKey)
+            bool IsRightShift = (GetKeyState(VK_RSHIFT) & 0x8000) != 0;
+            bool IsRightControl = (GetKeyState(VK_RCONTROL) & 0x8000) != 0;
+            bool IsRightAlt = (GetKeyState(VK_RMENU) & 0x8000) != 0;
+
+            if (e.KeyCode is Keys.LShiftKey or Keys.Shift or Keys.ShiftKey && !IsRightShift)
             {
                 ModifierString = "Shift";
                 KeybindValueLabel.Text = ModifierString + " + " + KeyString;
             }
-            else if (e.KeyCode is Keys.Control or Keys.ControlKey or Keys.LControlKey)
+            else if (e.KeyCode is Keys.LControlKey or Keys.Control or Keys.ControlKey && !IsRightControl)
             {
                 ModifierString = "Ctrl";
                 KeybindValueLabel.Text = ModifierString + " + " + KeyString;
             }
-            else if (e.KeyCode is Keys.Alt or Keys.Menu or Keys.LMenu)
+            else if (e.KeyCode is Keys.Alt or Keys.Menu or Keys.LMenu && !IsRightAlt)
             {
                 ModifierString = "Alt";
                 KeybindValueLabel.Text = ModifierString + " + " + KeyString;
@@ -152,7 +164,18 @@ namespace AsylumLauncher
                         break;
                 }
             }
-
+            if (IsRightShift)
+            {
+                KeyString = "Right Shift";
+            }
+            if (IsRightControl)
+            {
+                KeyString = "Right Control";
+            }
+            if (IsRightAlt)
+            {
+                KeyString = "Right Alt";
+            }
             if (ModifierString != "" && KeyString != "")
             {
                 KeybindValueLabel.Text = ModifierString + " + " + KeyString;
@@ -164,6 +187,12 @@ namespace AsylumLauncher
             else
             {
                 KeybindValueLabel.Text = KeyString;
+            }
+            if (KeybindValueLabel.Text == "Ctrl + Right Alt")
+            {
+                ModifierString = "";
+                KeyString = "Right Alt";
+                KeybindValueLabel.Text = "Right Alt";
             }
 
             switch (e.KeyCode)

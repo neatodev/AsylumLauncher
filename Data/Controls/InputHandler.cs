@@ -83,7 +83,10 @@ namespace AsylumLauncher
                 "Underscore",
                 "TAB",
                 "LeftShift",
-                "LeftAlt"
+                "LeftAlt",
+                "RightShift",
+                "RightControl",
+                "RightAlt"
             };
             return style;
         }
@@ -141,7 +144,10 @@ namespace AsylumLauncher
                 "-",
                 "Tab",
                 "Shift",
-                "Alt"
+                "Alt",
+                "Right Shift",
+                "Right Control",
+                "Right Alt"
             };
             return style;
         }
