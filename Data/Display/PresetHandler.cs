@@ -36,7 +36,14 @@
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
             Program.MainWindow.AntiAliasingBox.SelectedIndex = 1;
-            Program.MainWindow.PhysXBox.SelectedIndex = 1;
+            if (Program.MainWindow.GPULabel.Text.Contains("NVIDIA", StringComparison.OrdinalIgnoreCase))
+            {
+                Program.MainWindow.PhysXBox.SelectedIndex = 1;
+            }
+            else
+            {
+                Program.MainWindow.PhysXBox.SelectedIndex = 0;
+            }
             Program.MainWindow.PoolsizeBox.SelectedIndex = 2;
             Program.MainWindow.AnisoBox.SelectedIndex = 2;
             Program.MainWindow.ShadowQualityBox.SelectedIndex = 1;
@@ -57,7 +64,14 @@
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
             Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
-            Program.MainWindow.PhysXBox.SelectedIndex = 1;
+            if (Program.MainWindow.GPULabel.Text.Contains("NVIDIA", StringComparison.OrdinalIgnoreCase))
+            {
+                Program.MainWindow.PhysXBox.SelectedIndex = 1;
+            }
+            else
+            {
+                Program.MainWindow.PhysXBox.SelectedIndex = 0;
+            }
             Program.MainWindow.PoolsizeBox.SelectedIndex = 4;
             Program.MainWindow.AnisoBox.SelectedIndex = 2;
             Program.MainWindow.ShadowQualityBox.SelectedIndex = 3;
