@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace AsylumLauncher
+namespace AsylumLauncher.UI
 {
     public partial class ManualTexGroupsForm : Form
     {

@@ -36,7 +36,7 @@
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
             Program.MainWindow.AntiAliasingBox.SelectedIndex = 1;
-            if (Program.MainWindow.GPULabel.Text.Contains("NVIDIA", StringComparison.OrdinalIgnoreCase))
+            if (Program.MainWindow.GPULabel.Text.ToUpper().Contains("NVIDIA"))
             {
                 Program.MainWindow.PhysXBox.SelectedIndex = 1;
             }
@@ -64,7 +64,7 @@
             Program.MainWindow.LensFlareBox.Checked = true;
             Program.MainWindow.BloomBox.Checked = true;
             Program.MainWindow.AntiAliasingBox.SelectedIndex = 3;
-            if (Program.MainWindow.GPULabel.Text.Contains("NVIDIA", StringComparison.OrdinalIgnoreCase))
+            if (Program.MainWindow.GPULabel.Text.ToUpper().Contains("NVIDIA"))
             {
                 Program.MainWindow.PhysXBox.SelectedIndex = 1;
             }
