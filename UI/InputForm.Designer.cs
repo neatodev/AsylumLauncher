@@ -1,4 +1,4 @@
-﻿namespace AsylumLauncher
+﻿namespace AsylumLauncher.UI
 {
     partial class InputForm
     {

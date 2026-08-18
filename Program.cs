@@ -17,7 +17,7 @@ namespace AsylumLauncher
 
         public static readonly string CurrentTime = DateTime.Now.ToString("dd-MM-yy__hh-mm-ss");
 
-        public static AsylumLauncher MainWindow;
+        public static UI.AsylumLauncher MainWindow;
 
         public static IniHandler IniHandler;
 
@@ -100,9 +100,17 @@ namespace AsylumLauncher
             Nlog.Info("InitializeProgram - Starting logs at {0} on {1}.", DateTime.Now.ToString("HH:mm:ss"), DateTime.Now.ToString("D", new CultureInfo("en-GB")));
             Nlog.Info("InitializeProgram - Current application version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             Nlog.Info("InitializeProgram - Elevated Privileges: {0}", IsAdmin.ToString());
+#if NET6_0_OR_GREATER
             ApplicationConfiguration.Initialize();
+#else
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+#if NETCOREAPP3_0_OR_GREATER
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+#endif
+#endif
             InitFonts();
-            MainWindow = new AsylumLauncher();
+            MainWindow = new UI.AsylumLauncher();
             MainWindow.Text = MainWindow.Text + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             NvidiaHandler = new NvidiaHandler();
             FileHandler = new FileHandler();

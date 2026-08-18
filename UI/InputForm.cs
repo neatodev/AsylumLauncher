@@ -1,7 +1,7 @@
 ﻿using NLog;
 using System.Runtime.InteropServices;
 
-namespace AsylumLauncher
+namespace AsylumLauncher.UI
 {
     public partial class InputForm : Form
     {

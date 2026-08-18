@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Media;
 
-namespace AsylumLauncher
+namespace AsylumLauncher.UI
 {
     public partial class AsylumLauncher : Form
     {
